@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Network::Http - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Network::Http"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Network::Http: x client. HTTP`."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="x client. HTTP`.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="x client. HTTP`.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script
+  src="../../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-send_request">send_request</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Animation.html">Animation</a></code></li><li><code><a href="../../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../../SFML/Audio.html">Audio</a></code></li><li><code><a href="../../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../../SFML/Clock.html">Clock</a></code></li><li><code><a href="../../SFML/Color.html">Color</a></code></li><li><code><a href="../../SFML/Context.html">Context</a></code></li><li><code><a href="../../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../../SFML/Error.html">Error</a></code></li><li><code><a href="../../SFML/Event.html">Event</a></code></li><li><code><a href="../../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../../SFML/Image.html">Image</a></code></li><li><code><a href="../../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../../SFML/Listener.html">Listener</a></code></li><li><code><a href="../../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../../SFML/Rect.html">Rect</a></code></li><li><code><a href="../../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../../SFML/Scene.html">Scene</a></code></li><li><code><a href="../../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../../SFML/Shader.html">Shader</a></code></li><li><code><a href="../../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../../SFML/Shape.html">Shape</a></code></li><li><code><a href="../../SFML/Sound.html">Sound</a></code></li><li><code><a href="../../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../../SFML/Text.html">Text</a></code></li><li><code><a href="../../SFML/Texture.html">Texture</a></code></li><li><code><a href="../../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../../SFML/Time.html">Time</a></code></li><li><code><a href="../../SFML/Touch.html">Touch</a></code></li><li><code><a href="../../SFML/Transform.html">Transform</a></code></li><li><code><a href="../../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../../SFML/View.html">View</a></code></li><li><code><a href="../../SFML/Window.html">Window</a></code></li><li><code><a href="../../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-network-http">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <a href="../../SFML/Network.html">Network</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Http</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Network::Http" class="legacy-anchor"></span>
+  <h1 id="class-sfml-network-http" class="anchor-link class">
+    class SFML::Network::Http
+  </h1>
+
+  <section class="description">
+    
+<p>CSFML’s tiny HTTP/1.x client. Useful when an <a href="../../SFML.html"><code>SFML</code></a> 3 game wants to talk to a leaderboard / asset server without pulling in <code>Net::HTTP</code>. For anything more involved (TLS, redirects, streaming, retries, JSON), Ruby’s stdlib <code>Net::HTTP</code> is the better tool — this wrapper exists for parity with CSFML, not because we recommend it.</p>
+
+<p>http = <a href="Http.html#method-c-new"><code>SFML::Network::Http.new</code></a>(“<a href="http://localhost">localhost</a>”, port: 8080) resp = http.send_request(method: :get, uri: “/”) resp.status #=&gt; 200 resp.body #=&gt; “Hello world\n”</p>
+
+<p><a href="Http.html#method-i-send_request"><code>send_request</code></a> accepts: method: :get / :post / :head / :put / :delete (default :get) uri: path string (default “/”) fields: Hash of header name → value body: String body (POST/PUT) http_version: [major, minor] (default [1, 0]) timeout: <a href="../Time.html"><code>SFML::Time</code></a> or seconds (default 0 = no timeout)</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="DEFAULT_TIMEOUT">DEFAULT_TIMEOUT</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="DEFAULT_VERSION">DEFAULT_VERSION</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(host, port: 0)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-value">port:</span> <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttp_create</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NetworkError</span>, <span class="ruby-string">&quot;sfHttp_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfHttp_destroy</span>))
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttp_setHost</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">host</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">port</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-send_request" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-send_request" title="Link to this method">
+                <span class="method-name">send_request</span>
+                <span class="method-args">(method: :get, uri: &quot;/&quot;, fields: nil, body: nil, http_version: DEFAULT_VERSION, timeout: DEFAULT_TIMEOUT)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="send_request-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_request</span>(<span class="ruby-value">method:</span> <span class="ruby-value">:get</span>, <span class="ruby-value">uri:</span> <span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-value">fields:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">body:</span> <span class="ruby-keyword">nil</span>,
+                 <span class="ruby-value">http_version:</span> <span class="ruby-constant">DEFAULT_VERSION</span>, <span class="ruby-value">timeout:</span> <span class="ruby-constant">DEFAULT_TIMEOUT</span>)
+  <span class="ruby-identifier">request_ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_create</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NetworkError</span>, <span class="ruby-string">&quot;sfHttpRequest_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">request_ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">method_idx</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP_METHODS</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">||</span>
+      <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown HTTP method: #{method.inspect} &quot;</span> \
+                           <span class="ruby-node">&quot;(expected one of #{C::Network::HTTP_METHODS.inspect})&quot;</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_setMethod</span>(<span class="ruby-identifier">request_ptr</span>, <span class="ruby-identifier">method_idx</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_setUri</span>(<span class="ruby-identifier">request_ptr</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_setHttpVersion</span>(<span class="ruby-identifier">request_ptr</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">http_version</span>[<span class="ruby-value">0</span>]), <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">http_version</span>[<span class="ruby-value">1</span>]))
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_setBody</span>(<span class="ruby-identifier">request_ptr</span>, <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">fields</span>&amp;.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_setField</span>(<span class="ruby-identifier">request_ptr</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">timeout</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">timeout</span>.<span class="ruby-identifier">to_f</span>)
+    <span class="ruby-identifier">response_ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttp_sendRequest</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">request_ptr</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NetworkError</span>, <span class="ruby-string">&quot;sfHttp_sendRequest returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">response_ptr</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-constant">Response</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">response_ptr</span>)
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_destroy</span>(<span class="ruby-identifier">request_ptr</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Image - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Image"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Image: CPU-side bitmap. writes — handy for procedural generation, screenshots, masks, and anything that needs to inspect or modify pixel data before upload."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Image - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="CPU-side bitmap. writes — handy for procedural generation, screenshots, masks, and anything that needs to inspect or modify pixel data before upload.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Image - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="CPU-side bitmap. writes — handy for procedural generation, screenshots, masks, and anything that needs to inspect or modify pixel data before upload.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-from_memory">from_memory</a></li>
+
+        <li ><a href="#method-c-from_pixels">from_pixels</a></li>
+
+        <li ><a href="#method-c-from_stream">from_stream</a></li>
+
+        <li ><a href="#method-c-load">load</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-5B-5D">[]</a></li>
+
+        <li ><a href="#method-i-5B-5D-3D">[]=</a></li>
+
+        <li ><a href="#method-i-_take_ownership">_take_ownership</a></li>
+
+        <li ><a href="#method-i-copy_from">copy_from</a></li>
+
+        <li ><a href="#method-i-flip_horizontally">flip_horizontally</a></li>
+
+        <li ><a href="#method-i-flip_vertically">flip_vertically</a></li>
+
+        <li ><a href="#method-i-height">height</a></li>
+
+        <li ><a href="#method-i-mask_color-21">mask_color!</a></li>
+
+        <li ><a href="#method-i-pixels">pixels</a></li>
+
+        <li ><a href="#method-i-save">save</a></li>
+
+        <li ><a href="#method-i-save_to_memory">save_to_memory</a></li>
+
+        <li ><a href="#method-i-size">size</a></li>
+
+        <li ><a href="#method-i-width">width</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-image">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Image</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Image" class="legacy-anchor"></span>
+  <h1 id="class-sfml-image" class="anchor-link class">
+    class SFML::Image
+  </h1>
+
+  <section class="description">
+    
+<p>CPU-side bitmap. Lives in main memory and supports per-pixel reads / writes — handy for procedural generation, screenshots, masks, and anything that needs to inspect or modify pixel data before upload.</p>
+
+<p>img = <a href="Image.html#method-c-new"><code>SFML::Image.new</code></a>(800, 600, fill: <a href="Color.html#method-c-cornflower_blue"><code>SFML::Color.cornflower_blue</code></a>) img = <a href="Image.html#method-c-load"><code>SFML::Image.load</code></a>(“assets/hero.png”)</p>
+
+<p>img[10, 20] = <a href="Color.html#method-c-red"><code>SFML::Color.red</code></a> img[10, 20] #=&gt; Color(255, 0, 0, 255)</p>
+
+<p>img.flip_vertically img.save(“out.png”)</p>
+
+<p>Convert to a GPU-side texture for drawing:</p>
+
+<p>tex = <a href="Texture.html#method-c-from_image"><code>SFML::Texture.from_image(img)</code></a> sprite = <a href="Sprite.html#method-c-new"><code>SFML::Sprite.new(tex)</code></a></p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-from_memory" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_memory" title="Link to this method">
+                <span class="method-name">from_memory</span>
+                <span class="method-args">(bytes)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_memory-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_memory</span>(<span class="ruby-identifier">bytes</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;expected a String, got #{bytes.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:uint8</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_bytes</span>(<span class="ruby-identifier">bytes</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createFromMemory</span>(<span class="ruby-identifier">buf</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfImage_createFromMemory returned NULL — unsupported format?&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">img</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">img</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Decode an image from a Ruby String of bytes (PNG, JPG, BMP, TGA, GIF, HDR, PSD — whatever stb_image / SFML’s loader supports). Mirror of <a href="Image.html#method-i-save_to_memory"><code>Image#save_to_memory</code></a> for round-trips without touching the disk.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_pixels" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_pixels" title="Link to this method">
+                <span class="method-name">from_pixels</span>
+                <span class="method-args">(width, height, pixels)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_pixels-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_pixels</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">pixels</span>)
+  <span class="ruby-identifier">expected</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>) <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;expected #{expected} bytes, got #{pixels.bytesize}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">expected</span>
+
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:uint8</span>, <span class="ruby-identifier">expected</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_bytes</span>(<span class="ruby-identifier">pixels</span>)
+
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>)
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createFromPixels</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">buf</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfImage_createFromPixels returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">img</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">img</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Build an image from a raw RGBA byte string. <code>pixels</code> must be exactly width_height_4 bytes, row-major from the top-left.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_stream" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_stream" title="Link to this method">
+                <span class="method-name">from_stream</span>
+                <span class="method-args">(io)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_stream-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-identifier">stream</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createFromStream</span>(<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">to_ptr</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfImage_createFromStream returned NULL — unsupported format?&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">img</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">img</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Decode an image from any Ruby IO-like object (File, StringIO, network-backed reader). The stream must support read/seek/pos/size.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-load" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-load" title="Link to this method">
+                <span class="method-name">load</span>
+                <span class="method-args">(path)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="load-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createFromFile</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not load image from #{path.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">img</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">img</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(width, height, fill: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">fill:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>)
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">fill</span>
+          <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createFromColor</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">fill</span>.<span class="ruby-identifier">to_native</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_create</span>(<span class="ruby-identifier">size</span>)
+        <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfImage_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Create a blank image of the given size. With <code>fill:</code> it’s filled with that colour; without, with transparent black.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-5B-5D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-5B-5D" title="Link to this method">
+                <span class="method-name">[]</span>
+                <span class="method-args">(x, y)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="5B-5D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Read the colour of a single pixel.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-5B-5D-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-5B-5D-3D" title="Link to this method">
+                <span class="method-name">[]=</span>
+                <span class="method-args">(x, y, color)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_setPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Write a single pixel.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_take_ownership" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_take_ownership" title="Link to this method">
+                <span class="method-name">_take_ownership</span>
+                <span class="method-args">(ptr)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_take_ownership-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfImage_destroy</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-copy_from" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-copy_from" title="Link to this method">
+                <span class="method-name">copy_from</span>
+                <span class="method-args">(source, at:, source_rect: nil, apply_alpha: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="copy_from-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">copy_from</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">at:</span>, <span class="ruby-value">source_rect:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">apply_alpha:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Image#copy_from needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+
+  <span class="ruby-identifier">dest</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">dest</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">0</span>]); <span class="ruby-identifier">dest</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">1</span>])
+
+  <span class="ruby-identifier">sr_struct</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">source_rect</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>   <span class="ruby-keyword">then</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]   <span class="ruby-comment"># zeroes = &quot;entire source&quot; in CSFML</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Rect</span>  <span class="ruby-keyword">then</span> [<span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">width</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">height</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">source_rect</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;source_rect must be a SFML::Rect or [x, y, w, h]&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">w</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">h</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_copyImage</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">sr_struct</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">apply_alpha</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Copy a rectangular region of <code>source</code> into this image. The source region is <code>source_rect</code> (a <a href="Rect.html"><code>SFML::Rect</code></a> or <code>[x, y, w, h]</code> Array; defaults to the entire source); the destination top-left in this image is <code>at</code> (<code>[x, y]</code>). When <code>apply_alpha</code> is true, the source’s alpha channel blends with this image’s existing pixels; otherwise the copy is opaque.</p>
+
+<p>Useful for stamping sprites onto an atlas, blitting one image into a sub-rect of another, or hand-building a composite before uploading to GPU.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-flip_horizontally" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-flip_horizontally" title="Link to this method">
+                <span class="method-name">flip_horizontally</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="flip_horizontally-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_horizontally</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipHorizontally</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-flip_vertically" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-flip_vertically" title="Link to this method">
+                <span class="method-name">flip_vertically</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="flip_vertically-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_vertically</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipVertically</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-height" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-height" title="Link to this method">
+                <span class="method-name">height</span>
+                <span class="method-args">(= size.y)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="height-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 98</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
+
+  <span class="ruby-comment"># Read the colour of a single pixel.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+    <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Write a single pixel.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+    <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_setPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Write the entire pixel buffer back as a Ruby String. Useful for</span>
+  <span class="ruby-comment"># piping to image-processing libraries or writing custom file formats.</span>
+  <span class="ruby-comment"># Format: width*height*4 bytes, RGBA, row-major from top-left.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pixels</span>
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixelsPtr</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Copy a rectangular region of `source` into this image. The</span>
+  <span class="ruby-comment"># source region is `source_rect` (a `SFML::Rect` or `[x, y, w,</span>
+  <span class="ruby-comment"># h]` Array; defaults to the entire source); the destination</span>
+  <span class="ruby-comment"># top-left in this image is `at` (`[x, y]`). When `apply_alpha`</span>
+  <span class="ruby-comment"># is true, the source&#39;s alpha channel blends with this image&#39;s</span>
+  <span class="ruby-comment"># existing pixels; otherwise the copy is opaque.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Useful for stamping sprites onto an atlas, blitting one</span>
+  <span class="ruby-comment"># image into a sub-rect of another, or hand-building a</span>
+  <span class="ruby-comment"># composite before uploading to GPU.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">copy_from</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">at:</span>, <span class="ruby-value">source_rect:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">apply_alpha:</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Image#copy_from needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+
+    <span class="ruby-identifier">dest</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">dest</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">0</span>]); <span class="ruby-identifier">dest</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">1</span>])
+
+    <span class="ruby-identifier">sr_struct</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> =
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">source_rect</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>   <span class="ruby-keyword">then</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]   <span class="ruby-comment"># zeroes = &quot;entire source&quot; in CSFML</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Rect</span>  <span class="ruby-keyword">then</span> [<span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">width</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">height</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">source_rect</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;source_rect must be a SFML::Rect or [x, y, w, h]&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">w</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_copyImage</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">sr_struct</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">apply_alpha</span>)
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToFile</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not save image to #{path.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+    <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Encode the image as `format` (&quot;png&quot;, &quot;jpg&quot;, &quot;bmp&quot;, or &quot;tga&quot;) and</span>
+  <span class="ruby-comment"># return the encoded bytes as a Ruby String. Useful for sending</span>
+  <span class="ruby-comment"># screenshots over the network, generating data: URLs, piping into</span>
+  <span class="ruby-comment"># an image-processing library, etc., without touching the disk.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#   png_bytes = img.save_to_memory(&quot;png&quot;)</span>
+  <span class="ruby-comment">#   File.binwrite(&quot;out.png&quot;, png_bytes)</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save_to_memory</span>(<span class="ruby-identifier">format</span>)
+    <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_create</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfBuffer_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToMemory</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">format</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not encode image as #{format.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+
+      <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getSize</span>(<span class="ruby-identifier">buffer</span>)
+      <span class="ruby-identifier">data</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getData</span>(<span class="ruby-identifier">buffer</span>)
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">size</span>)
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_destroy</span>(<span class="ruby-identifier">buffer</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Replace any pixel matching `color` with that colour at `alpha`</span>
+  <span class="ruby-comment"># opacity — typical use is to turn a fixed background colour</span>
+  <span class="ruby-comment"># transparent: img.mask_color!(SFML::Color.magenta, alpha: 0).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mask_color!</span>(<span class="ruby-identifier">color</span>, <span class="ruby-value">alpha:</span> <span class="ruby-value">0</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createMaskFromColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">alpha</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_horizontally</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipHorizontally</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_vertically</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipVertically</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfImage_destroy</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-mask_color-21" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-mask_color-21" title="Link to this method">
+                <span class="method-name">mask_color!</span>
+                <span class="method-args">(color, alpha: 0)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="mask_color-21-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mask_color!</span>(<span class="ruby-identifier">color</span>, <span class="ruby-value">alpha:</span> <span class="ruby-value">0</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createMaskFromColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">alpha</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Replace any pixel matching <code>color</code> with that colour at <code>alpha</code> opacity — typical use is to turn a fixed background colour transparent: img.mask_color!(<a href="Color.html#method-c-magenta"><code>SFML::Color.magenta</code></a>, alpha: 0).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-pixels" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-pixels" title="Link to this method">
+                <span class="method-name">pixels</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="pixels-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pixels</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixelsPtr</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Write the entire pixel buffer back as a Ruby String. Useful for piping to image-processing libraries or writing custom file formats. Format: width_height_4 bytes, RGBA, row-major from top-left.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-save" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-save" title="Link to this method">
+                <span class="method-name">save</span>
+                <span class="method-args">(path)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="save-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToFile</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not save image to #{path.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-save_to_memory" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-save_to_memory" title="Link to this method">
+                <span class="method-name">save_to_memory</span>
+                <span class="method-args">(format)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="save_to_memory-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save_to_memory</span>(<span class="ruby-identifier">format</span>)
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_create</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfBuffer_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToMemory</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">format</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not encode image as #{format.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+
+    <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getSize</span>(<span class="ruby-identifier">buffer</span>)
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getData</span>(<span class="ruby-identifier">buffer</span>)
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_destroy</span>(<span class="ruby-identifier">buffer</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Encode the image as <code>format</code> (“png”, “jpg”, “bmp”, or “tga”) and return the encoded bytes as a Ruby String. Useful for sending screenshots over the network, generating data: URLs, piping into an image-processing library, etc., without touching the disk.</p>
+
+<p>png_bytes = img.save_to_memory(“png”) File.binwrite(“out.png”, png_bytes)</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-size" title="Link to this method">
+                <span class="method-name">size</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getSize</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-width" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-width" title="Link to this method">
+                <span class="method-name">width</span>
+                <span class="method-args">(= size.x)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="width-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 97</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">x</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
+
+    <span class="ruby-comment"># Read the colour of a single pixel.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+      <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Write a single pixel.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+      <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_setPixel</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">coord</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Write the entire pixel buffer back as a Ruby String. Useful for</span>
+    <span class="ruby-comment"># piping to image-processing libraries or writing custom file formats.</span>
+    <span class="ruby-comment"># Format: width*height*4 bytes, RGBA, row-major from top-left.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pixels</span>
+      <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixelsPtr</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Copy a rectangular region of `source` into this image. The</span>
+    <span class="ruby-comment"># source region is `source_rect` (a `SFML::Rect` or `[x, y, w,</span>
+    <span class="ruby-comment"># h]` Array; defaults to the entire source); the destination</span>
+    <span class="ruby-comment"># top-left in this image is `at` (`[x, y]`). When `apply_alpha`</span>
+    <span class="ruby-comment"># is true, the source&#39;s alpha channel blends with this image&#39;s</span>
+    <span class="ruby-comment"># existing pixels; otherwise the copy is opaque.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># Useful for stamping sprites onto an atlas, blitting one</span>
+    <span class="ruby-comment"># image into a sub-rect of another, or hand-building a</span>
+    <span class="ruby-comment"># composite before uploading to GPU.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">copy_from</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">at:</span>, <span class="ruby-value">source_rect:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">apply_alpha:</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Image#copy_from needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+
+      <span class="ruby-identifier">dest</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">dest</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">0</span>]); <span class="ruby-identifier">dest</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">at</span>[<span class="ruby-value">1</span>])
+
+      <span class="ruby-identifier">sr_struct</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> =
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">source_rect</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>   <span class="ruby-keyword">then</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]   <span class="ruby-comment"># zeroes = &quot;entire source&quot; in CSFML</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Rect</span>  <span class="ruby-keyword">then</span> [<span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">width</span>, <span class="ruby-identifier">source_rect</span>.<span class="ruby-identifier">height</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">source_rect</span>
+        <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;source_rect must be a SFML::Rect or [x, y, w, h]&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">w</span>); <span class="ruby-identifier">sr_struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">h</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_copyImage</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">sr_struct</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">apply_alpha</span>)
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToFile</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not save image to #{path.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+      <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Encode the image as `format` (&quot;png&quot;, &quot;jpg&quot;, &quot;bmp&quot;, or &quot;tga&quot;) and</span>
+    <span class="ruby-comment"># return the encoded bytes as a Ruby String. Useful for sending</span>
+    <span class="ruby-comment"># screenshots over the network, generating data: URLs, piping into</span>
+    <span class="ruby-comment"># an image-processing library, etc., without touching the disk.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment">#   png_bytes = img.save_to_memory(&quot;png&quot;)</span>
+    <span class="ruby-comment">#   File.binwrite(&quot;out.png&quot;, png_bytes)</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save_to_memory</span>(<span class="ruby-identifier">format</span>)
+      <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_create</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfBuffer_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span>
+
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToMemory</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">format</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not encode image as #{format.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+
+        <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getSize</span>(<span class="ruby-identifier">buffer</span>)
+        <span class="ruby-identifier">data</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_getData</span>(<span class="ruby-identifier">buffer</span>)
+        <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword">ensure</span>
+        <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_destroy</span>(<span class="ruby-identifier">buffer</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Replace any pixel matching `color` with that colour at `alpha`</span>
+    <span class="ruby-comment"># opacity — typical use is to turn a fixed background colour</span>
+    <span class="ruby-comment"># transparent: img.mask_color!(SFML::Color.magenta, alpha: 0).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mask_color!</span>(<span class="ruby-identifier">color</span>, <span class="ruby-value">alpha:</span> <span class="ruby-value">0</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createMaskFromColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">alpha</span>))
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_horizontally</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipHorizontally</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_vertically</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipVertically</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+    <span class="ruby-identifier">private</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+      <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfImage_destroy</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

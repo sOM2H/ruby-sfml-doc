@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::BlendMode - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::BlendMode"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::BlendMode: How source pixels combine with destination pixels when drawing. window."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="How source pixels combine with destination pixels when drawing. window.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="How source pixels combine with destination pixels when drawing. window.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-from_native">from_native</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-3D-3D">==</a></li>
+
+        <li ><a href="#method-i-_check_equation">_check_equation</a></li>
+
+        <li ><a href="#method-i-_check_factor">_check_factor</a></li>
+
+        <li ><a href="#method-i-eql-3F">eql?</a></li>
+
+        <li ><a href="#method-i-hash">hash</a></li>
+
+        <li ><a href="#method-i-populate">populate</a></li>
+
+        <li ><a href="#method-i-to_s">to_s</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-blendmode">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>BlendMode</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::BlendMode" class="legacy-anchor"></span>
+  <h1 id="class-sfml-blendmode" class="anchor-link class">
+    class SFML::BlendMode
+  </h1>
+
+  <section class="description">
+    
+<p>How source pixels combine with destination pixels when drawing. Use the named constants for the common cases:</p>
+
+<p>window.draw(sprite, <a href="../lib/sfml/graphics/blend_mode_rb.html">blend_mode</a>: <a href="BlendMode.html#ADD"><code>SFML::BlendMode::ADD</code></a>)</p>
+
+<p><a href="BlendMode.html#ADD"><code>ADD</code></a> — bright shapes accumulate (great for glow / lighting) <a href="BlendMode.html#MULTIPLY"><code>MULTIPLY</code></a> — darken (shadows, screen-style overlays) <a href="BlendMode.html#MIN"><code>MIN</code></a> / <a href="BlendMode.html#MAX"><code>MAX</code></a> — pick the darker / brighter pixel <a href="BlendMode.html#NONE"><code>NONE</code></a> — overwrite, ignoring the destination <a href="BlendMode.html#ALPHA"><code>ALPHA</code></a> — the default; src*α blended onto dst</p>
+
+<p>Build a custom mode with kwargs:</p>
+
+<p><a href="BlendMode.html#method-c-new"><code>SFML::BlendMode.new</code></a>( <a href="BlendMode.html#attribute-i-color_src"><code>color_src</code></a>: :src_alpha, <a href="BlendMode.html#attribute-i-color_dst"><code>color_dst</code></a>: :one, <a href="BlendMode.html#attribute-i-color_eq"><code>color_eq</code></a>: :add, <a href="BlendMode.html#attribute-i-alpha_src"><code>alpha_src</code></a>: :one, <a href="BlendMode.html#attribute-i-alpha_dst"><code>alpha_dst</code></a>: :one, <a href="BlendMode.html#attribute-i-alpha_eq"><code>alpha_eq</code></a>: :add, )</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="ADD">ADD</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="ALPHA">ALPHA</dt>
+
+        <dd>
+
+          <p>Built-in modes — read straight out of CSFML’s global constants so we never have to hand-maintain the canonical factor lists.</p>
+        </dd>
+
+
+        <dt id="EQUATIONS">EQUATIONS</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="EQUATION_INDEX">EQUATION_INDEX</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="FACTORS">FACTORS</dt>
+
+        <dd>
+
+          <p>Order matches sfBlendFactor in CSFML 3.</p>
+        </dd>
+
+
+        <dt id="FACTOR_INDEX">FACTOR_INDEX</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="MAX">MAX</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="MIN">MIN</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="MULTIPLY">MULTIPLY</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="NONE">NONE</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+    <section class="attribute-method-details method-section">
+      <header>
+        <h3 id="untitled-attributes"><a href="#untitled-attributes">Attributes</a></h3>
+      </header>
+
+
+      <div id="attribute-i-alpha_dst" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-alpha_dst" title="Link to this attribute">
+            <span class="method-name">alpha_dst</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-alpha_eq" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-alpha_eq" title="Link to this attribute">
+            <span class="method-name">alpha_eq</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-alpha_src" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-alpha_src" title="Link to this attribute">
+            <span class="method-name">alpha_src</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-color_dst" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-color_dst" title="Link to this attribute">
+            <span class="method-name">color_dst</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-color_eq" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-color_eq" title="Link to this attribute">
+            <span class="method-name">color_eq</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-color_src" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-color_src" title="Link to this attribute">
+            <span class="method-name">color_src</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-from_native" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_native" title="Link to this method">
+                <span class="method-name">from_native</span>
+                <span class="method-args">(struct)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_native-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>)
+  <span class="ruby-identifier">new</span>(
+    <span class="ruby-value">color_src:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>]],
+    <span class="ruby-value">color_dst:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_dst_factor</span>]],
+    <span class="ruby-value">color_eq:</span>  <span class="ruby-constant">EQUATIONS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_equation</span>]],
+    <span class="ruby-value">alpha_src:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_src_factor</span>]],
+    <span class="ruby-value">alpha_dst:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_dst_factor</span>]],
+    <span class="ruby-value">alpha_eq:</span>  <span class="ruby-constant">EQUATIONS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_equation</span>]],
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>@!visibility private</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(color_src:, color_dst:, color_eq:, alpha_src:, alpha_dst:, alpha_eq:)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">color_src:</span>, <span class="ruby-value">color_dst:</span>, <span class="ruby-value">color_eq:</span>,
+               <span class="ruby-value">alpha_src:</span>, <span class="ruby-value">alpha_dst:</span>, <span class="ruby-value">alpha_eq:</span>)
+  <span class="ruby-ivar">@color_src</span> = <span class="ruby-identifier">_check_factor</span>(<span class="ruby-identifier">color_src</span>)
+  <span class="ruby-ivar">@color_dst</span> = <span class="ruby-identifier">_check_factor</span>(<span class="ruby-identifier">color_dst</span>)
+  <span class="ruby-ivar">@color_eq</span>  = <span class="ruby-identifier">_check_equation</span>(<span class="ruby-identifier">color_eq</span>)
+  <span class="ruby-ivar">@alpha_src</span> = <span class="ruby-identifier">_check_factor</span>(<span class="ruby-identifier">alpha_src</span>)
+  <span class="ruby-ivar">@alpha_dst</span> = <span class="ruby-identifier">_check_factor</span>(<span class="ruby-identifier">alpha_dst</span>)
+  <span class="ruby-ivar">@alpha_eq</span>  = <span class="ruby-identifier">_check_equation</span>(<span class="ruby-identifier">alpha_eq</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-3D-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-3D-3D" title="Link to this method">
+                <span class="method-name">==</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="3D-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BlendMode</span>) <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-identifier">color_src</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">color_src</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">color_dst</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">color_dst</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">color_eq</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">color_eq</span> <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-identifier">alpha_src</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alpha_src</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">alpha_dst</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alpha_dst</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">alpha_eq</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alpha_eq</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+        <div class="aliases">
+          Also aliased as: <a href="BlendMode.html#method-i-eql-3F">eql?</a>
+        </div>
+
+
+
+      </div>
+
+
+      <div id="method-i-_check_equation" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_check_equation" title="Link to this method">
+                <span class="method-name">_check_equation</span>
+                <span class="method-args">(name)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_check_equation-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_equation</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend equation: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">EQUATION_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_check_factor" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_check_factor" title="Link to this method">
+                <span class="method-name">_check_factor</span>
+                <span class="method-args">(name)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_check_factor-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_factor</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend factor: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">FACTOR_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-eql-3F" class="method-detail anchor-link method-alias">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-eql-3F" title="Link to this method">
+                <span class="method-name">eql?</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+        <div class="aliases">
+          Alias for: <a href="BlendMode.html#method-i-3D-3D">==</a>
+        </div>
+
+      </div>
+
+
+      <div id="method-i-hash" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-hash" title="Link to this method">
+                <span class="method-name">hash</span>
+                <span class="method-args">(= [color_src, color_dst, color_eq, alpha_src, alpha_dst, alpha_eq].hash)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="hash-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 50</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-identifier">color_src</span>, <span class="ruby-identifier">color_dst</span>, <span class="ruby-identifier">color_eq</span>, <span class="ruby-identifier">alpha_src</span>, <span class="ruby-identifier">alpha_dst</span>, <span class="ruby-identifier">alpha_eq</span>].<span class="ruby-identifier">hash</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+    <span class="ruby-node">&quot;BlendMode(color: #{color_src}/#{color_dst}/#{color_eq}, alpha: #{alpha_src}/#{alpha_dst}/#{alpha_eq})&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-comment"># Write our six fields into a CSFML BlendMode struct (or a sub-struct</span>
+  <span class="ruby-comment"># of an existing RenderStates buffer).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate</span>(<span class="ruby-identifier">struct</span>)
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_src</span>]
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_dst_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_dst</span>]
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_equation</span>]   = <span class="ruby-constant">EQUATION_INDEX</span>[<span class="ruby-ivar">@color_eq</span>]
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_src_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@alpha_src</span>]
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_dst_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@alpha_dst</span>]
+    <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_equation</span>]   = <span class="ruby-constant">EQUATION_INDEX</span>[<span class="ruby-ivar">@alpha_eq</span>]
+    <span class="ruby-identifier">struct</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>)
+    <span class="ruby-identifier">new</span>(
+      <span class="ruby-value">color_src:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>]],
+      <span class="ruby-value">color_dst:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_dst_factor</span>]],
+      <span class="ruby-value">color_eq:</span>  <span class="ruby-constant">EQUATIONS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_equation</span>]],
+      <span class="ruby-value">alpha_src:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_src_factor</span>]],
+      <span class="ruby-value">alpha_dst:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_dst_factor</span>]],
+      <span class="ruby-value">alpha_eq:</span>  <span class="ruby-constant">EQUATIONS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_equation</span>]],
+    )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Defined as private at the bottom of the file would arrive too late</span>
+  <span class="ruby-comment"># — the constants below call .new through .from_native, which goes</span>
+  <span class="ruby-comment"># through #initialize, which uses these checks.</span>
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_factor</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend factor: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">FACTOR_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_equation</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend equation: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">EQUATION_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">public</span>
+
+  <span class="ruby-comment"># Built-in modes — read straight out of CSFML&#39;s global constants so</span>
+  <span class="ruby-comment"># we never have to hand-maintain the canonical factor lists.</span>
+  <span class="ruby-constant">ALPHA</span>    = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendAlpha</span>)
+  <span class="ruby-constant">ADD</span>      = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendAdd</span>)
+  <span class="ruby-constant">MULTIPLY</span> = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendMultiply</span>)
+  <span class="ruby-constant">MIN</span>      = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendMin</span>)
+  <span class="ruby-constant">MAX</span>      = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendMax</span>)
+  <span class="ruby-constant">NONE</span>     = <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfBlendNone</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-populate" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-populate" title="Link to this method">
+                <span class="method-name">populate</span>
+                <span class="method-args">(struct)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="populate-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate</span>(<span class="ruby-identifier">struct</span>)
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_src</span>]
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_dst_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_dst</span>]
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_equation</span>]   = <span class="ruby-constant">EQUATION_INDEX</span>[<span class="ruby-ivar">@color_eq</span>]
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_src_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@alpha_src</span>]
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_dst_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@alpha_dst</span>]
+  <span class="ruby-identifier">struct</span>[<span class="ruby-value">:alpha_equation</span>]   = <span class="ruby-constant">EQUATION_INDEX</span>[<span class="ruby-ivar">@alpha_eq</span>]
+  <span class="ruby-identifier">struct</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>@!visibility private Write our six fields into a CSFML <a href="BlendMode.html"><code>BlendMode</code></a> struct (or a sub-struct of an existing <a href="RenderStates.html"><code>RenderStates</code></a> buffer).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-to_s" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-to_s" title="Link to this method">
+                <span class="method-name">to_s</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="to_s-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;BlendMode(color: #{color_src}/#{color_dst}/#{color_eq}, alpha: #{alpha_src}/#{alpha_dst}/#{alpha_eq})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

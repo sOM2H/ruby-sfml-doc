@@ -1,5 +1,7 @@
+# public/ IS tracked — it's the artefact Netlify publishes.
+# Everything below is genuinely build-time noise.
+
 /.gem-src/
-/public/
 /vendor/
 /.bundle/
 Gemfile.lock

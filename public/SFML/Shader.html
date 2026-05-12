@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Shader - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Shader"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Shader: A GLSL shader. Shader."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Shader - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="A GLSL shader. Shader.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Shader - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="A GLSL shader. Shader.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-_check_at_least_one">_check_at_least_one</a></li>
+
+        <li ><a href="#method-c-_wrap">_wrap</a></li>
+
+        <li ><a href="#method-c-available-3F">available?</a></li>
+
+        <li ><a href="#method-c-from_file">from_file</a></li>
+
+        <li ><a href="#method-c-from_source">from_source</a></li>
+
+        <li ><a href="#method-c-from_stream">from_stream</a></li>
+
+        <li ><a href="#method-c-geometry_available-3F">geometry_available?</a></li>
+
+        <li ><a href="#method-c-unbind">unbind</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-5B-5D-3D">[]=</a></li>
+
+        <li ><a href="#method-i-_coerce_matrix">_coerce_matrix</a></li>
+
+        <li ><a href="#method-i-_set_mat_array">_set_mat_array</a></li>
+
+        <li ><a href="#method-i-_set_vec_array_uniform">_set_vec_array_uniform</a></li>
+
+        <li ><a href="#method-i-bind">bind</a></li>
+
+        <li ><a href="#method-i-native_handle">native_handle</a></li>
+
+        <li ><a href="#method-i-set_bvec">set_bvec</a></li>
+
+        <li ><a href="#method-i-set_float_array">set_float_array</a></li>
+
+        <li ><a href="#method-i-set_int">set_int</a></li>
+
+        <li ><a href="#method-i-set_int_color">set_int_color</a></li>
+
+        <li ><a href="#method-i-set_ivec2">set_ivec2</a></li>
+
+        <li ><a href="#method-i-set_mat3">set_mat3</a></li>
+
+        <li ><a href="#method-i-set_mat3_array">set_mat3_array</a></li>
+
+        <li ><a href="#method-i-set_mat4">set_mat4</a></li>
+
+        <li ><a href="#method-i-set_mat4_array">set_mat4_array</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-shader">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Shader</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Shader" class="legacy-anchor"></span>
+  <h1 id="class-sfml-shader" class="anchor-link class">
+    class SFML::Shader
+  </h1>
+
+  <section class="description">
+    
+<p>A GLSL shader. Build one from a vertex and/or fragment source (either a file path or a literal source string), then set uniforms with bracket assignment and pass it to draw via the <code>shader:</code> kwarg:</p>
+
+<p>shader = <a href="Shader.html#method-c-from_source"><code>SFML::Shader.from_source</code></a>(fragment: &lt;&lt;~GLSL) uniform sampler2D texture; uniform float time; void main() { vec2 uv = gl_<a href="0">TexCoord</a>.xy; uv.x += sin(uv.y * 20.0 + time * 3.0) * 0.02; gl_FragColor = texture2D(texture, uv) * gl_Color; } GLSL</p>
+
+<p><a href=":time">shader</a> = clock.elapsed.as_seconds window.draw(sprite, shader: shader)</p>
+
+<p>Uniform types are inferred from the Ruby value: Float / Integer / Numeric → float (uniform float) true / false → bool <a href="Vector2.html"><code>SFML::Vector2</code></a> → vec2 <a href="Vector3.html"><code>SFML::Vector3</code></a> → vec3 <a href="Color.html"><code>SFML::Color</code></a> → vec4 (normalised RGBA) <a href="Texture.html"><code>SFML::Texture</code></a> → sampler2D :current_texture (Symbol) → sampler2D bound to the drawable’s own texture [a, b] → vec2 (floats) [a, b, c] → vec3 [a, b, c, d] → vec4</p>
+
+<p>Array uniforms (<code>uniform vec2 positions[8];</code> and friends): [[x, y], [x, y], …] → vec2[]  [[x, y, z], …] → vec3[]  [[x, y, z, w], …] → vec4[]  [Vector2[a, b], …] → vec2[] (also accepts <a href="Vector2.html"><code>Vector2</code></a> / <a href="Vector3.html"><code>Vector3</code></a>)</p>
+
+<p>Float arrays (<code>uniform float weights[N];</code>) are ambiguous with vec3 at length 3, so use the explicit <a href="Shader.html#method-i-set_float_array"><code>set_float_array</code></a> setter.</p>
+
+<p>Need an int / bvec / matrix uniform? Use <a href="Shader.html#method-i-set_int"><code>set_int</code></a>, <a href="Shader.html#method-i-set_ivec2"><code>set_ivec2</code></a>, etc. — they exist for completeness.</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-_check_at_least_one" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-_check_at_least_one" title="Link to this method">
+                <span class="method-name">_check_at_least_one</span>
+                <span class="method-args">(*sources)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_check_at_least_one-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_check_at_least_one</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">sources</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader needs at least one of vertex:, geometry:, fragment:&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>@!visibility private</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-_wrap" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-_wrap" title="Link to this method">
+                <span class="method-name">_wrap</span>
+                <span class="method-args">(ptr)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_wrap-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">shader</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">shader</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfShader_destroy</span>)))
+  <span class="ruby-identifier">shader</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>@!visibility private</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-available-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-available-3F" title="Link to this method">
+                <span class="method-name">available?</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="available-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">available?</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_isAvailable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Class-level: is GLSL available on the current GPU at all?</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_file" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_file" title="Link to this method">
+                <span class="method-name">from_file</span>
+                <span class="method-args">(vertex: nil, geometry: nil, fragment: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_file-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_file</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_createFromFile</span>(
+    <span class="ruby-identifier">vertex</span>&amp;.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">geometry</span>&amp;.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">fragment</span>&amp;.<span class="ruby-identifier">to_s</span>,
+  )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ShaderError</span>, <span class="ruby-string">&quot;sfShader_createFromFile failed (compile error or missing file?)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Build a shader from one or more source files. Any of vertex / geometry / fragment may be omitted; at least one must be present.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_source" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_source" title="Link to this method">
+                <span class="method-name">from_source</span>
+                <span class="method-args">(vertex: nil, geometry: nil, fragment: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_source-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_source</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_createFromMemory</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ShaderError</span>, <span class="ruby-string">&quot;sfShader_createFromMemory failed (GLSL compile error?)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Build a shader directly from GLSL source strings.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_stream" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_stream" title="Link to this method">
+                <span class="method-name">from_stream</span>
+                <span class="method-args">(vertex: nil, geometry: nil, fragment: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_stream-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
+  <span class="ruby-identifier">streams</span> = [<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>) }
+  <span class="ruby-identifier">ptrs</span>    = <span class="ruby-identifier">streams</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_ptr</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span> }
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_createFromStream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">ptrs</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ShaderError</span>, <span class="ruby-string">&quot;sfShader_createFromStream failed (GLSL compile error?)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Build a shader from one or more IO-like streams (any object answering read/seek/pos/size). Useful when shader source lives inside an archive or a network resource.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-geometry_available-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-geometry_available-3F" title="Link to this method">
+                <span class="method-name">geometry_available?</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="geometry_available-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">geometry_available?</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_isGeometryAvailable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-unbind" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-unbind" title="Link to this method">
+                <span class="method-name">unbind</span>
+                <span class="method-args">(= C::Graphics.sfShader_bind(nil))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="unbind-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 211</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-keyword">nil</span>)
+
+    <span class="ruby-comment"># The OpenGL program ID. Useful for debug printf / interop</span>
+    <span class="ruby-comment"># with raw GL libraries.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-comment"># Set a `vec4` uniform from an integer-channel `SFML::Color`</span>
+    <span class="ruby-comment"># (RGBA 0–255). Equivalent to writing `[c.r/255, ..., c.a/255]`</span>
+    <span class="ruby-comment"># by hand into a vec4 — the CSFML helper does the divide for</span>
+    <span class="ruby-comment"># you.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int_color</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">color</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+    <span class="ruby-identifier">private</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">expected_length</span>, <span class="ruby-identifier">label</span>)
+      <span class="ruby-identifier">values</span> =
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">matrix</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Transform</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">matrix</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">flatten</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform requires an Array or SFML::Transform (got #{matrix.class})&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_length</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform needs #{expected_length} elements (got #{values.length})&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">setter</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;matrix array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">empty?</span>
+
+      <span class="ruby-identifier">label</span> = <span class="ruby-identifier">stride</span> <span class="ruby-operator">==</span> <span class="ruby-value">9</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;mat3&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;mat4&quot;</span>
+      <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">flat_map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">label</span>) }
+      <span class="ruby-identifier">buf</span>  = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">setter</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Detect the inner length (2/3/4), pack a contiguous float buffer,</span>
+    <span class="ruby-comment"># and dispatch to the matching CSFML setVec*UniformArray.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_vec_array_uniform</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">elements</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">empty?</span>
+
+      <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">flat_map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">el</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector2</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector3</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">z</span>.<span class="ruby-identifier">to_f</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array element must be Array/Vector2/Vector3 (got #{el.class})&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">stride</span> = <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array elements must all be the same length&quot;</span> \
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">stride</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+
+      <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">stride</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec2UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec3UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">4</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec4UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array elements must be length 2, 3, or 4 (got #{stride})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">public</span>
+
+    <span class="ruby-comment"># @!visibility private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+      <span class="ruby-identifier">shader</span> = <span class="ruby-identifier">allocate</span>
+      <span class="ruby-identifier">shader</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfShader_destroy</span>)))
+      <span class="ruby-identifier">shader</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># @!visibility private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_check_at_least_one</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">sources</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader needs at least one of vertex:, geometry:, fragment:&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-5B-5D-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-5B-5D-3D" title="Link to this method">
+                <span class="method-name">[]=</span>
+                <span class="method-args">(name, value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setBoolUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setFloatUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setFloatUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector2</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2f</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>; <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec2Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector3</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector3f</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>; <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>; <span class="ruby-identifier">v</span>[<span class="ruby-value">:z</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">z</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec3Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Color</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_native</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Texture</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setTextureUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:current_texture</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setCurrentTextureUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">first</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>)
+      <span class="ruby-identifier">_set_vec_array_uniform</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">4</span>
+        <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslVec4</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_f</span>; <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span>
+        <span class="ruby-identifier">v</span>[<span class="ruby-value">:z</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_f</span>; <span class="ruby-identifier">v</span>[<span class="ruby-value">:w</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">to_f</span>
+        <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec4Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">n</span>, <span class="ruby-identifier">v</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Shader uniform array must be length 2, 3, or 4 (got #{value.length})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">&quot;Shader uniform value must be Numeric, Vector2/3, Color, Texture, &quot;</span> \
+          <span class="ruby-node">&quot;Array of 2-4 numbers, or :current_texture (got #{value.class})&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a uniform by name. Dispatches to the right CSFML setter based on the Ruby value’s type — see the class-level docs for the table.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_coerce_matrix" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_coerce_matrix" title="Link to this method">
+                <span class="method-name">_coerce_matrix</span>
+                <span class="method-args">(matrix, expected_length, label)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_coerce_matrix-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">expected_length</span>, <span class="ruby-identifier">label</span>)
+  <span class="ruby-identifier">values</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">matrix</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Transform</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">matrix</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">flatten</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform requires an Array or SFML::Transform (got #{matrix.class})&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_length</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform needs #{expected_length} elements (got #{values.length})&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_set_mat_array" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_set_mat_array" title="Link to this method">
+                <span class="method-name">_set_mat_array</span>
+                <span class="method-args">(name, matrices, stride, setter)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_set_mat_array-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">setter</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;matrix array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">label</span> = <span class="ruby-identifier">stride</span> <span class="ruby-operator">==</span> <span class="ruby-value">9</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;mat3&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;mat4&quot;</span>
+  <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">flat_map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">label</span>) }
+  <span class="ruby-identifier">buf</span>  = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">setter</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">length</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_set_vec_array_uniform" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_set_vec_array_uniform" title="Link to this method">
+                <span class="method-name">_set_vec_array_uniform</span>
+                <span class="method-args">(name, elements)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_set_vec_array_uniform-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_vec_array_uniform</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">elements</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">flat_map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">el</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector2</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector3</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">z</span>.<span class="ruby-identifier">to_f</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array element must be Array/Vector2/Vector3 (got #{el.class})&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">stride</span> = <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array elements must all be the same length&quot;</span> \
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">stride</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">stride</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec2UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec3UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">4</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec4UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array elements must be length 2, 3, or 4 (got #{stride})&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Detect the inner length (2/3/4), pack a contiguous float buffer, and dispatch to the matching CSFML setVec*UniformArray.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-bind" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-bind" title="Link to this method">
+                <span class="method-name">bind</span>
+                <span class="method-args">(= C::Graphics.sfShader_bind(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="bind-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 209</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-comment"># The OpenGL program ID. Useful for debug printf / interop</span>
+  <span class="ruby-comment"># with raw GL libraries.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Set a `vec4` uniform from an integer-channel `SFML::Color`</span>
+  <span class="ruby-comment"># (RGBA 0–255). Equivalent to writing `[c.r/255, ..., c.a/255]`</span>
+  <span class="ruby-comment"># by hand into a vec4 — the CSFML helper does the divide for</span>
+  <span class="ruby-comment"># you.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int_color</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">color</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">expected_length</span>, <span class="ruby-identifier">label</span>)
+    <span class="ruby-identifier">values</span> =
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">matrix</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Transform</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">matrix</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">flatten</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform requires an Array or SFML::Transform (got #{matrix.class})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_length</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform needs #{expected_length} elements (got #{values.length})&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">setter</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;matrix array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">label</span> = <span class="ruby-identifier">stride</span> <span class="ruby-operator">==</span> <span class="ruby-value">9</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;mat3&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;mat4&quot;</span>
+    <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">flat_map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">label</span>) }
+    <span class="ruby-identifier">buf</span>  = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">setter</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Detect the inner length (2/3/4), pack a contiguous float buffer,</span>
+  <span class="ruby-comment"># and dispatch to the matching CSFML setVec*UniformArray.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_vec_array_uniform</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">elements</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">flat_map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">el</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector2</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector3</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">z</span>.<span class="ruby-identifier">to_f</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array element must be Array/Vector2/Vector3 (got #{el.class})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">stride</span> = <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array elements must all be the same length&quot;</span> \
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">stride</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+
+    <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">stride</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec2UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec3UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">4</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec4UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array elements must be length 2, 3, or 4 (got #{stride})&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">public</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">shader</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">shader</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfShader_destroy</span>)))
+    <span class="ruby-identifier">shader</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_check_at_least_one</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">sources</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader needs at least one of vertex:, geometry:, fragment:&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Bind this shader as the active GL program. Useful when you want to issue raw GL draw calls under SFML’s context. Pair with <a href="Shader.html#method-c-unbind"><code>Shader.unbind</code></a> to restore SFML’s default. Most users don’t need this — just pass the shader to <code>target.draw(..., render_states: SFML::RenderStates.new(shader: self))</code>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-native_handle" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-native_handle" title="Link to this method">
+                <span class="method-name">native_handle</span>
+                <span class="method-args">(= C::Graphics.sfShader_getNativeHandle(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="native_handle-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 215</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Set a `vec4` uniform from an integer-channel `SFML::Color`</span>
+  <span class="ruby-comment"># (RGBA 0–255). Equivalent to writing `[c.r/255, ..., c.a/255]`</span>
+  <span class="ruby-comment"># by hand into a vec4 — the CSFML helper does the divide for</span>
+  <span class="ruby-comment"># you.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int_color</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">color</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">expected_length</span>, <span class="ruby-identifier">label</span>)
+    <span class="ruby-identifier">values</span> =
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">matrix</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Transform</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">matrix</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">flatten</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform requires an Array or SFML::Transform (got #{matrix.class})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_length</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{label} uniform needs #{expected_length} elements (got #{values.length})&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">setter</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;matrix array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">label</span> = <span class="ruby-identifier">stride</span> <span class="ruby-operator">==</span> <span class="ruby-value">9</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;mat3&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;mat4&quot;</span>
+    <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">flat_map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">label</span>) }
+    <span class="ruby-identifier">buf</span>  = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">setter</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Detect the inner length (2/3/4), pack a contiguous float buffer,</span>
+  <span class="ruby-comment"># and dispatch to the matching CSFML setVec*UniformArray.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_vec_array_uniform</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">elements</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">flat_map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">el</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector2</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector3</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">el</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">el</span>.<span class="ruby-identifier">z</span>.<span class="ruby-identifier">to_f</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array element must be Array/Vector2/Vector3 (got #{el.class})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">stride</span> = <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array elements must all be the same length&quot;</span> \
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">stride</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>
+
+    <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">flat</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">stride</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec2UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec3UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">4</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setVec4UniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;uniform array elements must be length 2, 3, or 4 (got #{stride})&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">public</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">shader</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">shader</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfShader_destroy</span>)))
+    <span class="ruby-identifier">shader</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># @!visibility private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_check_at_least_one</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">sources</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader needs at least one of vertex:, geometry:, fragment:&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The OpenGL program ID. Useful for debug printf / interop with raw GL libraries.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_bvec" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_bvec" title="Link to this method">
+                <span class="method-name">set_bvec</span>
+                <span class="method-args">(name, *components)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_bvec-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_bvec</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">components</span>)
+  <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">components</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslBvec2</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">s</span>[<span class="ruby-value">:x</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:y</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setBvec2Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslBvec3</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">s</span>[<span class="ruby-value">:x</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:y</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">1</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:z</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setBvec3Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslBvec4</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">s</span>[<span class="ruby-value">:x</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:y</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">1</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:z</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">2</span>]; <span class="ruby-identifier">s</span>[<span class="ruby-value">:w</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">flat</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setBvec4Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;bvec uniform must have 2, 3, or 4 components (got #{flat.length})&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>uniform bvec2/3/4</code> from a Ruby Array of booleans. Length picks the dimensionality.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_float_array" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_float_array" title="Link to this method">
+                <span class="method-name">set_float_array</span>
+                <span class="method-args">(name, values)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_float_array-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_float_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>))
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setFloatUniformArray</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">buf</span>, <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>uniform float arr[N];</code> from a plain Ruby array of numbers. Float arrays can’t be inferred via <code>[]=</code> because they’d collide with the vec3 case at length 3.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_int" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_int" title="Link to this method">
+                <span class="method-name">set_int</span>
+                <span class="method-args">(name, value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_int-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Explicit integer setters when a uniform really is <code>uniform int n</code>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_int_color" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_int_color" title="Link to this method">
+                <span class="method-name">set_int_color</span>
+                <span class="method-args">(name, color)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_int_color-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int_color</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>vec4</code> uniform from an integer-channel <a href="Color.html"><code>SFML::Color</code></a> (RGBA 0–255). Equivalent to writing <code>[c.r/255, ..., c.a/255]</code> by hand into a vec4 — the CSFML helper does the divide for you.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_ivec2" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_ivec2" title="Link to this method">
+                <span class="method-name">set_ivec2</span>
+                <span class="method-args">(name, x, y)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_ivec2-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_ivec2</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIvec2Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_mat3" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_mat3" title="Link to this method">
+                <span class="method-name">set_mat3</span>
+                <span class="method-args">(name, matrix)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_mat3-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat3</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrix</span>)
+  <span class="ruby-identifier">values</span> = <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-value">9</span>, <span class="ruby-string">&quot;mat3&quot;</span>)
+  <span class="ruby-identifier">mat</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslMat3</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mat</span>[<span class="ruby-value">:array</span>][<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setMat3Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">pointer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>uniform mat3</code> from a 9-element row-major float array (or an <a href="Transform.html"><code>SFML::Transform</code></a> — its 3×3 matrix is read directly).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_mat3_array" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_mat3_array" title="Link to this method">
+                <span class="method-name">set_mat3_array</span>
+                <span class="method-args">(name, matrices)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_mat3_array-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat3_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>)
+  <span class="ruby-identifier">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-value">9</span>, <span class="ruby-value">:sfShader_setMat3UniformArray</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>uniform mat3 arr[N];</code> / <code>uniform mat4 arr[N];</code> from a list of matrices (each a 9- or 16-element flat array, or an <a href="Transform.html"><code>SFML::Transform</code></a> for mat3).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_mat4" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_mat4" title="Link to this method">
+                <span class="method-name">set_mat4</span>
+                <span class="method-args">(name, matrix)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_mat4-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat4</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrix</span>)
+  <span class="ruby-identifier">values</span> = <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-value">16</span>, <span class="ruby-string">&quot;mat4&quot;</span>)
+  <span class="ruby-identifier">mat</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslMat4</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mat</span>[<span class="ruby-value">:array</span>][<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setMat4Uniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">pointer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set a <code>uniform mat4</code> from a 16-element row-major float array.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_mat4_array" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_mat4_array" title="Link to this method">
+                <span class="method-name">set_mat4_array</span>
+                <span class="method-args">(name, matrices)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_mat4_array-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat4_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>)
+  <span class="ruby-identifier">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-value">16</span>, <span class="ruby-value">:sfShader_setMat4UniformArray</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

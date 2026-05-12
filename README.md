@@ -1,81 +1,75 @@
 # ruby-sfml-doc
 
-This repo builds the [ruby-sfml](https://github.com/sOM2H/ruby-sfml)
-documentation site. **It does not contain any docs of its own** — it
-fetches the latest gem from RubyGems on every build and runs RDoc over
-the unpacked source.
+Hosts the [ruby-sfml](https://github.com/sOM2H/ruby-sfml) HTML
+documentation. **The HTML in `public/` is checked into git** —
+Netlify serves it as-is without running Ruby.
 
-That way the deployed site always matches whatever's `gem install`-able,
-without us having to bump a number every time the library releases.
+## Why pre-rendered + committed
+
+`ruby-sfml` is a C-extension gem (links libcsfml). Netlify's build
+image has neither libcsfml nor its dev headers, so a Netlify-side
+`bundle install ruby-sfml` fails at extconf time. Building locally
+where the toolchain already exists, then committing the static
+output, sidesteps the whole problem and makes the deploy trivial.
+
+It also means every commit shows up as a reviewable diff: "we
+changed the `Color` page" is visible in a PR.
 
 ## Layout
 
 ```
 .
-├── Gemfile          # ruby-sfml + rdoc
-├── build.sh         # the whole pipeline
-├── netlify.toml     # build/publish config + cache headers
-└── public/          # RDoc output — generated, gitignored
+├── build.sh         # local-only: regenerate public/ from sibling
+├── netlify.toml     # publish = public, command = ""
+├── public/          # ★ tracked HTML — what Netlify serves
+└── README.md        # this file
 ```
 
-## How a build runs
+## Updating the docs after a ruby-sfml release
 
-1. Netlify (or local) calls `./build.sh`.
-2. `bundle install` resolves the latest `ruby-sfml`.
-3. `gem fetch ruby-sfml` downloads the released `.gem`.
-4. `gem unpack` extracts sources into `./.gem-src/src`.
-5. `rdoc` runs against those sources using the project's own
-   `.rdoc_options` (ships inside the gem).
-6. HTML lands in `./public`, which Netlify publishes.
-
-## Local build
+From the directory that contains both checkouts:
 
 ```sh
-./build.sh              # build into ./public
-./build.sh --serve      # build, then open index.html in a browser
+cd ruby-sfml-doc
+./build.sh                        # regenerates ./public from ../ruby-sfml/
+git add public/
+git commit -m "Rebuild docs for ruby-sfml X.Y.Z.W"
+git push
 ```
 
-You need:
-- Ruby 3.2+
-- Bundler
+Netlify auto-deploys on every push to `main` — usually live within
+~30s of `git push` because there's nothing to build.
 
-You do **not** need CSFML installed on the system — RDoc only parses
-the gem's source files; it never `require`s `sfml`.
+If your checkout layout is different from the default (sibling
+`../ruby-sfml`), override:
 
-## Triggering a redeploy after a new gem release
+```sh
+RUBY_SFML_SRC=/elsewhere/ruby-sfml ./build.sh
+```
 
-The build doesn't know that ruby-sfml released. Two options:
+## Local preview
 
-1. **Manual**: Netlify dashboard → Deploys → "Trigger deploy" →
-   "Clear cache and deploy site".
-2. **Webhook**: Netlify generates a build-hook URL — POST to it
-   from a `release` workflow in the main ruby-sfml repo:
+```sh
+./build.sh --serve     # builds + opens public/index.html
+```
 
-   ```yaml
-   on:
-     release:
-       types: [published]
-   jobs:
-     redeploy-docs:
-       runs-on: ubuntu-latest
-       steps:
-         - run: curl -X POST -d {} ${{ secrets.NETLIFY_DOCS_BUILD_HOOK }}
-   ```
+## Optional: drift check in pre-commit
 
-   Save the hook URL as `NETLIFY_DOCS_BUILD_HOOK` in the
-   ruby-sfml repo's GitHub secrets.
+`./build.sh --check` rebuilds into a tmp dir and diffs against
+the committed `public/`. Exits non-zero if anything's out of sync
+— useful as a pre-push hook in the main `ruby-sfml` repo:
 
-A nightly cron in `netlify.toml` is **deliberately not** used — Netlify
-charges per build minute, and ruby-sfml ships at most weekly. Manual
-or release-triggered is the right cadence.
+```sh
+# ~/Development/sfml/ruby-sfml/.git/hooks/pre-push
+#!/usr/bin/env bash
+cd "$(git rev-parse --show-toplevel)/../ruby-sfml-doc"
+./build.sh --check || { echo "docs out of date — run build.sh in ruby-sfml-doc"; exit 1; }
+```
 
-## Customising the rendered output
+## What gets rendered
 
-Anything that affects the **rendered docs** lives inside the gem's
-`.rdoc_options` (title, markup, template, excludes). Change it there,
-release a new ruby-sfml, redeploy this site. Keeping the config close
-to the source means the docs always agree with what the gem author
-shipped.
-
-Settings local to this repo (build runner, cache headers, etc.) stay
-in `netlify.toml` and `build.sh`.
+RDoc reads `.rdoc_options` from the **ruby-sfml** source tree (it
+ships in the gem too). To change title, theme, excludes, etc.,
+edit `ruby-sfml/.rdoc_options` and rebuild. Keeping the config
+co-located with the source means the docs config and the docs are
+versioned together.

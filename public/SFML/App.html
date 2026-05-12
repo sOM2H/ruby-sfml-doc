@@ -1,0 +1,2673 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::App - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::App"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::App: Subclass-friendly main loop. display so a small app fits in a few methods."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::App - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="Subclass-friendly main loop. display so a small app fits in a few methods.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::App - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="Subclass-friendly main loop. display so a small app fits in a few methods.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+<div id="includes-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-includes"></use></svg>
+      </span>
+      <span class="nav-section-title">Included Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="nav-list">
+
+
+      <li><a class="include" href="InputQueries.html">SFML::InputQueries</a></li>
+
+
+    </ul>
+  </details>
+</div>
+
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-initial_scene">initial_scene</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-_dispatch">_dispatch</a></li>
+
+        <li ><a href="#method-i-_invoke_key_handler">_invoke_key_handler</a></li>
+
+        <li ><a href="#method-i-_invoke_scene_key">_invoke_scene_key</a></li>
+
+        <li ><a href="#method-i-draw">draw</a></li>
+
+        <li ><a href="#method-i-height">height</a></li>
+
+        <li ><a href="#method-i-on_event">on_event</a></li>
+
+        <li ><a href="#method-i-on_resize">on_resize</a></li>
+
+        <li ><a href="#method-i-pause">pause</a></li>
+
+        <li ><a href="#method-i-paused-3F">paused?</a></li>
+
+        <li ><a href="#method-i-quit">quit</a></li>
+
+        <li ><a href="#method-i-resume">resume</a></li>
+
+        <li ><a href="#method-i-run">run</a></li>
+
+        <li ><a href="#method-i-setup">setup</a></li>
+
+        <li ><a href="#method-i-switch_to">switch_to</a></li>
+
+        <li ><a href="#method-i-teardown">teardown</a></li>
+
+        <li ><a href="#method-i-toggle_pause">toggle_pause</a></li>
+
+        <li ><a href="#method-i-update">update</a></li>
+
+        <li ><a href="#method-i-width">width</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-app">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>App</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::App" class="legacy-anchor"></span>
+  <h1 id="class-sfml-app" class="anchor-link class">
+    class SFML::App
+  </h1>
+
+  <section class="description">
+    
+<p>Subclass-friendly main loop. Removes the boilerplate of window creation, event pumping, clock management, and clear/display so a small app fits in a few methods.</p>
+
+<p>class MyApp &lt; <a href="App.html"><code>SFML::App</code></a> antialiasing 4 # class-level config — applies to every instance framerate 120 background <a href="Color.html#method-c-new"><code>SFML::Color.new(18, 20, 28)</code></a></p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@ball</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">CircleShape</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">radius:</span> <span class="ruby-value">30</span>, <span class="ruby-value">position:</span> [<span class="ruby-value">200</span>, <span class="ruby-value">200</span>],
+                                <span class="ruby-value">fill_color:</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">white</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-ivar">@ball</span>.<span class="ruby-identifier">move</span>([<span class="ruby-value">60</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dt</span>.<span class="ruby-identifier">as_seconds</span>, <span class="ruby-value">30</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dt</span>.<span class="ruby-identifier">as_seconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+  <span class="ruby-identifier">window</span>.<span class="ruby-identifier">draw</span>(<span class="ruby-ivar">@ball</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>MyApp.new(title: “Hello”).run</p>
+
+<p>The loop auto-handles :closed and :key_pressed/:escape by calling</p>
+
+<p><a href="App.html#method-i-quit"><code>quit</code></a>; everything else is forwarded to <a href="App.html#method-i-on_event"><code>on_event</code></a>. Override that to handle keys, mouse, etc.</p>
+
+<span id="class-SFML::App-label-Configuration" class="legacy-anchor"></span>
+<h2 id="class-sfml-app-configuration"><a href="#class-sfml-app-configuration">Configuration</a></h2>
+
+<p>Every constructor kwarg is also a class-level macro: declare defaults with <code>antialiasing 4</code> etc. inside the class body, and <code>MyApp.new</code> picks them up. Per-instance kwargs still win on a case-by-case basis. Subclasses inherit their parent’s settings— set one in a base class, override in a subclass.</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="CONFIG_KEYS">CONFIG_KEYS</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="FIXED_TIMESTEP_MAX_CATCHUP">FIXED_TIMESTEP_MAX_CATCHUP</dt>
+
+        <dd>
+
+          <p>Cap on catch-up update calls per frame when running with <code>fixed_timestep</code>. Prevents the “spiral of death” where a slow frame queues so many physics steps that the next frame is even slower. After this many steps, residual time is dropped.</p>
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+    <section class="attribute-method-details method-section">
+      <header>
+        <h3 id="untitled-attributes"><a href="#untitled-attributes">Attributes</a></h3>
+      </header>
+
+
+      <div id="attribute-i-background_color" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-background_color" title="Link to this attribute">
+            <span class="method-name">background_color</span>
+            <span class="attribute-access-type">[RW]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+      <div id="attribute-i-window" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-window" title="Link to this attribute">
+            <span class="method-name">window</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-initial_scene" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-initial_scene" title="Link to this method">
+                <span class="method-name">initial_scene</span>
+                <span class="method-args">(klass = nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="initial_scene-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initial_scene</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@initial_scene</span> = <span class="ruby-identifier">klass</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@initial_scene</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value">:@initial_scene</span>)
+  <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:initial_scene</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">initial_scene</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Set the scene class the app should switch into automatically at <code>setup</code> time. Inheritable: a subclass that doesn’t set one inherits the parent’s choice.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(**opts)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">cfg</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
+
+  <span class="ruby-identifier">width</span>        = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:width</span>]        <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">width</span>        <span class="ruby-operator">||</span> <span class="ruby-value">800</span>
+  <span class="ruby-identifier">height</span>       = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:height</span>]       <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">height</span>       <span class="ruby-operator">||</span> <span class="ruby-value">600</span>
+  <span class="ruby-identifier">title</span>        = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:title</span>]        <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">title</span>        <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">framerate</span>    = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:framerate</span>]    <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">framerate</span>    <span class="ruby-operator">||</span> <span class="ruby-value">60</span>
+  <span class="ruby-identifier">vsync</span>        = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:vsync</span>,        <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">vsync</span>)
+  <span class="ruby-identifier">background</span>   = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:background</span>]   <span class="ruby-operator">||</span> <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">background</span>   <span class="ruby-operator">||</span> <span class="ruby-constant">Color</span><span class="ruby-operator">::</span><span class="ruby-constant">BLACK</span>
+  <span class="ruby-identifier">style</span>        = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:style</span>,        <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">style</span>)
+  <span class="ruby-identifier">fullscreen</span>   = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:fullscreen</span>,   <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">fullscreen</span>)
+  <span class="ruby-identifier">fullscreen</span>   = <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">fullscreen</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">antialiasing</span> = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:antialiasing</span>, <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">antialiasing</span>)
+  <span class="ruby-identifier">context</span>      = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:context</span>,      <span class="ruby-identifier">cfg</span>.<span class="ruby-identifier">context</span>)
+
+  <span class="ruby-identifier">window_opts</span> = { <span class="ruby-value">framerate:</span> <span class="ruby-identifier">framerate</span>, <span class="ruby-value">fullscreen:</span> <span class="ruby-identifier">fullscreen</span> }
+  <span class="ruby-identifier">window_opts</span>[<span class="ruby-value">:vsync</span>]        = <span class="ruby-identifier">vsync</span>         <span class="ruby-keyword">unless</span> <span class="ruby-identifier">vsync</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">window_opts</span>[<span class="ruby-value">:style</span>]        = <span class="ruby-identifier">style</span>         <span class="ruby-keyword">unless</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">window_opts</span>[<span class="ruby-value">:antialiasing</span>] = <span class="ruby-identifier">antialiasing</span>  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">antialiasing</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">window_opts</span>[<span class="ruby-value">:context</span>]      = <span class="ruby-identifier">context</span>       <span class="ruby-keyword">unless</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-ivar">@window</span>           = <span class="ruby-constant">RenderWindow</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">title</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">window_opts</span>)
+  <span class="ruby-ivar">@background_color</span> = <span class="ruby-identifier">background</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Per-instance kwargs override anything set at the class level. Anything not given here OR at the class level falls back to the hard-coded defaults below.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-_dispatch" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_dispatch" title="Link to this method">
+                <span class="method-name">_dispatch</span>
+                <span class="method-args">(event)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_dispatch-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+    <span class="ruby-identifier">quit</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+    <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+    <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+    <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+    <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+    <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+    <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+    <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_invoke_key_handler" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_invoke_key_handler" title="Link to this method">
+                <span class="method-name">_invoke_key_handler</span>
+                <span class="method-args">(handler)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_invoke_key_handler-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_invoke_scene_key" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_invoke_scene_key" title="Link to this method">
+                <span class="method-name">_invoke_scene_key</span>
+                <span class="method-args">(handler)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_invoke_scene_key-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-draw" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-draw" title="Link to this method">
+                <span class="method-name">draw</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="draw-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-height" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-height" title="Link to this method">
+                <span class="method-name">height</span>
+                <span class="method-args">(= @window.size.y)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="height-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># Close the window. The main loop exits at the start of the</span>
+<span class="ruby-comment"># next frame.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quit</span>
+  <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Scenes ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># `current_scene` is whatever the app last activated via</span>
+<span class="ruby-comment"># `switch_to`. When non-nil, App&#39;s default `update` / `draw` /</span>
+<span class="ruby-comment"># `on_event` / `on_resize` forward to it; key bindings on the</span>
+<span class="ruby-comment"># scene class shadow ones on the app class while the scene is</span>
+<span class="ruby-comment"># active.</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:current_scene</span>
+
+<span class="ruby-comment"># Activate `scene_or_class`. Tears down the previous scene</span>
+<span class="ruby-comment"># before calling `setup` on the new one. Accepts either:</span>
+<span class="ruby-comment">#   * a Scene subclass — instantiated with `self` as host</span>
+<span class="ruby-comment">#   * an existing Scene instance — used as-is</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">switch_to</span>(<span class="ruby-identifier">scene_or_class</span>)
+  <span class="ruby-identifier">new_scene</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">scene_or_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">else</span>            <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+  <span class="ruby-ivar">@current_scene</span> = <span class="ruby-identifier">new_scene</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">setup</span>
+  <span class="ruby-ivar">@current_scene</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Pause / resume ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># While paused, `update(dt)` is *not* called — the world stops</span>
+<span class="ruby-comment"># advancing. `draw` keeps running so the window still updates</span>
+<span class="ruby-comment"># (handy for pause overlays that need to be drawn over a</span>
+<span class="ruby-comment"># frozen scene).</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+<span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+<span class="ruby-comment"># interpolate between the previous and current world state:</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   def draw</span>
+<span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+<span class="ruby-comment">#     ...</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+<span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+<span class="ruby-comment"># per-frame loop until the window closes.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+<span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+<span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+<span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+<span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">setup</span>
+  <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+  <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+  <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+  <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+      <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+      <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+        <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+      <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+      <span class="ruby-comment"># and longer frames.</span>
+      <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+      <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+    <span class="ruby-identifier">draw</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+<span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+<span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+<span class="ruby-comment"># have to define `setup` themselves.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+    <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The framework consumes:</span>
+<span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+<span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+<span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+<span class="ruby-comment">#     `on_key` binding</span>
+<span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+<span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+<span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+<span class="ruby-comment"># the loop.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+<span class="ruby-comment"># scene by default.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+    <span class="ruby-identifier">quit</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+    <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+    <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+    <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+    <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+    <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+    <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+    <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+  <span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-on_event" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-on_event" title="Link to this method">
+                <span class="method-name">on_event</span>
+                <span class="method-args">(event)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="on_event-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The framework consumes: * <code>:closed</code> — closes the window (always) * <code>:resized</code> — forwarded to <a href="App.html#method-i-on_resize"><code>on_resize</code></a> * <code>:key_pressed</code> whose code matches a scene- or app-level <code>on_key</code> binding Everything else lands here. Override to handle game-specific input. By default forwards to the current scene’s <a href="App.html#method-i-on_event"><code>on_event</code></a>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-on_resize" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-on_resize" title="Link to this method">
+                <span class="method-name">on_resize</span>
+                <span class="method-args">(width, height)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="on_resize-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Default: forward to the current scene. Override to additionally do app-wide layout fixups; call <code>super</code> to keep the scene in the loop.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-pause" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-pause" title="Link to this method">
+                <span class="method-name">pause</span>
+                <span class="method-args">(= (@paused = true))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="pause-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+<span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+<span class="ruby-comment"># interpolate between the previous and current world state:</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   def draw</span>
+<span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+<span class="ruby-comment">#     ...</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+<span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+<span class="ruby-comment"># per-frame loop until the window closes.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+<span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+<span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+<span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+<span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">setup</span>
+  <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+  <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+  <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+  <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+      <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+      <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+        <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+      <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+      <span class="ruby-comment"># and longer frames.</span>
+      <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+      <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+    <span class="ruby-identifier">draw</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+<span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+<span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+<span class="ruby-comment"># have to define `setup` themselves.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+    <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The framework consumes:</span>
+<span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+<span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+<span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+<span class="ruby-comment">#     `on_key` binding</span>
+<span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+<span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+<span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+<span class="ruby-comment"># the loop.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+<span class="ruby-comment"># scene by default.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+    <span class="ruby-identifier">quit</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+    <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+    <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+    <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+    <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+    <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+    <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+    <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>—- Pause / resume —-</p>
+
+<p>While paused, <code>update(dt)</code> is <em>not</em> called — the world stops advancing. <code>draw</code> keeps running so the window still updates (handy for pause overlays that need to be drawn over a frozen scene).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-paused-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-paused-3F" title="Link to this method">
+                <span class="method-name">paused?</span>
+                <span class="method-args">(= @paused == true)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="paused-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 166</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+  <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+  <span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+  <span class="ruby-comment"># interpolate between the previous and current world state:</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#   def draw</span>
+  <span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+  <span class="ruby-comment">#     ...</span>
+  <span class="ruby-comment">#   end</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+  <span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+  <span class="ruby-comment"># per-frame loop until the window closes.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+  <span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+  <span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+  <span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+  <span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+    <span class="ruby-identifier">setup</span>
+    <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+    <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+    <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+    <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+    <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+    <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+      <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+        <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+          <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+          <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+          <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+        <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+        <span class="ruby-comment"># and longer frames.</span>
+        <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+      <span class="ruby-identifier">draw</span>
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">teardown</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+  <span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+  <span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+  <span class="ruby-comment"># have to define `setup` themselves.</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+      <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The framework consumes:</span>
+  <span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+  <span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+  <span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+  <span class="ruby-comment">#     `on_key` binding</span>
+  <span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+  <span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+  <span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+  <span class="ruby-comment"># the loop.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+  <span class="ruby-comment"># scene by default.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+      <span class="ruby-identifier">quit</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+      <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+      <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+      <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+      <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+      <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+      <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+      <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+        <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+        <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-quit" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-quit" title="Link to this method">
+                <span class="method-name">quit</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="quit-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quit</span>
+  <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Close the window. The main loop exits at the start of the next frame.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-resume" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-resume" title="Link to this method">
+                <span class="method-name">resume</span>
+                <span class="method-args">(= (@paused = false))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="resume-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 164</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+  <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+  <span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+  <span class="ruby-comment"># interpolate between the previous and current world state:</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#   def draw</span>
+  <span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+  <span class="ruby-comment">#     ...</span>
+  <span class="ruby-comment">#   end</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+  <span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+  <span class="ruby-comment"># per-frame loop until the window closes.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+  <span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+  <span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+  <span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+  <span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+    <span class="ruby-identifier">setup</span>
+    <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+    <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+    <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+    <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+    <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+    <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+      <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+        <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+          <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+          <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+          <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+        <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+        <span class="ruby-comment"># and longer frames.</span>
+        <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+      <span class="ruby-identifier">draw</span>
+      <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">teardown</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+  <span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+  <span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+  <span class="ruby-comment"># have to define `setup` themselves.</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+      <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The framework consumes:</span>
+  <span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+  <span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+  <span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+  <span class="ruby-comment">#     `on_key` binding</span>
+  <span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+  <span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+  <span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+  <span class="ruby-comment"># the loop.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+  <span class="ruby-comment"># scene by default.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+    <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+      <span class="ruby-identifier">quit</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+      <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+      <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+      <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+      <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+      <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+      <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+      <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+        <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+        <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-run" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-run" title="Link to this method">
+                <span class="method-name">run</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="run-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">setup</span>
+  <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+  <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+  <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+  <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+      <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+      <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+        <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+      <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+      <span class="ruby-comment"># and longer frames.</span>
+      <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+      <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+    <span class="ruby-identifier">draw</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The main entry point. Calls <a href="App.html#method-i-setup"><code>setup</code></a> once, then runs the per-frame loop until the window closes.</p>
+
+<p>When <code>fixed_timestep N</code> is set on the class, <code>update(dt)</code> is called exactly N times per second (with a fixed dt), and rendering runs as fast as vsync/framerate allows. This is the standard pattern for deterministic physics — without it, large-dt frames produce different results than small-dt frames.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-setup" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-setup" title="Link to this method">
+                <span class="method-name">setup</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="setup-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+    <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>—- Override these in subclasses ————————————–</p>
+
+<p>Defaults forward to the current scene when one is active. The <a href="App.html#method-c-initial_scene"><code>initial_scene</code></a> class macro auto-instantiates a scene at <code>setup</code> time so subclasses with <code>initial_scene Foo</code> don’t have to define <code>setup</code> themselves.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-switch_to" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-switch_to" title="Link to this method">
+                <span class="method-name">switch_to</span>
+                <span class="method-args">(scene_or_class)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="switch_to-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">switch_to</span>(<span class="ruby-identifier">scene_or_class</span>)
+  <span class="ruby-identifier">new_scene</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">scene_or_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">else</span>            <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+  <span class="ruby-ivar">@current_scene</span> = <span class="ruby-identifier">new_scene</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">setup</span>
+  <span class="ruby-ivar">@current_scene</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Activate <code>scene_or_class</code>. Tears down the previous scene before calling <code>setup</code> on the new one. Accepts either: * a <a href="Scene.html"><code>Scene</code></a> subclass — instantiated with <code>self</code> as host * an existing <a href="Scene.html"><code>Scene</code></a> instance — used as-is</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-teardown" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-teardown" title="Link to this method">
+                <span class="method-name">teardown</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="teardown-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Called once after the main loop exits. Tears down the active scene by default.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-toggle_pause" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-toggle_pause" title="Link to this method">
+                <span class="method-name">toggle_pause</span>
+                <span class="method-args">(= (@paused = !paused?))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="toggle_pause-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 165</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+    <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+    <span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+    <span class="ruby-comment"># interpolate between the previous and current world state:</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment">#   def draw</span>
+    <span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+    <span class="ruby-comment">#     ...</span>
+    <span class="ruby-comment">#   end</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+    <span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+    <span class="ruby-comment"># per-frame loop until the window closes.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+    <span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+    <span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+    <span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+    <span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+      <span class="ruby-identifier">setup</span>
+      <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+      <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+      <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+      <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+      <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+      <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+        <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+        <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+          <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+          <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+          <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+            <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+            <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+            <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+          <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+          <span class="ruby-comment"># and longer frames.</span>
+          <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+          <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+        <span class="ruby-identifier">draw</span>
+        <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">teardown</span>
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+    <span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+    <span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+    <span class="ruby-comment"># have to define `setup` themselves.</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+        <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+      <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+      <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The framework consumes:</span>
+    <span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+    <span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+    <span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+    <span class="ruby-comment">#     `on_key` binding</span>
+    <span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+    <span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+    <span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+    <span class="ruby-comment"># the loop.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+      <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+    <span class="ruby-comment"># scene by default.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+      <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">private</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+      <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+        <span class="ruby-identifier">quit</span>
+      <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+        <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+        <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+        <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+        <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+        <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+        <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+        <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+        <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+          <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+        <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+          <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-update" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-update" title="Link to this method">
+                <span class="method-name">update</span>
+                <span class="method-args">(dt)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="update-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-width" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-width" title="Link to this method">
+                <span class="method-name">width</span>
+                <span class="method-args">(= @window.size.x)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="width-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># Close the window. The main loop exits at the start of the</span>
+<span class="ruby-comment"># next frame.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quit</span>
+  <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Scenes ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># `current_scene` is whatever the app last activated via</span>
+<span class="ruby-comment"># `switch_to`. When non-nil, App&#39;s default `update` / `draw` /</span>
+<span class="ruby-comment"># `on_event` / `on_resize` forward to it; key bindings on the</span>
+<span class="ruby-comment"># scene class shadow ones on the app class while the scene is</span>
+<span class="ruby-comment"># active.</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:current_scene</span>
+
+<span class="ruby-comment"># Activate `scene_or_class`. Tears down the previous scene</span>
+<span class="ruby-comment"># before calling `setup` on the new one. Accepts either:</span>
+<span class="ruby-comment">#   * a Scene subclass — instantiated with `self` as host</span>
+<span class="ruby-comment">#   * an existing Scene instance — used as-is</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">switch_to</span>(<span class="ruby-identifier">scene_or_class</span>)
+  <span class="ruby-identifier">new_scene</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">scene_or_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">else</span>            <span class="ruby-identifier">scene_or_class</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+  <span class="ruby-ivar">@current_scene</span> = <span class="ruby-identifier">new_scene</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">setup</span>
+  <span class="ruby-ivar">@current_scene</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Pause / resume ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># While paused, `update(dt)` is *not* called — the world stops</span>
+<span class="ruby-comment"># advancing. `draw` keeps running so the window still updates</span>
+<span class="ruby-comment"># (handy for pause overlays that need to be drawn over a</span>
+<span class="ruby-comment"># frozen scene).</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
+<span class="ruby-comment"># `update`. In range [0.0, 1.0). Use it in `#draw` to</span>
+<span class="ruby-comment"># interpolate between the previous and current world state:</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   def draw</span>
+<span class="ruby-comment">#     pos = @prev_pos.lerp(@curr_pos, interpolation_alpha)</span>
+<span class="ruby-comment">#     ...</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Only meaningful when `fixed_timestep` is set; otherwise 0.</span>
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:interpolation_alpha</span>
+
+<span class="ruby-comment"># The main entry point. Calls #setup once, then runs the</span>
+<span class="ruby-comment"># per-frame loop until the window closes.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When `fixed_timestep N` is set on the class, `update(dt)` is</span>
+<span class="ruby-comment"># called exactly N times per second (with a fixed dt), and</span>
+<span class="ruby-comment"># rendering runs as fast as vsync/framerate allows. This is</span>
+<span class="ruby-comment"># the standard pattern for deterministic physics — without it,</span>
+<span class="ruby-comment"># large-dt frames produce different results than small-dt frames.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">setup</span>
+  <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ts</span>              = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fixed_timestep</span>
+  <span class="ruby-identifier">step_seconds</span>    = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">dt_fixed</span>        = <span class="ruby-identifier">ts</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">step_seconds</span>)
+  <span class="ruby-identifier">accumulator</span>     = <span class="ruby-value">0.0</span>
+  <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-value">0.0</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">frame_dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">each_event</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_dispatch</span>(<span class="ruby-identifier">event</span>) }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">dt_fixed</span>
+      <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">frame_dt</span>.<span class="ruby-identifier">as_seconds</span>
+      <span class="ruby-identifier">steps</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">step_seconds</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+        <span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt_fixed</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+        <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">step_seconds</span>
+        <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># If we hit the catch-up cap, drop residual time — better</span>
+      <span class="ruby-comment"># to slightly slow the simulation than spiral into longer</span>
+      <span class="ruby-comment"># and longer frames.</span>
+      <span class="ruby-identifier">accumulator</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FIXED_TIMESTEP_MAX_CATCHUP</span>
+      <span class="ruby-ivar">@interpolation_alpha</span> = <span class="ruby-identifier">accumulator</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">step_seconds</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">update</span>(<span class="ruby-identifier">frame_dt</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">paused?</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-ivar">@background_color</span>)
+    <span class="ruby-identifier">draw</span>
+    <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">teardown</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ---- Override these in subclasses --------------------------------------</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># Defaults forward to the current scene when one is active. The</span>
+<span class="ruby-comment"># `initial_scene` class macro auto-instantiates a scene at</span>
+<span class="ruby-comment"># `setup` time so subclasses with `initial_scene Foo` don&#39;t</span>
+<span class="ruby-comment"># have to define `setup` themselves.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
+    <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The framework consumes:</span>
+<span class="ruby-comment">#   * `:closed` — closes the window (always)</span>
+<span class="ruby-comment">#   * `:resized` — forwarded to `on_resize`</span>
+<span class="ruby-comment">#   * `:key_pressed` whose code matches a scene- or app-level</span>
+<span class="ruby-comment">#     `on_key` binding</span>
+<span class="ruby-comment"># Everything else lands here. Override to handle game-specific</span>
+<span class="ruby-comment"># input. By default forwards to the current scene&#39;s `on_event`.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Default: forward to the current scene. Override to additionally</span>
+<span class="ruby-comment"># do app-wide layout fixups; call `super` to keep the scene in</span>
+<span class="ruby-comment"># the loop.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Called once after the main loop exits. Tears down the active</span>
+<span class="ruby-comment"># scene by default.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+  <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
+    <span class="ruby-identifier">quit</span>
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:resized</span>, <span class="ruby-value">size:</span> {<span class="ruby-value">x:</span>, <span class="ruby-value">y:</span>}}
+    <span class="ruby-comment"># `:resized` fires BOTH the structured hook and the generic</span>
+    <span class="ruby-comment"># event sink — apps that forward `on_event` to a sub-system</span>
+    <span class="ruby-comment"># (`@gui.on_event(event)`, etc.) keep getting the event,</span>
+    <span class="ruby-comment"># while apps that just want clean (w, h) override the hook.</span>
+    <span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span>}
+    <span class="ruby-comment"># Scene-level bindings win over app-level (CSS-style cascade:</span>
+    <span class="ruby-comment"># the more-specific layer overrides the more-general one).</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_scene</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">h</span> = <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_scene_key</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">key_handlers</span>[<span class="ruby-identifier">code</span>])
+      <span class="ruby-identifier">_invoke_key_handler</span>(<span class="ruby-identifier">h</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@current_scene</span>)
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Width and height shortcuts that always reflect the current window size — matters once the user is allowed to resize.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

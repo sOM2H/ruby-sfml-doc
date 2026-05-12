@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>README - ruby-sfml 3.0.0.6</title>
+
+
+  <meta name="keywords" content="ruby,documentation,README">
+  <meta
+    name="description"
+    content="README: h1&gt; &lt;img src=&quot;ruby-sfml. h1&gt; Modern, idiomatic Ruby bindings for [SFML 3."
+  >
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="README - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="h1&gt; &lt;img src=&quot;ruby-sfml. h1&gt; Modern, idiomatic Ruby bindings for [SFML 3.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="README - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="h1&gt; &lt;img src=&quot;ruby-sfml. h1&gt; Modern, idiomatic Ruby bindings for [SFML 3.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script
+  src="./js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="./js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="./css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="file has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="./index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="./CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="./SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Animation.html">Animation</a></code></li><li><code><a href="./SFML/App.html">App</a></code></li><li><details><summary><code><a href="./SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="./SFML/Audio.html">Audio</a></code></li><li><code><a href="./SFML/AudioError.html">AudioError</a></code></li><li><code><a href="./SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="./SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="./SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="./SFML/Clock.html">Clock</a></code></li><li><code><a href="./SFML/Color.html">Color</a></code></li><li><code><a href="./SFML/Context.html">Context</a></code></li><li><code><a href="./SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="./SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="./SFML/Cursor.html">Cursor</a></code></li><li><code><a href="./SFML/Error.html">Error</a></code></li><li><code><a href="./SFML/Event.html">Event</a></code></li><li><code><a href="./SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="./SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="./SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="./SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="./SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="./SFML/Image.html">Image</a></code></li><li><code><a href="./SFML/InputActions.html">InputActions</a></code></li><li><code><a href="./SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="./SFML/InputStream.html">InputStream</a></code></li><li><code><a href="./SFML/Joystick.html">Joystick</a></code></li><li><code><a href="./SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="./SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="./SFML/Listener.html">Listener</a></code></li><li><code><a href="./SFML/LoadError.html">LoadError</a></code></li><li><code><a href="./SFML/Mouse.html">Mouse</a></code></li><li><code><a href="./SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="./SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="./SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="./SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="./SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="./SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="./SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="./SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="./SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="./SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="./SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="./SFML/Rect.html">Rect</a></code></li><li><code><a href="./SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="./SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="./SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="./SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="./SFML/Scene.html">Scene</a></code></li><li><code><a href="./SFML/Sensor.html">Sensor</a></code></li><li><code><a href="./SFML/Shader.html">Shader</a></code></li><li><code><a href="./SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="./SFML/Shape.html">Shape</a></code></li><li><code><a href="./SFML/Sound.html">Sound</a></code></li><li><code><a href="./SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="./SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="./SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="./SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="./SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="./SFML/Sprite.html">Sprite</a></code></li><li><code><a href="./SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="./SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="./SFML/Text.html">Text</a></code></li><li><code><a href="./SFML/Texture.html">Texture</a></code></li><li><code><a href="./SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="./SFML/Time.html">Time</a></code></li><li><code><a href="./SFML/Touch.html">Touch</a></code></li><li><code><a href="./SFML/Transform.html">Transform</a></code></li><li><code><a href="./SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="./SFML/Vector2.html">Vector2</a></code></li><li><code><a href="./SFML/Vector3.html">Vector3</a></code></li><li><code><a href="./SFML/Vertex.html">Vertex</a></code></li><li><code><a href="./SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="./SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="./SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="./SFML/View.html">View</a></code></li><li><code><a href="./SFML/Window.html">Window</a></code></li><li><code><a href="./SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-label="Page README.md">
+<h1>
+  <img src="ruby-sfml.png" alt="" height="48" align="absmiddle">
+  ruby-sfml
+</h1>
+<p>Modern, idiomatic Ruby bindings for <a href="https://www.sfml-dev.org/">SFML 3.x</a> via <a href="https://github.com/SFML/CSFML">CSFML</a> and <a href="https://github.com/ffi/ffi">Ruby FFI</a>.</p>
+
+<p><a href="https://rubygems.org/gems/ruby-sfml"><img src="https://img.shields.io/gem/v/ruby-sfml.svg" alt="gem version"></a> <a href="https://github.com/sOM2H/ruby-sfml/actions/workflows/ci.yml"><img src="https://github.com/sOM2H/ruby-sfml/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a> <a href="https://www.rubydoc.info/gems/ruby-sfml"><img src="https://img.shields.io/badge/docs-rubydoc.info-blue.svg" alt="docs"></a></p>
+
+<blockquote>
+<p><strong>Status:</strong> API surface complete for <a href="SFML.html"><code>SFML</code></a> 3.0 — system, window, graphics (incl. stencil buffer + VBOs), audio (incl. 3D positional + custom DSP + procedural streams), network (incl. HTTP / FTP / socket selector), input (keyboard, mouse, joystick, touch, sensors), plus higher-level helpers (<code>App</code>, <code>Scene</code>, <code>Assets</code>, <code>SpriteSheet</code>, <code>Animation</code>, <code>TextureAtlas</code>, <code>ParticleSystem</code>, fixed timestep, input-action DSL, vector math). 640 RSpec examples, 35 runnable example folders.</p>
+</blockquote>
+
+<span id="label-Why" class="legacy-anchor"></span>
+<h2 id="why"><a href="#why">Why</a></h2>
+
+<p>The original <a href="https://github.com/Groogy/rbSFML">rbSFML</a> is unmaintained and only works against <a href="SFML.html"><code>SFML</code></a> 2 and Ruby 2.2. <code>ruby-sfml</code> targets the current <a href="SFML.html"><code>SFML</code></a> 3.x line, modern Ruby (3.2+), and a Ruby-first API — blocks instead of polling loops, symbols instead of enums, operators on vectors, automatic resource cleanup via GC.</p>
+
+<span id="label-Installation" class="legacy-anchor"></span>
+<h2 id="installation"><a href="#installation">Installation</a></h2>
+
+<p>ruby-sfml needs <strong>Ruby ≥ 3.2</strong> and <strong>CSFML 3.0</strong> (or compatible 3.x) on the system. Install in two steps:</p>
+
+<span id="label-1.+Install+dependencies+-28CSFML-29" class="legacy-anchor"></span>
+<h3 id="1-install-dependencies-csfml"><a href="#1-install-dependencies-csfml">1. Install dependencies (CSFML)</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>OS</th>
+<th>Command</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu 25.04+ / Debian</td>
+<td><code>sudo apt install libcsfml-dev</code></td>
+<td>Ships CSFML 3</td>
+</tr>
+<tr>
+<td>Ubuntu 22.04 / 24.04</td>
+<td>repo too old (CSFML 2.5)</td>
+<td>Build from <a href="https://github.com/SFML/CSFML/releases/tag/3.0.0">3.0.0 release</a></td>
+</tr>
+<tr>
+<td>macOS (brew)</td>
+<td><code>brew install csfml</code></td>
+<td>Currently 3.x</td>
+</tr>
+<tr>
+<td>Arch Linux</td>
+<td><code>sudo pacman -S csfml</code></td>
+<td>Currently 3.x</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><a href="https://www.sfml-dev.org/download/csfml">www.sfml-dev.org/download/csfml</a>/</td>
+<td>Pick the 3.0 tarball</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-2.+Install+the+gem" class="legacy-anchor"></span>
+<h3 id="2-install-the-gem"><a href="#2-install-the-gem">2. Install the gem</a></h3>
+
+<p>In a Bundler-managed project, add to your <code>Gemfile</code>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby-sfml&quot;</span>, <span class="ruby-string">&quot;~&gt; 3.0&quot;</span>
+</pre>
+
+<p>then <code>bundle install</code>.</p>
+
+<p>Or drop it in directly:</p>
+
+<pre class="sh">gem install ruby-sfml</pre>
+
+<p>Hosted on <a href="https://rubygems.org/gems/ruby-sfml">rubygems.org</a>; HTML docs auto-generate at <a href="https://www.rubydoc.info/gems/ruby-sfml">rubydoc.info/gems/ruby-sfml</a>.</p>
+
+<span id="label-How+the+CSFML+check+happens" class="legacy-anchor"></span>
+<h3 id="how-the-csfml-check-happens"><a href="#how-the-csfml-check-happens">How the CSFML check happens</a></h3>
+
+<p>ruby-sfml verifies the linked CSFML in two places so a missing or out-of-date library never falls through to a cryptic segfault:</p>
+<ul><li>
+<p><strong>At <code>gem install</code></strong> — <code>extconf.rb</code> checks for the five <code>libcsfml-*</code> libraries plus a CSFML 3.0+ symbol (<code>sfClock_isRunning</code>). Aborts with a clear message if the system has CSFML 2.x.</p>
+</li><li>
+<p><strong>At <code>require &quot;sfml&quot;</code></strong> — the same probe runs as a runtime sanity check, in case libraries were swapped between install and use.</p>
+</li></ul>
+
+<span id="label-A+13-line+app" class="legacy-anchor"></span>
+<h2 id="a-13-line-app"><a href="#a-13-line-app">A 13-line app</a></h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;sfml&quot;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Hello</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">App</span>
+  <span class="ruby-identifier">title</span>        <span class="ruby-string">&quot;Hello&quot;</span>
+  <span class="ruby-identifier">background</span>   <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">cornflower_blue</span>
+  <span class="ruby-identifier">antialiasing</span> <span class="ruby-value">4</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+    <span class="ruby-ivar">@ball</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">CircleShape</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">radius:</span> <span class="ruby-value">30</span>, <span class="ruby-value">fill_color:</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">white</span>,
+                                  <span class="ruby-value">position:</span> [<span class="ruby-value">200</span>, <span class="ruby-value">200</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>) = <span class="ruby-ivar">@ball</span>.<span class="ruby-identifier">move</span>(<span class="ruby-value">60</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dt</span>.<span class="ruby-identifier">as_seconds</span> <span class="ruby-operator">*</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2</span>[<span class="ruby-value">1</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>       = <span class="ruby-identifier">window</span>.<span class="ruby-identifier">draw</span>(<span class="ruby-ivar">@ball</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Hello</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>
+</pre>
+
+<p><a href="SFML/App.html"><code>SFML::App</code></a> handles window creation, the main loop, event pumping, dt, and the Esc/close-button quit. Override <code>setup</code> / <code>update</code> / <code>draw</code> / <code>on_event</code>. Class-level macros (<code>title</code>, <code>framerate</code>, <code>antialiasing</code>, <code>background</code>, …) set per-class defaults; per-instance kwargs to <code>.new</code> still override on a case-by-case basis. Drop into the manual loop style any time you want full control.</p>
+
+<span id="label-A+5-line+manual+loop" class="legacy-anchor"></span>
+<h2 id="a-5-line-manual-loop"><a href="#a-5-line-manual-loop">A 5-line manual loop</a></h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;sfml&quot;</span>
+
+<span class="ruby-identifier">window</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">RenderWindow</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">800</span>, <span class="ruby-value">600</span>, <span class="ruby-string">&quot;Hello&quot;</span>, <span class="ruby-value">framerate:</span> <span class="ruby-value">60</span>)
+
+<span class="ruby-keyword">while</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">open?</span>
+  <span class="ruby-identifier">window</span>.<span class="ruby-identifier">each_event</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}                     <span class="ruby-keyword">then</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:key_pressed</span>, <span class="ruby-value">code:</span> <span class="ruby-value">:escape</span>} <span class="ruby-keyword">then</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-comment"># always include `else` — case/in raises on unmatched events.</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">cornflower_blue</span>)
+  <span class="ruby-identifier">window</span>.<span class="ruby-identifier">display</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<span id="label-Available+modules" class="legacy-anchor"></span>
+<h2 id="available-modules"><a href="#available-modules">Available modules</a></h2>
+
+<table role="table">
+<thead>
+<tr>
+<th>Area</th>
+<th>Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td><code>Vector2</code>, <code>Vector3</code>, <code>Rect</code>, <code>Time</code>, <code>Clock</code></td>
+</tr>
+<tr>
+<td>Window</td>
+<td><code>RenderWindow</code>, <code>Window</code> (bare, GL-only), <code>VideoMode</code>, <code>Event</code>, <code>Keyboard</code>, <code>Mouse</code>, <code>Joystick</code>, <code>Touch</code>, <code>Sensor</code>, <code>Cursor</code>, <code>Clipboard</code></td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td><code>Color</code>, <code>Image</code>, <code>Texture</code>, <code>RenderTexture</code>, <code>Sprite</code>, <code>CircleShape</code>, <code>RectangleShape</code>, <code>ConvexShape</code>, <code>Vertex</code>, <code>VertexArray</code>, <code>VertexBuffer</code>, <code>Font</code>, <code>Text</code>, <code>View</code>, <code>BlendMode</code>, <code>StencilMode</code>, <code>RenderStates</code>, <code>Shader</code>, <code>Transform</code></td>
+</tr>
+<tr>
+<td>Audio</td>
+<td><code>SoundBuffer</code>, <code>Sound</code>, <code>Music</code>, <code>Listener</code>, <code>SoundCone</code>, <code>SoundStream</code>, <code>SoundRecorder</code>, <code>SoundBufferRecorder</code> (3D positional + cones + Doppler + custom DSP via <code>effect_processor=</code>)</td>
+</tr>
+<tr>
+<td>Helpers</td>
+<td><code>Assets</code> (search-path + cache), <code>App</code> (lifecycle main loop with class-level config + <code>on_key</code> DSL + <code>pause</code> / <code>on_resize</code>), <code>Scene</code> (stateful screens + <code>switch_to</code> between them), <code>ContextSettings</code> (MSAA / GL version)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Network</strong>: <code>IpAddress</code>, <code>TcpSocket</code>, <code>TcpListener</code>, <code>UdpSocket</code>, <code>SocketSelector</code> for stream / datagram networking, plus the niche <code>Http</code> and <code>Ftp</code> clients (use Ruby’s <code>Net::HTTP</code> / <code>Net::FTP</code> if you have the choice — these exist for parity with CSFML).</p>
+
+<span id="label-What-27s+intentionally+not+wrapped" class="legacy-anchor"></span>
+<h2 id="whats-intentionally-not-wrapped"><a href="#whats-intentionally-not-wrapped">What’s intentionally <em>not</em> wrapped</a></h2>
+
+<p>Three corners of CSFML 3 deliberately stay out:</p>
+<ul><li>
+<p><strong>Geometry shaders</strong> — CSFML doesn’t expose them at all (only vertex and fragment stages); there’s nothing on the C side to wrap.</p>
+</li><li>
+<p><strong>Raw <code>sf::SoundRecorder</code></strong> (per-buffer callbacks on the audio thread) — fights the GVL too hard for what it gives. Use <a href="SFML/SoundBufferRecorder.html"><code>SFML::SoundBufferRecorder</code></a> for the common “record into memory, save on stop” path.</p>
+</li><li>
+<p><strong>Custom <code>sf::InputStream</code></strong> for loading assets from non-file sources — Ruby’s <code>IO</code> covers this. Read the bytes yourself and feed them into the byte-string constructors.</p>
+</li></ul>
+
+<p>If anything else is missing or blocking you, <strong>open an issue</strong>.</p>
+
+<span id="label-Other+Ruby+bindings+worth+knowing+about" class="legacy-anchor"></span>
+<h2 id="other-ruby-bindings-worth-knowing-about"><a href="#other-ruby-bindings-worth-knowing-about">Other Ruby bindings worth knowing about</a></h2>
+<ul><li>
+<p><a href="SFML.html"><code>SFML</code></a> 2.x is <em>not</em> covered. The previous-generation gem <a href="https://github.com/Groogy/rbSFML">rbSFML</a> targets <a href="SFML.html"><code>SFML</code></a> 2; it’s unmaintained and only works with Ruby ≤ 2.2.</p>
+</li><li>
+<p><a href="https://github.com/gAndy50/RubySFML3">RubySFML3</a> — a thin FFI wrapper that exposes the CSFML C API directly. If you want raw bindings (no idiomatic Ruby layer, no auto-cleanup), check that project instead.</p>
+</li></ul>
+
+<span id="label-Examples" class="legacy-anchor"></span>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
+
+<p>Each example is a self-contained folder under <a href="examples/">examples/</a>, numbered roughly in learning order. Assets each example needs sit next to its script. Run from the gem root:</p>
+
+<pre class="sh">bundle exec ruby examples/&lt;NN_name&gt;/&lt;name&gt;.rb</pre>
+
+<p>The numbering reflects a rough learning order — earlier examples introduce concepts that later ones build on. Pick the section that matches what you want to learn first.</p>
+
+<span id="label-Foundations+-E2-80-94+window-2C+events-2C+input" class="legacy-anchor"></span>
+<h3 id="foundations--window-events-input"><a href="#foundations--window-events-input">Foundations — window, events, input</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td><a href="examples/01_hello_window/hello_window_rb.html">hello_window</a></td>
+<td>Empty window, manual event loop</td>
+</tr>
+<tr>
+<td>02</td>
+<td><a href="examples/02_events_demo/events_demo_rb.html">events_demo</a></td>
+<td>Pattern matching on input events</td>
+</tr>
+<tr>
+<td>03</td>
+<td><a href="examples/03_mouse_demo/mouse_demo_rb.html">mouse_demo</a></td>
+<td>Polling vs. events; paint with the mouse</td>
+</tr>
+<tr>
+<td>04</td>
+<td><a href="examples/04_bouncing_ball/bouncing_ball_rb.html">bouncing_ball</a></td>
+<td>dt-based physics on a manual main loop</td>
+</tr>
+<tr>
+<td>05</td>
+<td><a href="examples/05_app_class/app_class_rb.html">app_class</a></td>
+<td>Same idea on top of <a href="SFML/App.html"><code>SFML::App</code></a> — see how much boilerplate goes away</td>
+</tr>
+<tr>
+<td>06</td>
+<td><a href="examples/06_vector_math/vector_math_rb.html">vector_math</a></td>
+<td><code>Vector2</code> helpers (distance / angle_to / rotated / lerp / clamp_length) in real motion</td>
+</tr>
+<tr>
+<td>07</td>
+<td><a href="examples/07_input_actions/input_actions_rb.html">input_actions</a></td>
+<td><code>action :name, keys:, scancodes:, mouse_buttons:</code> DSL + <code>axis(...)</code> digital steering</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Drawing+-E2-80-94+geometry+and+assets" class="legacy-anchor"></span>
+<h3 id="drawing--geometry-and-assets"><a href="#drawing--geometry-and-assets">Drawing — geometry and assets</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08</td>
+<td><a href="examples/08_draw_primitives/draw_primitives_rb.html">draw_primitives</a></td>
+<td>Raw <code>draw_primitives</code> — line burst rebuilt every frame</td>
+</tr>
+<tr>
+<td>09</td>
+<td><a href="examples/09_custom_shape/custom_shape_rb.html">custom_shape</a></td>
+<td>Abstract <a href="SFML/Shape.html"><code>SFML::Shape</code></a> subclass — parametric star / heart / gear</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="examples/10_image_viewer/image_viewer_rb.html">image_viewer</a></td>
+<td>Load a PNG, mutate the <code>Image</code>, re-upload to <code>Texture</code> on a key</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="examples/11_pixel_paint/pixel_paint_rb.html">pixel_paint</a></td>
+<td>Paint into a CPU <code>Image</code>, blit to GPU <code>Texture</code> each dirty frame</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="examples/12_sprite_animation/sprite_animation_rb.html">sprite_animation</a></td>
+<td>Procedural <code>SpriteSheet</code> → <code>Animation</code> walk cycle</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="examples/13_texture_atlas/texture_atlas_rb.html">texture_atlas</a></td>
+<td>Aseprite-style JSON atlas → 3 named animations with auto-fps</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="examples/14_window_icon/window_icon_rb.html">window_icon</a></td>
+<td>Procedural 32×32 icon set as the window/taskbar icon</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="examples/15_cursors_clipboard/cursors_clipboard_rb.html">cursors_clipboard</a></td>
+<td>All 21 system <code>Cursor</code> shapes + <code>Clipboard</code> copy/paste</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Camera-2C+GPU-2C+effects" class="legacy-anchor"></span>
+<h3 id="camera-gpu-effects"><a href="#camera-gpu-effects">Camera, GPU, effects</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td><a href="examples/16_screenshot/screenshot_rb.html">screenshot</a></td>
+<td><code>RenderWindow#screenshot(path)</code> / capture_image for in-memory frames</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="examples/17_scrolling_world/scrolling_world_rb.html">scrolling_world</a></td>
+<td><code>View</code> as a 2D camera: drag-pan, wheel-zoom around cursor, FPS HUD</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="examples/18_render_texture/render_texture_rb.html">render_texture</a></td>
+<td>Off-screen <code>RenderTexture</code> for trail / motion-blur effects</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="examples/19_tilemap/tilemap_rb.html">tilemap</a></td>
+<td>Textured <code>VertexArray</code> tilemap + additive <code>BlendMode</code> torch</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="examples/20_particle_system/particle_system_rb.html">particle_system</a></td>
+<td><a href="SFML/ParticleSystem.html"><code>SFML::ParticleSystem</code></a> fountain — VertexArray-backed pool</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="examples/21_particles/particles_rb.html">particles</a></td>
+<td>Same fountain hand-rolled on <code>VertexArray</code> + <code>ConvexShape</code> ground</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="examples/22_shader_wave/shader_wave_rb.html">shader_wave</a></td>
+<td>Pure GLSL fragment <code>Shader</code> — procedural ripple + plasma</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="examples/23_stencil_mask/stencil_mask_rb.html">stencil_mask</a></td>
+<td>Two-pass <code>StencilMode</code> masking — cursor spotlight clip</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="examples/24_vertex_buffer/vertex_buffer_rb.html">vertex_buffer</a></td>
+<td>120 K-vertex <code>VertexBuffer</code> drawn in one call, animated via <code>View</code> only</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="examples/25_bare_window/bare_window_rb.html">bare_window</a></td>
+<td><a href="SFML/Window.html"><code>SFML::Window</code></a> (no 2D batcher) — events for raw-OpenGL apps</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Game-loop+polish" class="legacy-anchor"></span>
+<h3 id="game-loop-polish"><a href="#game-loop-polish">Game-loop polish</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>26</td>
+<td><a href="examples/26_scenes/scenes_rb.html">scenes</a></td>
+<td>Title → play → game-over flow with <a href="SFML/Scene.html"><code>SFML::Scene</code></a></td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="examples/27_fixed_timestep/fixed_timestep_rb.html">fixed_timestep</a></td>
+<td><code>fixed_timestep 30</code> + <code>interpolation_alpha</code> for jitter-free physics</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="examples/28_pong/pong_rb.html">pong</a></td>
+<td>Two-player Pong with in-window score (<code>Text</code>) and bounce <code>Sound</code></td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="examples/29_joystick_demo/joystick_demo_rb.html">joystick_demo</a></td>
+<td>Live gamepad inspector (axes, buttons, connect/disconnect)</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Audio+-E2-80-94+simple+to+procedural" class="legacy-anchor"></span>
+<h3 id="audio--simple-to-procedural"><a href="#audio--simple-to-procedural">Audio — simple to procedural</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30</td>
+<td><a href="examples/30_spatial_audio/spatial_audio_rb.html">spatial_audio</a></td>
+<td>3D positional <code>Sound</code> + <code>Listener</code> — three drones around the cursor</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="examples/31_voice_memo/voice_memo_rb.html">voice_memo</a></td>
+<td>Record from microphone via <code>SoundBufferRecorder</code>, save + play back</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="examples/32_sound_stream/sound_stream_rb.html">sound_stream</a></td>
+<td>Real-time sine synth via <a href="SFML/SoundStream.html"><code>SFML::SoundStream</code></a> subclass</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="examples/33_procedural_synth/procedural_synth_rb.html">procedural_synth</a></td>
+<td><code>SoundBuffer.from_samples</code> mini-piano (Z–M keys, chromatic C4..B4)</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Networking" class="legacy-anchor"></span>
+<h3 id="networking"><a href="#networking">Networking</a></h3>
+
+<table role="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Example</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>34</td>
+<td><a href="examples/34_udp_loopback/udp_loopback_rb.html">udp_loopback</a></td>
+<td>UDP send/receive on localhost via <code>Network::UdpSocket</code></td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="examples/35_tcp_chat/tcp_chat_rb.html">tcp_chat</a></td>
+<td><code>TcpListener</code> + <code>TcpSocket</code> + typed <code>Network::Packet</code> over loopback</td>
+</tr>
+</tbody>
+</table>
+
+<span id="label-Idioms+baked+in" class="legacy-anchor"></span>
+<h2 id="idioms-baked-in"><a href="#idioms-baked-in">Idioms baked in</a></h2>
+<ul><li>
+<p><strong>Symbols, not enums:</strong> <code>Keyboard.key_pressed?(:escape)</code>, not <code>Keyboard::Key::Escape</code>.</p>
+</li><li>
+<p><strong>Pattern matching for events:</strong> <code>ruby  case event  in {type: :key_pressed, code: :escape}  in {type: :resized, size: {x:, y:}}  in {type: :mouse_button_pressed, button: :left, position: {x:, y:}}  end  </code></p>
+</li><li>
+<p><strong>Vectors with operators:</strong> <code>pos + velocity * dt</code>, <code>2 * vec</code>, <code>vec.length</code>, deconstruction in <code>case/in</code>.</p>
+</li><li>
+<p><strong>Kwargs constructors:</strong> <code>Sprite.new(texture, position: [0, 0], color: SFML::Color.red)</code>, <code>CircleShape.new(radius: 10, fill_color: ...)</code> — no setter chains.</p>
+</li><li>
+<p><strong>Asset manager with cache:</strong> <code>SFML::Assets.font(&quot;DejaVuSans&quot;)</code>, <code>SFML::Assets.sound(&quot;blip&quot;)</code> — load each thing once, refer by name.</p>
+</li><li>
+<p><strong>GC-managed resources:</strong> every CSFML pointer goes through <code>FFI::AutoPointer</code>, so <code>sfXxx_destroy</code> is called automatically.</p>
+</li></ul>
+
+<span id="label-Versioning" class="legacy-anchor"></span>
+<h2 id="versioning"><a href="#versioning">Versioning</a></h2>
+
+<p>The gem version is <code>MAJOR.MINOR.PATCH.GEM_PATCH</code> — the first three segments mirror the CSFML release the gem was built against; the fourth is our own patch level for fixes / additions on top of the same upstream:</p>
+
+<table role="table">
+<thead>
+<tr>
+<th>gem version</th>
+<th>targets CSFML</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3.0.0.0</code></td>
+<td>3.0.0</td>
+<td>First cut against CSFML 3.0.0</td>
+</tr>
+<tr>
+<td><code>3.0.0.1</code></td>
+<td>3.0.0</td>
+<td>Bug fix on top of CSFML 3.0.0</td>
+</tr>
+<tr>
+<td><code>3.0.1.0</code></td>
+<td>3.0.1</td>
+<td>CSFML 3.0.1 ships, we re-cut</td>
+</tr>
+<tr>
+<td><code>3.1.0.0</code></td>
+<td>3.1.0</td>
+<td>New CSFML minor — added bindings for new APIs</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="SFML.html#CSFML_VERSION"><code>SFML::CSFML_VERSION</code></a> exposes the upstream string at runtime.</p>
+
+<p>Bundler-pinning patterns:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby-sfml&quot;</span>, <span class="ruby-string">&quot;~&gt; 3.0&quot;</span>      <span class="ruby-comment"># any 3.x.x.x — typical</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby-sfml&quot;</span>, <span class="ruby-string">&quot;~&gt; 3.0.0&quot;</span>    <span class="ruby-comment"># only 3.0.0.x — hold across a CSFML minor</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby-sfml&quot;</span>, <span class="ruby-string">&quot;~&gt; 3.0.0.0&quot;</span>  <span class="ruby-comment"># only our patches on CSFML 3.0.0 — paranoid pin</span>
+</pre>
+
+<span id="label-Process+exit" class="legacy-anchor"></span>
+<h2 id="process-exit"><a href="#process-exit">Process exit</a></h2>
+
+<p>ruby-sfml installs a single <code>at_exit</code> hook that:</p>
+<ol><li>
+<p>Stops every live <a href="SFML/Sound.html"><code>SFML::Sound</code></a> / <a href="SFML/Music.html"><code>SFML::Music</code></a> so the audio thread quiets before anything is freed.</p>
+</li><li>
+<p>Calls <code>Kernel#exit!</code> with the appropriate status, bypassing Ruby’s natural finalizer pass.</p>
+</li></ol>
+
+<p>This is intentional. CSFML’s GL context, font glyph atlases, and OpenAL state are reclaimed by the OS on process exit; running each <code>FFI::AutoPointer</code> finalizer in a non-deterministic order tends to crash inside libGL/libopenal. The OS doesn’t care, and now neither do we.</p>
+
+<p>The trade-off: any user <code>at_exit</code> hook registered <strong>before</strong> <code>require &quot;sfml&quot;</code> will be skipped. Hooks registered after the require run first (Ruby’s at_exit is LIFO) and are unaffected. Put your <code>require</code> at the top of the file (the normal place for it) and there’s nothing to think about.</p>
+
+<span id="label-Architecture" class="legacy-anchor"></span>
+<h2 id="architecture"><a href="#architecture">Architecture</a></h2>
+
+<p>Two layers. Users only touch the top one.</p>
+
+<pre class="ruby"><span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">C</span>    <span class="ruby-comment"># thin FFI wrapper around CSFML, 1:1 with the C API</span>
+<span class="ruby-constant">SFML</span>       <span class="ruby-comment"># idiomatic Ruby on top</span>
+</pre>
+
+<p>Each render target (RenderWindow + RenderTexture) includes a <code>Graphics::RenderTarget</code> mixin that dispatches <code>clear</code>, <code>display</code>, <code>draw</code>, <code>view=</code>, <code>map_pixel_to_coords</code> etc. through the includer’s <code>CSFML_PREFIX</code>. Adding a new target (say a future <code>RenderImage</code>) is ~30 lines.</p>
+
+<p>When <a href="SFML.html"><code>SFML</code></a> 3.1 / CSFML 3.1 ships, only the bottom layer typically needs to move.</p>
+
+<span id="label-Development" class="legacy-anchor"></span>
+<h2 id="development"><a href="#development">Development</a></h2>
+
+<pre class="sh">bundle install
+bundle exec rspec        # 410 examples (all subsystems on Linux)
+bundle exec rake rdoc    # generate HTML docs in doc/ (Aliki theme via RDoc 7)</pre>
+
+<p>The spec suite hits real CSFML for everything that isn’t pure Ruby — <code>Clock</code> reads the real monotonic clock, <code>Text#local_bounds</code> measures real glyphs, audio loads a WAV — so a green run also confirms the FFI bindings line up. <code>spec/fixtures/</code> holds the only assets the suite touches (a font and a tiny WAV) so tests are independent of <code>examples/</code>.</p>
+
+<p>CI runs the full suite on Ubuntu and macOS × Ruby 3.2 / 3.3 / 3.4. Linux builds CSFML 3 from source (cached), then runs specs under <code>xvfb-run</code> so the headless runner has an X server for <code>RenderWindow</code>.</p>
+
+<span id="label-Audio+specs+on+macOS" class="legacy-anchor"></span>
+<h3 id="audio-specs-on-macos"><a href="#audio-specs-on-macos">Audio specs on macOS</a></h3>
+
+<p>CoreAudio + the CSFML OpenAL backend occasionally hang an audio test group on macOS. To keep a darwin run reliable, every spec under <code>spec/sfml/audio/</code> is auto-tagged <code>:audio</code> and <strong>excluded by default on darwin</strong>. Force them in when you do want to run them:</p>
+
+<pre class="sh">bundle exec rspec --tag audio                  # only audio specs
+bundle exec rspec spec/sfml/audio/sound_spec.rb --tag audio   # one file</pre>
+
+<p>On Linux the <code>:audio</code> filter doesn’t fire — the whole suite runs by default.</p>
+
+<span id="label-License" class="legacy-anchor"></span>
+<h2 id="license"><a href="#license">License</a></h2>
+
+<p>MIT. See <a href="LICENSE.txt">LICENSE.txt</a>.</p>
+
+<p>The gem also bundles <a href="https://dejavu-fonts.github.io/">DejaVu Sans</a> under its <a href="lib/sfml/assets/fonts/DejaVuSans.LICENSE.txt">permissive license</a> — used as the default font when you don’t supply your own.</p>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

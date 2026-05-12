@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Text - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Text"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Text: Drawable rendered text. Like Sprite, requires a Font at construction time in SFML 3, and we hold a Ruby reference to it to keep the GPU resource alive"
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Text - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="Drawable rendered text. Like Sprite, requires a Font at construction time in SFML 3, and we hold a Ruby reference to it to keep the GPU resource alive">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Text - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="Drawable rendered text. Like Sprite, requires a Font at construction time in SFML 3, and we hold a Ruby reference to it to keep the GPU resource alive">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+<div id="includes-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-includes"></use></svg>
+      </span>
+      <span class="nav-section-title">Included Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="nav-list">
+
+
+      <li><a class="include" href="Graphics/Transformable.html">SFML::Graphics::Transformable</a></li>
+
+
+    </ul>
+  </details>
+</div>
+
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-character_size">character_size</a></li>
+
+        <li ><a href="#method-i-character_size-3D">character_size=</a></li>
+
+        <li ><a href="#method-i-dup">dup</a></li>
+
+        <li ><a href="#method-i-fill_color">fill_color</a></li>
+
+        <li ><a href="#method-i-fill_color-3D">fill_color=</a></li>
+
+        <li ><a href="#method-i-find_character_pos">find_character_pos</a></li>
+
+        <li ><a href="#method-i-font-3D">font=</a></li>
+
+        <li ><a href="#method-i-global_bounds">global_bounds</a></li>
+
+        <li ><a href="#method-i-inverse_transform">inverse_transform</a></li>
+
+        <li ><a href="#method-i-letter_spacing">letter_spacing</a></li>
+
+        <li ><a href="#method-i-letter_spacing-3D">letter_spacing=</a></li>
+
+        <li ><a href="#method-i-line_spacing">line_spacing</a></li>
+
+        <li ><a href="#method-i-line_spacing-3D">line_spacing=</a></li>
+
+        <li ><a href="#method-i-local_bounds">local_bounds</a></li>
+
+        <li ><a href="#method-i-outline_color">outline_color</a></li>
+
+        <li ><a href="#method-i-outline_color-3D">outline_color=</a></li>
+
+        <li ><a href="#method-i-outline_thickness">outline_thickness</a></li>
+
+        <li ><a href="#method-i-outline_thickness-3D">outline_thickness=</a></li>
+
+        <li ><a href="#method-i-string">string</a></li>
+
+        <li ><a href="#method-i-string-3D">string=</a></li>
+
+        <li ><a href="#method-i-style">style</a></li>
+
+        <li ><a href="#method-i-style-3D">style=</a></li>
+
+        <li ><a href="#method-i-transform">transform</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-text">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Text</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Text" class="legacy-anchor"></span>
+  <h1 id="class-sfml-text" class="anchor-link class">
+    class SFML::Text
+  </h1>
+
+  <section class="description">
+    
+<p>Drawable rendered text. Like <a href="Sprite.html"><code>Sprite</code></a>, requires a <a href="Font.html"><code>Font</code></a> at construction time in <a href="../SFML.html"><code>SFML</code></a> 3, and we hold a Ruby reference to it to keep the GPU resource alive while the <a href="Text.html"><code>Text</code></a> object is in use.</p>
+
+<p>font = <a href="Font.html#method-c-find"><code>SFML::Font.find</code></a>(“DejaVuSans”) score = <a href="Text.html#method-c-new"><code>SFML::Text.new</code></a>(font, “0 : 0”, <a href="Text.html#method-i-character_size"><code>character_size</code></a>: 48, <a href="Text.html#method-i-fill_color"><code>fill_color</code></a>: <a href="Color.html#method-c-white"><code>SFML::Color.white</code></a>, position: [400, 30], style: %<a href="bold">i</a>) window.draw(score) score.string = “1 : 0” # mutate freely after construction</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="CSFML_PREFIX">CSFML_PREFIX</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="STYLES">STYLES</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+    <section class="attribute-method-details method-section">
+      <header>
+        <h3 id="untitled-attributes"><a href="#untitled-attributes">Attributes</a></h3>
+      </header>
+
+
+      <div id="attribute-i-font" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-font" title="Link to this attribute">
+            <span class="method-name">font</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(font, string = &quot;&quot;, **opts)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">font</span>, <span class="ruby-identifier">string</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Text requires a SFML::Font&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">font</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Font</span>)
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_create</span>(<span class="ruby-identifier">font</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>))
+  <span class="ruby-ivar">@font</span>   = <span class="ruby-identifier">font</span> <span class="ruby-comment"># keep alive for GC</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">string</span>             = <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">character_size</span>     = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:character_size</span>]    <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:character_size</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fill_color</span>         = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:fill_color</span>]        <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:fill_color</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">outline_color</span>      = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:outline_color</span>]     <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:outline_color</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">outline_thickness</span>  = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:outline_thickness</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:outline_thickness</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">style</span>              = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:style</span>]             <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:style</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">position</span>           = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:position</span>]          <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:position</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">origin</span>             = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:origin</span>]            <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:origin</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rotation</span>           = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:rotation</span>]          <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:rotation</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scale</span>              = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:scale</span>]             <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:scale</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-character_size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-character_size" title="Link to this method">
+                <span class="method-name">character_size</span>
+                <span class="method-args">(= C::Graphics.sfText_getCharacterSize(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="character_size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">character_size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getCharacterSize</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">character_size=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setCharacterSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getFillColor</span>(<span class="ruby-ivar">@handle</span>))
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Returns an Array of style symbols, e.g. [:bold, :italic].</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+  <span class="ruby-identifier">bits</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getStyle</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">:regular</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">acc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">acc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">bits</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Accepts a single Symbol, an Array of Symbols, or a raw integer bitmask.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">bits</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>  <span class="ruby-keyword">then</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>)
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+           <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">acc</span>, <span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">acc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) }
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Text#style= expects Symbol, Array, or Integer; got #{value.class}&quot;</span>
+         <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setStyle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">bits</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The character spacing modifier — a multiplier on the font&#39;s</span>
+<span class="ruby-comment"># natural advance. Read with no args, set with a Float (1.0 =</span>
+<span class="ruby-comment"># default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLetterSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The line-spacing multiplier (1.0 = default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The screen-space position of the character at byte index</span>
+<span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+<span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+<span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+<span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+<span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+  <span class="ruby-identifier">copy</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+<span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+<span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+<span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-character_size-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-character_size-3D" title="Link to this method">
+                <span class="method-name">character_size=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="character_size-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">character_size=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setCharacterSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-dup" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-dup" title="Link to this method">
+                <span class="method-name">dup</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="dup-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+  <span class="ruby-identifier">copy</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Deep copy. The returned <a href="Text.html"><code>Text</code></a> holds the same <a href="Font.html"><code>Font</code></a> reference (Fonts are shareable; each owns its own glyph atlas).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-fill_color" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-fill_color" title="Link to this method">
+                <span class="method-name">fill_color</span>
+                <span class="method-args">(= Color.from_native(C::Graphics.sfText_getFillColor(@handle)))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="fill_color-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getFillColor</span>(<span class="ruby-ivar">@handle</span>))
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Returns an Array of style symbols, e.g. [:bold, :italic].</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+  <span class="ruby-identifier">bits</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getStyle</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">:regular</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">acc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">acc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">bits</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Accepts a single Symbol, an Array of Symbols, or a raw integer bitmask.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">bits</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>  <span class="ruby-keyword">then</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>)
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+           <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">acc</span>, <span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">acc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) }
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Text#style= expects Symbol, Array, or Integer; got #{value.class}&quot;</span>
+         <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setStyle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">bits</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The character spacing modifier — a multiplier on the font&#39;s</span>
+<span class="ruby-comment"># natural advance. Read with no args, set with a Float (1.0 =</span>
+<span class="ruby-comment"># default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLetterSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The line-spacing multiplier (1.0 = default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The screen-space position of the character at byte index</span>
+<span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+<span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+<span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+<span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+<span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+  <span class="ruby-identifier">copy</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+<span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+<span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+<span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-fill_color-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-fill_color-3D" title="Link to this method">
+                <span class="method-name">fill_color=</span>
+                <span class="method-args">(c)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="fill_color-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-find_character_pos" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-find_character_pos" title="Link to this method">
+                <span class="method-name">find_character_pos</span>
+                <span class="method-args">(index)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="find_character_pos-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The screen-space position of the character at byte index <code>index</code> in the Text’s current string. Returns a <a href="Vector2.html"><code>Vector2</code></a>. Useful for positioning a caret in a text field, drawing selection highlights, or anchoring tooltips.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-font-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-font-3D" title="Link to this method">
+                <span class="method-name">font=</span>
+                <span class="method-args">(new_font)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="font-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">font=</span>(<span class="ruby-identifier">new_font</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Text#font= requires a SFML::Font&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new_font</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Font</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setFont</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">new_font</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-ivar">@font</span> = <span class="ruby-identifier">new_font</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-global_bounds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-global_bounds" title="Link to this method">
+                <span class="method-name">global_bounds</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="global_bounds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Bounding box after applying the Text’s transform (position/scale/rotation).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-inverse_transform" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-inverse_transform" title="Link to this method">
+                <span class="method-name">inverse_transform</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="inverse_transform-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-letter_spacing" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-letter_spacing" title="Link to this method">
+                <span class="method-name">letter_spacing</span>
+                <span class="method-args">(= C::Graphics.sfText_getLetterSpacing(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="letter_spacing-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 129</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLetterSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The line-spacing multiplier (1.0 = default).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The screen-space position of the character at byte index</span>
+    <span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+    <span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+    <span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+      <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+    <span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+    <span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+      <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+      <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+      <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+      <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+      <span class="ruby-identifier">copy</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+    <span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+    <span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+    <span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+      <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+      <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+      <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The character spacing modifier — a multiplier on the font’s natural advance. Read with no args, set with a Float (1.0 = default).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-letter_spacing-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-letter_spacing-3D" title="Link to this method">
+                <span class="method-name">letter_spacing=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="letter_spacing-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-line_spacing" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-line_spacing" title="Link to this method">
+                <span class="method-name">line_spacing</span>
+                <span class="method-args">(= C::Graphics.sfText_getLineSpacing(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="line_spacing-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 136</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The screen-space position of the character at byte index</span>
+  <span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+  <span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+  <span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+    <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+  <span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+  <span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+    <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+    <span class="ruby-identifier">copy</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+  <span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+  <span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+  <span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The line-spacing multiplier (1.0 = default).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-line_spacing-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-line_spacing-3D" title="Link to this method">
+                <span class="method-name">line_spacing=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="line_spacing-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-local_bounds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-local_bounds" title="Link to this method">
+                <span class="method-name">local_bounds</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="local_bounds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Bounding box of the text in its own (untransformed) coordinate system. Use this to centre or align glyphs precisely: text.origin = [text.local_bounds.width / 2, 0]</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-outline_color" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-outline_color" title="Link to this method">
+                <span class="method-name">outline_color</span>
+                <span class="method-args">(= Color.from_native(C::Graphics.sfText_getOutlineColor(@handle)))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="outline_color-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Returns an Array of style symbols, e.g. [:bold, :italic].</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+  <span class="ruby-identifier">bits</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getStyle</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">:regular</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">acc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">acc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">bits</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Accepts a single Symbol, an Array of Symbols, or a raw integer bitmask.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">bits</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>  <span class="ruby-keyword">then</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>)
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+           <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">acc</span>, <span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">acc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) }
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Text#style= expects Symbol, Array, or Integer; got #{value.class}&quot;</span>
+         <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setStyle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">bits</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The character spacing modifier — a multiplier on the font&#39;s</span>
+<span class="ruby-comment"># natural advance. Read with no args, set with a Float (1.0 =</span>
+<span class="ruby-comment"># default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLetterSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The line-spacing multiplier (1.0 = default).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The screen-space position of the character at byte index</span>
+<span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+<span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+<span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+<span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+<span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+  <span class="ruby-identifier">copy</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+<span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+<span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+<span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-outline_color-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-outline_color-3D" title="Link to this method">
+                <span class="method-name">outline_color=</span>
+                <span class="method-args">(c)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="outline_color-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-outline_thickness" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-outline_thickness" title="Link to this method">
+                <span class="method-name">outline_thickness</span>
+                <span class="method-args">(= C::Graphics.sfText_getOutlineThickness(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="outline_thickness-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 98</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Returns an Array of style symbols, e.g. [:bold, :italic].</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+    <span class="ruby-identifier">bits</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getStyle</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">return</span> [<span class="ruby-value">:regular</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">zero?</span>
+    <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">acc</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">acc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">bits</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Accepts a single Symbol, an Array of Symbols, or a raw integer bitmask.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">bits</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+           <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+           <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>  <span class="ruby-keyword">then</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>)
+           <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+             <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">acc</span>, <span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">acc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) }
+           <span class="ruby-keyword">else</span>
+             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Text#style= expects Symbol, Array, or Integer; got #{value.class}&quot;</span>
+           <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setStyle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">bits</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The character spacing modifier — a multiplier on the font&#39;s</span>
+  <span class="ruby-comment"># natural advance. Read with no args, set with a Float (1.0 =</span>
+  <span class="ruby-comment"># default).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLetterSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_spacing=</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLetterSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The line-spacing multiplier (1.0 = default).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing=</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The screen-space position of the character at byte index</span>
+  <span class="ruby-comment"># `index` in the Text&#39;s current string. Returns a `Vector2`.</span>
+  <span class="ruby-comment"># Useful for positioning a caret in a text field, drawing</span>
+  <span class="ruby-comment"># selection highlights, or anchoring tooltips.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_character_pos</span>(<span class="ruby-identifier">index</span>)
+    <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_findCharacterPos</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Combined translation/scale/rotation as a SFML::Transform.</span>
+  <span class="ruby-comment"># Same matrix the renderer uses to draw the Text.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Deep copy. The returned Text holds the same Font reference</span>
+  <span class="ruby-comment"># (Fonts are shareable; each owns its own glyph atlas).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_copy</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfText_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfText_destroy</span>)))
+    <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@font</span>, <span class="ruby-ivar">@font</span>)
+    <span class="ruby-identifier">copy</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+  <span class="ruby-comment"># Bounding box of the text in its own (untransformed) coordinate system.</span>
+  <span class="ruby-comment"># Use this to centre or align glyphs precisely:</span>
+  <span class="ruby-comment">#   text.origin = [text.local_bounds.width / 2, 0]</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Bounding box after applying the Text&#39;s transform (position/scale/rotation).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Text</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-outline_thickness-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-outline_thickness-3D" title="Link to this method">
+                <span class="method-name">outline_thickness=</span>
+                <span class="method-args">(t)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="outline_thickness-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-string" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-string" title="Link to this method">
+                <span class="method-name">string</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="string-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">string</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getUnicodeString</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">codepoints</span> = []
+  <span class="ruby-identifier">offset</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">cp</span> = <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">get_uint32</span>(<span class="ruby-identifier">offset</span>)
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cp</span>.<span class="ruby-identifier">zero?</span>
+    <span class="ruby-identifier">codepoints</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cp</span>
+    <span class="ruby-identifier">offset</span> <span class="ruby-operator">+=</span> <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Read the current string back as Ruby UTF-8. CSFML returns a pointer to a null-terminated sfChar32 (UTF-32) array; we walk it until the zero terminator and pack the codepoints back into a UTF-8 String.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-string-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-string-3D" title="Link to this method">
+                <span class="method-name">string=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="string-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">string=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-string">&quot;UTF-8&quot;</span>)
+  <span class="ruby-identifier">cps</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;U*&quot;</span>)  <span class="ruby-comment"># array of integer codepoints</span>
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:uint32</span>, <span class="ruby-identifier">cps</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_uint32</span>(<span class="ruby-identifier">cps</span> <span class="ruby-operator">+</span> [<span class="ruby-value">0</span>])
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setUnicodeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">buf</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-style" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-style" title="Link to this method">
+                <span class="method-name">style</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="style-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+  <span class="ruby-identifier">bits</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getStyle</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-value">:regular</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">each_with_object</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">acc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">acc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">bits</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Returns an Array of style symbols, e.g. [:bold, :italic].</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-style-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-style-3D" title="Link to this method">
+                <span class="method-name">style=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="style-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">bits</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>  <span class="ruby-keyword">then</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>)
+         <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+           <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">acc</span>, <span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">acc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">STYLES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) }
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Text#style= expects Symbol, Array, or Integer; got #{value.class}&quot;</span>
+         <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_setStyle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">bits</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Accepts a single Symbol, an Array of Symbols, or a raw integer bitmask.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-transform" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-transform" title="Link to this method">
+                <span class="method-name">transform</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="transform-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/text.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfText_getTransform</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Combined translation/scale/rotation as a <a href="Transform.html"><code>SFML::Transform</code></a>. Same matrix the renderer uses to draw the <a href="Text.html"><code>Text</code></a>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

@@ -1,33 +1,19 @@
-# Netlify build config for the ruby-sfml docs site.
+# Netlify config for the ruby-sfml docs site.
 #
-# How it works:
-#   1. Netlify spins up an Ubuntu image, installs Ruby per below.
-#   2. `bundle install` pulls the latest ruby-sfml + rdoc.
-#   3. `build.sh` fetches + unpacks the gem and runs `rdoc` over it.
-#   4. The resulting HTML in ./public is published.
+# Pure-static deployment — no build step. The HTML in ./public is
+# generated **locally** with `./build.sh`, committed, and pushed.
+# Netlify just serves the directory as-is.
 #
-# Trigger a fresh build manually from Netlify (Builds → Trigger
-# deploy) to pick up a new gem release without bumping anything
-# here.
+# Why no build: ruby-sfml is a C-extension gem (links libcsfml).
+# Netlify's build image has neither libcsfml nor the dev headers,
+# so `bundle install` fails at extconf time. Sidestep the whole
+# problem by building where the toolchain already lives.
 
 [build]
-  base    = ""
-  command = "./build.sh"
+  command = ""
   publish = "public"
 
-[build.environment]
-  # Match the gem's required_ruby_version (>= 3.2). Keep it in
-  # sync with .ruby-version, which is what local builds honour.
-  RUBY_VERSION   = "3.4.9"
-
-  # Make `bundle install` quiet & non-interactive.
-  BUNDLE_JOBS    = "4"
-  BUNDLE_RETRY   = "2"
-  BUNDLE_PATH    = "vendor/bundle"
-  BUNDLE_DEPLOYMENT = "false"
-
-# Long-cache the immutable RDoc assets — they're content-addressed
-# by RDoc so the URL only changes when the asset bytes change.
+# Long-cache the immutable RDoc-generated assets.
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -38,7 +24,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Sane default headers for HTML.
+# Sane defaults for HTML.
 [[headers]]
   for = "/*"
   [headers.values]

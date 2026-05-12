@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::View - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::View"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::View: A 2D camera. a centre point, a size in world units, an optional rotation, and a viewport rectangle (in normalised window coords [0,1]) that places the"
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::View - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="A 2D camera. a centre point, a size in world units, an optional rotation, and a viewport rectangle (in normalised window coords [0,1]) that places the">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::View - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="A 2D camera. a centre point, a size in world units, an optional rotation, and a viewport rectangle (in normalised window coords [0,1]) that places the">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-from_borrowed">from_borrowed</a></li>
+
+        <li ><a href="#method-c-from_rect">from_rect</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-center">center</a></li>
+
+        <li ><a href="#method-i-center-3D">center=</a></li>
+
+        <li ><a href="#method-i-move">move</a></li>
+
+        <li ><a href="#method-i-rotate">rotate</a></li>
+
+        <li ><a href="#method-i-rotation">rotation</a></li>
+
+        <li ><a href="#method-i-rotation-3D">rotation=</a></li>
+
+        <li ><a href="#method-i-scissor">scissor</a></li>
+
+        <li ><a href="#method-i-scissor-3D">scissor=</a></li>
+
+        <li ><a href="#method-i-size">size</a></li>
+
+        <li ><a href="#method-i-size-3D">size=</a></li>
+
+        <li ><a href="#method-i-viewport">viewport</a></li>
+
+        <li ><a href="#method-i-viewport-3D">viewport=</a></li>
+
+        <li ><a href="#method-i-zoom">zoom</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-view">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>View</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::View" class="legacy-anchor"></span>
+  <h1 id="class-sfml-view" class="anchor-link class">
+    class SFML::View
+  </h1>
+
+  <section class="description">
+    
+<p>A 2D camera. A <a href="View.html"><code>View</code></a> defines what part of the world is visible in the window: a centre point, a size in world units, an optional rotation, and a viewport rectangle (in normalised window coords [0,1]) that places the view inside the window — useful for split-screen or for rendering a mini-map alongside the main camera.</p>
+
+<p>Two flows you’ll typically use:</p>
+
+<p># 1. Define from a centre + size: camera = <a href="View.html#method-c-new"><code>SFML::View.new</code></a>(center: [400, 300], size: [800, 600])</p>
+
+<p># 2. Define from a world rectangle (top-left + size): camera = <a href="View.html#method-c-from_rect"><code>SFML::View.from_rect</code></a>(<a href="Rect.html#method-c-new"><code>SFML::Rect.new</code></a>([0, 0], [1600, 1200]))</p>
+
+<p>window.view = camera # apply window.draw(stuff) # everything draws through the camera window.view = window.default_view # restore the 1:1 default</p>
+
+<p>All coordinate inputs accept either a <a href="Vector2.html"><code>SFML::Vector2</code></a> or a [x, y] array.</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-from_borrowed" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_borrowed" title="Link to this method">
+                <span class="method-name">from_borrowed</span>
+                <span class="method-args">(ptr)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_borrowed-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_borrowed</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;borrowed view pointer is NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">copy</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_copy</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-value">_handle:</span> <span class="ruby-identifier">copy</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>@!visibility private Wrap a CSFML view pointer that we don’t own (e.g. the value returned by sfRenderWindow_getView). We deep-copy via sfView_copy so the Ruby object owns its own lifetime.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_rect" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_rect" title="Link to this method">
+                <span class="method-name">from_rect</span>
+                <span class="method-args">(rect)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_rect-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_rect</span>(<span class="ruby-identifier">rect</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View.from_rect needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
+
+  <span class="ruby-identifier">native</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">FloatRect</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>] = <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>] = <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>]     = <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>]     = <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_f</span>
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_createFromRect</span>(<span class="ruby-identifier">native</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfView_createFromRect returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-value">_handle:</span> <span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Build a <a href="View.html"><code>View</code></a> whose rectangle covers the given world <a href="Rect.html"><code>Rect</code></a>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(center: nil, size: nil, rotation: nil, viewport: nil, _handle: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">center:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">size:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">rotation:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">viewport:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">_handle:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">_handle</span> <span class="ruby-operator">||</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_create</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfView_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfView_destroy</span>))
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">center</span>   = <span class="ruby-identifier">center</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">center</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">size</span>     = <span class="ruby-identifier">size</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rotation</span> = <span class="ruby-identifier">rotation</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">rotation</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">viewport</span> = <span class="ruby-identifier">viewport</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">viewport</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-center" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-center" title="Link to this method">
+                <span class="method-name">center</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="center-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">center</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getCenter</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-center-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-center-3D" title="Link to this method">
+                <span class="method-name">center=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="center-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">center=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setCenter</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-move" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-move" title="Link to this method">
+                <span class="method-name">move</span>
+                <span class="method-args">(offset)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="move-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move</span>(<span class="ruby-identifier">offset</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_move</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">offset</span>).<span class="ruby-identifier">to_native_f</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Pan the camera by an offset in world units.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-rotate" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-rotate" title="Link to this method">
+                <span class="method-name">rotate</span>
+                <span class="method-args">(degrees)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="rotate-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotate</span>(<span class="ruby-identifier">degrees</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_rotate</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Rotate the camera by <code>degrees</code>, relative to current rotation.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-rotation" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-rotation" title="Link to this method">
+                <span class="method-name">rotation</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="rotation-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getRotation</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-rotation-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-rotation-3D" title="Link to this method">
+                <span class="method-name">rotation=</span>
+                <span class="method-args">(degrees)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="rotation-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation=</span>(<span class="ruby-identifier">degrees</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setRotation</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-scissor" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-scissor" title="Link to this method">
+                <span class="method-name">scissor</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="scissor-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getScissor</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Scissor rect in normalised [0,1] window coords — pixels <em>outside</em> this rect are clipped before rendering. Default <code>[0, 0, 1, 1]</code> (no clipping). Use it to render UI inside a sub-region of the window without re-projecting.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-scissor-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-scissor-3D" title="Link to this method">
+                <span class="method-name">scissor=</span>
+                <span class="method-args">(rect)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="scissor-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor=</span>(<span class="ruby-identifier">rect</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View#scissor= needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_to_floatrect</span>(<span class="ruby-identifier">rect</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-size" title="Link to this method">
+                <span class="method-name">size</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getSize</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-size-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-size-3D" title="Link to this method">
+                <span class="method-name">size=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="size-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-viewport" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-viewport" title="Link to this method">
+                <span class="method-name">viewport</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="viewport-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getViewport</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Viewport in normalised [0,1] window coordinates. Default is the full window (<a href="Rect.html#method-c-new"><code>Rect.new</code></a>([0,0], [1,1])). Use [0, 0, 0.5, 1] for left half, [0.75, 0, 0.25, 0.25] for a top-right mini-map, etc.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-viewport-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-viewport-3D" title="Link to this method">
+                <span class="method-name">viewport=</span>
+                <span class="method-args">(rect)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="viewport-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport=</span>(<span class="ruby-identifier">rect</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View#viewport= needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_to_floatrect</span>(<span class="ruby-identifier">rect</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-zoom" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-zoom" title="Link to this method">
+                <span class="method-name">zoom</span>
+                <span class="method-args">(factor)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="zoom-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zoom</span>(<span class="ruby-identifier">factor</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_zoom</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">factor</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Multiply the visible area by <code>factor</code>. Factor &lt; 1.0 zooms in; factor &gt; 1.0 zooms out.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

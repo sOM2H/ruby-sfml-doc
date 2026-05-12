@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Time - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Time"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Time: Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Time - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Time - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+<div id="includes-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-includes"></use></svg>
+      </span>
+      <span class="nav-section-title">Included Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="nav-list">
+
+
+      <li><span class="include">Comparable</span></li>
+
+
+    </ul>
+  </details>
+</div>
+
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-microseconds">microseconds</a></li>
+
+        <li ><a href="#method-c-milliseconds">milliseconds</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+        <li ><a href="#method-c-seconds">seconds</a></li>
+
+        <li ><a href="#method-c-zero">zero</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-2B">+</a></li>
+
+        <li ><a href="#method-i-2D">-</a></li>
+
+        <li ><a href="#method-i-2D-40">-@</a></li>
+
+        <li ><a href="#method-i-3C-3D-3E">&lt;=&gt;</a></li>
+
+        <li ><a href="#method-i-as_microseconds">as_microseconds</a></li>
+
+        <li ><a href="#method-i-as_milliseconds">as_milliseconds</a></li>
+
+        <li ><a href="#method-i-as_seconds">as_seconds</a></li>
+
+        <li ><a href="#method-i-eql-3F">eql?</a></li>
+
+        <li ><a href="#method-i-hash">hash</a></li>
+
+        <li ><a href="#method-i-to_s">to_s</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-time">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Time</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Time" class="legacy-anchor"></span>
+  <h1 id="class-sfml-time" class="anchor-link class">
+    class SFML::Time
+  </h1>
+
+  <section class="description">
+    
+<p>Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML. Immutable and comparable.</p>
+
+<p><a href="Time.html#method-c-seconds"><code>SFML::Time.seconds(1.5)</code></a> #=&gt; 1_500_000 µs <a href="Time.html#method-c-milliseconds"><code>SFML::Time.milliseconds(500)</code></a> <a href="Time.html#method-c-microseconds"><code>SFML::Time.microseconds(42)</code></a> <a href="Time.html#method-c-zero"><code>SFML::Time.zero</code></a></p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+
+
+    <section class="attribute-method-details method-section">
+      <header>
+        <h3 id="untitled-attributes"><a href="#untitled-attributes">Attributes</a></h3>
+      </header>
+
+
+      <div id="attribute-i-microseconds" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-microseconds" title="Link to this attribute">
+            <span class="method-name">microseconds</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-microseconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-microseconds" title="Link to this method">
+                <span class="method-name">microseconds</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="microseconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-milliseconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-milliseconds" title="Link to this method">
+                <span class="method-name">milliseconds</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="milliseconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">milliseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1_000</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { </pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(microseconds)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-seconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-seconds" title="Link to this method">
+                <span class="method-name">seconds</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="seconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">seconds</span>(<span class="ruby-identifier">value</span>)      = <span class="ruby-identifier">new</span>((<span class="ruby-identifier">value</span> <span class="ruby-operator">*</span> <span class="ruby-value">1_000_000</span>).<span class="ruby-identifier">to_i</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">milliseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1_000</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> </pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-zero" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-zero" title="Link to this method">
+                <span class="method-name">zero</span>
+                <span class="method-args">(= new(0))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="zero-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> </pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-2B" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-2B" title="Link to this method">
+                <span class="method-name">+</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="2B-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-2D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-2D" title="Link to this method">
+                <span class="method-name">-</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="2D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-2D-40" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-2D-40" title="Link to this method">
+                <span class="method-name">-@</span>
+                <span class="method-args">(= Time.new(-@microseconds))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="2D-40-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-3C-3D-3E" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-3C-3D-3E" title="Link to this method">
+                <span class="method-name">&lt;=&gt;</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-as_microseconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-as_microseconds" title="Link to this method">
+                <span class="method-name">as_microseconds</span>
+                <span class="method-args">(= @microseconds)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="as_microseconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] =</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-as_milliseconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-as_milliseconds" title="Link to this method">
+                <span class="method-name">as_milliseconds</span>
+                <span class="method-args">(= @microseconds / 1_000)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="as_milliseconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>]</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-as_seconds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-as_seconds" title="Link to this method">
+                <span class="method-name">as_seconds</span>
+                <span class="method-args">(= @microseconds / 1_000_000.0)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="as_seconds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-eql-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-eql-3F" title="Link to this method">
+                <span class="method-name">eql?</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="eql-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 34</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+    <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+    <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+      <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-hash" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-hash" title="Link to this method">
+                <span class="method-name">hash</span>
+                <span class="method-args">(= @microseconds.hash)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="hash-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 33</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-to_s" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-to_s" title="Link to this method">
+                <span class="method-name">to_s</span>
+                <span class="method-args">(= &quot;</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="to_s-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 37</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:microseconds</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">:microseconds</span>] = <span class="ruby-ivar">@microseconds</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

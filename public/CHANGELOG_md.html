@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CHANGELOG - ruby-sfml 3.0.0.6</title>
+
+
+  <meta name="keywords" content="ruby,documentation,CHANGELOG">
+  <meta
+    name="description"
+    content="CHANGELOG: Changelog All notable changes are documented here. keepachangelog."
+  >
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CHANGELOG - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="Changelog All notable changes are documented here. keepachangelog.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CHANGELOG - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="Changelog All notable changes are documented here. keepachangelog.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script
+  src="./js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="./js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="./css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="file has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="./index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="./CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="./lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="./SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Animation.html">Animation</a></code></li><li><code><a href="./SFML/App.html">App</a></code></li><li><details><summary><code><a href="./SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="./SFML/Audio.html">Audio</a></code></li><li><code><a href="./SFML/AudioError.html">AudioError</a></code></li><li><code><a href="./SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="./SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="./SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="./SFML/Clock.html">Clock</a></code></li><li><code><a href="./SFML/Color.html">Color</a></code></li><li><code><a href="./SFML/Context.html">Context</a></code></li><li><code><a href="./SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="./SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="./SFML/Cursor.html">Cursor</a></code></li><li><code><a href="./SFML/Error.html">Error</a></code></li><li><code><a href="./SFML/Event.html">Event</a></code></li><li><code><a href="./SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="./SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="./SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="./SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="./SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="./SFML/Image.html">Image</a></code></li><li><code><a href="./SFML/InputActions.html">InputActions</a></code></li><li><code><a href="./SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="./SFML/InputStream.html">InputStream</a></code></li><li><code><a href="./SFML/Joystick.html">Joystick</a></code></li><li><code><a href="./SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="./SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="./SFML/Listener.html">Listener</a></code></li><li><code><a href="./SFML/LoadError.html">LoadError</a></code></li><li><code><a href="./SFML/Mouse.html">Mouse</a></code></li><li><code><a href="./SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="./SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="./SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="./SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="./SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="./SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="./SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="./SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="./SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="./SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="./SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="./SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="./SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="./SFML/Rect.html">Rect</a></code></li><li><code><a href="./SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="./SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="./SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="./SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="./SFML/Scene.html">Scene</a></code></li><li><code><a href="./SFML/Sensor.html">Sensor</a></code></li><li><code><a href="./SFML/Shader.html">Shader</a></code></li><li><code><a href="./SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="./SFML/Shape.html">Shape</a></code></li><li><code><a href="./SFML/Sound.html">Sound</a></code></li><li><code><a href="./SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="./SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="./SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="./SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="./SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="./SFML/Sprite.html">Sprite</a></code></li><li><code><a href="./SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="./SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="./SFML/Text.html">Text</a></code></li><li><code><a href="./SFML/Texture.html">Texture</a></code></li><li><code><a href="./SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="./SFML/Time.html">Time</a></code></li><li><code><a href="./SFML/Touch.html">Touch</a></code></li><li><code><a href="./SFML/Transform.html">Transform</a></code></li><li><code><a href="./SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="./SFML/Vector2.html">Vector2</a></code></li><li><code><a href="./SFML/Vector3.html">Vector3</a></code></li><li><code><a href="./SFML/Vertex.html">Vertex</a></code></li><li><code><a href="./SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="./SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="./SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="./SFML/View.html">View</a></code></li><li><code><a href="./SFML/Window.html">Window</a></code></li><li><code><a href="./SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-label="Page CHANGELOG.md">
+
+<span id="label-Changelog" class="legacy-anchor"></span>
+<h1 id="changelog"><a href="#changelog">Changelog</a></h1>
+
+<p>All notable changes are documented here. The format roughly follows <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a> and the gem versioning is <a href="README_md.html#versioning">described in the README</a> — first three segments mirror the targeted CSFML release, fourth segment is ruby-sfml’s own patch level.</p>
+
+<span id="label-5BUnreleased-5D" class="legacy-anchor"></span>
+<h2 id="unreleased"><a href="#unreleased">[Unreleased]</a></h2>
+
+<span id="label-5B3.0.0.6-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
+<h2 id="3006--2026-05-12"><a href="#3006--2026-05-12">[3.0.0.6] — 2026-05-12</a></h2>
+
+<p>Quality-of-life release: the CSFML 3.0 surface was already covered; this round adds the helpers and tooling you reach for when building on top of it.</p>
+
+<span id="label-Added+-E2-80-94+system" class="legacy-anchor"></span>
+<h3 id="added--system"><a href="#added--system">Added — system</a></h3>
+<ul><li>
+<p><strong>Vector2 / Vector3 math</strong> — distance, distance_sq, lerp, project_on, reflect, clamp_length, zero?, abs, plus <code>Vector2#angle</code>, angle_to(other), rotated(degrees) / rotated_rad(radians), perpendicular, and <code>Vector3#angle_between</code>. Both classes gain to_v3 / to_v2 for cross-dimension promotion + scalar coercion (<code>2 * vec</code>).</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+graphics" class="legacy-anchor"></span>
+<h3 id="added--graphics"><a href="#added--graphics">Added — graphics</a></h3>
+<ul><li>
+<p><code>RenderWindow#screenshot(path)</code> — capture the current back-buffer to disk (PNG / JPG / BMP / TGA inferred by extension).</p>
+</li><li>
+<p><code>RenderWindow#capture_image</code> — same capture, returns an in-memory <a href="SFML/Image.html"><code>SFML::Image</code></a> for further processing.</p>
+</li><li>
+<p><strong><a href="SFML/SpriteSheet.html"><code>SFML::SpriteSheet</code></a></strong> — slice a uniformly-gridded image into numbered frames. <code>.load(path, frame_size:, padding:, margin:)</code>, region(i), region_at(col, row), sprite(i), <code>#animation(fps:, ...)</code>.</p>
+</li><li>
+<p><strong><a href="SFML/TextureAtlas.html"><code>SFML::TextureAtlas</code></a></strong> — load Aseprite / TexturePacker JSON descriptors. <code>.load(json_path)</code>, region(name), sprite(name), <code>#animation(names, fps:)</code> (auto-derives fps from Aseprite per-frame durations when present).</p>
+</li><li>
+<p><strong><a href="SFML/Animation.html"><code>SFML::Animation</code></a></strong> — frame-based animation that drives a Sprite’s texture_rect over time. Loop / one-shot, update(dt), reset, done?. Sprite-style transform setters (<code>position=</code>, <code>rotation=</code>, <code>scale=</code>, <code>origin=</code>, <code>color=</code>) for ergonomic use.</p>
+</li><li>
+<p><strong><a href="SFML/ParticleSystem.html"><code>SFML::ParticleSystem</code></a></strong> — VertexArray-backed particle pool. <code>#spawn(position:, velocity:, lifetime:, color:, size:)</code>, optional <code>gravity:</code>, <code>update_particle</code> subclass hook for drag / attractors / colour curves.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+game-loop" class="legacy-anchor"></span>
+<h3 id="added--game-loop"><a href="#added--game-loop">Added — game-loop</a></h3>
+<ul><li>
+<p><strong>Fixed timestep</strong> — <code>fixed_timestep N</code> class macro on <a href="SFML/App.html"><code>SFML::App</code></a> calls <code>update(dt)</code> exactly N times per second with a fixed dt (semi-implicit Euler accumulator, capped at 5 catch-up steps to prevent the “spiral of death”). Read <code>interpolation_alpha</code> from draw to smoothly render between fixed updates.</p>
+</li><li>
+<p><strong>Input actions DSL</strong> — <code>action :jump, keys: [...],  scancodes: [...], mouse_buttons: [...], joy_buttons: [...]</code> on <a href="SFML/App.html"><code>SFML::App</code></a> and <a href="SFML/Scene.html"><code>SFML::Scene</code></a>. Poll with <code>action_pressed?  (:name)</code> from <code>update</code> / <code>draw</code>; build digital axes with <code>axis(negative:, positive:)</code>. Scene actions inherit from the host App’s actions.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+errors" class="legacy-anchor"></span>
+<h3 id="added--errors"><a href="#added--errors">Added — errors</a></h3>
+<ul><li>
+<p>Domain-specific exception hierarchy:</p>
+</li><li>
+<p><a href="SFML/LoadError.html"><code>SFML::LoadError</code></a> — asset load failures (file, memory, stream)</p>
+</li><li>
+<p><a href="SFML/AudioError.html"><code>SFML::AudioError</code></a> — capture / OpenAL / channel-map</p>
+</li><li>
+<p><a href="SFML/NetworkError.html"><code>SFML::NetworkError</code></a> — sockets / packet framing</p>
+</li><li>
+<p><a href="SFML/ShaderError.html"><code>SFML::ShaderError</code></a> — GLSL compile / link</p>
+</li><li>
+<p><a href="SFML/GraphicsError.html"><code>SFML::GraphicsError</code></a> — generic graphics-side failures</p>
+</li><li>
+<p><a href="SFML/WindowError.html"><code>SFML::WindowError</code></a> — window / context creation All inherit from <a href="SFML/Error.html"><code>SFML::Error</code></a>, so existing <code>rescue SFML::Error</code> blocks keep catching everything.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+CI+-2F+tooling" class="legacy-anchor"></span>
+<h3 id="added--ci--tooling"><a href="#added--ci--tooling">Added — CI / tooling</a></h3>
+<ul><li>
+<p>CI badge in <a href="README_md.html">README.md</a>.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.5-5D+-E2-80-94+2026-05-11" class="legacy-anchor"></span>
+<h2 id="3005--2026-05-11"><a href="#3005--2026-05-11">[3.0.0.5] — 2026-05-11</a></h2>
+
+<p>Round-trip release: closes every remaining CSFML 3.0 gap that’s useful from Ruby. The library now covers the surface area you’d expect for porting a CSFML application straight across.</p>
+
+<span id="label-Added+-E2-80-94+graphics-1" class="legacy-anchor"></span>
+<h3 id="added--graphics-1"><a href="#added--graphics-1">Added — graphics</a></h3>
+<ul><li>
+<p><code>Color#+</code>, <code>Color#-</code>, <code>Color#*</code> (alias <code>modulate</code>), <code>Color#to_integer</code> / <code>Color.from_integer(value)</code> — channel-wise saturating arithmetic, plus packed 0xRRGGBBAA round-trips.</p>
+</li><li>
+<p>Texture binding + geometric introspection on the three concrete shapes via the new <code>Graphics::ShapeInspectable</code> mixin: <code>CircleShape</code>/<code>RectangleShape</code>/<code>ConvexShape</code> all gain <code>texture</code> / <code>texture=</code> / <code>set_texture(tex, reset_rect:)</code>, <code>texture_rect</code> / <code>texture_rect=</code>, <code>point(i)</code>, <code>geometric_center</code>, <code>local_bounds</code>, <code>global_bounds</code>, <code>transform</code>, <code>inverse_transform</code>, <code>dup</code> / <code>clone</code>. <code>RectangleShape</code> additionally exposes <code>point_count</code>.</p>
+</li><li>
+<p><a href="SFML/Shape.html"><code>SFML::Shape</code></a> — callback-driven abstract shape. Subclass and override point_count / point(i) to drive geometry from live Ruby data; call update after the source data changes.</p>
+</li><li>
+<p><a href="SFML/TransformableObject.html"><code>SFML::TransformableObject</code></a> — standalone transform container (CSFML’s <code>sfTransformable*</code>). Useful as a base for custom drawables that combine a transform with their own rendering.</p>
+</li><li>
+<p><code>VertexArray#dup</code> / clone — independent deep copy.</p>
+</li><li>
+<p><code>VertexBuffer#bind</code> / <code>VertexBuffer.unbind</code> — bind a VBO as the active GL vertex buffer (for mixing raw GL with <a href="SFML.html"><code>SFML</code></a> rendering).</p>
+</li><li>
+<p>Texture sRGB variants via the <code>srgb:</code> kwarg on <code>Texture.load</code>, <code>Texture.create</code>, <code>Texture.from_memory</code>, <code>Texture.from_image</code>, and <code>Texture#resize</code>.</p>
+</li><li>
+<p><code>Shader#set_mat3</code> / set_mat4 / set_mat3_array / set_mat4_array and <code>Shader#set_bvec(name, *components)</code> — matrix and bool-vector uniforms.</p>
+</li><li>
+<p><code>Shader.from_stream(vertex:, geometry:, fragment:)</code>, <code>Font.from_stream(io)</code>, <code>Image.from_stream(io)</code>, <code>Texture.from_stream(io, srgb:, ...)</code> — load any of these from a Ruby IO-like object (File, StringIO, network reader). Backed by the new <a href="SFML/InputStream.html"><code>SFML::InputStream</code></a> adapter that wraps a Ruby IO as CSFML’s <code>sfInputStream*</code>.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+audio" class="legacy-anchor"></span>
+<h3 id="added--audio"><a href="#added--audio">Added — audio</a></h3>
+<ul><li>
+<p>Full 3D-audio surface on <code>SoundStream</code> (mirror of Sound / Music): <code>pan</code>, <code>min_gain</code> / <code>max_gain</code>, <code>max_distance</code>, <code>spatialization_enabled?</code>, <code>direction</code>, <code>cone</code>, <code>velocity</code>, <code>doppler_factor</code>, <code>directional_attenuation_factor</code>, <code>effect_processor=</code> (real-time DSP filter), <code>channel_map</code> — and the <code>=</code> setters.</p>
+</li><li>
+<p><code>SoundRecorder#channel_map</code> — read the channel layout the recorder is producing.</p>
+</li><li>
+<p><a href="SFML/SoundRecorder.html"><code>SFML::SoundRecorder</code></a> — callback-based mic capture. Subclass and override on_start / on_process_samples(samples,  channels) / on_stop. The pre-existing module-level helpers (<code>SoundRecorder.available?</code> / <code>.devices</code> / <code>.default_device</code>) are preserved as class methods.</p>
+</li><li>
+<p><code>Music.from_stream(io, **opts)</code> and <code>SoundBuffer.from_stream(io)</code> — stream-backed audio loaders.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+network" class="legacy-anchor"></span>
+<h3 id="added--network"><a href="#added--network">Added — network</a></h3>
+<ul><li>
+<p><a href="SFML/Network/Packet.html"><code>SFML::Network::Packet</code></a> — wire-compatible with <code>sf::Packet</code>. Typed read / write for <code>Bool</code>, <code>Int8</code>–<code>Int64</code>, <code>Uint8</code>–<code>Uint64</code>, <code>Float</code>, <code>Double</code>, <code>String</code>; data / size / read_position / end_of_packet? / ok? / clear / dup.</p>
+</li><li>
+<p><code>TcpSocket#send_packet</code> / receive_packet and <code>UdpSocket#send_packet(packet, to:, port:)</code> / receive_packet — structured framing on top of the existing raw byte send/receive.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+window" class="legacy-anchor"></span>
+<h3 id="added--window"><a href="#added--window">Added — window</a></h3>
+<ul><li>
+<p><code>Keyboard::SCAN_CODES</code> — full layout-independent scancode table (146 entries matching <code>sfScancode</code>).</p>
+</li><li>
+<p><code>Keyboard.scancode_pressed?(:scan_w)</code> — query the physical key regardless of keyboard layout (the standard for WASD-style games).</p>
+</li><li>
+<p><code>Keyboard.localize(scancode)</code> / <code>.delocalize(key)</code> / <code>.description(scancode)</code> — convert between physical scancodes and logical keys under the current OS layout, plus the human-readable description string.</p>
+</li><li>
+<p><code>Keyboard.virtual_keyboard_visible=</code> — on-screen keyboard toggle for touchscreen / mobile builds (no-op on desktop).</p>
+</li><li>
+<p><code>VideoMode.fullscreen_modes</code> — all video modes the display supports for true-fullscreen window creation, sorted from most to least pixels.</p>
+</li><li>
+<p><code>VideoMode#valid?</code> — does the display actually support this mode at fullscreen?</p>
+</li><li>
+<p><a href="SFML/Context.html"><code>SFML::Context</code></a> — headless GL context. Activate it on a thread to compile shaders / make raw GL calls without a window. Static <code>Context.active_context_id</code>, <code>.extension_available?(name)</code>, <code>.gl_function(name)</code>.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+system-1" class="legacy-anchor"></span>
+<h3 id="added--system-1"><a href="#added--system-1">Added — system</a></h3>
+<ul><li>
+<p><code>SFML::InputStream(io)</code> — wraps a Ruby IO-like object (anything answering <code>read</code> / <code>seek</code> / <code>pos</code> / <code>size</code>) as the <code>sfInputStream*</code> argument CSFML loader functions take. Used internally by every <code>*.from_stream</code> factory.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.4-5D+-E2-80-94+2026-05-09" class="legacy-anchor"></span>
+<h2 id="3004--2026-05-09"><a href="#3004--2026-05-09">[3.0.0.4] — 2026-05-09</a></h2>
+
+<span id="label-Added+-E2-80-94+graphics-2" class="legacy-anchor"></span>
+<h3 id="added--graphics-2"><a href="#added--graphics-2">Added — graphics</a></h3>
+<ul><li>
+<p><code>Sprite#dup</code> / clone, <code>Sprite#texture</code> (borrowed reference), <code>Sprite#transform</code>, <code>Sprite#inverse_transform</code>.</p>
+</li><li>
+<p><code>View#scissor</code> / <code>View#scissor=</code> — normalised [0..1] clip rect applied at render time (paired with the existing <code>viewport</code> API).</p>
+</li><li>
+<p><code>Texture.from_memory(bytes, smooth:, repeated:)</code> — decode + upload a Ruby String of bytes (PNG / JPG / BMP / TGA / …) as a texture. Bypasses the disk for embedded assets / network blobs.</p>
+</li><li>
+<p><code>Texture#resize(w, h)</code> — reallocate GPU memory in place.</p>
+</li><li>
+<p><code>Texture#swap(other)</code> — atomically swap GPU memory between two textures (cheap double-buffer pattern).</p>
+</li><li>
+<p><code>Texture#native_handle</code> — the OpenGL texture-object name for raw GL interop.</p>
+</li><li>
+<p><code>Texture#update_from_texture(source, offset:)</code>, <code>Texture#update_from_render_window(window, offset:)</code>, <code>Texture#update_from_window(window, offset:)</code> — copy pixels from another GPU texture / from a window’s back-buffer / from a bare-Window’s framebuffer into this texture at <code>offset</code>.</p>
+</li><li>
+<p><code>RenderWindow#viewport(view = self.view)</code> and <code>RenderWindow#scissor(view = self.view)</code> — pixel-space <a href="SFML/Rect.html"><code>SFML::Rect</code></a>s the view actually covers / clips. Same on <code>RenderTexture</code>.</p>
+</li><li>
+<p><code>Shader#set_int_color(name, color)</code> — uploads a <a href="SFML/Color.html"><code>SFML::Color</code></a> as a <code>vec4</code> uniform (CSFML normalises 0–255 → 0.0–1.0 for you).</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+audio-1" class="legacy-anchor"></span>
+<h3 id="added--audio-1"><a href="#added--audio-1">Added — audio</a></h3>
+<ul><li>
+<p><code>Sound#dup</code> / clone, <code>Sound#buffer</code> reader.</p>
+</li><li>
+<p><code>Sound#pan</code> / pan=, <code>Sound#min_gain</code>/max_gain (and <code>=</code>), <code>Sound#max_distance</code> (and <code>=</code>), <code>Sound#spatialization_enabled?</code> / spatialization_enabled=, <code>Sound#directional_attenuation_factor</code> (and <code>=</code>) — the full remaining 3D-audio surface from CSFML’s SoundSource.</p>
+</li><li>
+<p>Same set on <code>Music</code>: <code>pan</code>, gain clamps, max-distance, spatialisation, directional-attenuation.</p>
+</li><li>
+<p><code>Music#channel_count</code>, <code>Music#sample_rate</code> — stream introspection.</p>
+</li><li>
+<p><code>Music#loop_points</code> / loop_points= — set the looping window inside a track ([offset_time, length_time] pair of <a href="SFML/Time.html"><code>SFML::Time</code></a>s).</p>
+</li><li>
+<p><code>Music.from_memory(bytes, **opts)</code> — stream from a Ruby String of bytes (in-memory MP3 / OGG / FLAC). Caller’s bytes must outlive the <code>Music</code> (we pin the Ruby buffer).</p>
+</li><li>
+<p><code>SoundBuffer.from_memory(bytes)</code> — decode <code>.wav</code> / <code>.ogg</code> / <code>.flac</code> from RAM.</p>
+</li><li>
+<p><code>SoundBuffer.from_samples(samples, sample_rate:, channel_count:,  channel_map:)</code> — build a buffer from a Ruby Array of int16 samples. Default channel maps for 1- and 2-channel content.</p>
+</li><li>
+<p><code>SoundBuffer#dup</code>, <code>SoundBuffer#sample_count</code>, <code>SoundBuffer#samples</code> — sample-level introspection.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.3-5D+-E2-80-94+2026-05-09" class="legacy-anchor"></span>
+<h2 id="3003--2026-05-09"><a href="#3003--2026-05-09">[3.0.0.3] — 2026-05-09</a></h2>
+
+<span id="label-Added+-E2-80-94+typography" class="legacy-anchor"></span>
+<h3 id="added--typography"><a href="#added--typography">Added — typography</a></h3>
+<ul><li>
+<p><code>Font#family</code> — human-readable family name from <code>sfFont_getInfo</code>.</p>
+</li><li>
+<p><code>Font#has_glyph?(codepoint)</code> — accepts an Integer codepoint or a single-character String.</p>
+</li><li>
+<p><code>Font#kerning(a, b, character_size:, bold: false)</code> — wraps <code>sfFont_getKerning</code> / <code>getBoldKerning</code> for accurate glyph pairing. Used in advanced text layout.</p>
+</li><li>
+<p><code>Font#line_spacing(size)</code>, <code>Font#underline_position(size)</code>, <code>Font#underline_thickness(size)</code> — typography metrics for the given character size.</p>
+</li><li>
+<p><code>Font#texture(size)</code> — borrowed <a href="SFML/Texture.html"><code>SFML::Texture</code></a> of the glyph atlas (handy for debug visualisations of what’s been rasterised).</p>
+</li><li>
+<p><code>Font#dup</code> / clone — independent deep copy.</p>
+</li><li>
+<p><code>Font.from_memory(bytes)</code> — load from a Ruby String (embedded assets, network responses, <code>data:</code> URLs).</p>
+</li><li>
+<p><code>Text#find_character_pos(index)</code> — exact <code>Vector2</code> position of the character at the given byte index. Critical for caret / selection rendering in text inputs.</p>
+</li><li>
+<p><code>Text#letter_spacing</code> / line_spacing getters (the setters were already there).</p>
+</li><li>
+<p><code>Text#dup</code> / clone — independent copy with the same string and font reference.</p>
+</li><li>
+<p><code>Text#transform</code> / inverse_transform — the <a href="SFML/Transform.html"><code>SFML::Transform</code></a> the renderer applies when drawing this Text.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+Image+-2F+Texture+-2F+RenderTexture" class="legacy-anchor"></span>
+<h3 id="added--image--texture--rendertexture"><a href="#added--image--texture--rendertexture">Added — Image / Texture / RenderTexture</a></h3>
+<ul><li>
+<p><code>Image.from_memory(bytes)</code> — decode PNG / JPG / BMP / TGA / GIF / HDR / PSD from a Ruby String. Mirror of <code>Image#save_to_memory</code>.</p>
+</li><li>
+<p><code>Image#copy_from(source, at:, source_rect: nil, apply_alpha: false)</code> — stamp a region of <code>source</code> into self. Useful for hand-built texture atlases or composite images.</p>
+</li><li>
+<p><code>Texture.create(width, height)</code> — allocate a blank GPU texture; pair with <code>Texture#update(image)</code> to stream pixels.</p>
+</li><li>
+<p><code>Texture.maximum_size</code> / <code>Texture.unbind</code> — class-level helpers.</p>
+</li><li>
+<p><code>Texture#bind(coord:)</code> — manually bind for raw OpenGL interop.</p>
+</li><li>
+<p><code>Texture#srgb?</code>, <code>Texture#generate_mipmap</code>, <code>Texture#dup</code>.</p>
+</li><li>
+<p><code>RenderTexture.maximum_anti_aliasing_level</code>, <code>RenderTexture#srgb?</code>, <code>RenderTexture#generate_mipmap</code>.</p>
+</li><li>
+<p><code>RenderTexture#active=</code>, push_gl_states, pop_gl_states, reset_gl_states — same GL-state machinery as RenderWindow.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+Window+-2F+RenderWindow+polish" class="legacy-anchor"></span>
+<h3 id="added--window--renderwindow-polish"><a href="#added--window--renderwindow-polish">Added — Window / RenderWindow polish</a></h3>
+<ul><li>
+<p><code>RenderWindow#focused?</code> / request_focus / position / position= / srgb?.</p>
+</li><li>
+<p><code>RenderWindow#visible=</code>, key_repeat_enabled=, joystick_threshold=.</p>
+</li><li>
+<p><code>RenderWindow#active=</code>, push_gl_states, pop_gl_states, reset_gl_states — for mixing raw OpenGL calls with <a href="SFML.html"><code>SFML</code></a> rendering. Surround custom GL with push/pop so SFML’s internal state survives.</p>
+</li><li>
+<p><code>RenderWindow#wait_event(timeout:)</code> — block until the next event or <code>timeout</code> elapses (a <a href="SFML/Time.html"><code>SFML::Time</code></a>). For low-power / event-driven apps that don’t need a 60Hz update loop.</p>
+</li><li>
+<p><code>Window#cursor=</code>, cursor_visible=, cursor_grabbed= — parity with the same setters that already existed on <code>RenderWindow</code>.</p>
+</li><li>
+<p><code>Window#joystick_threshold=</code>, <code>Window#context_settings</code>, <code>Window#wait_event(timeout:)</code>.</p>
+</li></ul>
+
+<span id="label-Added+-E2-80-94+Shader" class="legacy-anchor"></span>
+<h3 id="added--shader"><a href="#added--shader">Added — Shader</a></h3>
+<ul><li>
+<p><code>Shader#bind</code>, <code>Shader.unbind</code>, <code>Shader#native_handle</code> — for raw GL interop and debug introspection.</p>
+</li></ul>
+
+<span id="label-Fixed" class="legacy-anchor"></span>
+<h3 id="fixed"><a href="#fixed">Fixed</a></h3>
+<ul><li>
+<p><a href="SFML/App.html#method-i-_dispatch"><code>SFML::App._dispatch</code></a> now forwards <code>:resized</code> events to <em>both</em> <code>on_resize(width, height)</code> <em>and</em> <code>on_event(event)</code>. The 3.0.0.2 refactor accidentally routed <code>:resized</code> only through the structured hook, which broke any app that forwarded <code>on_event</code> to a sub-system (e.g. <code>def on_event(e) =  @gui.on_event(e)</code>) — the GUI never got told to refresh its view + reflow on resize. Both hooks now receive the event; apps that already use <code>on_resize</code> are unaffected.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.2-5D+-E2-80-94+2026-05-09" class="legacy-anchor"></span>
+<h2 id="3002--2026-05-09"><a href="#3002--2026-05-09">[3.0.0.2] — 2026-05-09</a></h2>
+
+<span id="label-Added" class="legacy-anchor"></span>
+<h3 id="added"><a href="#added">Added</a></h3>
+<ul><li>
+<p><strong><a href="SFML/App.html"><code>SFML::App</code></a></strong> — subclass-friendly main loop. Removes the boilerplate of window creation, event pumping, dt management, and clear/display so a small app fits in a few methods.</p>
+</li><li>
+<p>Class-level configuration DSL for <a href="SFML/App.html"><code>SFML::App</code></a>. Defaults that used to be passed to <code>.new</code> can now be declared in the class body and inherited: <code>ruby  class MyApp &lt; SFML::App width        800 height       600 title        &quot;Smooth&quot; framerate    120 antialiasing 4 background   SFML::Color[&quot;#1a1a1a&quot;]  end  </code> Per-instance kwargs to <code>.new</code> still override on a case-by-case basis. Available macros: <code>width</code>, <code>height</code>, <code>title</code>, <code>framerate</code>, <code>vsync</code>, <code>background</code>, <code>style</code>, <code>fullscreen</code>, <code>antialiasing</code>, <code>context</code>.</p>
+</li><li>
+<p><strong><a href="SFML/ContextSettings.html"><code>SFML::ContextSettings</code></a></strong> — configures the OpenGL context the window backs onto: anti-aliasing level, depth/stencil bits, GL version. The fifth argument to <code>sfRenderWindow_create</code> is no longer <code>NULL</code> by default; pass <code>antialiasing: 4</code> (or <code>context: SFML::ContextSettings.new(...)</code>) to <code>RenderWindow.new</code> / <a href="SFML/App.html#method-c-new"><code>SFML::App.new</code></a> to turn on MSAA. Read back what the driver actually gave you with <code>window.context_settings</code>. Wraps <code>sfContextSettings</code> and <code>sfRenderWindow_getSettings</code>.</p>
+</li><li>
+<p><strong><code>on_key</code></strong> — class-level keybinding DSL. Bind a key to an instance method, a Proc, or a block; bindings inherit through subclasses with later definitions shadowing earlier ones: <code>ruby  class MyApp &lt; SFML::App on_key :escape, :quit on_key :f11,    :toggle_fullscreen on_key :p       do |app| app.toggle_pause end  end  </code> Bindings live as the class’s <code>key_handlers</code> Hash; the same DSL is also available on <a href="SFML/Scene.html"><code>SFML::Scene</code></a>, where scene-level bindings shadow app-level ones for the active scene.</p>
+</li><li>
+<p><strong><code>pause</code> / <code>resume</code> / <code>toggle_pause</code> / <code>paused?</code></strong> on <a href="SFML/App.html"><code>SFML::App</code></a> — while paused, <code>update(dt)</code> is skipped but <code>draw</code> continues, so a pause overlay can be drawn on top of a frozen scene.</p>
+</li><li>
+<p><strong><code>on_resize(width, height)</code></strong> hook on <a href="SFML/App.html"><code>SFML::App</code></a> and <a href="SFML/Scene.html"><code>SFML::Scene</code></a> — replaces the <code>case event in {type: :resized,  size: {x:, y:}}</code> boilerplate that used to live inside <code>on_event</code>. Default forwards to the active scene.</p>
+</li><li>
+<p><strong><a href="SFML/Scene.html"><code>SFML::Scene</code></a></strong> — base class for stateful screens (menu, gameplay, results screen, settings overlay, etc.). Lifecycle hooks (<code>setup</code> / <code>update</code> / <code>draw</code> / <code>on_event</code> / <code>on_resize</code> / <code>teardown</code>), its own <code>on_key</code> DSL, and a <code>switch_to(other)</code> shortcut that delegates to the host app. The host app picks a starting scene with the <code>initial_scene SomeScene</code> class macro; <code>App.switch_to</code> tears down the previous scene before calling <code>setup</code> on the new one.</p>
+</li><li>
+<p>New example <a href="examples/24_scenes/scenes_rb.html">24_scenes</a> — title → play scene pair built on <a href="SFML/Scene.html"><code>SFML::Scene</code></a> + <code>initial_scene</code>.</p>
+</li><li>
+<p>New example <a href="examples/04_app_class/app_class_rb.html">04_app_class</a> — bouncing ball on top of <a href="SFML/App.html"><code>SFML::App</code></a> with class-level config and <code>on_key</code> bindings (replaces the old <code>04_game_class</code> example).</p>
+</li></ul>
+
+<span id="label-Changed" class="legacy-anchor"></span>
+<h3 id="changed"><a href="#changed">Changed</a></h3>
+<ul><li>
+<p><a href="SFML/App.html#method-i-_dispatch"><code>SFML::App._dispatch</code></a> no longer auto-quits on Esc. Apps that want it bind it explicitly with <code>on_key :escape, :quit</code>. The window-close button (<code>:closed</code>) still always quits.</p>
+</li><li>
+<p>Audio specs (anything under <code>spec/sfml/audio/</code>) are now auto-tagged <code>:audio</code> and skipped by default on macOS, where CoreAudio + the CSFML OpenAL backend occasionally hang the test group. Opt-in with <code>bundle exec rspec --tag audio</code>. Linux runs the full suite as before.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.1-5D+-E2-80-94+2026-05-07" class="legacy-anchor"></span>
+<h2 id="3001--2026-05-07"><a href="#3001--2026-05-07">[3.0.0.1] — 2026-05-07</a></h2>
+
+<span id="label-Added-1" class="legacy-anchor"></span>
+<h3 id="added-1"><a href="#added-1">Added</a></h3>
+<ul><li>
+<p><code>Window#icon=</code> and <code>RenderWindow#icon=</code> — set the window’s title-bar / taskbar icon from any <a href="SFML/Image.html"><code>SFML::Image</code></a>. Wraps <code>sfWindow_setIcon</code> / <code>sfRenderWindow_setIcon</code>. New example <a href="examples/21_window_icon/window_icon_rb.html">21_window_icon</a> builds a procedural 32×32 ruby-style icon to demo the API.</p>
+</li><li>
+<p><code>Image#save_to_memory(format)</code> — encode an image to a Ruby String of bytes in the given format (<code>&quot;png&quot;</code>, <code>&quot;jpg&quot;</code>, <code>&quot;bmp&quot;</code>, <code>&quot;tga&quot;</code>), without touching the disk. Useful for screenshots over the network, data: URLs, or piping into other image-processing libraries. Wraps <code>sfImage_saveToMemory</code> plus the <code>sfBuffer_*</code> helpers in libcsfml-system.</p>
+</li><li>
+<p>Shader array uniforms — <code>shader[:positions] = [[x, y], ...]</code> and similar for vec3 / vec4 arrays; also accepts <code>Vector2</code> / <code>Vector3</code> elements interchangeably. New explicit <code>Shader#set_float_array</code> for <code>uniform float arr[N];</code> (which can’t be inferred via <code>[]=</code> because it’d collide with the vec3 case). Wraps the <code>sfShader_set{Float,Vec2,Vec3,Vec4}UniformArray</code> family.</p>
+</li><li>
+<p><code>Window#minimum_size=</code> / maximum_size= and the same on <code>RenderWindow</code> — clamp how small or large the OS lets the user drag the window. Accepts <code>[w, h]</code>, <code>Vector2</code>, or <code>nil</code> (clears the limit). Wraps <code>sfWindow_setMinimumSize</code> / <code>setMaximumSize</code> and the RenderWindow equivalents.</p>
+</li><li>
+<p><code>Listener.velocity</code> and <code>Listener.cone</code> — finish the 3D-audio surface on the listener side. Velocity feeds the Doppler effect for sources whose <code>doppler_factor</code> is non-zero; cone (a <code>SoundCone</code>, or a Hash convertible to one) attenuates sources outside a directional pickup pattern.</p>
+</li><li>
+<p>3D-audio polish for <code>Sound</code> and <code>Music</code> — now expose <code>velocity</code>, <code>doppler_factor</code>, <code>direction</code>, and <code>cone</code> (via the new <a href="SFML/SoundCone.html"><code>SFML::SoundCone</code></a> value class — <code>inner_angle</code>, <code>outer_angle</code>, <code>outer_gain</code>). Cone setter accepts both a <code>SoundCone</code> and a Hash. Plus <code>effect_processor=</code> for installing a real-time DSP Ruby callable on the audio thread (<code>-&gt;(samples, channels) {  ... }</code>); pass <code>nil</code> to remove it. The DSP path is documented as Ruby+GVL-limited and best for very light effects only. Wraps the corresponding <code>sfSound_*</code> and <code>sfMusic_*</code> setters/getters plus <code>setEffectProcessor</code>.</p>
+</li><li>
+<p><a href="SFML/VertexBuffer.html"><code>SFML::VertexBuffer</code></a> — GPU-resident vertex buffer (VBO). Same shape as <code>VertexArray</code> but vertices live on the GPU, so a draw call ships only an OpenGL handle instead of re-uploading every frame. <code>new(vertices, primitive_type:, usage:)</code> (one of <code>:stream</code> / <code>:dynamic</code> / <code>:static</code>), <code>update(vertices, offset:)</code> for partial uploads, <code>draw_range_on(target, first, count)</code> to draw a slice. <code>VertexBuffer.available?</code> reports whether the GPU supports VBOs at all (fall back to <code>VertexArray</code> if it doesn’t). Wraps the <code>sfVertexBuffer_*</code> family plus the <code>sfRender{Window,Texture}_drawVertexBuffer{,Range}</code> draw paths.</p>
+</li><li>
+<p><code>Window.from_handle</code> / <code>RenderWindow.from_handle</code> — wrap an existing OS-level window (HWND, NSView*, X11 Window xid). The outside framework owns the window’s lifecycle; <a href="SFML.html"><code>SFML</code></a> just renders into it. Pair with native_handle to interop in the other direction. Wraps <code>sfWindow_createFromHandle</code> / <code>sfRenderWindow_createFromHandle</code> and the matching <code>getNativeHandle</code> getters.</p>
+</li><li>
+<p><a href="SFML/SoundStream.html"><code>SFML::SoundStream</code></a> — procedural audio source. Subclass it and override on_get_data to return an Array of <code>Int16</code> PCM samples (or <code>nil</code> to stop); optionally override on_seek(time) to support <code>playing_offset=</code>. Same playback / 3D-positional API as <code>Sound</code> and <code>Music</code> (volume, pitch, looping, position, attenuation, min_distance, relative_to_listener). Wraps the full <code>sfSoundStream_*</code> family. Includes example <a href="examples/23_sound_stream/sound_stream_rb.html">23_sound_stream</a> — a real-time sine synth with arrow-key pitch / volume control.</p>
+</li><li>
+<p><a href="SFML/Network/SocketSelector.html"><code>SFML::Network::SocketSelector</code></a> — multiplex many sockets onto one blocking <code>wait</code>. <code>add</code> / <code>remove</code> / <code>clear</code> / <code>wait(timeout:)</code> / <code>ready?(socket)</code>. Polymorphic across <code>TcpListener</code>, <code>TcpSocket</code>, <code>UdpSocket</code>. The <code>wait</code> call releases the GVL, so other Ruby threads keep running during the syscall. Wraps the <code>sfSocketSelector_*</code> family.</p>
+</li><li>
+<p><a href="SFML/Network/Ftp.html"><code>SFML::Network::Ftp</code></a> — CSFML’s FTP client wrapped as idiomatic Ruby: <code>connect</code>, <code>login</code> / <code>login_anonymous</code>, <code>working_directory</code>, <code>directory_listing</code>, <code>change_directory</code>, <code>parent_directory</code>, <code>create_directory</code>, <code>delete_directory</code>, <code>rename_file</code>, <code>delete_file</code>, <code>download</code>, <code>upload</code>, <code>send_command</code>, <code>keep_alive</code>, <code>disconnect</code>. Each call returns a <code>Response</code> (or <code>DirectoryResponse</code> / <code>ListingResponse</code>) with ok?, status, status_symbol, message, plus directory or names where applicable. Network calls release the GVL. Same caveat as Http — Ruby stdlib <code>Net::FTP</code> is the better choice in production.</p>
+</li><li>
+<p><a href="SFML/Network/Http.html"><code>SFML::Network::Http</code></a> — CSFML’s HTTP/1.x client in idiomatic Ruby form. <code>Http.new(host, port:)</code> plus <code>#send_request(method:, uri:,  fields:, body:, http_version:, timeout:)</code> returns an <code>Http::Response</code> with status (Integer) / status_symbol (<code>:ok</code>, <code>:not_found</code>, <code>:connection_failed</code>, …), body, field(name), http_version. Marked <code>blocking: true</code> so the GVL is released during the network round-trip and concurrent Ruby threads can run. Wraps <code>sfHttp_*</code>, <code>sfHttpRequest_*</code>, <code>sfHttpResponse_*</code>. Note: for any non-trivial use (TLS, redirects, JSON, retries), Ruby’s stdlib <code>Net::HTTP</code> is the better tool — this binding exists for parity with CSFML, not because we recommend it.</p>
+</li><li>
+<p><a href="SFML/Sensor.html"><code>SFML::Sensor</code></a> polling module — <code>available?(type)</code>, <code>enable(type)</code>, <code>disable(type)</code>, <code>value(type)</code> for the six sensor types (<code>:accelerometer</code>, <code>:gyroscope</code>, <code>:magnetometer</code>, <code>:gravity</code>, <code>:user_acceleration</code>, <code>:orientation</code>). The <code>:sensor_changed</code> event variant now decodes its <code>sensor:</code> and <code>value:</code> payloads. Wraps <code>sfSensor_isAvailable</code> / <code>sfSensor_setEnabled</code> / <code>sfSensor_getValue</code>.</p>
+</li><li>
+<p><a href="SFML/Touch.html"><code>SFML::Touch</code></a> polling module — <code>down?(finger)</code> and <code>position(finger, relative_to: window)</code>. Touch event variants (<code>:touch_began</code>, <code>:touch_moved</code>, <code>:touch_ended</code>) now decode their <code>finger:</code> and <code>position:</code> payloads (previously fell through to empty data). Wraps <code>sfTouch_isDown</code> / <code>sfTouch_getPosition</code> / <code>sfTouch_getPositionRenderWindow</code>.</p>
+</li><li>
+<p><code>Sound#playing_offset</code> / <code>playing_offset=</code> and <code>Music#playing_offset</code> / <code>playing_offset=</code> — read or seek the playback head as a <a href="SFML/Time.html"><code>SFML::Time</code></a>. Setter also accepts a Numeric (interpreted as seconds). Wraps <code>sfSound_setPlayingOffset</code> / <code>sfMusic_setPlayingOffset</code> and the matching getters.</p>
+</li><li>
+<p>Stencil buffer support — new <a href="SFML/StencilMode.html"><code>SFML::StencilMode</code></a> value class with symbolic comparisons (<code>:equal</code>, <code>:always</code>, etc.) and update operations (<code>:replace</code>, <code>:keep</code>, etc.). Pass it via <code>stencil_mode:</code> to <code>RenderTarget#draw</code> for two-pass mask/clip effects, and clear the stencil with <code>target.clear(color, stencil: N)</code> or <code>target.clear(stencil: N)</code>. Wraps <code>sfRenderWindow_clearStencil</code> / <code>clearColorAndStencil</code> (and the RenderTexture twins) plus the existing <a href="lib/sfml/graphics/stencil_mode_rb.html">stencil_mode</a> slot in <code>sfRenderStates</code>. New example <a href="examples/22_stencil_mask/stencil_mask_rb.html">22_stencil_mask</a> demonstrates a cursor-following spotlight that clips an animated rainbow background.</p>
+</li></ul>
+
+<span id="label-Fixed-1" class="legacy-anchor"></span>
+<h3 id="fixed-1"><a href="#fixed-1">Fixed</a></h3>
+<ul><li>
+<p><code>at_exit</code> hook now writes the unhandled exception (message, class, backtrace) to stderr before calling <code>exit!</code>. Previously <code>exit!</code> short-circuited Ruby’s terminal exception reporter, so an error in <code>setup</code> or any other top-level user code looked like a silent exit.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.0-5D+-E2-80-94+initial+release" class="legacy-anchor"></span>
+<h2 id="3000--initial-release"><a href="#3000--initial-release">[3.0.0.0] — initial release</a></h2>
+
+<p>First public cut. Targets <strong>CSFML 3.0.0</strong> (released March 2025) and <strong>Ruby ≥ 3.2</strong>. API surface complete for the <a href="SFML.html"><code>SFML</code></a> 3.0 spec; some engineering polish still pending (<code>gem build</code> end-to-end verification, RBS signatures, hosted RDoc).</p>
+
+<span id="label-System" class="legacy-anchor"></span>
+<h3 id="system"><a href="#system">System</a></h3>
+<ul><li>
+<p><code>Vector2</code>, <code>Vector3</code> — operator-friendly value classes with <code>coerce</code> (<code>2 * vec</code>), pattern-match <code>deconstruct</code>, <code>length</code>, <code>normalize</code>, <code>dot</code>/<code>cross</code>, conversion helpers</p>
+</li><li>
+<p><code>Rect</code> — single class for float / int rectangles with <code>contains?</code>, <code>intersects?</code>, deconstruction</p>
+</li><li>
+<p><code>Time</code>, <code>Clock</code> — monotonic timer, immutable Time arithmetic</p>
+</li></ul>
+
+<span id="label-Window" class="legacy-anchor"></span>
+<h3 id="window"><a href="#window">Window</a></h3>
+<ul><li>
+<p><code>RenderWindow</code> — main 2D drawing surface</p>
+</li><li>
+<p><code>Window</code> — bare GL-only window for raw-OpenGL apps</p>
+</li><li>
+<p><code>Event</code> — pattern-matchable hash-like value (<code>case event in {type: :key_pressed, code: :escape}</code>)</p>
+</li><li>
+<p><code>Keyboard</code>, <code>Mouse</code>, <code>Joystick</code> — polling APIs with symbol-named keys / buttons / axes</p>
+</li><li>
+<p><code>Cursor</code> — 21 system cursor types + <code>from_pixels</code> for custom shapes</p>
+</li><li>
+<p><code>Clipboard</code> — UTF-8 in / UTF-8 out via the unicode-string CSFML path</p>
+</li><li>
+<p><code>VideoMode</code></p>
+</li></ul>
+
+<span id="label-Graphics" class="legacy-anchor"></span>
+<h3 id="graphics"><a href="#graphics">Graphics</a></h3>
+<ul><li>
+<p><code>Color</code>, <code>Image</code>, <code>Texture</code>, <code>RenderTexture</code></p>
+</li><li>
+<p><code>Sprite</code>, <code>CircleShape</code>, <code>RectangleShape</code>, <code>ConvexShape</code> — share a <code>Transformable</code> mixin (position, rotation, scale, origin, move)</p>
+</li><li>
+<p><code>Vertex</code>, <code>VertexArray</code> — batched geometry; six primitive types</p>
+</li><li>
+<p><code>Font</code>, <code>Text</code> — UTF-8 strings, <code>local_bounds</code> / <code>global_bounds</code>, Font.find searches common system paths plus a bundled DejaVu Sans</p>
+</li><li>
+<p><code>View</code> — 2D camera, including <code>from_rect</code> and viewport for split-screen / minimap</p>
+</li><li>
+<p><code>RenderStates</code>, <code>BlendMode</code> — full blend mode catalogue, kwargs shortcut on <code>window.draw(thing, blend_mode: SFML::BlendMode::ADD)</code></p>
+</li><li>
+<p><code>Shader</code> — load from file or memory, uniform setter that dispatches by Ruby type (<code>shader[:time] = 1.5</code>, <code>shader[:tex] = my_texture</code>, <code>shader[:tint] = SFML::Color.red</code>)</p>
+</li><li>
+<p><code>Transform</code> — standalone 4×3 matrix value class, chainable</p>
+</li><li>
+<p><code>RenderTarget#draw</code> accepts <code>texture:</code>, <code>blend_mode:</code>, <code>shader:</code>, <code>coordinate_type:</code>, <code>render_states:</code> kwargs</p>
+</li><li>
+<p><code>RenderTarget#draw_primitives(vertices, type)</code> — one-shot batch rendering without a <code>VertexArray</code> object</p>
+</li></ul>
+
+<span id="label-Audio" class="legacy-anchor"></span>
+<h3 id="audio"><a href="#audio">Audio</a></h3>
+<ul><li>
+<p><code>SoundBuffer</code>, <code>Sound</code>, <code>Music</code></p>
+</li><li>
+<p>3D positional audio on Sound and Music (position=, attenuation=, min_distance=, relative_to_listener=)</p>
+</li><li>
+<p><code>Listener</code> — global “ear” with <code>position</code>, <code>direction</code>, <code>up_vector</code>, <code>global_volume</code></p>
+</li><li>
+<p><code>SoundBufferRecorder</code> + <code>SoundRecorder</code> static helpers — record audio from the system mic into a SoundBuffer</p>
+</li></ul>
+
+<span id="label-Network" class="legacy-anchor"></span>
+<h3 id="network"><a href="#network">Network</a></h3>
+<ul><li>
+<p><code>Network::IpAddress</code> — value class with <code>from_string</code>, <code>from_bytes</code>, <code>LOCALHOST</code> / <code>ANY</code> / <code>BROADCAST</code> constants, <code>local</code>, <code>public</code></p>
+</li><li>
+<p><code>Network::TcpSocket</code>, <code>Network::TcpListener</code> — TCP client + server, blocking and non-blocking modes</p>
+</li><li>
+<p><code>Network::UdpSocket</code> — connectionless datagrams</p>
+</li><li>
+<p><code>SocketStatus</code> returned as symbols (<code>:done</code>, <code>:not_ready</code>, <code>:disconnected</code>, <code>:error</code>, <code>:partial</code>)</p>
+</li><li>
+<p>Intentionally not wrapped: <code>Http</code>, <code>Ftp</code> (use Ruby stdlib’s <code>Net::HTTP</code> / <code>Net::FTP</code> — they’re nicer)</p>
+</li></ul>
+
+<span id="label-Helpers" class="legacy-anchor"></span>
+<h3 id="helpers"><a href="#helpers">Helpers</a></h3>
+<ul><li>
+<p><code>App</code> — subclass-friendly main loop with <code>setup</code> / <code>update(dt)</code> / <code>draw</code> / <code>on_event</code> hooks.</p>
+</li><li>
+<p><code>Assets</code> — cached, search-path-driven loader. <code>SFML::Assets.font(&quot;DejaVuSans&quot;)</code>, <code>.texture(name)</code>, <code>.sound(name)</code>, <code>.music(name)</code>. Default search root is <code>&lt;dir of $0&gt;/assets/</code>.</p>
+</li><li>
+<p>Bundled DejaVu Sans (Bitstream Vera license) — <a href="SFML/Font.html#method-c-default"><code>SFML::Font.default</code></a> works without a system font install</p>
+</li></ul>
+
+<span id="label-Engineering" class="legacy-anchor"></span>
+<h3 id="engineering"><a href="#engineering">Engineering</a></h3>
+<ul><li>
+<p>Two-tier API: <code>SFML::C::*</code> thin FFI bindings, <code>SFML::*</code> idiomatic Ruby on top. Most user-facing classes are ~50–150 LOC each</p>
+</li><li>
+<p><code>RenderTarget</code> mixin — <code>RenderWindow</code> and <code>RenderTexture</code> share every drawing method through CSFML_PREFIX dispatch</p>
+</li><li>
+<p>287 RSpec examples, all hitting real CSFML</p>
+</li><li>
+<p>20 self-contained example folders under <a href="examples/">examples/</a></p>
+</li><li>
+<p>CI matrix: Ubuntu + macOS × Ruby 3.2 / 3.3 / 3.4</p>
+</li><li>
+<p>Linux CI builds CSFML 3 from source (cached) and runs specs under <code>xvfb-run</code></p>
+</li><li>
+<p><code>extconf.rb</code> checks every required <code>libcsfml-*</code> plus probes <code>sfClock_isRunning</code> (CSFML 3.0+ only) — <code>gem install</code> aborts with a helpful message on CSFML 2.x</p>
+</li><li>
+<p>Same probe re-runs at <code>require &quot;sfml&quot;</code> time as a runtime sanity check</p>
+</li><li>
+<p><code>at_exit</code> hook stops live <code>Sound</code>/<code>Music</code> and bypasses Ruby’s finalizer pass via <code>exit!</code> — eliminates a class of GL/OpenAL-teardown segfaults that plagued every non-trivial example</p>
+</li><li>
+<p>RDoc 7 (Aliki theme) generated via <code>rake rdoc</code></p>
+</li></ul>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

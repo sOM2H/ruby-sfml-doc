@@ -1,0 +1,3230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::RenderWindow - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::RenderWindow"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::RenderWindow: The main drawing surface. Wraps sfRenderWindow."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::RenderWindow - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="The main drawing surface. Wraps sfRenderWindow.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::RenderWindow - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="The main drawing surface. Wraps sfRenderWindow.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+<div id="includes-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-includes"></use></svg>
+      </span>
+      <span class="nav-section-title">Included Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="nav-list">
+
+
+      <li><a class="include" href="Graphics/RenderTarget.html">SFML::Graphics::RenderTarget</a></li>
+
+
+    </ul>
+  </details>
+</div>
+
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-from_handle">from_handle</a></li>
+
+        <li ><a href="#method-c-new">new</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-_resolve_context_settings">_resolve_context_settings</a></li>
+
+        <li ><a href="#method-i-_vec2u_or_nil">_vec2u_or_nil</a></li>
+
+        <li ><a href="#method-i-active-3D">active=</a></li>
+
+        <li ><a href="#method-i-capture_image">capture_image</a></li>
+
+        <li ><a href="#method-i-close">close</a></li>
+
+        <li ><a href="#method-i-context_settings">context_settings</a></li>
+
+        <li ><a href="#method-i-cursor-3D">cursor=</a></li>
+
+        <li ><a href="#method-i-cursor_grabbed-3D">cursor_grabbed=</a></li>
+
+        <li ><a href="#method-i-cursor_visible-3D">cursor_visible=</a></li>
+
+        <li ><a href="#method-i-each_event">each_event</a></li>
+
+        <li ><a href="#method-i-focused-3F">focused?</a></li>
+
+        <li ><a href="#method-i-framerate_limit-3D">framerate_limit=</a></li>
+
+        <li ><a href="#method-i-icon-3D">icon=</a></li>
+
+        <li ><a href="#method-i-joystick_threshold-3D">joystick_threshold=</a></li>
+
+        <li ><a href="#method-i-key_repeat_enabled-3D">key_repeat_enabled=</a></li>
+
+        <li ><a href="#method-i-maximum_size-3D">maximum_size=</a></li>
+
+        <li ><a href="#method-i-minimum_size-3D">minimum_size=</a></li>
+
+        <li ><a href="#method-i-native_handle">native_handle</a></li>
+
+        <li ><a href="#method-i-open-3F">open?</a></li>
+
+        <li ><a href="#method-i-parse_args">parse_args</a></li>
+
+        <li ><a href="#method-i-poll_event">poll_event</a></li>
+
+        <li ><a href="#method-i-pop_gl_states">pop_gl_states</a></li>
+
+        <li ><a href="#method-i-position">position</a></li>
+
+        <li ><a href="#method-i-position-3D">position=</a></li>
+
+        <li ><a href="#method-i-push_gl_states">push_gl_states</a></li>
+
+        <li ><a href="#method-i-request_focus">request_focus</a></li>
+
+        <li ><a href="#method-i-reset_gl_states">reset_gl_states</a></li>
+
+        <li ><a href="#method-i-run">run</a></li>
+
+        <li ><a href="#method-i-scissor">scissor</a></li>
+
+        <li ><a href="#method-i-screenshot">screenshot</a></li>
+
+        <li ><a href="#method-i-size">size</a></li>
+
+        <li ><a href="#method-i-srgb-3F">srgb?</a></li>
+
+        <li ><a href="#method-i-title-3D">title=</a></li>
+
+        <li ><a href="#method-i-viewport">viewport</a></li>
+
+        <li ><a href="#method-i-visible-3D">visible=</a></li>
+
+        <li ><a href="#method-i-vsync-3D">vsync=</a></li>
+
+        <li ><a href="#method-i-wait_event">wait_event</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-renderwindow">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>RenderWindow</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::RenderWindow" class="legacy-anchor"></span>
+  <h1 id="class-sfml-renderwindow" class="anchor-link class">
+    class SFML::RenderWindow
+  </h1>
+
+  <section class="description">
+    
+<p>The main drawing surface. Wraps sfRenderWindow.</p>
+
+<p>window = <a href="RenderWindow.html#method-c-new"><code>SFML::RenderWindow.new</code></a>(800, 600, “Hello”)</p>
+
+<p>while window.open? window.each_event do |event| case event in {type: :closed} then window.close in {type: :key_pressed, code: :escape} then window.close end end</p>
+
+<pre class="ruby"><span class="ruby-identifier">window</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Color</span>.<span class="ruby-identifier">cornflower_blue</span>)
+<span class="ruby-identifier">window</span>.<span class="ruby-identifier">display</span>
+</pre>
+
+<p>end</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="CSFML_PREFIX">CSFML_PREFIX</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+        <dt id="DEFAULT_STYLE">DEFAULT_STYLE</dt>
+
+        <dd>
+
+          
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+    <section class="attribute-method-details method-section">
+      <header>
+        <h3 id="untitled-attributes"><a href="#untitled-attributes">Attributes</a></h3>
+      </header>
+
+
+      <div id="attribute-i-requested_context" class="method-detail anchor-link">
+        <div class="method-heading attribute-method-heading">
+          <a href="#attribute-i-requested_context" title="Link to this attribute">
+            <span class="method-name">requested_context</span>
+            <span class="attribute-access-type">[R]</span>
+          </a>
+        </div>
+
+        <div class="method-description">
+
+
+        <p>What we asked for at creation time, if anything (otherwise nil).</p>
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-from_handle" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_handle" title="Link to this method">
+                <span class="method-name">from_handle</span>
+                <span class="method-args">(handle)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_handle-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+  <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+    <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">win</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Wrap an existing OS-level window. <code>handle</code> is a platform native handle (Integer address or FFI::Pointer). Useful for embedding the renderer inside another framework’s window (Qt, Gtk, raw Win32, NSView).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-new" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-new" title="Link to this method">
+                <span class="method-name">new</span>
+                <span class="method-args">(*args, **opts)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="new-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">title</span> = <span class="ruby-identifier">parse_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">style</span> = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:style</span>, <span class="ruby-constant">DEFAULT_STYLE</span>)
+  <span class="ruby-identifier">state</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:fullscreen</span>] <span class="ruby-operator">?</span> <span class="ruby-value">:fullscreen</span> <span class="ruby-operator">:</span> <span class="ruby-value">:windowed</span>
+
+  <span class="ruby-identifier">settings</span> = <span class="ruby-identifier">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-comment"># Hold a reference for the duration of the C call so the</span>
+  <span class="ruby-comment"># struct&#39;s memory survives until CSFML has copied it.</span>
+  <span class="ruby-ivar">@ctx_struct</span> = <span class="ruby-identifier">settings</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">to_native</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">ctx_ptr</span>     = <span class="ruby-ivar">@ctx_struct</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@ctx_struct</span>.<span class="ruby-identifier">to_ptr</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_create</span>(
+    <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">to_native</span>,
+    <span class="ruby-identifier">title</span>.<span class="ruby-identifier">to_s</span>,
+    <span class="ruby-identifier">style</span>,
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">State</span>[<span class="ruby-identifier">state</span>],
+    <span class="ruby-identifier">ctx_ptr</span>,
+  )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>))
+  <span class="ruby-ivar">@event_buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@requested_context</span> = <span class="ruby-identifier">settings</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">framerate_limit</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:framerate</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:framerate</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">vsync</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:vsync</span>]               <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:vsync</span>].<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The first form takes (width, height, title, <strong>opts). The second form takes (<a href="../lib/sfml/window/video_mode_rb.html">video_mode</a>, title, </strong>opts) for full control.</p>
+
+<p>Options: style: bitmask of SFML::C::Window::Style constants fullscreen: true to use sfFullscreen state instead of sfWindowed framerate: cap to N FPS via sfRenderWindow_setFramerateLimit vsync: enable vertical sync antialiasing: shorthand — MSAA level (2 / 4 / 8). Same as passing <code>context: ContextSettings.new(antialiasing: N)</code> context: a <a href="ContextSettings.html"><code>SFML::ContextSettings</code></a> for full GL-context control</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-_resolve_context_settings" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_resolve_context_settings" title="Link to this method">
+                <span class="method-name">_resolve_context_settings</span>
+                <span class="method-args">(opts)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_resolve_context_settings-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 307</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+    <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_vec2u_or_nil" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_vec2u_or_nil" title="Link to this method">
+                <span class="method-name">_vec2u_or_nil</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_vec2u_or_nil-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-active-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-active-3D" title="Link to this method">
+                <span class="method-name">active=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="active-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>—- GL interop —-</p>
+
+<p>When mixing raw OpenGL calls with <a href="../SFML.html"><code>SFML</code></a> rendering, surround the OpenGL block with <a href="RenderWindow.html#method-i-push_gl_states"><code>push_gl_states</code></a> / <a href="RenderWindow.html#method-i-pop_gl_states"><code>pop_gl_states</code></a> so SFML’s internal state survives. <a href="RenderWindow.html#method-i-reset_gl_states"><code>reset_gl_states</code></a> is a heavier “throw away whatever’s been changed” reset. <code>active=</code> toggles the GL context’s activation on the current thread — the only way to use <a href="../SFML.html"><code>SFML</code></a> rendering from a non-main thread.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-capture_image" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-capture_image" title="Link to this method">
+                <span class="method-name">capture_image</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="capture_image-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">capture_image</span>
+  <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
+  <span class="ruby-identifier">tex</span>  = <span class="ruby-constant">Texture</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">update_from_render_window</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">to_image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Read the current back-buffer into a fresh CPU-side <a href="Image.html"><code>SFML::Image</code></a>. Useful for processing/encoding the frame yourself (sending it over a socket, encoding as JPEG memory bytes, comparing against a reference, etc.).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-close" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-close" title="Link to this method">
+                <span class="method-name">close</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="close-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">close</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_close</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-context_settings" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-context_settings" title="Link to this method">
+                <span class="method-name">context_settings</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="context_settings-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">context_settings</span>
+  <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getSettings</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The actual <a href="ContextSettings.html"><code>ContextSettings</code></a> the driver gave us. May differ from what we requested — the driver picks the closest level of MSAA / GL version it supports.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-cursor-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-cursor-3D" title="Link to this method">
+                <span class="method-name">cursor=</span>
+                <span class="method-args">(cursor)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="cursor-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cursor=</span>(<span class="ruby-identifier">cursor</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;RenderWindow#cursor= requires a SFML::Cursor&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Cursor</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setMouseCursor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-ivar">@cursor</span> = <span class="ruby-identifier">cursor</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Apply a <a href="Cursor.html"><code>SFML::Cursor</code></a> as the visible mouse pointer over this window. Keeps a Ruby reference so the <a href="Cursor.html"><code>Cursor</code></a> object’s lifetime spans at least until the next assignment.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-cursor_grabbed-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-cursor_grabbed-3D" title="Link to this method">
+                <span class="method-name">cursor_grabbed=</span>
+                <span class="method-args">(grabbed)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="cursor_grabbed-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cursor_grabbed=</span>(<span class="ruby-identifier">grabbed</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setMouseCursorGrabbed</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">grabbed</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Lock the mouse pointer inside the window’s client area while focused — useful for FPS-style games or when dragging widgets that need pixel-precise input.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-cursor_visible-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-cursor_visible-3D" title="Link to this method">
+                <span class="method-name">cursor_visible=</span>
+                <span class="method-args">(visible)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="cursor_visible-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cursor_visible=</span>(<span class="ruby-identifier">visible</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setMouseCursorVisible</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">visible</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Toggle the OS mouse pointer’s visibility while it’s over the window.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-each_event" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-each_event" title="Link to this method">
+                <span class="method-name">each_event</span>
+                <span class="method-args">() { |event| ... }</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="each_event-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each_event</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-value">:each_event</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">while</span> (<span class="ruby-identifier">event</span> = <span class="ruby-identifier">poll_event</span>)
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Yields every pending event for this frame, then returns. Without a block returns an Enumerator.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-focused-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-focused-3F" title="Link to this method">
+                <span class="method-name">focused?</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_hasFocus(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="focused-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">focused?</span>       = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_hasFocus</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_focus</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_requestFocus</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># ---- OS-window state ----</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visible=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setVisible</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_repeat_enabled=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setKeyRepeatEnabled</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">joystick_threshold=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setJoystickThreshold</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Top-left corner in desktop coordinates.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getPosition</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setPosition</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># `true` if the framebuffer is sRGB-capable (i.e. the GL</span>
+<span class="ruby-comment"># context was created with the sRGB attribute and the driver</span>
+<span class="ruby-comment"># honoured it).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># ---- GL interop ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When mixing raw OpenGL calls with SFML rendering, surround</span>
+<span class="ruby-comment"># the OpenGL block with `push_gl_states` / `pop_gl_states` so</span>
+<span class="ruby-comment"># SFML&#39;s internal state survives. `reset_gl_states` is a</span>
+<span class="ruby-comment"># heavier &quot;throw away whatever&#39;s been changed&quot; reset.</span>
+<span class="ruby-comment"># `active=` toggles the GL context&#39;s activation on the</span>
+<span class="ruby-comment"># current thread — the only way to use SFML rendering from a</span>
+<span class="ruby-comment"># non-main thread.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+<span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+<span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+<span class="ruby-comment"># 60fps — wake on input.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+<span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+<span class="ruby-comment"># window&#39;s pixel size.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+<span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+<span class="ruby-comment"># are clipped before rendering.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+<span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+<span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+<span class="ruby-comment"># Win32, NSView).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+  <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+    <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">win</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+<span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+<span class="ruby-comment"># any drawing.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   window.run do |dt, events|</span>
+<span class="ruby-comment">#     events.each { |e| ... }</span>
+<span class="ruby-comment">#     window.clear(...)</span>
+<span class="ruby-comment">#     window.draw(...)</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+    <span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+    <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-comment"># (video_mode, title)</span>
+    [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-comment"># (width, height, title)</span>
+    [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+          <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>—- Focus —-</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-framerate_limit-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-framerate_limit-3D" title="Link to this method">
+                <span class="method-name">framerate_limit=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="framerate_limit-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">framerate_limit=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setFramerateLimit</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-icon-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-icon-3D" title="Link to this method">
+                <span class="method-name">icon=</span>
+                <span class="method-args">(image)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="icon-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">icon=</span>(<span class="ruby-identifier">image</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;RenderWindow#icon= requires a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">image</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setIcon</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixelsPtr</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Replace the window’s title-bar / taskbar icon with the pixels from the given <a href="Image.html"><code>SFML::Image</code></a>. The OS scales it as needed; 32×32 RGBA is the typical sweet spot.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-joystick_threshold-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-joystick_threshold-3D" title="Link to this method">
+                <span class="method-name">joystick_threshold=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="joystick_threshold-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">joystick_threshold=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setJoystickThreshold</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-key_repeat_enabled-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-key_repeat_enabled-3D" title="Link to this method">
+                <span class="method-name">key_repeat_enabled=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="key_repeat_enabled-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_repeat_enabled=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setKeyRepeatEnabled</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-maximum_size-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-maximum_size-3D" title="Link to this method">
+                <span class="method-name">maximum_size=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="maximum_size-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">maximum_size=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setMaximumSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-minimum_size-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-minimum_size-3D" title="Link to this method">
+                <span class="method-name">minimum_size=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="minimum_size-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">minimum_size=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setMinimumSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Constrain user-driven resizes. Accepts a [w, h] Array, a <a href="Vector2.html"><code>Vector2</code></a>, or nil to clear the limit. When set, the OS won’t let the user drag the window smaller (or larger) than this — programmatic <code>size=</code> is not affected.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-native_handle" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-native_handle" title="Link to this method">
+                <span class="method-name">native_handle</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="native_handle-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>OS-specific native handle for the underlying window — <code>HWND</code> on Windows, <code>NSView*</code> on macOS, X11 <a href="Window.html"><code>Window</code></a> xid on Linux.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-open-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-open-3F" title="Link to this method">
+                <span class="method-name">open?</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="open-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">open?</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_isOpen</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-parse_args" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-parse_args" title="Link to this method">
+                <span class="method-name">parse_args</span>
+                <span class="method-args">(args)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="parse_args-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-comment"># (video_mode, title)</span>
+    [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-comment"># (width, height, title)</span>
+    [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+          <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-poll_event" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-poll_event" title="Link to this method">
+                <span class="method-name">poll_event</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="poll_event-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">poll_event</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_pollEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Returns the next pending <a href="Event.html"><code>Event</code></a> or nil if the queue is empty.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-pop_gl_states" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-pop_gl_states" title="Link to this method">
+                <span class="method-name">pop_gl_states</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_popGLStates(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="pop_gl_states-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 237</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+    <span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+    <span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+    <span class="ruby-comment"># 60fps — wake on input.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+      <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+      <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+    <span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+    <span class="ruby-comment"># window&#39;s pixel size.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+      <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+    <span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+    <span class="ruby-comment"># are clipped before rendering.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+      <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+    <span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+    <span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+    <span class="ruby-comment"># Win32, NSView).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+      <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+      <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+      <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+      <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+        <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+      <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+      <span class="ruby-identifier">win</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+    <span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+    <span class="ruby-comment"># any drawing.</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment">#   window.run do |dt, events|</span>
+    <span class="ruby-comment">#     events.each { |e| ... }</span>
+    <span class="ruby-comment">#     window.clear(...)</span>
+    <span class="ruby-comment">#     window.draw(...)</span>
+    <span class="ruby-comment">#   end</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+      <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+        <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+        <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+        <span class="ruby-identifier">display</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+    <span class="ruby-identifier">private</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+        <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+        <span class="ruby-comment"># (video_mode, title)</span>
+        [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+        <span class="ruby-comment"># (width, height, title)</span>
+        [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+              <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+              <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-position" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-position" title="Link to this method">
+                <span class="method-name">position</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="position-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getPosition</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Top-left corner in desktop coordinates.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-position-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-position-3D" title="Link to this method">
+                <span class="method-name">position=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="position-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setPosition</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-push_gl_states" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-push_gl_states" title="Link to this method">
+                <span class="method-name">push_gl_states</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_pushGLStates(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="push_gl_states-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 236</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+  <span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+  <span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+  <span class="ruby-comment"># 60fps — wake on input.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+    <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+    <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+  <span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+  <span class="ruby-comment"># window&#39;s pixel size.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+  <span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+  <span class="ruby-comment"># are clipped before rendering.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+  <span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+  <span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+  <span class="ruby-comment"># Win32, NSView).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+    <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+      <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+    <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+    <span class="ruby-identifier">win</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+  <span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+  <span class="ruby-comment"># any drawing.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#   window.run do |dt, events|</span>
+  <span class="ruby-comment">#     events.each { |e| ... }</span>
+  <span class="ruby-comment">#     window.clear(...)</span>
+  <span class="ruby-comment">#     window.draw(...)</span>
+  <span class="ruby-comment">#   end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+    <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+      <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+      <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+      <span class="ruby-identifier">display</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+      <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+      <span class="ruby-comment"># (video_mode, title)</span>
+      [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+      <span class="ruby-comment"># (width, height, title)</span>
+      [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+            <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+            <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-request_focus" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-request_focus" title="Link to this method">
+                <span class="method-name">request_focus</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_requestFocus(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="request_focus-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_focus</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_requestFocus</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># ---- OS-window state ----</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visible=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setVisible</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_repeat_enabled=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setKeyRepeatEnabled</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">joystick_threshold=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setJoystickThreshold</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Top-left corner in desktop coordinates.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getPosition</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setPosition</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># `true` if the framebuffer is sRGB-capable (i.e. the GL</span>
+<span class="ruby-comment"># context was created with the sRGB attribute and the driver</span>
+<span class="ruby-comment"># honoured it).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># ---- GL interop ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When mixing raw OpenGL calls with SFML rendering, surround</span>
+<span class="ruby-comment"># the OpenGL block with `push_gl_states` / `pop_gl_states` so</span>
+<span class="ruby-comment"># SFML&#39;s internal state survives. `reset_gl_states` is a</span>
+<span class="ruby-comment"># heavier &quot;throw away whatever&#39;s been changed&quot; reset.</span>
+<span class="ruby-comment"># `active=` toggles the GL context&#39;s activation on the</span>
+<span class="ruby-comment"># current thread — the only way to use SFML rendering from a</span>
+<span class="ruby-comment"># non-main thread.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+<span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+<span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+<span class="ruby-comment"># 60fps — wake on input.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+<span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+<span class="ruby-comment"># window&#39;s pixel size.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+<span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+<span class="ruby-comment"># are clipped before rendering.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+<span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+<span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+<span class="ruby-comment"># Win32, NSView).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+  <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+    <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">win</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+<span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+<span class="ruby-comment"># any drawing.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   window.run do |dt, events|</span>
+<span class="ruby-comment">#     events.each { |e| ... }</span>
+<span class="ruby-comment">#     window.clear(...)</span>
+<span class="ruby-comment">#     window.draw(...)</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+    <span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+    <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-comment"># (video_mode, title)</span>
+    [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-comment"># (width, height, title)</span>
+    [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+          <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+  <span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-reset_gl_states" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-reset_gl_states" title="Link to this method">
+                <span class="method-name">reset_gl_states</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_resetGLStates(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="reset_gl_states-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 238</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+  <span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+  <span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+  <span class="ruby-comment"># 60fps — wake on input.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+    <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+    <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+  <span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+  <span class="ruby-comment"># window&#39;s pixel size.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+  <span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+  <span class="ruby-comment"># are clipped before rendering.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+    <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+  <span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+  <span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+  <span class="ruby-comment"># Win32, NSView).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+    <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+      <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+    <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+    <span class="ruby-identifier">win</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+  <span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+  <span class="ruby-comment"># any drawing.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#   window.run do |dt, events|</span>
+  <span class="ruby-comment">#     events.each { |e| ... }</span>
+  <span class="ruby-comment">#     window.clear(...)</span>
+  <span class="ruby-comment">#     window.draw(...)</span>
+  <span class="ruby-comment">#   end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+    <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+      <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+      <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+      <span class="ruby-identifier">display</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+      <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+      <span class="ruby-comment"># (video_mode, title)</span>
+      [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+      <span class="ruby-comment"># (width, height, title)</span>
+      [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+            <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+            <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-run" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-run" title="Link to this method">
+                <span class="method-name">run</span>
+                <span class="method-args">() { |dt, events| ... }</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="run-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+    <span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Convenience driver loop. Yields the per-frame delta (<a href="Time.html"><code>SFML::Time</code></a>) and auto-pumps events + display. The block is responsible for <a href="Graphics/RenderTarget.html#method-i-clear"><code>clear</code></a> and any drawing.</p>
+
+<p>window.run do |dt, events| events.each { |e| … } window.clear(…) window.draw(…) end</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-scissor" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-scissor" title="Link to this method">
+                <span class="method-name">scissor</span>
+                <span class="method-args">(view = self.view)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="scissor-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The pixel-space scissor rect — same idea as <code>viewport</code> but for the view’s <code>scissor</code> property. Pixels outside this rect are clipped before rendering.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-screenshot" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-screenshot" title="Link to this method">
+                <span class="method-name">screenshot</span>
+                <span class="method-args">(path, format: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="screenshot-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">screenshot</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value">format:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">capture_image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Capture the current back-buffer to disk. The format is inferred from the file extension (png / jpg / bmp / tga supported by CSFML’s stb_image-based saver). Returns the path.</p>
+
+<p>window.screenshot(“screenshot.png”)</p>
+
+<p><code>format:</code> lets you save under a different name than the extension. For an in-memory copy, use <a href="RenderWindow.html#method-i-capture_image"><code>capture_image</code></a> instead.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-size" title="Link to this method">
+                <span class="method-name">size</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getSize</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-srgb-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-srgb-3F" title="Link to this method">
+                <span class="method-name">srgb?</span>
+                <span class="method-args">(= C::Graphics.sfRenderWindow_isSrgb(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="srgb-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># ---- GL interop ----</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># When mixing raw OpenGL calls with SFML rendering, surround</span>
+<span class="ruby-comment"># the OpenGL block with `push_gl_states` / `pop_gl_states` so</span>
+<span class="ruby-comment"># SFML&#39;s internal state survives. `reset_gl_states` is a</span>
+<span class="ruby-comment"># heavier &quot;throw away whatever&#39;s been changed&quot; reset.</span>
+<span class="ruby-comment"># `active=` toggles the GL context&#39;s activation on the</span>
+<span class="ruby-comment"># current thread — the only way to use SFML rendering from a</span>
+<span class="ruby-comment"># non-main thread.</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Block until an event arrives or `timeout` (a SFML::Time)</span>
+<span class="ruby-comment"># elapses. Returns the next pending Event or nil on timeout.</span>
+<span class="ruby-comment"># Useful for low-power apps that don&#39;t need to redraw at</span>
+<span class="ruby-comment"># 60fps — wake on input.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space rect a `view` projects onto inside this</span>
+<span class="ruby-comment"># window. Combines the view&#39;s normalised viewport with the</span>
+<span class="ruby-comment"># window&#39;s pixel size.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The pixel-space scissor rect — same idea as `viewport` but</span>
+<span class="ruby-comment"># for the view&#39;s `scissor` property. Pixels outside this rect</span>
+<span class="ruby-comment"># are clipped before rendering.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Wrap an existing OS-level window. `handle` is a platform native</span>
+<span class="ruby-comment"># handle (Integer address or FFI::Pointer). Useful for embedding</span>
+<span class="ruby-comment"># the renderer inside another framework&#39;s window (Qt, Gtk, raw</span>
+<span class="ruby-comment"># Win32, NSView).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_handle</span>(<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:void</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">handle</span>))
+  <span class="ruby-identifier">raw</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_createFromHandle</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WindowError</span>, <span class="ruby-string">&quot;sfRenderWindow_createFromHandle returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">win</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
+    <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfRenderWindow_destroy</span>)))
+  <span class="ruby-identifier">win</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@event_buffer</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">win</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Convenience driver loop. Yields the per-frame delta (SFML::Time) and</span>
+<span class="ruby-comment"># auto-pumps events + display. The block is responsible for #clear and</span>
+<span class="ruby-comment"># any drawing.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   window.run do |dt, events|</span>
+<span class="ruby-comment">#     events.each { |e| ... }</span>
+<span class="ruby-comment">#     window.clear(...)</span>
+<span class="ruby-comment">#     window.draw(...)</span>
+<span class="ruby-comment">#   end</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
+  <span class="ruby-identifier">clock</span> = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">open?</span>
+    <span class="ruby-identifier">dt</span> = <span class="ruby-identifier">clock</span>.<span class="ruby-identifier">restart</span>
+    <span class="ruby-identifier">events</span> = <span class="ruby-identifier">each_event</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dt</span>, <span class="ruby-identifier">events</span>
+    <span class="ruby-identifier">display</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_resolve_context_settings</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ContextSettings</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;context: must be a SFML::ContextSettings&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:context</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>]
+    <span class="ruby-constant">ContextSettings</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">antialiasing:</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:antialiasing</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u_or_nil</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_args</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-comment"># (video_mode, title)</span>
+    [<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-comment"># (width, height, title)</span>
+    [<span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>]), <span class="ruby-identifier">args</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">&quot;RenderWindow.new takes either (video_mode, title) or &quot;</span> \
+          <span class="ruby-node">&quot;(width, height, title), got #{args.length} positional arg(s)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><code>true</code> if the framebuffer is sRGB-capable (i.e. the GL context was created with the sRGB attribute and the driver honoured it).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-title-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-title-3D" title="Link to this method">
+                <span class="method-name">title=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="title-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">title=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setTitle</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-viewport" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-viewport" title="Link to this method">
+                <span class="method-name">viewport</span>
+                <span class="method-args">(view = self.view)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="viewport-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The pixel-space rect a <code>view</code> projects onto inside this window. Combines the view’s normalised viewport with the window’s pixel size.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-visible-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-visible-3D" title="Link to this method">
+                <span class="method-name">visible=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="visible-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visible=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setVisible</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>—- OS-window state —-</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-vsync-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-vsync-3D" title="Link to this method">
+                <span class="method-name">vsync=</span>
+                <span class="method-args">(enabled)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="vsync-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">vsync=</span>(<span class="ruby-identifier">enabled</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_setVerticalSyncEnabled</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">enabled</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-wait_event" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-wait_event" title="Link to this method">
+                <span class="method-name">wait_event</span>
+                <span class="method-args">(timeout: nil)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="wait_event-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_window.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wait_event</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">timeout</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderWindow_waitEvent</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-ivar">@event_buffer</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-constant">Event</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-ivar">@event_buffer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Block until an event arrives or <code>timeout</code> (a <a href="Time.html"><code>SFML::Time</code></a>) elapses. Returns the next pending <a href="Event.html"><code>Event</code></a> or nil on timeout. Useful for low-power apps that don’t need to redraw at 60fps — wake on input.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

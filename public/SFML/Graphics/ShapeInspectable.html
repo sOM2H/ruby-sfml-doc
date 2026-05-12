@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,module,SFML::Graphics::ShapeInspectable"
+  >
+
+    <meta
+      name="description"
+      content="module SFML::Graphics::ShapeInspectable: texture binding, geometry introspection, transform readout, dup. Transformable)."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="texture binding, geometry introspection, transform readout, dup. Transformable).">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="texture binding, geometry introspection, transform readout, dup. Transformable).">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script
+  src="../../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="module has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-clone">clone</a></li>
+
+        <li ><a href="#method-i-dup">dup</a></li>
+
+        <li ><a href="#method-i-geometric_center">geometric_center</a></li>
+
+        <li ><a href="#method-i-global_bounds">global_bounds</a></li>
+
+        <li ><a href="#method-i-inverse_transform">inverse_transform</a></li>
+
+        <li ><a href="#method-i-local_bounds">local_bounds</a></li>
+
+        <li ><a href="#method-i-point">point</a></li>
+
+        <li ><a href="#method-i-set_texture">set_texture</a></li>
+
+        <li ><a href="#method-i-texture">texture</a></li>
+
+        <li ><a href="#method-i-texture-3D">texture=</a></li>
+
+        <li ><a href="#method-i-texture_rect">texture_rect</a></li>
+
+        <li ><a href="#method-i-texture_rect-3D">texture_rect=</a></li>
+
+        <li ><a href="#method-i-transform">transform</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Animation.html">Animation</a></code></li><li><code><a href="../../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../../SFML/Audio.html">Audio</a></code></li><li><code><a href="../../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../../SFML/Clock.html">Clock</a></code></li><li><code><a href="../../SFML/Color.html">Color</a></code></li><li><code><a href="../../SFML/Context.html">Context</a></code></li><li><code><a href="../../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../../SFML/Error.html">Error</a></code></li><li><code><a href="../../SFML/Event.html">Event</a></code></li><li><code><a href="../../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../../SFML/Image.html">Image</a></code></li><li><code><a href="../../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../../SFML/Listener.html">Listener</a></code></li><li><code><a href="../../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../../SFML/Rect.html">Rect</a></code></li><li><code><a href="../../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../../SFML/Scene.html">Scene</a></code></li><li><code><a href="../../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../../SFML/Shader.html">Shader</a></code></li><li><code><a href="../../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../../SFML/Shape.html">Shape</a></code></li><li><code><a href="../../SFML/Sound.html">Sound</a></code></li><li><code><a href="../../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../../SFML/Text.html">Text</a></code></li><li><code><a href="../../SFML/Texture.html">Texture</a></code></li><li><code><a href="../../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../../SFML/Time.html">Time</a></code></li><li><code><a href="../../SFML/Touch.html">Touch</a></code></li><li><code><a href="../../SFML/Transform.html">Transform</a></code></li><li><code><a href="../../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../../SFML/View.html">View</a></code></li><li><code><a href="../../SFML/Window.html">Window</a></code></li><li><code><a href="../../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="module-sfml-graphics-shapeinspectable">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <a href="../../SFML/Graphics.html">Graphics</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>ShapeInspectable</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="module-SFML::Graphics::ShapeInspectable" class="legacy-anchor"></span>
+  <h1 id="module-sfml-graphics-shapeinspectable" class="anchor-link module">
+    module SFML::Graphics::ShapeInspectable
+  </h1>
+
+  <section class="description">
+    
+<p>Methods shared across <a href="../CircleShape.html"><code>CircleShape</code></a> / <a href="../RectangleShape.html"><code>RectangleShape</code></a> / ConvexShape: texture binding, geometry introspection, transform readout, dup. Including class must define CSFML_PREFIX (Symbol) and hold the FFI handle in @handle (same contract as <a href="Transformable.html"><code>Graphics::Transformable</code></a>).</p>
+
+<p><a href="../Texture.html"><code>Texture</code></a> binding follows the <a href="../Sprite.html"><code>Sprite</code></a> pattern: keep a Ruby reference to the bound texture in @texture so the GC doesn’t collect the GPU resource while the shape still draws with it.</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-clone" class="method-detail anchor-link method-alias">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-clone" title="Link to this method">
+                <span class="method-name">clone</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+        <div class="aliases">
+          Alias for: <a href="ShapeInspectable.html#method-i-dup">dup</a>
+        </div>
+
+      </div>
+
+
+      <div id="method-i-dup" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-dup" title="Link to this method">
+                <span class="method-name">dup</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="dup-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:copy</span>, <span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-node">&quot;#{self.class.name}#dup returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">destroy_fn</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:&quot;#{self.class::CSFML_PREFIX}_destroy&quot;</span>)
+  <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">destroy_fn</span>))
+  <span class="ruby-identifier">copy</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@texture</span>, <span class="ruby-ivar">@texture</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@texture</span>)
+  <span class="ruby-identifier">copy</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Deep copy. <a href="../Texture.html"><code>Texture</code></a> binding is shared (textures are GPU objects, cheap to alias); transform/colour state is independent.</p>
+
+
+        </div>
+
+
+
+        <div class="aliases">
+          Also aliased as: <a href="ShapeInspectable.html#method-i-clone">clone</a>
+        </div>
+
+
+
+      </div>
+
+
+      <div id="method-i-geometric_center" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-geometric_center" title="Link to this method">
+                <span class="method-name">geometric_center</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="geometric_center-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">geometric_center</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getGeometricCenter</span>, <span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Centroid of the polygon’s vertex list (CSFML 3.0+).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-global_bounds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-global_bounds" title="Link to this method">
+                <span class="method-name">global_bounds</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="global_bounds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getGlobalBounds</span>, <span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>AABB after the shape’s full transform — the world-space rect the renderer uses for culling and hit-tests.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-inverse_transform" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-inverse_transform" title="Link to this method">
+                <span class="method-name">inverse_transform</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="inverse_transform-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
+  <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getInverseTransform</span>, <span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-local_bounds" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-local_bounds" title="Link to this method">
+                <span class="method-name">local_bounds</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="local_bounds-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getLocalBounds</span>, <span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>AABB before transform — the rectangle the geometry would occupy if the shape were drawn at the origin with no rotation/scale.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-point" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-point" title="Link to this method">
+                <span class="method-name">point</span>
+                <span class="method-args">(index)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="point-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">point</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getPoint</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Single polygon vertex by index. The full list is exposed by the subclass-specific points method on <a href="../ConvexShape.html"><code>ConvexShape</code></a>; <a href="../CircleShape.html"><code>CircleShape</code></a> synthesises N points from its radius+point_count.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-set_texture" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-set_texture" title="Link to this method">
+                <span class="method-name">set_texture</span>
+                <span class="method-args">(tex, reset_rect: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="set_texture-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_texture</span>(<span class="ruby-identifier">tex</span>, <span class="ruby-value">reset_rect:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Texture or nil&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setTexture</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">tex</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">handle</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">reset_rect</span>)
+  <span class="ruby-ivar">@texture</span> = <span class="ruby-identifier">tex</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><code>reset_rect: true</code> snaps the texture-rect to the full texture size, which is usually what you want when binding a fresh texture.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-texture" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-texture" title="Link to this method">
+                <span class="method-name">texture</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="texture-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getTexture</span>, <span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-constant">Texture</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_borrow</span>, <span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-texture-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-texture-3D" title="Link to this method">
+                <span class="method-name">texture=</span>
+                <span class="method-args">(tex)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="texture-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture=</span>(<span class="ruby-identifier">tex</span>)
+  <span class="ruby-identifier">set_texture</span>(<span class="ruby-identifier">tex</span>, <span class="ruby-value">reset_rect:</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-texture_rect" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-texture_rect" title="Link to this method">
+                <span class="method-name">texture_rect</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="texture_rect-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect</span>
+  <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getTextureRect</span>, <span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-texture_rect-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-texture_rect-3D" title="Link to this method">
+                <span class="method-name">texture_rect=</span>
+                <span class="method-args">(rect)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="texture_rect-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect=</span>(<span class="ruby-identifier">rect</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;texture_rect= requires a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
+  <span class="ruby-identifier">native</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">rect</span>.<span class="ruby-identifier">x</span>)
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">rect</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">rect</span>.<span class="ruby-identifier">width</span>)
+  <span class="ruby-identifier">native</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>]     = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">rect</span>.<span class="ruby-identifier">height</span>)
+  <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setTextureRect</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">native</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-transform" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-transform" title="Link to this method">
+                <span class="method-name">transform</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="transform-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
+  <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getTransform</span>, <span class="ruby-ivar">@handle</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

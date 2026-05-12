@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>class SFML::Texture - ruby-sfml 3.0.0.6</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,class,SFML::Texture"
+  >
+
+    <meta
+      name="description"
+      content="class SFML::Texture: A 2D image stored on the GPU. Used by Sprite (and shapes) to draw textured geometry."
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="class SFML::Texture - ruby-sfml 3.0.0.6">
+
+
+
+    <meta property="og:description" content="A 2D image stored on the GPU. Used by Sprite (and shapes) to draw textured geometry.">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class SFML::Texture - ruby-sfml 3.0.0.6">
+
+
+
+    <meta name="twitter:description" content="A 2D image stored on the GPU. Used by Sprite (and shapes) to draw textured geometry.">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.2.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.2.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.2.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="class has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    ruby-sfml 3.0.0.6
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+  <div id="fileindex-section" class="nav-section">
+    <details class="nav-section-collapsible" >
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg>
+            <use href="#icon-file"></use>
+          </svg>
+        </span>
+
+        <span class="nav-section-title">Pages</span>
+
+        <span class="nav-section-chevron">
+          <svg>
+            <use href="#icon-chevron"></use>
+          </svg>
+        </span>
+      </summary>
+
+      <ul class="nav-list">
+
+
+
+
+
+
+            <li>
+              <a href="../CHANGELOG_md.html">
+                CHANGELOG
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../LICENSE_txt.html">
+                LICENSE
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../README_md.html">
+                README
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="../lib/sfml/assets/fonts/DejaVuSans_LICENSE_txt.html">
+                DejaVuSans.LICENSE
+              </a>
+            </li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  
+
+  
+<div id="parent-class-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-ancestors"></use></svg>
+      </span>
+      <span class="nav-section-title">Ancestors</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+    <ul><li>Object</li></ul>
+  </details>
+</div>
+
+
+  
+
+  
+
+  
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-class-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Class Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-c-_borrow">_borrow</a></li>
+
+        <li ><a href="#method-c-create">create</a></li>
+
+        <li ><a href="#method-c-from_image">from_image</a></li>
+
+        <li ><a href="#method-c-from_memory">from_memory</a></li>
+
+        <li ><a href="#method-c-from_stream">from_stream</a></li>
+
+        <li ><a href="#method-c-load">load</a></li>
+
+        <li ><a href="#method-c-maximum_size">maximum_size</a></li>
+
+        <li ><a href="#method-c-unbind">unbind</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-_take_ownership">_take_ownership</a></li>
+
+        <li ><a href="#method-i-_vec2u">_vec2u</a></li>
+
+        <li ><a href="#method-i-bind">bind</a></li>
+
+        <li ><a href="#method-i-dup">dup</a></li>
+
+        <li ><a href="#method-i-generate_mipmap">generate_mipmap</a></li>
+
+        <li ><a href="#method-i-native_handle">native_handle</a></li>
+
+        <li ><a href="#method-i-repeated-3D">repeated=</a></li>
+
+        <li ><a href="#method-i-repeated-3F">repeated?</a></li>
+
+        <li ><a href="#method-i-resize">resize</a></li>
+
+        <li ><a href="#method-i-size">size</a></li>
+
+        <li ><a href="#method-i-smooth-3D">smooth=</a></li>
+
+        <li ><a href="#method-i-smooth-3F">smooth?</a></li>
+
+        <li ><a href="#method-i-srgb-3F">srgb?</a></li>
+
+        <li ><a href="#method-i-swap">swap</a></li>
+
+        <li ><a href="#method-i-to_image">to_image</a></li>
+
+        <li ><a href="#method-i-update">update</a></li>
+
+        <li ><a href="#method-i-update_from_render_window">update_from_render_window</a></li>
+
+        <li ><a href="#method-i-update_from_texture">update_from_texture</a></li>
+
+        <li ><a href="#method-i-update_from_window">update_from_window</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details open><summary><code><a href="../SFML.html">SFML</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Animation.html">Animation</a></code></li><li><code><a href="../SFML/App.html">App</a></code></li><li><details><summary><code><a href="../SFML/Assets.html">Assets</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Assets/NotFound.html">NotFound</a></code></li></ul></details></li><li><code><a href="../SFML/Audio.html">Audio</a></code></li><li><code><a href="../SFML/AudioError.html">AudioError</a></code></li><li><code><a href="../SFML/BlendMode.html">BlendMode</a></code></li><li><code><a href="../SFML/CircleShape.html">CircleShape</a></code></li><li><code><a href="../SFML/Clipboard.html">Clipboard</a></code></li><li><code><a href="../SFML/Clock.html">Clock</a></code></li><li><code><a href="../SFML/Color.html">Color</a></code></li><li><code><a href="../SFML/Context.html">Context</a></code></li><li><code><a href="../SFML/ContextSettings.html">ContextSettings</a></code></li><li><code><a href="../SFML/ConvexShape.html">ConvexShape</a></code></li><li><code><a href="../SFML/Cursor.html">Cursor</a></code></li><li><code><a href="../SFML/Error.html">Error</a></code></li><li><code><a href="../SFML/Event.html">Event</a></code></li><li><code><a href="../SFML/Font.html">Font</a></code></li><li><details><summary><code><a href="../SFML/Graphics.html">Graphics</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Graphics/RenderTarget.html">RenderTarget</a></code></li><li><code><a href="../SFML/Graphics/ShapeInspectable.html">ShapeInspectable</a></code></li><li><code><a href="../SFML/Graphics/Transformable.html">Transformable</a></code></li></ul></details></li><li><code><a href="../SFML/GraphicsError.html">GraphicsError</a></code></li><li><code><a href="../SFML/Image.html">Image</a></code></li><li><code><a href="../SFML/InputActions.html">InputActions</a></code></li><li><code><a href="../SFML/InputQueries.html">InputQueries</a></code></li><li><code><a href="../SFML/InputStream.html">InputStream</a></code></li><li><code><a href="../SFML/Joystick.html">Joystick</a></code></li><li><code><a href="../SFML/Keybindings.html">Keybindings</a></code></li><li><code><a href="../SFML/Keyboard.html">Keyboard</a></code></li><li><code><a href="../SFML/Listener.html">Listener</a></code></li><li><code><a href="../SFML/LoadError.html">LoadError</a></code></li><li><code><a href="../SFML/Mouse.html">Mouse</a></code></li><li><code><a href="../SFML/Music.html">Music</a></code></li><li><details><summary><code><a href="../SFML/Network.html">Network</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp.html">Ftp</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response.html">Response</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse.html">DirectoryResponse</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Ftp/Response/DirectoryResponse/ListingResponse.html">ListingResponse</a></code></li></ul></details></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../SFML/Network/Http.html">Http</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SFML/Network/Http/Response.html">Response</a></code></li></ul></details></li><li><code><a href="../SFML/Network/IpAddress.html">IpAddress</a></code></li><li><code><a href="../SFML/Network/Packet.html">Packet</a></code></li><li><code><a href="../SFML/Network/SocketSelector.html">SocketSelector</a></code></li><li><code><a href="../SFML/Network/TcpListener.html">TcpListener</a></code></li><li><code><a href="../SFML/Network/TcpSocket.html">TcpSocket</a></code></li><li><code><a href="../SFML/Network/UdpSocket.html">UdpSocket</a></code></li></ul></details></li><li><code><a href="../SFML/NetworkError.html">NetworkError</a></code></li><li><code><a href="../SFML/ParticleSystem.html">ParticleSystem</a></code></li><li><code><a href="../SFML/Rect.html">Rect</a></code></li><li><code><a href="../SFML/RectangleShape.html">RectangleShape</a></code></li><li><code><a href="../SFML/RenderStates.html">RenderStates</a></code></li><li><code><a href="../SFML/RenderTexture.html">RenderTexture</a></code></li><li><code><a href="../SFML/RenderWindow.html">RenderWindow</a></code></li><li><code><a href="../SFML/Scene.html">Scene</a></code></li><li><code><a href="../SFML/Sensor.html">Sensor</a></code></li><li><code><a href="../SFML/Shader.html">Shader</a></code></li><li><code><a href="../SFML/ShaderError.html">ShaderError</a></code></li><li><code><a href="../SFML/Shape.html">Shape</a></code></li><li><code><a href="../SFML/Sound.html">Sound</a></code></li><li><code><a href="../SFML/SoundBuffer.html">SoundBuffer</a></code></li><li><code><a href="../SFML/SoundBufferRecorder.html">SoundBufferRecorder</a></code></li><li><code><a href="../SFML/SoundCone.html">SoundCone</a></code></li><li><code><a href="../SFML/SoundRecorder.html">SoundRecorder</a></code></li><li><code><a href="../SFML/SoundStream.html">SoundStream</a></code></li><li><code><a href="../SFML/Sprite.html">Sprite</a></code></li><li><code><a href="../SFML/SpriteSheet.html">SpriteSheet</a></code></li><li><code><a href="../SFML/StencilMode.html">StencilMode</a></code></li><li><code><a href="../SFML/Text.html">Text</a></code></li><li><code><a href="../SFML/Texture.html">Texture</a></code></li><li><code><a href="../SFML/TextureAtlas.html">TextureAtlas</a></code></li><li><code><a href="../SFML/Time.html">Time</a></code></li><li><code><a href="../SFML/Touch.html">Touch</a></code></li><li><code><a href="../SFML/Transform.html">Transform</a></code></li><li><code><a href="../SFML/TransformableObject.html">TransformableObject</a></code></li><li><code><a href="../SFML/Vector2.html">Vector2</a></code></li><li><code><a href="../SFML/Vector3.html">Vector3</a></code></li><li><code><a href="../SFML/Vertex.html">Vertex</a></code></li><li><code><a href="../SFML/VertexArray.html">VertexArray</a></code></li><li><code><a href="../SFML/VertexBuffer.html">VertexBuffer</a></code></li><li><code><a href="../SFML/VideoMode.html">VideoMode</a></code></li><li><code><a href="../SFML/View.html">View</a></code></li><li><code><a href="../SFML/Window.html">Window</a></code></li><li><code><a href="../SFML/WindowError.html">WindowError</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="class-sfml-texture">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../SFML.html">SFML</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Texture</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="class-SFML::Texture" class="legacy-anchor"></span>
+  <h1 id="class-sfml-texture" class="anchor-link class">
+    class SFML::Texture
+  </h1>
+
+  <section class="description">
+    
+<p>A 2D image stored on the GPU. Used by <a href="Sprite.html"><code>Sprite</code></a> (and shapes) to draw textured geometry. Build one with .load:</p>
+
+<p>tex = <a href="Texture.html#method-c-load"><code>SFML::Texture.load</code></a>(“assets/hero.png”) tex = <a href="Texture.html#method-c-load"><code>SFML::Texture.load</code></a>(“assets/tile.png”, smooth: true, repeated: true)</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section class="documentation-section anchor-link">
+
+
+
+
+
+    <section class="constants-list">
+      <header>
+        <h3 id="untitled-constants"><a href="#untitled-constants">Constants</a></h3>
+      </header>
+      <dl>
+
+        <dt id="COORDINATE_TYPES">COORDINATE_TYPES</dt>
+
+        <dd>
+
+          <p>Bind this texture to the active OpenGL texture unit. <code>coord</code> is one of <code>:normalized</code> (default — UVs in [0..1]) or <code>:pixels</code> (UVs in [0..size]). Useful when mixing raw OpenGL with <a href="../SFML.html"><code>SFML</code></a> rendering. Pass <code>nil</code> to unbind: <a href="Texture.html#method-c-unbind"><code>SFML::Texture.unbind</code></a>.</p>
+        </dd>
+
+
+      </dl>
+    </section>
+
+
+
+
+
+
+
+
+     <section id="public-class-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-class-untitled-methods"><a href="#public-class-untitled-methods">Public Class Methods</a></h3>
+       </header>
+
+
+      <div id="method-c-_borrow" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-_borrow" title="Link to this method">
+                <span class="method-name">_borrow</span>
+                <span class="method-args">(ptr)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_borrow-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Internal — borrow a CSFML-owned <code>sfTexture*</code> (e.g. one returned by <code>sfFont_getTexture</code>) without registering an auto-destroy hook. The owning object is responsible for outliving any draw call that uses this borrowed handle.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-create" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-create" title="Link to this method">
+                <span class="method-name">create</span>
+                <span class="method-args">(width, height, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="create-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">create</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">srgb</span> <span class="ruby-operator">?</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createSrgb</span>(<span class="ruby-identifier">size</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_create</span>(<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_create returned NULL — out of GPU memory?&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Allocate a blank texture on the GPU at the given size — use <code>update(image)</code> afterwards to upload pixels. Useful when you’ll be filling the texture from a procedurally-generated <a href="Image.html"><code>Image</code></a> or repeatedly streaming pixel data into it.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_image" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_image" title="Link to this method">
+                <span class="method-name">from_image</span>
+                <span class="method-args">(image, smooth: false, repeated: false, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_image-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_image</span>(<span class="ruby-identifier">image</span>, <span class="ruby-value">smooth:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">repeated:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture.from_image needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">image</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">srgb</span> \
+    <span class="ruby-operator">?</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createSrgbFromImage</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-keyword">nil</span>) \
+    <span class="ruby-operator">:</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createFromImage</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfTexture_createFromImage returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">smooth</span>   = <span class="ruby-identifier">smooth</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">repeated</span> = <span class="ruby-identifier">repeated</span>
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Upload a CPU-side <a href="Image.html"><code>SFML::Image</code></a> to the GPU as a new <a href="Texture.html"><code>Texture</code></a>. Keeps the RGBA byte order and dimensions of the source image.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_memory" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_memory" title="Link to this method">
+                <span class="method-name">from_memory</span>
+                <span class="method-args">(bytes, smooth: false, repeated: false, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_memory-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_memory</span>(<span class="ruby-identifier">bytes</span>, <span class="ruby-value">smooth:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">repeated:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;expected a String, got #{bytes.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+
+  <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:uint8</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_bytes</span>(<span class="ruby-identifier">bytes</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">srgb</span> \
+    <span class="ruby-operator">?</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createSrgbFromMemory</span>(<span class="ruby-identifier">buf</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>, <span class="ruby-keyword">nil</span>) \
+    <span class="ruby-operator">:</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createFromMemory</span>(<span class="ruby-identifier">buf</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfTexture_createFromMemory returned NULL — unsupported format?&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">smooth</span>   = <span class="ruby-identifier">smooth</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">repeated</span> = <span class="ruby-identifier">repeated</span>
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Decode + upload a Ruby String of bytes (PNG, JPG, BMP, …) as a texture. Useful for embedded assets / network responses that bypass the disk.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-from_stream" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-from_stream" title="Link to this method">
+                <span class="method-name">from_stream</span>
+                <span class="method-args">(io, smooth: false, repeated: false, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="from_stream-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-identifier">io</span>, <span class="ruby-value">smooth:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">repeated:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">stream</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">srgb</span> \
+    <span class="ruby-operator">?</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createSrgbFromStream</span>(<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">to_ptr</span>, <span class="ruby-keyword">nil</span>) \
+    <span class="ruby-operator">:</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createFromStream</span>(<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">to_ptr</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;sfTexture_createFromStream returned NULL — unsupported format?&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">smooth</span>   = <span class="ruby-identifier">smooth</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">repeated</span> = <span class="ruby-identifier">repeated</span>
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Load a texture from any Ruby IO-like object (File, StringIO, or anything answering read/seek/pos/size). Useful for assets inside a zip archive, served over a socket, or generated on the fly.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-load" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-load" title="Link to this method">
+                <span class="method-name">load</span>
+                <span class="method-args">(path, smooth: false, repeated: false, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="load-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value">smooth:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">repeated:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">srgb</span> \
+    <span class="ruby-operator">?</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createSrgbFromFile</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>) \
+    <span class="ruby-operator">:</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_createFromFile</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not load texture from #{path.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">smooth</span>   = <span class="ruby-identifier">smooth</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">repeated</span> = <span class="ruby-identifier">repeated</span>
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Load a texture from a file on disk.</p>
+
+<p>Pass <code>srgb: true</code> if the source pixels are in sRGB-encoded gamma space (most photo/PNG art assets) and you want the GPU to gamma-decode on sample so blending happens in linear space. Pair with <code>RenderWindow#new(..., srgb_capable: true)</code> and your final framebuffer will gamma-encode on present.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-maximum_size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-maximum_size" title="Link to this method">
+                <span class="method-name">maximum_size</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="maximum_size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Maximum texture dimension the driver will allocate. Tied to the GL state, so it’s a class-level call (no instance).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-c-unbind" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-c-unbind" title="Link to this method">
+                <span class="method-name">unbind</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="unbind-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-untitled-methods"><a href="#public-instance-untitled-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-_take_ownership" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_take_ownership" title="Link to this method">
+                <span class="method-name">_take_ownership</span>
+                <span class="method-args">(ptr)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_take_ownership-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-_vec2u" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-_vec2u" title="Link to this method">
+                <span class="method-name">_vec2u</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="_vec2u-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-bind" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-bind" title="Link to this method">
+                <span class="method-name">bind</span>
+                <span class="method-args">(coord: :normalized)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="bind-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-dup" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-dup" title="Link to this method">
+                <span class="method-name">dup</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="dup-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Deep copy. The returned texture has its own GPU memory.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-generate_mipmap" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-generate_mipmap" title="Link to this method">
+                <span class="method-name">generate_mipmap</span>
+                <span class="method-args">(= C::Graphics.sfTexture_generateMipmap(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="generate_mipmap-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 140</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-comment"># Bind this texture to the active OpenGL texture unit. `coord`</span>
+    <span class="ruby-comment"># is one of `:normalized` (default — UVs in [0..1]) or</span>
+    <span class="ruby-comment"># `:pixels` (UVs in [0..size]). Useful when mixing raw</span>
+    <span class="ruby-comment"># OpenGL with SFML rendering. Pass `nil` to unbind:</span>
+    <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
+    <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Maximum texture dimension the driver will allocate. Tied to</span>
+    <span class="ruby-comment"># the GL state, so it&#39;s a class-level call (no instance).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Deep copy. The returned texture has its own GPU memory.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+      <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+      <span class="ruby-identifier">tex</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+      <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+      <span class="ruby-identifier">tex</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+    <span class="ruby-comment"># Reallocate this texture&#39;s GPU memory at a new size. Returns</span>
+    <span class="ruby-comment"># `false` if the GPU rejects the size (driver limit / OOM);</span>
+    <span class="ruby-comment"># the texture&#39;s contents become undefined on success.</span>
+    <span class="ruby-comment"># Pass `srgb: true` to re-allocate as an sRGB-encoded texture.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">srgb</span>
+        <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resizeSrgb</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Atomically swap the GPU memory between two textures —</span>
+    <span class="ruby-comment"># cheaper than `dup` + reassign for double-buffer-style</span>
+    <span class="ruby-comment"># patterns (paint-buffer ⇄ visible-buffer).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># The OpenGL texture-object name (a `glGenTextures` ID).</span>
+    <span class="ruby-comment"># Useful when feeding this texture into raw GL calls.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+    <span class="ruby-comment"># Upload the contents of another texture into this one at</span>
+    <span class="ruby-comment"># `offset` (`[x, y]`). Both textures must remain alive for the</span>
+    <span class="ruby-comment"># duration of the call.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Read the back-buffer of a `RenderWindow` into this texture</span>
+    <span class="ruby-comment"># at `offset`. Useful for capturing the rendered scene</span>
+    <span class="ruby-comment"># without re-drawing into a separate `RenderTexture`.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Same as `update_from_render_window` for the bare `Window`</span>
+    <span class="ruby-comment"># (when you&#39;re managing GL yourself).</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+    <span class="ruby-comment"># Internal — borrow a CSFML-owned `sfTexture*` (e.g. one</span>
+    <span class="ruby-comment"># returned by `sfFont_getTexture`) without registering an</span>
+    <span class="ruby-comment"># auto-destroy hook. The owning object is responsible for</span>
+    <span class="ruby-comment"># outliving any draw call that uses this borrowed handle.</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+      <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+      <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+      <span class="ruby-identifier">tex</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">private</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+      <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+      <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Generate mipmaps for this texture. Returns <code>true</code> if the GPU honoured it. Required for the <code>_MIPMAP_*</code> minification filters; otherwise downscaled samples alias.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-native_handle" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-native_handle" title="Link to this method">
+                <span class="method-name">native_handle</span>
+                <span class="method-args">(= C::Graphics.sfTexture_getNativeHandle(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="native_handle-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 200</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Upload the contents of another texture into this one at</span>
+  <span class="ruby-comment"># `offset` (`[x, y]`). Both textures must remain alive for the</span>
+  <span class="ruby-comment"># duration of the call.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Read the back-buffer of a `RenderWindow` into this texture</span>
+  <span class="ruby-comment"># at `offset`. Useful for capturing the rendered scene</span>
+  <span class="ruby-comment"># without re-drawing into a separate `RenderTexture`.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Same as `update_from_render_window` for the bare `Window`</span>
+  <span class="ruby-comment"># (when you&#39;re managing GL yourself).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-comment"># Internal — borrow a CSFML-owned `sfTexture*` (e.g. one</span>
+  <span class="ruby-comment"># returned by `sfFont_getTexture`) without registering an</span>
+  <span class="ruby-comment"># auto-destroy hook. The owning object is responsible for</span>
+  <span class="ruby-comment"># outliving any draw call that uses this borrowed handle.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">tex</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>The OpenGL texture-object name (a <code>glGenTextures</code> ID). Useful when feeding this texture into raw GL calls.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-repeated-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-repeated-3D" title="Link to this method">
+                <span class="method-name">repeated=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="repeated-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-repeated-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-repeated-3F" title="Link to this method">
+                <span class="method-name">repeated?</span>
+                <span class="method-args">(= C::Graphics.sfTexture_isRepeated(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="repeated-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isRepeated</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Generate mipmaps for this texture. Returns `true` if the</span>
+<span class="ruby-comment"># GPU honoured it. Required for the `_MIPMAP_*` minification</span>
+<span class="ruby-comment"># filters; otherwise downscaled samples alias.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Bind this texture to the active OpenGL texture unit. `coord`</span>
+<span class="ruby-comment"># is one of `:normalized` (default — UVs in [0..1]) or</span>
+<span class="ruby-comment"># `:pixels` (UVs in [0..size]). Useful when mixing raw</span>
+<span class="ruby-comment"># OpenGL with SFML rendering. Pass `nil` to unbind:</span>
+<span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
+<span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Maximum texture dimension the driver will allocate. Tied to</span>
+<span class="ruby-comment"># the GL state, so it&#39;s a class-level call (no instance).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Deep copy. The returned texture has its own GPU memory.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+<span class="ruby-comment"># Reallocate this texture&#39;s GPU memory at a new size. Returns</span>
+<span class="ruby-comment"># `false` if the GPU rejects the size (driver limit / OOM);</span>
+<span class="ruby-comment"># the texture&#39;s contents become undefined on success.</span>
+<span class="ruby-comment"># Pass `srgb: true` to re-allocate as an sRGB-encoded texture.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">srgb</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resizeSrgb</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Atomically swap the GPU memory between two textures —</span>
+<span class="ruby-comment"># cheaper than `dup` + reassign for double-buffer-style</span>
+<span class="ruby-comment"># patterns (paint-buffer ⇄ visible-buffer).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The OpenGL texture-object name (a `glGenTextures` ID).</span>
+<span class="ruby-comment"># Useful when feeding this texture into raw GL calls.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Upload the contents of another texture into this one at</span>
+<span class="ruby-comment"># `offset` (`[x, y]`). Both textures must remain alive for the</span>
+<span class="ruby-comment"># duration of the call.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Read the back-buffer of a `RenderWindow` into this texture</span>
+<span class="ruby-comment"># at `offset`. Useful for capturing the rendered scene</span>
+<span class="ruby-comment"># without re-drawing into a separate `RenderTexture`.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Same as `update_from_render_window` for the bare `Window`</span>
+<span class="ruby-comment"># (when you&#39;re managing GL yourself).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+<span class="ruby-comment"># Internal — borrow a CSFML-owned `sfTexture*` (e.g. one</span>
+<span class="ruby-comment"># returned by `sfFont_getTexture`) without registering an</span>
+<span class="ruby-comment"># auto-destroy hook. The owning object is responsible for</span>
+<span class="ruby-comment"># outliving any draw call that uses this borrowed handle.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-resize" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-resize" title="Link to this method">
+                <span class="method-name">resize</span>
+                <span class="method-args">(width, height, srgb: false)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="resize-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">srgb</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resizeSrgb</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Reallocate this texture’s GPU memory at a new size. Returns <code>false</code> if the GPU rejects the size (driver limit / OOM); the texture’s contents become undefined on success. Pass <code>srgb: true</code> to re-allocate as an sRGB-encoded texture.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-size" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-size" title="Link to this method">
+                <span class="method-name">size</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="size-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getSize</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-smooth-3D" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-smooth-3D" title="Link to this method">
+                <span class="method-name">smooth=</span>
+                <span class="method-args">(value)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="smooth-3D-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-smooth-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-smooth-3F" title="Link to this method">
+                <span class="method-name">smooth?</span>
+                <span class="method-args">(= C::Graphics.sfTexture_isSmooth(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="smooth-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSmooth</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isRepeated</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Generate mipmaps for this texture. Returns `true` if the</span>
+<span class="ruby-comment"># GPU honoured it. Required for the `_MIPMAP_*` minification</span>
+<span class="ruby-comment"># filters; otherwise downscaled samples alias.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Bind this texture to the active OpenGL texture unit. `coord`</span>
+<span class="ruby-comment"># is one of `:normalized` (default — UVs in [0..1]) or</span>
+<span class="ruby-comment"># `:pixels` (UVs in [0..size]). Useful when mixing raw</span>
+<span class="ruby-comment"># OpenGL with SFML rendering. Pass `nil` to unbind:</span>
+<span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
+<span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Maximum texture dimension the driver will allocate. Tied to</span>
+<span class="ruby-comment"># the GL state, so it&#39;s a class-level call (no instance).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Deep copy. The returned texture has its own GPU memory.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+  <span class="ruby-identifier">tex</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+<span class="ruby-comment"># Reallocate this texture&#39;s GPU memory at a new size. Returns</span>
+<span class="ruby-comment"># `false` if the GPU rejects the size (driver limit / OOM);</span>
+<span class="ruby-comment"># the texture&#39;s contents become undefined on success.</span>
+<span class="ruby-comment"># Pass `srgb: true` to re-allocate as an sRGB-encoded texture.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">srgb</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resizeSrgb</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Atomically swap the GPU memory between two textures —</span>
+<span class="ruby-comment"># cheaper than `dup` + reassign for double-buffer-style</span>
+<span class="ruby-comment"># patterns (paint-buffer ⇄ visible-buffer).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># The OpenGL texture-object name (a `glGenTextures` ID).</span>
+<span class="ruby-comment"># Useful when feeding this texture into raw GL calls.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+<span class="ruby-comment"># Upload the contents of another texture into this one at</span>
+<span class="ruby-comment"># `offset` (`[x, y]`). Both textures must remain alive for the</span>
+<span class="ruby-comment"># duration of the call.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Read the back-buffer of a `RenderWindow` into this texture</span>
+<span class="ruby-comment"># at `offset`. Useful for capturing the rendered scene</span>
+<span class="ruby-comment"># without re-drawing into a separate `RenderTexture`.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Same as `update_from_render_window` for the bare `Window`</span>
+<span class="ruby-comment"># (when you&#39;re managing GL yourself).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+<span class="ruby-comment"># Internal — borrow a CSFML-owned `sfTexture*` (e.g. one</span>
+<span class="ruby-comment"># returned by `sfFont_getTexture`) without registering an</span>
+<span class="ruby-comment"># auto-destroy hook. The owning object is responsible for</span>
+<span class="ruby-comment"># outliving any draw call that uses this borrowed handle.</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">tex</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">v</span>
+</pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-srgb-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-srgb-3F" title="Link to this method">
+                <span class="method-name">srgb?</span>
+                <span class="method-args">(= C::Graphics.sfTexture_isSrgb(@handle))</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="srgb-3F-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 135</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Generate mipmaps for this texture. Returns `true` if the</span>
+  <span class="ruby-comment"># GPU honoured it. Required for the `_MIPMAP_*` minification</span>
+  <span class="ruby-comment"># filters; otherwise downscaled samples alias.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Bind this texture to the active OpenGL texture unit. `coord`</span>
+  <span class="ruby-comment"># is one of `:normalized` (default — UVs in [0..1]) or</span>
+  <span class="ruby-comment"># `:pixels` (UVs in [0..size]). Useful when mixing raw</span>
+  <span class="ruby-comment"># OpenGL with SFML rendering. Pass `nil` to unbind:</span>
+  <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
+  <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Maximum texture dimension the driver will allocate. Tied to</span>
+  <span class="ruby-comment"># the GL state, so it&#39;s a class-level call (no instance).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Deep copy. The returned texture has its own GPU memory.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+    <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+
+    <span class="ruby-identifier">tex</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">tex</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">alias</span> <span class="ruby-identifier">clone</span> <span class="ruby-identifier">dup</span>
+
+  <span class="ruby-comment"># Reallocate this texture&#39;s GPU memory at a new size. Returns</span>
+  <span class="ruby-comment"># `false` if the GPU rejects the size (driver limit / OOM);</span>
+  <span class="ruby-comment"># the texture&#39;s contents become undefined on success.</span>
+  <span class="ruby-comment"># Pass `srgb: true` to re-allocate as an sRGB-encoded texture.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">srgb</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resizeSrgb</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">size</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Atomically swap the GPU memory between two textures —</span>
+  <span class="ruby-comment"># cheaper than `dup` + reassign for double-buffer-style</span>
+  <span class="ruby-comment"># patterns (paint-buffer ⇄ visible-buffer).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># The OpenGL texture-object name (a `glGenTextures` ID).</span>
+  <span class="ruby-comment"># Useful when feeding this texture into raw GL calls.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
+
+  <span class="ruby-comment"># Upload the contents of another texture into this one at</span>
+  <span class="ruby-comment"># `offset` (`[x, y]`). Both textures must remain alive for the</span>
+  <span class="ruby-comment"># duration of the call.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Read the back-buffer of a `RenderWindow` into this texture</span>
+  <span class="ruby-comment"># at `offset`. Useful for capturing the rendered scene</span>
+  <span class="ruby-comment"># without re-drawing into a separate `RenderTexture`.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Same as `update_from_render_window` for the bare `Window`</span>
+  <span class="ruby-comment"># (when you&#39;re managing GL yourself).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+    <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:handle</span> <span class="ruby-comment"># :nodoc:</span>
+
+  <span class="ruby-comment"># Internal — borrow a CSFML-owned `sfTexture*` (e.g. one</span>
+  <span class="ruby-comment"># returned by `sfFont_getTexture`) without registering an</span>
+  <span class="ruby-comment"># auto-destroy hook. The owning object is responsible for</span>
+  <span class="ruby-comment"># outliving any draw call that uses this borrowed handle.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
+    <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
+    <span class="ruby-identifier">tex</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
+    <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
+    <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-swap" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-swap" title="Link to this method">
+                <span class="method-name">swap</span>
+                <span class="method-args">(other)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="swap-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Atomically swap the GPU memory between two textures —cheaper than <code>dup</code> + reassign for double-buffer-style patterns (paint-buffer ⇄ visible-buffer).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-to_image" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-to_image" title="Link to this method">
+                <span class="method-name">to_image</span>
+                <span class="method-args">()</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="to_image-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_image</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copyToImage</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copyToImage returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
+  <span class="ruby-identifier">img</span> = <span class="ruby-constant">Image</span>.<span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">img</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_take_ownership</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-identifier">img</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Read the texture back from the GPU into a fresh <a href="Image.html"><code>SFML::Image</code></a>. Slow— useful for screenshots or post-processing inspection.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-update" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-update" title="Link to this method">
+                <span class="method-name">update</span>
+                <span class="method-args">(image)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="update-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">image</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#update needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">image</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
+  <span class="ruby-identifier">offset</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">offset</span>[<span class="ruby-value">:x</span>] = <span class="ruby-value">0</span>; <span class="ruby-identifier">offset</span>[<span class="ruby-value">:y</span>] = <span class="ruby-value">0</span>
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromImage</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Re-upload an Image’s pixels to this texture in place. The image must match the texture’s size — use this for animated procedural textures (paint-buffer style) without re-allocating GPU memory.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-update_from_render_window" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-update_from_render_window" title="Link to this method">
+                <span class="method-name">update_from_render_window</span>
+                <span class="method-args">(window, offset: [0, 0])</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="update_from_render_window-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Read the back-buffer of a <a href="RenderWindow.html"><code>RenderWindow</code></a> into this texture at <code>offset</code>. Useful for capturing the rendered scene without re-drawing into a separate <a href="RenderTexture.html"><code>RenderTexture</code></a>.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-update_from_texture" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-update_from_texture" title="Link to this method">
+                <span class="method-name">update_from_texture</span>
+                <span class="method-args">(source, offset: [0, 0])</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="update_from_texture-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Upload the contents of another texture into this one at <code>offset</code> (<code>[x, y]</code>). Both textures must remain alive for the duration of the call.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-update_from_window" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-update_from_window" title="Link to this method">
+                <span class="method-name">update_from_window</span>
+                <span class="method-args">(window, offset: [0, 0])</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="update_from_window-source">
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
+  <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Same as <a href="Texture.html#method-i-update_from_render_window"><code>update_from_render_window</code></a> for the bare <a href="Window.html"><code>Window</code></a> (when you’re managing GL yourself).</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+
