@@ -1,13 +1,18 @@
 # Netlify config for the ruby-sfml docs site.
 #
-# Pure-static deployment — no build step. The HTML in ./public is
-# generated **locally** with `./build.sh`, committed, and pushed.
-# Netlify just serves the directory as-is.
+# Pure-static deployment — no build step, no language runtime.
+# The HTML in ./public is generated **locally** with `./build.sh`,
+# committed, and pushed. Netlify just serves the directory as-is.
 #
-# Why no build: ruby-sfml is a C-extension gem (links libcsfml).
-# Netlify's build image has neither libcsfml nor the dev headers,
-# so `bundle install` fails at extconf time. Sidestep the whole
-# problem by building where the toolchain already lives.
+# Why no build / no Ruby: ruby-sfml is a C-extension gem (links
+# libcsfml). Netlify's build image has neither libcsfml nor the
+# dev headers, so `bundle install ruby-sfml` fails at extconf
+# time. Sidestep the whole problem — keep the docs as static
+# HTML the runner doesn't even compile.
+#
+# Anything that would trick Netlify into installing Ruby (a
+# `Gemfile`, a `.ruby-version`, a `RUBY_VERSION` env, …) has been
+# deliberately removed from this repo.
 
 [build]
   command = ""
