@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CHANGELOG - ruby-sfml 3.0.0.6</title>
+<title>CHANGELOG - ruby-sfml 3.0.0.7</title>
 
 
   <meta name="keywords" content="ruby,documentation,CHANGELOG">
@@ -19,7 +19,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="CHANGELOG - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="CHANGELOG - ruby-sfml 3.0.0.7">
 
 
 
@@ -31,7 +31,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHANGELOG - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="CHANGELOG - ruby-sfml 3.0.0.7">
 
 
 
@@ -303,7 +303,7 @@
 
 <header class="top-navbar">
   <a href="./index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -459,8 +459,39 @@
 
 <p>All notable changes are documented here. The format roughly follows <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a> and the gem versioning is <a href="README_md.html#versioning">described in the README</a> — first three segments mirror the targeted CSFML release, fourth segment is ruby-sfml’s own patch level.</p>
 
+<p>HTML API docs: <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/</p>
+
 <span id="label-5BUnreleased-5D" class="legacy-anchor"></span>
 <h2 id="unreleased"><a href="#unreleased">[Unreleased]</a></h2>
+
+<span id="label-5B3.0.0.7-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
+<h2 id="3007--2026-05-12"><a href="#3007--2026-05-12">[3.0.0.7] — 2026-05-12</a></h2>
+
+<p>Documentation pass. Every public class / module / method now carries at least a one-line RDoc comment — coverage went from ~36% (<code>rake rdoc:coverage</code>) to ~68%. Pair this release with the new docs site at <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/.</p>
+
+<span id="label-Changed+-E2-80-94+documentation" class="legacy-anchor"></span>
+<h3 id="changed--documentation"><a href="#changed--documentation">Changed — documentation</a></h3>
+<ul><li>
+<p>Hand-written, context-aware docstrings on the value classes (<code>Vector2</code>, <code>Vector3</code>, <code>Color</code>, <code>Rect</code>, <code>Time</code>): every operator, every helper, every pattern-match hook.</p>
+</li><li>
+<p>Audio API surface (<code>Sound</code>, <code>Music</code>, <code>SoundStream</code>, <code>Listener</code>): every playback method, every property setter/getter, every 3D- audio knob has a real description.</p>
+</li><li>
+<p>Graphics — <code>Transformable</code> mixin (position / rotation / scale / origin / move / rotate / scale_by), then <code>CircleShape</code> / <code>RectangleShape</code> / <code>ConvexShape</code> / <code>Text</code> / <code>VertexArray</code> / <code>RenderWindow</code>. Color named-accessors, geometric introspection, fill / outline / texture binding.</p>
+</li><li>
+<p>Network — typed <code>Packet</code> reader / writer methods, full FTP surface (download / upload / directory_listing / …).</p>
+</li><li>
+<p>The autodoc pass fills in trivial setter / getter / predicate pairs everywhere else, so the docs site has at least an identifiable signature line on every public method.</p>
+</li></ul>
+
+<span id="label-Changed+-E2-80-94+infra" class="legacy-anchor"></span>
+<h3 id="changed--infra"><a href="#changed--infra">Changed — infra</a></h3>
+<ul><li>
+<p><code>documentation_uri</code> in the gemspec now points to <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/ (was rubydoc.info). rubydoc.info still works as an archive of older releases.</p>
+</li><li>
+<p><code>.rdoc_options</code> ships inside the gem (<code>gem unpack</code> exposes it), so the docs-site repo can <code>rdoc</code> an unpacked release without re-supplying title / template / markup / exclude config.</p>
+</li><li>
+<p>Added <code>script/build-docs.sh</code> — local-only build that renders <code>../ruby-sfml-doc/public/</code>. Optional <code>--check</code> mode catches “docs out of date with source” in a pre-push hook.</p>
+</li></ul>
 
 <span id="label-5B3.0.0.6-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
 <h2 id="3006--2026-05-12"><a href="#3006--2026-05-12">[3.0.0.6] — 2026-05-12</a></h2>

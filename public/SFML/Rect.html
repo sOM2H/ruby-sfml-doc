@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Rect - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Rect - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -15,7 +15,7 @@
 
     <meta
       name="description"
-      content="class SFML::Rect: An axis-aligned rectangle. Vector2)."
+      content="class SFML::Rect: An axis-aligned rectangle. Vector2)`."
     >
 
 
@@ -24,11 +24,11 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Rect - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Rect - ruby-sfml 3.0.0.7">
 
 
 
-    <meta property="og:description" content="An axis-aligned rectangle. Vector2).">
+    <meta property="og:description" content="An axis-aligned rectangle. Vector2)`.">
 
 
 
@@ -36,11 +36,11 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Rect - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Rect - ruby-sfml 3.0.0.7">
 
 
 
-    <meta name="twitter:description" content="An axis-aligned rectangle. Vector2).">
+    <meta name="twitter:description" content="An axis-aligned rectangle. Vector2)`.">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -575,7 +575,7 @@
 
   <section class="description">
     
-<p>An axis-aligned rectangle. Mirrors sfFloatRect / sfIntRect — those structs are just (position: <a href="Vector2.html"><code>Vector2</code></a>, size: <a href="Vector2.html"><code>Vector2</code></a>). We deliberately keep one Ruby class for both the float and int variants since pattern-matching <code>case bounds in {position: {x:, y:}, size: {x: w, y: h}}</code> is what the users reach for either way.</p>
+<p>An axis-aligned rectangle. Mirrors sfFloatRect / sfIntRect — those structs are just <code>(position: Vector2, size: Vector2)</code>. We deliberately keep one Ruby class for both the float and int variants since pattern-matching <code>case bounds in {position: {x:, y:}, size: {x: w, y: h}}</code> is what users reach for either way.</p>
 
 <p>r = <a href="Rect.html#method-c-new"><code>SFML::Rect.new</code></a>([10, 20], [100, 50]) r.contains?([50, 30]) #=&gt; true r.right #=&gt; 110</p>
 
@@ -663,7 +663,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 16</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">position</span>, <span class="ruby-identifier">size</span>)
   <span class="ruby-ivar">@position</span> = <span class="ruby-identifier">position</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">position</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">position</span>)
   <span class="ruby-ivar">@size</span>     = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">size</span>)
@@ -676,7 +676,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>position</code> and <code>size</code> may each be a <a href="Vector2.html"><code>Vector2</code></a> OR a <code>[x, y]</code> Array.</p>
 
 
         </div>
@@ -721,7 +721,7 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 43</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span></pre>
@@ -732,7 +732,7 @@
         <div class="method-description">
 
 
-          
+          <p>Value equality — same position + same size.</p>
 
 
         </div>
@@ -763,14 +763,18 @@
             </details>
           </div>
           <div class="method-source-code" id="bottom-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -778,17 +782,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -835,7 +849,7 @@
             </details>
           </div>
           <div class="method-source-code" id="contains-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
@@ -847,7 +861,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if <code>point</code> (<a href="Vector2.html"><code>Vector2</code></a> or <code>[x, y]</code>) is inside this rect. The right and bottom edges are exclusive.</p>
 
 
         </div>
@@ -878,10 +892,13 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 70</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+  <span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+  <span class="ruby-comment"># String representation for debugging.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -899,7 +916,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match support for <code>in [x, y, w, h]</code>.</p>
 
 
         </div>
@@ -930,9 +947,10 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 73</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+    <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -951,7 +969,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match support for <code>in {position:, size:}</code>.</p>
 
 
         </div>
@@ -982,14 +1000,22 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 47</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1005,7 +1031,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash key support.</p>
 
 
         </div>
@@ -1036,18 +1062,25 @@
             </details>
           </div>
           <div class="method-source-code" id="height-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 25</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">x</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">top</span>  <span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># X of the right edge (`x + width`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1055,17 +1088,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1111,7 +1154,7 @@
             </details>
           </div>
           <div class="method-source-code" id="intersects-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1125,7 +1168,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if this rect overlaps <code>other</code> at all (any non-empty intersection counts).</p>
 
 
         </div>
@@ -1156,15 +1199,20 @@
             </details>
           </div>
           <div class="method-source-code" id="right-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1172,17 +1220,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1197,7 +1255,7 @@
         <div class="method-description">
 
 
-          
+          <p>X of the right edge (<code>x + width</code>).</p>
 
 
         </div>
@@ -1228,12 +1286,19 @@
             </details>
           </div>
           <div class="method-source-code" id="to_a-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 49</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1250,7 +1315,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>[x, y, width, height]</code>.</p>
 
 
         </div>
@@ -1281,11 +1346,16 @@
             </details>
           </div>
           <div class="method-source-code" id="to_h-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1303,7 +1373,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>{position:, size:}</code>.</p>
 
 
         </div>
@@ -1334,7 +1404,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 54</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 76</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1352,7 +1422,7 @@
         <div class="method-description">
 
 
-          
+          <p>String representation for debugging.</p>
 
 
         </div>
@@ -1383,19 +1453,27 @@
             </details>
           </div>
           <div class="method-source-code" id="width-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Height.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">x</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">top</span>  <span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># X of the right edge (`x + width`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1403,17 +1481,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1459,21 +1547,31 @@
             </details>
           </div>
           <div class="method-source-code" id="x-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">x</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Top-left Y.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">y</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span>
+<span class="ruby-comment"># Width.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Height.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">x</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">top</span>  <span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># X of the right edge (`x + width`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1481,17 +1579,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1506,7 +1614,7 @@
         <div class="method-description">
 
 
-          
+          <p>Top-left X.</p>
 
 
         </div>
@@ -1537,20 +1645,29 @@
             </details>
           </div>
           <div class="method-source-code" id="y-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 23</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">y</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span>
+<span class="ruby-comment"># Width.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Height.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">x</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">top</span>  <span class="ruby-identifier">y</span>
+
+<span class="ruby-comment"># X of the right edge (`x + width`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
+<span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
+<span class="ruby-comment"># The right and bottom edges are exclusive.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if this rect overlaps `other` at all (any non-empty</span>
+<span class="ruby-comment"># intersection counts).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1558,17 +1675,27 @@
     <span class="ruby-identifier">bottom</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">top</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — same position + same size.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[x, y, width, height]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># `{position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 

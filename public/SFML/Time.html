@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Time - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Time - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -15,7 +15,7 @@
 
     <meta
       name="description"
-      content="class SFML::Time: Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML."
+      content="class SFML::Time: Represents a time value. Stored internally as microseconds (int64), same as `sfTime` in CSFML."
     >
 
 
@@ -24,11 +24,11 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Time - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Time - ruby-sfml 3.0.0.7">
 
 
 
-    <meta property="og:description" content="Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML.">
+    <meta property="og:description" content="Represents a time value. Stored internally as microseconds (int64), same as `sfTime` in CSFML.">
 
 
 
@@ -36,11 +36,11 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Time - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Time - ruby-sfml 3.0.0.7">
 
 
 
-    <meta name="twitter:description" content="Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML.">
+    <meta name="twitter:description" content="Represents a time value. Stored internally as microseconds (int64), same as `sfTime` in CSFML.">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -595,9 +595,11 @@
 
   <section class="description">
     
-<p>Represents a time value. Stored internally as microseconds (int64), same as sfTime in CSFML. Immutable and comparable.</p>
+<p>Represents a time value. Stored internally as microseconds (int64), same as <code>sfTime</code> in CSFML. Immutable and Comparable, so two Times can be <code>==</code> / <code>&lt;</code> / <code>&gt;</code> / sorted.</p>
 
 <p><a href="Time.html#method-c-seconds"><code>SFML::Time.seconds(1.5)</code></a> #=&gt; 1_500_000 µs <a href="Time.html#method-c-milliseconds"><code>SFML::Time.milliseconds(500)</code></a> <a href="Time.html#method-c-microseconds"><code>SFML::Time.microseconds(42)</code></a> <a href="Time.html#method-c-zero"><code>SFML::Time.zero</code></a></p>
+
+<p>t1 + t2 # sum of two Times t.as_seconds # Float seconds</p>
 
   </section>
 
@@ -665,8 +667,9 @@
             </details>
           </div>
           <div class="method-source-code" id="microseconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 16</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-comment"># The zero Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
@@ -674,19 +677,31 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># As Float seconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-comment"># As Integer milliseconds (truncated).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -703,7 +718,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="Time.html"><code>Time</code></a> directly from microseconds.</p>
 
 
         </div>
@@ -734,9 +749,11 @@
             </details>
           </div>
           <div class="method-source-code" id="milliseconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 15</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">milliseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1_000</span>)
+<span class="ruby-comment"># Build a Time directly from microseconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-comment"># The zero Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
@@ -744,19 +761,31 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># As Float seconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-comment"># As Integer milliseconds (truncated).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -773,7 +802,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="Time.html"><code>Time</code></a> from an Integer of milliseconds.</p>
 
 
         </div>
@@ -804,7 +833,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 19</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
   <span class="ruby-ivar">@microseconds</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">microseconds</span>)
   <span class="ruby-identifier">freeze</span>
@@ -847,10 +876,13 @@
             </details>
           </div>
           <div class="method-source-code" id="seconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 14</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">seconds</span>(<span class="ruby-identifier">value</span>)      = <span class="ruby-identifier">new</span>((<span class="ruby-identifier">value</span> <span class="ruby-operator">*</span> <span class="ruby-value">1_000_000</span>).<span class="ruby-identifier">to_i</span>)
+<span class="ruby-comment"># Build a Time from an Integer of milliseconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">milliseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1_000</span>)
+<span class="ruby-comment"># Build a Time directly from microseconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">microseconds</span>(<span class="ruby-identifier">value</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
+<span class="ruby-comment"># The zero Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
@@ -858,19 +890,31 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># As Float seconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-comment"># As Integer milliseconds (truncated).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -887,7 +931,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="Time.html"><code>Time</code></a> from a Float of seconds.</p>
 
 
         </div>
@@ -918,7 +962,7 @@
             </details>
           </div>
           <div class="method-source-code" id="zero-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 17</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>                = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">microseconds</span>)
@@ -926,19 +970,31 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># As Float seconds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-comment"># As Integer milliseconds (truncated).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -955,7 +1011,7 @@
         <div class="method-description">
 
 
-          
+          <p>The zero <a href="Time.html"><code>Time</code></a>.</p>
 
 
         </div>
@@ -1000,16 +1056,24 @@
             </details>
           </div>
           <div class="method-source-code" id="2B-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1026,7 +1090,7 @@
         <div class="method-description">
 
 
-          
+          <p>Sum of two Times — returns a fresh <a href="Time.html"><code>Time</code></a>.</p>
 
 
         </div>
@@ -1057,15 +1121,22 @@
             </details>
           </div>
           <div class="method-source-code" id="2D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1082,7 +1153,7 @@
         <div class="method-description">
 
 
-          
+          <p>Difference between two Times.</p>
 
 
         </div>
@@ -1113,14 +1184,20 @@
             </details>
           </div>
           <div class="method-source-code" id="2D-40-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1138,7 +1215,7 @@
         <div class="method-description">
 
 
-          
+          <p>Negate (useful when computing a “ago” offset).</p>
 
 
         </div>
@@ -1169,13 +1246,16 @@
             </details>
           </div>
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1194,7 +1274,7 @@
         <div class="method-description">
 
 
-          
+          <p>Compare two Times — implements <code>Comparable</code>, so <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>clamp</code>, and <code>Array#sort</code> all work.</p>
 
 
         </div>
@@ -1225,18 +1305,27 @@
             </details>
           </div>
           <div class="method-source-code" id="as_microseconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1284,19 +1373,29 @@
             </details>
           </div>
           <div class="method-source-code" id="as_milliseconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 25</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1344,20 +1443,31 @@
             </details>
           </div>
           <div class="method-source-code" id="as_seconds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_seconds</span>      = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000_000.0</span>
+<span class="ruby-comment"># As Integer milliseconds (truncated).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_milliseconds</span> = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">/</span> <span class="ruby-value">1_000</span>
+<span class="ruby-comment"># As Integer microseconds — the raw stored value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_microseconds</span> = <span class="ruby-ivar">@microseconds</span>
 
+<span class="ruby-comment"># Sum of two Times — returns a fresh Time.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Difference between two Times.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>)
+<span class="ruby-comment"># Negate (useful when computing a &quot;ago&quot; offset).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>       = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@microseconds</span>)
+
+<span class="ruby-comment"># Compare two Times — implements `Comparable`, so `&lt;`, `&lt;=`, `&gt;=`,</span>
+<span class="ruby-comment"># `&gt;`, `clamp`, and `Array#sort` all work.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 
+<span class="ruby-comment"># Hash key support — Times can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-comment"># Value equality.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1374,7 +1484,7 @@
         <div class="method-description">
 
 
-          
+          <p>As Float seconds.</p>
 
 
         </div>
@@ -1405,10 +1515,11 @@
             </details>
           </div>
           <div class="method-source-code" id="eql-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 53</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+    <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1459,11 +1570,13 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 33</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 51</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-ivar">@microseconds</span>.<span class="ruby-identifier">hash</span>
+  <span class="ruby-comment"># Value equality.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@microseconds</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">microseconds</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">==</span> <span class="ruby-identifier">eql?</span>
 
+  <span class="ruby-comment"># String representation for debugging.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1482,7 +1595,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash key support — Times can be Hash keys / Set members.</p>
 
 
         </div>
@@ -1513,7 +1626,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 37</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/time.rb, line 57</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Time #{as_seconds}s&gt;&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1532,7 +1645,7 @@
         <div class="method-description">
 
 
-          
+          <p>String representation for debugging.</p>
 
 
         </div>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::SocketSelector - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Network::SocketSelector - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::SocketSelector - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Network::SocketSelector - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::SocketSelector - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Network::SocketSelector - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -763,7 +763,7 @@
             </details>
           </div>
           <div class="method-source-code" id="ready-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/socket_selector.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/socket_selector.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ready?</span>(<span class="ruby-identifier">socket</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">socket</span>
   <span class="ruby-keyword">when</span> <span class="ruby-constant">TcpListener</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfSocketSelector_isTcpListenerReady</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">socket</span>.<span class="ruby-identifier">handle</span>)
@@ -781,7 +781,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if ready.</p>
 
 
         </div>

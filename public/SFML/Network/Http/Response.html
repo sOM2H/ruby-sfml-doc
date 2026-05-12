@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::Http::Response - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Network::Http::Response - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::Http::Response - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Network::Http::Response - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::Http::Response - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Network::Http::Response - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -630,7 +630,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 108</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">obj</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
@@ -731,7 +731,7 @@
             </details>
           </div>
           <div class="method-source-code" id="body-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 95</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 96</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">body</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpResponse_getBody</span>(<span class="ruby-ivar">@handle</span>).<span class="ruby-identifier">to_s</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">field</span>(<span class="ruby-identifier">name</span>) = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpResponse_getField</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
 
@@ -760,7 +760,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the body.</p>
 
 
         </div>
@@ -791,7 +791,7 @@
             </details>
           </div>
           <div class="method-source-code" id="field-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 96</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 97</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">field</span>(<span class="ruby-identifier">name</span>) = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpResponse_getField</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
 
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">http_version</span>
@@ -849,7 +849,7 @@
             </details>
           </div>
           <div class="method-source-code" id="http_version-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 98</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">http_version</span>
   [
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpResponse_getMajorVersion</span>(<span class="ruby-ivar">@handle</span>),

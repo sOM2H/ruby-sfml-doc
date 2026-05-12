@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::Packet - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Network::Packet - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::Packet - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Network::Packet - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::Packet - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Network::Packet - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -859,7 +859,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 109</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 137</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NetworkError</span>, <span class="ruby-string">&quot;sfPacket_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -907,7 +907,7 @@
             </details>
           </div>
           <div class="method-source-code" id="end_of_packet-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_of_packet?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_endOfPacket</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># `false` if the last read overran the packet — sfPacket &quot;fails&quot;</span>
@@ -916,20 +916,35 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ok?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_canRead</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># ---- typed writers ----</span>
+<span class="ruby-comment"># All writers append to the end of the packet and return self</span>
+<span class="ruby-comment"># for chaining.</span>
+
+<span class="ruby-comment"># Append a Bool.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_bool</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeBool</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>); <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Append a signed 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int8</span>(<span class="ruby-identifier">v</span>)   = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt8</span>(<span class="ruby-ivar">@handle</span>,   <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -937,15 +952,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1005,24 +1030,39 @@
             </details>
           </div>
           <div class="method-source-code" id="ok-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 62</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ok?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_canRead</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># ---- typed writers ----</span>
+<span class="ruby-comment"># All writers append to the end of the packet and return self</span>
+<span class="ruby-comment"># for chaining.</span>
+
+<span class="ruby-comment"># Append a Bool.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_bool</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeBool</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>); <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Append a signed 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int8</span>(<span class="ruby-identifier">v</span>)   = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt8</span>(<span class="ruby-ivar">@handle</span>,   <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -1030,15 +1070,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1098,17 +1148,27 @@
             </details>
           </div>
           <div class="method-source-code" id="read_bool-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 85</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1171,7 +1231,7 @@
             </details>
           </div>
           <div class="method-source-code" id="read_double-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 95</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 123</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1237,8 +1297,9 @@
             </details>
           </div>
           <div class="method-source-code" id="read_float-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 94</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 121</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-comment"># Returns the read double.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1305,14 +1366,21 @@
             </details>
           </div>
           <div class="method-source-code" id="read_int16-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 88</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1377,12 +1445,17 @@
             </details>
           </div>
           <div class="method-source-code" id="read_int32-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 90</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1448,10 +1521,13 @@
             </details>
           </div>
           <div class="method-source-code" id="read_int64-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 92</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 117</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-comment"># Returns the read uint64.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-comment"># Returns the read float.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-comment"># Returns the read double.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1518,16 +1594,25 @@
             </details>
           </div>
           <div class="method-source-code" id="read_int8-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 86</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1591,8 +1676,9 @@
             </details>
           </div>
           <div class="method-source-code" id="read_position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 56</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_position</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_getReadPosition</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># `true` if end of packet.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_of_packet?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_endOfPacket</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># `false` if the last read overran the packet — sfPacket &quot;fails&quot;</span>
@@ -1601,20 +1687,35 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ok?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_canRead</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># ---- typed writers ----</span>
+<span class="ruby-comment"># All writers append to the end of the packet and return self</span>
+<span class="ruby-comment"># for chaining.</span>
+
+<span class="ruby-comment"># Append a Bool.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_bool</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeBool</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>); <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Append a signed 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int8</span>(<span class="ruby-identifier">v</span>)   = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt8</span>(<span class="ruby-ivar">@handle</span>,   <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -1622,15 +1723,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1690,7 +1801,7 @@
             </details>
           </div>
           <div class="method-source-code" id="read_string-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 100</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 128</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_string</span>
   <span class="ruby-identifier">remaining</span> = <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">read_position</span>
   <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">remaining</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
@@ -1737,13 +1848,19 @@
             </details>
           </div>
           <div class="method-source-code" id="read_uint16-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 89</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 111</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1808,11 +1925,15 @@
             </details>
           </div>
           <div class="method-source-code" id="read_uint32-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 91</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 115</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the read int64.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the read uint64.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the read float.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the read double.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1879,9 +2000,11 @@
             </details>
           </div>
           <div class="method-source-code" id="read_uint64-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 93</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 119</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-comment"># Returns the read float.</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+      <span class="ruby-comment"># Returns the read double.</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
       <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -1949,15 +2072,23 @@
             </details>
           </div>
           <div class="method-source-code" id="read_uint8-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 107</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2022,9 +2153,11 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>            = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_getDataSize</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read position.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_position</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_getReadPosition</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># `true` if end of packet.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_of_packet?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_endOfPacket</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># `false` if the last read overran the packet — sfPacket &quot;fails&quot;</span>
@@ -2033,20 +2166,35 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ok?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_canRead</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># ---- typed writers ----</span>
+<span class="ruby-comment"># All writers append to the end of the packet and return self</span>
+<span class="ruby-comment"># for chaining.</span>
+
+<span class="ruby-comment"># Append a Bool.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_bool</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeBool</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>); <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Append a signed 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int8</span>(<span class="ruby-identifier">v</span>)   = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt8</span>(<span class="ruby-ivar">@handle</span>,   <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2054,15 +2202,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2091,7 +2249,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the size.</p>
 
 
         </div>
@@ -2122,7 +2280,7 @@
             </details>
           </div>
           <div class="method-source-code" id="write_bool-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 65</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_bool</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeBool</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>); <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2133,7 +2291,7 @@
         <div class="method-description">
 
 
-          <p>—- typed writers —-</p>
+          <p>Append a Bool.</p>
 
 
         </div>
@@ -2164,9 +2322,10 @@
             </details>
           </div>
           <div class="method-source-code" id="write_double-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 77</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2174,15 +2333,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2214,7 +2383,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a double-precision Float.</p>
 
 
         </div>
@@ -2245,10 +2414,12 @@
             </details>
           </div>
           <div class="method-source-code" id="write_float-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2256,15 +2427,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2296,7 +2477,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a single-precision Float.</p>
 
 
         </div>
@@ -2327,16 +2508,24 @@
             </details>
           </div>
           <div class="method-source-code" id="write_int16-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 70</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2344,15 +2533,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2381,7 +2580,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a signed 16-bit Integer.</p>
 
 
         </div>
@@ -2412,14 +2611,20 @@
             </details>
           </div>
           <div class="method-source-code" id="write_int32-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 72</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2427,15 +2632,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2464,7 +2679,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a signed 32-bit Integer.</p>
 
 
         </div>
@@ -2495,12 +2710,16 @@
             </details>
           </div>
           <div class="method-source-code" id="write_int64-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 74</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2508,15 +2727,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2547,7 +2776,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a signed 64-bit Integer.</p>
 
 
         </div>
@@ -2578,18 +2807,28 @@
             </details>
           </div>
           <div class="method-source-code" id="write_int8-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 68</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int8</span>(<span class="ruby-identifier">v</span>)   = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt8</span>(<span class="ruby-ivar">@handle</span>,   <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 8-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2597,15 +2836,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2634,7 +2883,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a signed 8-bit Integer.</p>
 
 
         </div>
@@ -2665,7 +2914,7 @@
             </details>
           </div>
           <div class="method-source-code" id="write_string-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2677,7 +2926,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append a length-prefixed UTF-8 String.</p>
 
 
         </div>
@@ -2708,15 +2957,22 @@
             </details>
           </div>
           <div class="method-source-code" id="write_uint16-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 71</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2724,15 +2980,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2761,7 +3027,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append an unsigned 16-bit Integer.</p>
 
 
         </div>
@@ -2792,13 +3058,18 @@
             </details>
           </div>
           <div class="method-source-code" id="write_uint32-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2806,15 +3077,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2844,7 +3125,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append an unsigned 32-bit Integer.</p>
 
 
         </div>
@@ -2875,11 +3156,14 @@
             </details>
           </div>
           <div class="method-source-code" id="write_uint64-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 75</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2887,15 +3171,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -2926,7 +3220,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append an unsigned 64-bit Integer.</p>
 
 
         </div>
@@ -2957,17 +3251,26 @@
             </details>
           </div>
           <div class="method-source-code" id="write_uint8-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 69</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/packet.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint8</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint8</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int16</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt16</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 16-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint16</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint16</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int32</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt32</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 32-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint32</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint32</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a signed 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_int64</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeInt64</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append an unsigned 64-bit Integer.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_uint64</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeUint64</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">v</span>)); <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a single-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_float</span>(<span class="ruby-identifier">v</span>)  = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeFloat</span>(<span class="ruby-ivar">@handle</span>,  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
+<span class="ruby-comment"># Append a double-precision Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_double</span>(<span class="ruby-identifier">v</span>) = (<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeDouble</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Float</span>(<span class="ruby-identifier">v</span>));   <span class="ruby-keyword">self</span>)
 
+<span class="ruby-comment"># Append a length-prefixed UTF-8 String.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_string</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_writeString</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-keyword">self</span>
@@ -2975,15 +3278,25 @@
 
 <span class="ruby-comment"># ---- typed readers ----</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_bool</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readBool</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int8</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint8.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint8</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint8</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int16</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint16.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint16</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint16</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int32</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint32.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint32</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint32</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read int64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_int64</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readInt64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read uint64.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_uint64</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readUint64</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_float</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readFloat</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the read double.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_double</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfPacket_readDouble</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Read a length-prefixed string. CSFML expects a caller-allocated</span>
@@ -3012,7 +3325,7 @@
         <div class="method-description">
 
 
-          
+          <p>Append an unsigned 8-bit Integer.</p>
 
 
         </div>

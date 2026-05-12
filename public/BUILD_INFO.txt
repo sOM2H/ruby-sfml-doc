@@ -1,5 +1,5 @@
 ruby-sfml docs site
-Built:   2026-05-12T08:45:31Z
-Version: 3.0.0.6
+Built:   2026-05-12T09:35:01Z
+Version: 3.0.0.7
 Source:  /home/miller/Development/sfml/ruby-sfml
 Repo:    https://github.com/sOM2H/ruby-sfml

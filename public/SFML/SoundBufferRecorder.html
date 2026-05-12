@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.6</title>
+<title>class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::SoundBufferRecorder - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -667,7 +667,7 @@
             </details>
           </div>
           <div class="method-source-code" id="buffer-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">buffer</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBufferRecorder_getBuffer</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">AudioError</span>, <span class="ruby-string">&quot;sfSoundBufferRecorder_getBuffer returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -756,7 +756,7 @@
             </details>
           </div>
           <div class="method-source-code" id="channel_count-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 40</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBufferRecorder_setChannelCount</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -767,7 +767,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the channel count.</p>
 
 
         </div>
@@ -798,7 +798,7 @@
             </details>
           </div>
           <div class="method-source-code" id="device-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 58</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">device</span>
   <span class="ruby-identifier">name</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBufferRecorder_getDevice</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span>
@@ -841,7 +841,7 @@
             </details>
           </div>
           <div class="method-source-code" id="device-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer_recorder.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">device=</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBufferRecorder_setDevice</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">AudioError</span>, <span class="ruby-node">&quot;could not select recording device #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
@@ -854,7 +854,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the device.</p>
 
 
         </div>

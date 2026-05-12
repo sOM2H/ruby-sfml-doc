@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::StencilMode - ruby-sfml 3.0.0.6</title>
+<title>class SFML::StencilMode - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::StencilMode - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::StencilMode - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::StencilMode - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::StencilMode - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -738,7 +738,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_native-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 83</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">new</span>(
     <span class="ruby-value">comparison:</span>       <span class="ruby-constant">COMPARISONS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:comparison</span>]],
@@ -938,7 +938,7 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 62</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 63</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-identifier">comparison</span>, <span class="ruby-identifier">update_operation</span>, <span class="ruby-identifier">reference</span>, <span class="ruby-identifier">mask</span>, <span class="ruby-identifier">only_write_mask</span>].<span class="ruby-identifier">hash</span>
 
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
@@ -977,7 +977,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the hash.</p>
 
 
         </div>
@@ -1008,7 +1008,7 @@
             </details>
           </div>
           <div class="method-source-code" id="populate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">struct</span>[<span class="ruby-value">:comparison</span>]       = <span class="ruby-constant">COMPARISON_INDEX</span>[<span class="ruby-ivar">@comparison</span>]
   <span class="ruby-identifier">struct</span>[<span class="ruby-value">:update_operation</span>] = <span class="ruby-constant">OPERATION_INDEX</span>[<span class="ruby-ivar">@update_operation</span>]
@@ -1055,7 +1055,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/stencil_mode.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;StencilMode(#{comparison}, #{update_operation}, ref=#{reference}, &quot;</span> \
     <span class="ruby-node">&quot;mask=#{format(&#39;0x%08X&#39;, mask)}, only_write=#{only_write_mask})&quot;</span>

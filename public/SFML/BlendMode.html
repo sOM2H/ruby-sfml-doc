@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::BlendMode - ruby-sfml 3.0.0.6</title>
+<title>class SFML::BlendMode - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::BlendMode - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -806,7 +806,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_native-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 71</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">new</span>(
     <span class="ruby-value">color_src:</span> <span class="ruby-constant">FACTORS</span>[<span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>]],
@@ -966,7 +966,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_check_equation-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 92</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_equation</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend equation: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">EQUATION_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">name</span>
@@ -1009,7 +1009,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_check_factor-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_check_factor</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown blend factor: #{name.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">FACTOR_INDEX</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">name</span>
@@ -1086,7 +1086,7 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 51</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-identifier">color_src</span>, <span class="ruby-identifier">color_dst</span>, <span class="ruby-identifier">color_eq</span>, <span class="ruby-identifier">alpha_src</span>, <span class="ruby-identifier">alpha_dst</span>, <span class="ruby-identifier">alpha_eq</span>].<span class="ruby-identifier">hash</span>
 
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
@@ -1152,7 +1152,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the hash.</p>
 
 
         </div>
@@ -1183,7 +1183,7 @@
             </details>
           </div>
           <div class="method-source-code" id="populate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 60</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_src_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_src</span>]
   <span class="ruby-identifier">struct</span>[<span class="ruby-value">:color_dst_factor</span>] = <span class="ruby-constant">FACTOR_INDEX</span>[<span class="ruby-ivar">@color_dst</span>]
@@ -1231,7 +1231,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/blend_mode.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;BlendMode(color: #{color_src}/#{color_dst}/#{color_eq}, alpha: #{alpha_src}/#{alpha_dst}/#{alpha_eq})&quot;</span>
 <span class="ruby-keyword">end</span></pre>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Listener - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Listener - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Listener - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Listener - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Listener - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Listener - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -589,7 +589,7 @@
             </details>
           </div>
           <div class="method-source-code" id="cone-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 71</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cone</span>
   <span class="ruby-constant">SoundCone</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_getCone</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -631,7 +631,7 @@
             </details>
           </div>
           <div class="method-source-code" id="cone-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 75</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cone=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">cone</span> =
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
@@ -649,7 +649,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the cone. Accepts a <a href="SoundCone.html"><code>SoundCone</code></a> or a Hash.</p>
 
 
         </div>
@@ -680,7 +680,7 @@
             </details>
           </div>
           <div class="method-source-code" id="direction-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">direction</span>
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_getDirection</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -722,7 +722,7 @@
             </details>
           </div>
           <div class="method-source-code" id="direction-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">direction=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_setDirection</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -734,7 +734,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the forward direction — accepts <a href="Vector3.html"><code>Vector3</code></a> or <code>[x, y, z]</code>.</p>
 
 
         </div>
@@ -807,7 +807,7 @@
             </details>
           </div>
           <div class="method-source-code" id="global_volume-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 20</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_volume=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_setGlobalVolume</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -818,7 +818,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the master volume in [0, 100].</p>
 
 
         </div>
@@ -849,7 +849,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_getPosition</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -860,7 +860,7 @@
         <div class="method-description">
 
 
-          
+          <p>The listener’s 3D position in world space.</p>
 
 
         </div>
@@ -891,7 +891,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_setPosition</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -903,7 +903,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the position — accepts <a href="Vector3.html"><code>Vector3</code></a> or <code>[x, y, z]</code>.</p>
 
 
         </div>
@@ -934,7 +934,7 @@
             </details>
           </div>
           <div class="method-source-code" id="up_vector-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">up_vector</span>
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_getUpVector</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -976,7 +976,7 @@
             </details>
           </div>
           <div class="method-source-code" id="up_vector-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">up_vector=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_setUpVector</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -988,7 +988,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the up vector — accepts <a href="Vector3.html"><code>Vector3</code></a> or <code>[x, y, z]</code>.</p>
 
 
         </div>
@@ -1019,7 +1019,7 @@
             </details>
           </div>
           <div class="method-source-code" id="velocity-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">velocity</span>
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_getVelocity</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1061,7 +1061,7 @@
             </details>
           </div>
           <div class="method-source-code" id="velocity-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 61</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/listener.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">velocity=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfListener_setVelocity</span>(<span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -1073,7 +1073,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the velocity — accepts <a href="Vector3.html"><code>Vector3</code></a> or <code>[x, y, z]</code>.</p>
 
 
         </div>

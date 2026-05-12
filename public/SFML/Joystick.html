@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Joystick - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Joystick - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Joystick - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Joystick - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Joystick - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Joystick - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -640,7 +640,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_axis_code-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 83</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_axis_code</span>(<span class="ruby-identifier">axis</span>)
   <span class="ruby-identifier">sym</span> = <span class="ruby-constant">AXIS_ALIASES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">axis</span>, <span class="ruby-identifier">axis</span>)
   <span class="ruby-constant">AXIS_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) <span class="ruby-keyword">do</span>
@@ -685,7 +685,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_id-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_id</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-identifier">n</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Joystick id must be in 0..#{MAX_COUNT - 1}, got #{n}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">MAX_COUNT</span>
@@ -729,7 +729,7 @@
             </details>
           </div>
           <div class="method-source-code" id="axis_position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 47</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">axis_position</span>(<span class="ruby-identifier">joystick</span>, <span class="ruby-identifier">axis</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_getAxisPosition</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>), <span class="ruby-identifier">_axis_code</span>(<span class="ruby-identifier">axis</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -771,7 +771,7 @@
             </details>
           </div>
           <div class="method-source-code" id="button_count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">button_count</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_getButtonCount</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -813,7 +813,7 @@
             </details>
           </div>
           <div class="method-source-code" id="button_pressed-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">button_pressed?</span>(<span class="ruby-identifier">joystick</span>, <span class="ruby-identifier">button</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_isButtonPressed</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>), <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">button</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -824,7 +824,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if button pressed.</p>
 
 
         </div>
@@ -855,7 +855,7 @@
             </details>
           </div>
           <div class="method-source-code" id="connected-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 32</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connected?</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_isConnected</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -866,7 +866,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if connected.</p>
 
 
         </div>
@@ -897,7 +897,7 @@
             </details>
           </div>
           <div class="method-source-code" id="has_axis-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 40</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">has_axis?</span>(<span class="ruby-identifier">joystick</span>, <span class="ruby-identifier">axis</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_hasAxis</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>), <span class="ruby-identifier">_axis_code</span>(<span class="ruby-identifier">axis</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -908,7 +908,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if has axis.</p>
 
 
         </div>
@@ -939,7 +939,7 @@
             </details>
           </div>
           <div class="method-source-code" id="identification-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">identification</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">connected?</span>(<span class="ruby-identifier">joystick</span>)
   <span class="ruby-identifier">ident</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_getIdentification</span>(<span class="ruby-identifier">_id</span>(<span class="ruby-identifier">joystick</span>))
@@ -988,7 +988,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 71</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/joystick.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfJoystick_update</span>
 <span class="ruby-keyword">end</span></pre>

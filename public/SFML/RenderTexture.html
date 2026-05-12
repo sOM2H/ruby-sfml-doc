@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::RenderTexture - ruby-sfml 3.0.0.6</title>
+<title>class SFML::RenderTexture - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::RenderTexture - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::RenderTexture - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::RenderTexture - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::RenderTexture - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -664,7 +664,7 @@
             </details>
           </div>
           <div class="method-source-code" id="maximum_anti_aliasing_level-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 68</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_anti_aliasing_level</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_getMaximumAntiAliasingLevel</span>
 <span class="ruby-keyword">end</span></pre>
@@ -771,7 +771,7 @@
             </details>
           </div>
           <div class="method-source-code" id="active-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 74</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -813,7 +813,7 @@
             </details>
           </div>
           <div class="method-source-code" id="generate_mipmap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 62</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -855,8 +855,9 @@
             </details>
           </div>
           <div class="method-source-code" id="pop_gl_states-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 78</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 84</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+    <span class="ruby-comment"># Returns the reset gl states.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -928,9 +929,11 @@
             </details>
           </div>
           <div class="method-source-code" id="push_gl_states-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 77</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 82</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the pop gl states.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-comment"># Returns the reset gl states.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -970,7 +973,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the push gl states.</p>
 
 
         </div>
@@ -1001,7 +1004,7 @@
             </details>
           </div>
           <div class="method-source-code" id="repeated-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1012,7 +1015,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the repeated.</p>
 
 
         </div>
@@ -1043,9 +1046,10 @@
             </details>
           </div>
           <div class="method-source-code" id="repeated-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_isRepeated</span>(<span class="ruby-ivar">@handle</span>)
 
+<span class="ruby-comment"># Set the repeated.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span>
@@ -1073,8 +1077,11 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Returns the push gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the pop gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the reset gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -1113,7 +1120,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if repeated.</p>
 
 
         </div>
@@ -1144,7 +1151,7 @@
             </details>
           </div>
           <div class="method-source-code" id="reset_gl_states-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 86</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -1215,7 +1222,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scissor-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 88</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_getScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))
@@ -1301,7 +1308,7 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 44</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1312,7 +1319,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the smooth.</p>
 
 
         </div>
@@ -1343,15 +1350,18 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_isSmooth</span>(<span class="ruby-ivar">@handle</span>)
 
+<span class="ruby-comment"># Set the smooth.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` if repeated.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_isRepeated</span>(<span class="ruby-ivar">@handle</span>)
 
+<span class="ruby-comment"># Set the repeated.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span>
@@ -1379,8 +1389,11 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Returns the push gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the pop gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the reset gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -1419,7 +1432,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if smooth.</p>
 
 
         </div>
@@ -1450,7 +1463,7 @@
             </details>
           </div>
           <div class="method-source-code" id="srgb-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Generate mipmaps for the underlying texture. Useful when the</span>
@@ -1473,8 +1486,11 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">active=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_setActive</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span>
+<span class="ruby-comment"># Returns the push gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push_gl_states</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_pushGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the pop gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_gl_states</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_popGLStates</span>(<span class="ruby-ivar">@handle</span>)
+<span class="ruby-comment"># Returns the reset gl states.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_gl_states</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_resetGLStates</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Pixel-space viewport / scissor for the given view (defaults</span>
@@ -1545,7 +1561,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 96</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture</span>
   <span class="ruby-ivar">@texture</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_getTexture</span>(<span class="ruby-ivar">@handle</span>)
@@ -1596,7 +1612,7 @@
             </details>
           </div>
           <div class="method-source-code" id="viewport-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 83</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_texture.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>(<span class="ruby-identifier">view</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRenderTexture_getViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">handle</span>))

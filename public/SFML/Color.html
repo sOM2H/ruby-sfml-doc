@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Color - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Color - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Color - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Color - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Color - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Color - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -802,7 +802,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">hex</span>)
   <span class="ruby-identifier">str</span> = <span class="ruby-identifier">hex</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">delete_prefix</span>(<span class="ruby-string">&quot;#&quot;</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">length</span>
@@ -823,7 +823,9 @@
         <div class="method-description">
 
 
-          
+          <p>Parse a hex color string. Accepts RGB (each digit doubled), RRGGBB (opaque), or RRGGBBAA (with alpha). The leading <code>#</code> is optional.</p>
+
+<p>SFML::<a href="&quot;#ff6432&quot;">Color</a> #=&gt; Color(255, 100, 50, 255) SFML::<a href="&quot;#ff643280&quot;">Color</a> #=&gt; Color(255, 100, 50, 128) SFML::<a href="&quot;#abc&quot;">Color</a> #=&gt; Color(170, 187, 204, 255)</p>
 
 
         </div>
@@ -854,16 +856,25 @@
             </details>
           </div>
           <div class="method-source-code" id="black-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 107</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+<span class="ruby-comment"># Returns the WHITE singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+<span class="ruby-comment"># Returns the RED singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+<span class="ruby-comment"># Returns the GREEN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+<span class="ruby-comment"># Returns the BLUE singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+<span class="ruby-comment"># Returns the YELLOW singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+<span class="ruby-comment"># Returns the MAGENTA singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+<span class="ruby-comment"># Returns the CYAN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+<span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+<span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
 <span class="ruby-keyword">def</span></pre>
           </div>
 
@@ -872,7 +883,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the <a href="Color.html#BLACK"><code>BLACK</code></a> singleton.</p>
 
 
         </div>
@@ -903,12 +914,17 @@
             </details>
           </div>
           <div class="method-source-code" id="blue-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 111</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 137</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+<span class="ruby-comment"># Returns the YELLOW singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+<span class="ruby-comment"># Returns the MAGENTA singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+<span class="ruby-comment"># Returns the CYAN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+<span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+<span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
     </pre>
           </div>
@@ -949,7 +965,7 @@
             </details>
           </div>
           <div class="method-source-code" id="cornflower_blue-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 116</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 147</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -990,9 +1006,11 @@
             </details>
           </div>
           <div class="method-source-code" id="cyan-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 114</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 143</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+      <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+      <span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
       <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
@@ -1035,7 +1053,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_integer-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_integer</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_fromInteger</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -1077,13 +1095,19 @@
             </details>
           </div>
           <div class="method-source-code" id="green-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 110</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 135</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+<span class="ruby-comment"># Returns the BLUE singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+<span class="ruby-comment"># Returns the YELLOW singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+<span class="ruby-comment"># Returns the MAGENTA singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+<span class="ruby-comment"># Returns the CYAN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+<span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+<span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span></pre>
           </div>
 
@@ -1123,10 +1147,13 @@
             </details>
           </div>
           <div class="method-source-code" id="magenta-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 113</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 141</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+    <span class="ruby-comment"># Returns the CYAN singleton.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+    <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+    <span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1168,7 +1195,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 13</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span> = <span class="ruby-value">255</span>)
   <span class="ruby-ivar">@r</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">r</span>)
   <span class="ruby-ivar">@g</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">g</span>)
@@ -1183,7 +1210,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="Color.html"><code>Color</code></a> from individual channel values. Each must be an Integer in [0, 255]; alpha defaults to 255 (opaque).</p>
 
 
         </div>
@@ -1214,14 +1241,21 @@
             </details>
           </div>
           <div class="method-source-code" id="red-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 109</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+<span class="ruby-comment"># Returns the GREEN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+<span class="ruby-comment"># Returns the BLUE singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+<span class="ruby-comment"># Returns the YELLOW singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+<span class="ruby-comment"># Returns the MAGENTA singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+<span class="ruby-comment"># Returns the CYAN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+<span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+<span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> =</pre>
           </div>
 
@@ -1261,10 +1295,18 @@
             </details>
           </div>
           <div class="method-source-code" id="rgb-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 21</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">rgb</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)        = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-value">255</span>)
+<span class="ruby-comment"># RGBA constructor — alias for `.new(r, g, b, a)`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">rgba</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)    = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)
 
+<span class="ruby-comment"># Parse a hex color string. Accepts `#RGB` (each digit doubled),</span>
+<span class="ruby-comment"># `#RRGGBB` (opaque), or `#RRGGBBAA` (with alpha). The leading</span>
+<span class="ruby-comment"># `#` is optional.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#ff6432&quot;]     #=&gt; Color(255, 100, 50, 255)</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#ff643280&quot;]   #=&gt; Color(255, 100, 50, 128)</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#abc&quot;]        #=&gt; Color(170, 187, 204, 255)</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">hex</span>)
   <span class="ruby-identifier">str</span> = <span class="ruby-identifier">hex</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">delete_prefix</span>(<span class="ruby-string">&quot;#&quot;</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">length</span>
@@ -1279,17 +1321,24 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — all four channels must match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@g</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">g</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">b</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">a</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>]
+<span class="ruby-comment"># `{r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">r:</span> <span class="ruby-ivar">@r</span>, <span class="ruby-value">g:</span> <span class="ruby-ivar">@g</span>, <span class="ruby-value">b:</span> <span class="ruby-ivar">@b</span>, <span class="ruby-value">a:</span> <span class="ruby-ivar">@a</span> }
+<span class="ruby-comment"># Pattern-match support for `in [r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1319,6 +1368,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1347,15 +1397,25 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
-  </pre>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            </pre>
           </div>
 
 
@@ -1363,7 +1423,7 @@
         <div class="method-description">
 
 
-          
+          <p>Opaque RGB constructor — alias for <code>.new(r, g, b)</code>.</p>
 
 
         </div>
@@ -1394,9 +1454,16 @@
             </details>
           </div>
           <div class="method-source-code" id="rgba-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">rgba</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)    = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)
 
+<span class="ruby-comment"># Parse a hex color string. Accepts `#RGB` (each digit doubled),</span>
+<span class="ruby-comment"># `#RRGGBB` (opaque), or `#RRGGBBAA` (with alpha). The leading</span>
+<span class="ruby-comment"># `#` is optional.</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#ff6432&quot;]     #=&gt; Color(255, 100, 50, 255)</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#ff643280&quot;]   #=&gt; Color(255, 100, 50, 128)</span>
+<span class="ruby-comment">#   SFML::Color[&quot;#abc&quot;]        #=&gt; Color(170, 187, 204, 255)</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">hex</span>)
   <span class="ruby-identifier">str</span> = <span class="ruby-identifier">hex</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">delete_prefix</span>(<span class="ruby-string">&quot;#&quot;</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">length</span>
@@ -1411,17 +1478,24 @@
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — all four channels must match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@g</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">g</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">b</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">a</span>
 <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>]
+<span class="ruby-comment"># `{r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">r:</span> <span class="ruby-ivar">@r</span>, <span class="ruby-value">g:</span> <span class="ruby-ivar">@g</span>, <span class="ruby-value">b:</span> <span class="ruby-ivar">@b</span>, <span class="ruby-value">a:</span> <span class="ruby-ivar">@a</span> }
+<span class="ruby-comment"># Pattern-match support for `in [r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1451,6 +1525,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1479,15 +1554,25 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
-  <span class="ruby-keyword">def</span> </pre>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = </pre>
           </div>
 
 
@@ -1495,7 +1580,7 @@
         <div class="method-description">
 
 
-          
+          <p>RGBA constructor — alias for <code>.new(r, g, b, a)</code>.</p>
 
 
         </div>
@@ -1526,8 +1611,9 @@
             </details>
           </div>
           <div class="method-source-code" id="transparent-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 115</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 145</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+    <span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1569,15 +1655,23 @@
             </details>
           </div>
           <div class="method-source-code" id="white-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 108</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+<span class="ruby-comment"># Returns the RED singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+<span class="ruby-comment"># Returns the GREEN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+<span class="ruby-comment"># Returns the BLUE singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+<span class="ruby-comment"># Returns the YELLOW singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+<span class="ruby-comment"># Returns the MAGENTA singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+<span class="ruby-comment"># Returns the CYAN singleton.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+<span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+<span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span></pre>
           </div>
 
@@ -1617,11 +1711,15 @@
             </details>
           </div>
           <div class="method-source-code" id="yellow-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 112</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 139</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+  <span class="ruby-comment"># Returns the CORNFLOWER_BLUE singleton — handy default for empty windows.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cornflower_blue</span> = <span class="ruby-constant">CORNFLOWER_BLUE</span>
 <span class="ruby-keyword">end</span>
 </pre>
@@ -1677,7 +1775,7 @@
             </details>
           </div>
           <div class="method-source-code" id="2A-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 86</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color *: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_modulate</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1720,7 +1818,7 @@
             </details>
           </div>
           <div class="method-source-code" id="2B-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color +: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1763,7 +1861,7 @@
             </details>
           </div>
           <div class="method-source-code" id="2D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 78</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1775,7 +1873,7 @@
         <div class="method-description">
 
 
-          
+          <p>Saturating channel-wise subtraction — values clamp at 0.</p>
 
 
         </div>
@@ -1806,7 +1904,7 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@g</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">g</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">b</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">a</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1817,7 +1915,7 @@
         <div class="method-description">
 
 
-          
+          <p>Value equality — all four channels must match.</p>
 
 
         </div>
@@ -1848,10 +1946,12 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1881,6 +1981,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -1909,16 +2010,27 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
-  <span class="ruby-keyword">def</span></pre>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span></pre>
           </div>
 
 
@@ -1926,7 +2038,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match support for <code>in [r, g, b, a]</code>.</p>
 
 
         </div>
@@ -1957,9 +2069,10 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 47</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1989,6 +2102,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2017,16 +2131,27 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span></pre>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     =</pre>
           </div>
 
 
@@ -2065,14 +2190,19 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># `[r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>]
+<span class="ruby-comment"># `{r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">r:</span> <span class="ruby-ivar">@r</span>, <span class="ruby-value">g:</span> <span class="ruby-ivar">@g</span>, <span class="ruby-value">b:</span> <span class="ruby-ivar">@b</span>, <span class="ruby-value">a:</span> <span class="ruby-ivar">@a</span> }
+<span class="ruby-comment"># Pattern-match support for `in [r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2102,6 +2232,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2130,15 +2261,26 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            </pre>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+</pre>
           </div>
 
 
@@ -2146,7 +2288,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash key support.</p>
 
 
         </div>
@@ -2177,12 +2319,16 @@
             </details>
           </div>
           <div class="method-source-code" id="to_a-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 44</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>]
+<span class="ruby-comment"># `{r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">r:</span> <span class="ruby-ivar">@r</span>, <span class="ruby-value">g:</span> <span class="ruby-ivar">@g</span>, <span class="ruby-value">b:</span> <span class="ruby-ivar">@b</span>, <span class="ruby-value">a:</span> <span class="ruby-ivar">@a</span> }
+<span class="ruby-comment"># Pattern-match support for `in [r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2212,6 +2358,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2240,15 +2387,27 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = </pre>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+</pre>
           </div>
 
 
@@ -2256,7 +2415,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>[r, g, b, a]</code>.</p>
 
 
         </div>
@@ -2287,11 +2446,14 @@
             </details>
           </div>
           <div class="method-source-code" id="to_h-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 45</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">r:</span> <span class="ruby-ivar">@r</span>, <span class="ruby-value">g:</span> <span class="ruby-ivar">@g</span>, <span class="ruby-value">b:</span> <span class="ruby-ivar">@b</span>, <span class="ruby-value">a:</span> <span class="ruby-ivar">@a</span> }
+<span class="ruby-comment"># Pattern-match support for `in [r, g, b, a]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = <span class="ruby-identifier">to_a</span>
+<span class="ruby-comment"># Pattern-match support for `in {r:, g:, b:, a:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = <span class="ruby-identifier">to_h</span>
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2321,6 +2483,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2349,16 +2512,27 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
-</pre>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+  <span class="ruby-keyword">def</span></pre>
           </div>
 
 
@@ -2397,7 +2571,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_integer-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 68</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_integer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_toInteger</span>(<span class="ruby-identifier">to_native</span>)
 
 <span class="ruby-comment"># Component-wise channel arithmetic (saturating in CSFML — values</span>
@@ -2408,6 +2582,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2436,16 +2611,28 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span></pre>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span>
+  </pre>
           </div>
 
 
@@ -2484,7 +2671,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 49</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/color.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Color(#{@r}, #{@g}, #{@b}, #{@a})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2514,6 +2701,7 @@
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_add</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Saturating channel-wise subtraction — values clamp at 0.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Color -: expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfColor_subtract</span>(<span class="ruby-identifier">to_native</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_native</span>))
@@ -2542,16 +2730,27 @@
 <span class="ruby-comment"># A nicer default than pure black for empty windows.</span>
 <span class="ruby-constant">CORNFLOWER_BLUE</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>, <span class="ruby-value">149</span>, <span class="ruby-value">237</span>)
 
+<span class="ruby-comment"># Convenience accessors for the standard named colors, also</span>
+<span class="ruby-comment"># available as `Color::BLACK` etc. for use in constants.</span>
 <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-comment"># Returns the BLACK singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">black</span>           = <span class="ruby-constant">BLACK</span>
+  <span class="ruby-comment"># Returns the WHITE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">white</span>           = <span class="ruby-constant">WHITE</span>
+  <span class="ruby-comment"># Returns the RED singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">red</span>             = <span class="ruby-constant">RED</span>
+  <span class="ruby-comment"># Returns the GREEN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">green</span>           = <span class="ruby-constant">GREEN</span>
+  <span class="ruby-comment"># Returns the BLUE singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blue</span>            = <span class="ruby-constant">BLUE</span>
+  <span class="ruby-comment"># Returns the YELLOW singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yellow</span>          = <span class="ruby-constant">YELLOW</span>
+  <span class="ruby-comment"># Returns the MAGENTA singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magenta</span>         = <span class="ruby-constant">MAGENTA</span>
+  <span class="ruby-comment"># Returns the CYAN singleton.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cyan</span>            = <span class="ruby-constant">CYAN</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     =</pre>
+  <span class="ruby-comment"># Returns the TRANSPARENT singleton (alpha = 0).</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transparent</span>     = <span class="ruby-constant">TRANSPARENT</span></pre>
           </div>
 
 
@@ -2559,7 +2758,7 @@
         <div class="method-description">
 
 
-          
+          <p>String representation for debugging.</p>
 
 
         </div>

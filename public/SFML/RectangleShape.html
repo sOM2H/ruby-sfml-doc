@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::RectangleShape - ruby-sfml 3.0.0.6</title>
+<title>class SFML::RectangleShape - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::RectangleShape - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::RectangleShape - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::RectangleShape - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::RectangleShape - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -652,7 +652,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 15</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">size:</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfRectangleShape_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -676,7 +676,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="RectangleShape.html"><code>RectangleShape</code></a>. Required: <code>size:</code> (<a href="Vector2.html"><code>Vector2</code></a> or <code>[w, h]</code>). All other styling/transform kwargs match <a href="CircleShape.html"><code>CircleShape</code></a>.</p>
 
 
         </div>
@@ -721,21 +721,26 @@
             </details>
           </div>
           <div class="method-source-code" id="fill_color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 43</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 49</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getFillColor</span>(<span class="ruby-ivar">@handle</span>))
 
+  <span class="ruby-comment"># Set the fill color.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Outline color (only visible when `#outline_thickness &gt; 0`).</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
 
+  <span class="ruby-comment"># Set the outline color.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Outline thickness in pixels — negative draws inward.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
 
+  <span class="ruby-comment"># Set the outline thickness.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-keyword">end</span>
@@ -753,7 +758,7 @@
         <div class="method-description">
 
 
-          
+          <p>Interior fill color.</p>
 
 
         </div>
@@ -784,7 +789,7 @@
             </details>
           </div>
           <div class="method-source-code" id="fill_color-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 45</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -795,7 +800,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the fill color.</p>
 
 
         </div>
@@ -826,15 +831,18 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 49</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 57</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
 
+    <span class="ruby-comment"># Set the outline color.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Outline thickness in pixels — negative draws inward.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
 
+    <span class="ruby-comment"># Set the outline thickness.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
     <span class="ruby-keyword">end</span>
@@ -853,7 +861,7 @@
         <div class="method-description">
 
 
-          
+          <p>Outline color (only visible when <code>#outline_thickness &gt; 0</code>).</p>
 
 
         </div>
@@ -884,7 +892,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_color-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -895,7 +903,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the outline color.</p>
 
 
         </div>
@@ -926,9 +934,10 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_thickness-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 65</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
 
+  <span class="ruby-comment"># Set the outline thickness.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-keyword">end</span>
@@ -946,7 +955,7 @@
         <div class="method-description">
 
 
-          
+          <p>Outline thickness in pixels — negative draws inward.</p>
 
 
         </div>
@@ -977,7 +986,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_thickness-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -988,7 +997,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the outline thickness.</p>
 
 
         </div>
@@ -1019,32 +1028,40 @@
             </details>
           </div>
           <div class="method-source-code" id="point_count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 32</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">point_count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getPointCount</span>(<span class="ruby-ivar">@handle</span>)
 
+<span class="ruby-comment"># Current size as a Vector2.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getSize</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Set the size — accepts Vector2 or `[w, h]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Interior fill color.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getFillColor</span>(<span class="ruby-ivar">@handle</span>))
 
+<span class="ruby-comment"># Set the fill color.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Outline color (only visible when `#outline_thickness &gt; 0`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
 
+<span class="ruby-comment"># Set the outline color.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Outline thickness in pixels — negative draws inward.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
 
+<span class="ruby-comment"># Set the outline thickness.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span>
@@ -1062,7 +1079,7 @@
         <div class="method-description">
 
 
-          
+          <p>Always 4 — the four corners.</p>
 
 
         </div>
@@ -1093,7 +1110,7 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_getSize</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1104,7 +1121,7 @@
         <div class="method-description">
 
 
-          
+          <p>Current size as a <a href="Vector2.html"><code>Vector2</code></a>.</p>
 
 
         </div>
@@ -1135,7 +1152,7 @@
             </details>
           </div>
           <div class="method-source-code" id="size-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/rectangle_shape.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfRectangleShape_setSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -1147,7 +1164,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the size — accepts <a href="Vector2.html"><code>Vector2</code></a> or <code>[w, h]</code>.</p>
 
 
         </div>

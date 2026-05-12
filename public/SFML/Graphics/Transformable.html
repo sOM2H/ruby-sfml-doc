@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Graphics::Transformable - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Graphics::Transformable - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Graphics::Transformable - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Graphics::Transformable - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Graphics::Transformable - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Graphics::Transformable - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -591,7 +591,7 @@
             </details>
           </div>
           <div class="method-source-code" id="move-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move</span>(<span class="ruby-identifier">offset</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:move</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_coerce_vec2</span>(<span class="ruby-identifier">offset</span>).<span class="ruby-identifier">to_native_f</span>)
   <span class="ruby-keyword">self</span>
@@ -603,7 +603,7 @@
         <div class="method-description">
 
 
-          
+          <p>Translate by <code>offset</code> (relative move). Chainable — returns self.</p>
 
 
         </div>
@@ -634,7 +634,7 @@
             </details>
           </div>
           <div class="method-source-code" id="origin-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">origin</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getOrigin</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -645,7 +645,7 @@
         <div class="method-description">
 
 
-          
+          <p>The local origin (pivot for rotation/scale). Default is <code>[0, 0]</code>— set it to the centre of the bounding box for “rotate in place”.</p>
 
 
         </div>
@@ -676,7 +676,7 @@
             </details>
           </div>
           <div class="method-source-code" id="origin-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">origin=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setOrigin</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_coerce_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -687,7 +687,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the origin — accepts <a href="../Vector2.html"><code>Vector2</code></a> or <code>[x, y]</code> Array.</p>
 
 
         </div>
@@ -718,7 +718,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 14</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getPosition</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -729,7 +729,7 @@
         <div class="method-description">
 
 
-          
+          <p>Current 2D position as a <a href="../Vector2.html"><code>Vector2</code></a>.</p>
 
 
         </div>
@@ -760,7 +760,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 18</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setPosition</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_coerce_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -771,7 +771,7 @@
         <div class="method-description">
 
 
-          
+          <p>Move to absolute <code>[x, y]</code> — accepts <a href="../Vector2.html"><code>Vector2</code></a> or <code>[x, y]</code> Array.</p>
 
 
         </div>
@@ -802,7 +802,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotate</span>(<span class="ruby-identifier">degrees</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:rotate</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-keyword">self</span>
@@ -814,7 +814,7 @@
         <div class="method-description">
 
 
-          
+          <p>Rotate by <code>degrees</code> (relative). Chainable.</p>
 
 
         </div>
@@ -845,7 +845,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotation-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation</span>
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getRotation</span>, <span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -856,7 +856,7 @@
         <div class="method-description">
 
 
-          
+          <p>Current rotation in degrees (counter-clockwise positive).</p>
 
 
         </div>
@@ -887,7 +887,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotation-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation=</span>(<span class="ruby-identifier">degrees</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setRotation</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -898,7 +898,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set absolute rotation in degrees.</p>
 
 
         </div>
@@ -929,7 +929,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scale-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scale</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getScale</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -940,7 +940,7 @@
         <div class="method-description">
 
 
-          
+          <p>Current scale factors as a <a href="../Vector2.html"><code>Vector2</code></a> (<code>[1, 1]</code> means original size).</p>
 
 
         </div>
@@ -971,7 +971,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scale-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scale=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setScale</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_coerce_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -982,7 +982,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the scale — accepts <a href="../Vector2.html"><code>Vector2</code></a> or <code>[sx, sy]</code> Array.</p>
 
 
         </div>
@@ -1013,7 +1013,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scale_by-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 56</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scale_by</span>(<span class="ruby-identifier">factors</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:scale</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_coerce_vec2</span>(<span class="ruby-identifier">factors</span>).<span class="ruby-identifier">to_native_f</span>)
   <span class="ruby-keyword">self</span>
@@ -1025,7 +1025,7 @@
         <div class="method-description">
 
 
-          
+          <p>Multiply current scale by <code>factors</code> (relative scale). Chainable.</p>
 
 
         </div>

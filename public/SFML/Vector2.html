@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Vector2 - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Vector2 - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Vector2 - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Vector2 - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Vector2 - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Vector2 - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -701,9 +701,12 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 12</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>) = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>     = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+
+<span class="ruby-comment"># The (0, 0) vector. Reused as a singleton-style fallback (e.g.</span>
+<span class="ruby-comment"># `#normalize` returns this for the zero vector).</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">y</span> = <span class="ruby-value">0</span>)
   <span class="ruby-ivar">@x</span> = <span class="ruby-identifier">x</span>
@@ -711,10 +714,15 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Component-wise addition.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Component-wise subtraction.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Multiply both components by `scalar`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>)
+<span class="ruby-comment"># Divide both components by `scalar`. Always promotes to Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -724,24 +732,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -757,6 +781,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -802,15 +827,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -829,7 +868,7 @@
         <div class="method-description">
 
 
-          
+          <p>Compact constructor: <code>Vector2[3, 4]</code> reads naturally as a literal.</p>
 
 
         </div>
@@ -860,7 +899,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 15</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">y</span> = <span class="ruby-value">0</span>)
   <span class="ruby-ivar">@x</span> = <span class="ruby-identifier">x</span>
   <span class="ruby-ivar">@y</span> = <span class="ruby-identifier">y</span>
@@ -904,8 +943,8 @@
             </details>
           </div>
           <div class="method-source-code" id="zero-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 13</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span>     = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">zero</span> = <span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
 
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">x</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">y</span> = <span class="ruby-value">0</span>)
   <span class="ruby-ivar">@x</span> = <span class="ruby-identifier">x</span>
@@ -913,10 +952,15 @@
   <span class="ruby-identifier">freeze</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Component-wise addition.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Component-wise subtraction.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Multiply both components by `scalar`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>)
+<span class="ruby-comment"># Divide both components by `scalar`. Always promotes to Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -926,24 +970,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -959,6 +1019,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1004,15 +1065,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1032,7 +1107,7 @@
         <div class="method-description">
 
 
-          
+          <p>The (0, 0) vector. Reused as a singleton-style fallback (e.g. <a href="Vector2.html#method-i-normalize"><code>normalize</code></a> returns this for the zero vector).</p>
 
 
         </div>
@@ -1077,9 +1152,11 @@
             </details>
           </div>
           <div class="method-source-code" id="2A-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 23</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>)
+<span class="ruby-comment"># Divide both components by `scalar`. Always promotes to Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -1089,24 +1166,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1122,6 +1215,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1167,15 +1261,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1198,7 +1306,7 @@
         <div class="method-description">
 
 
-          
+          <p>Multiply both components by <code>scalar</code>.</p>
 
 
         </div>
@@ -1229,11 +1337,15 @@
             </details>
           </div>
           <div class="method-source-code" id="2B-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 21</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Component-wise subtraction.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Multiply both components by `scalar`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>)
+<span class="ruby-comment"># Divide both components by `scalar`. Always promotes to Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -1243,24 +1355,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1276,6 +1404,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1321,15 +1450,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1350,7 +1493,7 @@
         <div class="method-description">
 
 
-          
+          <p>Component-wise addition.</p>
 
 
         </div>
@@ -1381,10 +1524,13 @@
             </details>
           </div>
           <div class="method-source-code" id="2D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-comment"># Multiply both components by `scalar`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scalar</span>)
+<span class="ruby-comment"># Divide both components by `scalar`. Always promotes to Float.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -1394,24 +1540,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1427,6 +1589,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1472,15 +1635,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1502,7 +1679,7 @@
         <div class="method-description">
 
 
-          
+          <p>Component-wise subtraction.</p>
 
 
         </div>
@@ -1533,7 +1710,7 @@
             </details>
           </div>
           <div class="method-source-code" id="2D-40-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 25</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -1543,24 +1720,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1576,6 +1769,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1621,15 +1815,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1654,7 +1862,7 @@
         <div class="method-description">
 
 
-          
+          <p>Negate both components.</p>
 
 
         </div>
@@ -1685,8 +1893,9 @@
             </details>
           </div>
           <div class="method-source-code" id="2F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">scalar</span>) = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-comment"># Negate both components.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@x</span>, <span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>)
 
 <span class="ruby-comment"># Lets Ruby evaluate `2 * vec` as `vec * 2`. Without this, Numeric#*</span>
@@ -1696,24 +1905,40 @@
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Value equality — two Vector2s are equal when both components match.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1729,6 +1954,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1774,15 +2000,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1806,7 +2046,7 @@
         <div class="method-description">
 
 
-          
+          <p>Divide both components by <code>scalar</code>. Always promotes to Float.</p>
 
 
         </div>
@@ -1837,25 +2077,40 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>) = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">==</span>
+<span class="ruby-comment"># Hash key support — Vector2s can be Hash keys / Set members.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -1871,6 +2126,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -1916,15 +2172,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1949,7 +2219,7 @@
         <div class="method-description">
 
 
-          
+          <p>Value equality — two Vector2s are equal when both components match.</p>
 
 
         </div>
@@ -1980,7 +2250,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_coerce-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 137</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 177</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2022,15 +2292,26 @@
             </details>
           </div>
           <div class="method-source-code" id="abs-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 113</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2056,7 +2337,7 @@
         <div class="method-description">
 
 
-          
+          <p>Per-component absolute value.</p>
 
 
         </div>
@@ -2087,7 +2368,7 @@
             </details>
           </div>
           <div class="method-source-code" id="angle-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">angle</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">atan2</span>(<span class="ruby-ivar">@y</span>, <span class="ruby-ivar">@x</span>)
 
 <span class="ruby-comment"># Angle from this vector to `other` as positions, in radians.</span>
@@ -2100,6 +2381,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -2145,15 +2427,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2210,7 +2506,7 @@
             </details>
           </div>
           <div class="method-source-code" id="angle_to-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 58</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">angle_to</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">o</span> = <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-constant">Math</span>.<span class="ruby-identifier">atan2</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">o</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@x</span>)
@@ -2253,7 +2549,7 @@
             </details>
           </div>
           <div class="method-source-code" id="clamp_length-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 100</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clamp_length</span>(<span class="ruby-identifier">min_len</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">max_len</span>)
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
@@ -2303,7 +2599,7 @@
             </details>
           </div>
           <div class="method-source-code" id="coerce-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">coerce</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;Vector2 cannot coerce #{other.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
   [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">other</span>]
@@ -2346,11 +2642,14 @@
             </details>
           </div>
           <div class="method-source-code" id="cross-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -2366,6 +2665,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -2411,15 +2711,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2445,7 +2759,7 @@
         <div class="method-description">
 
 
-          
+          <p>Scalar 2D cross product (a.k.a. perpendicular dot). Positive when <code>other</code> is counter-clockwise from <code>self</code>, negative when clockwise.</p>
 
 
         </div>
@@ -2476,10 +2790,13 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 118</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 155</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+  <span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+  <span class="ruby-comment"># String representation for debugging.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2507,7 +2824,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match support for <code>in [x, y]</code>.</p>
 
 
         </div>
@@ -2538,9 +2855,10 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 119</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 158</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+    <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2569,7 +2887,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match support for <code>in {x:, y:}</code>.</p>
 
 
         </div>
@@ -2600,8 +2918,11 @@
             </details>
           </div>
           <div class="method-source-code" id="distance-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -2617,6 +2938,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -2662,15 +2984,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2696,7 +3032,7 @@
         <div class="method-description">
 
 
-          <p>Euclidean distance between two points.</p>
+          <p>Euclidean distance to <code>other</code> — accepts a <a href="Vector2.html"><code>Vector2</code></a> or <code>[x, y]</code>.</p>
 
 
         </div>
@@ -2727,7 +3063,7 @@
             </details>
           </div>
           <div class="method-source-code" id="distance_sq-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -2743,6 +3079,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -2788,15 +3125,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2822,7 +3173,7 @@
         <div class="method-description">
 
 
-          
+          <p>Squared distance to <code>other</code> — skip the <code>sqrt</code> if you only need to compare two distances.</p>
 
 
         </div>
@@ -2853,12 +3204,18 @@
             </details>
           </div>
           <div class="method-source-code" id="dot-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 47</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -2874,6 +3231,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -2919,15 +3277,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -2953,7 +3325,7 @@
         <div class="method-description">
 
 
-          
+          <p>Scalar dot product. Positive when both vectors point roughly the same way, negative when opposite, zero when perpendicular.</p>
 
 
         </div>
@@ -2984,23 +3356,37 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>].<span class="ruby-identifier">hash</span>
 
+<span class="ruby-comment"># Euclidean length √(x² + y²). For comparisons prefer `length_sq` —</span>
+<span class="ruby-comment"># avoids the square root.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -3016,6 +3402,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -3061,15 +3448,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3094,7 +3495,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash key support — Vector2s can be Hash keys / Set members.</p>
 
 
         </div>
@@ -3125,21 +3526,33 @@
             </details>
           </div>
           <div class="method-source-code" id="length-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length</span>    = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">length_sq</span>)
+<span class="ruby-comment"># Squared length (x² + y²) — comparisons can use this without the</span>
+<span class="ruby-comment"># `sqrt` call.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -3155,6 +3568,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -3200,15 +3614,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3233,7 +3661,7 @@
         <div class="method-description">
 
 
-          
+          <p>Euclidean length √(x² + y²). For comparisons prefer <a href="Vector2.html#method-i-length_sq"><code>length_sq</code></a> —avoids the square root.</p>
 
 
         </div>
@@ -3264,20 +3692,30 @@
             </details>
           </div>
           <div class="method-source-code" id="length_sq-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">length_sq</span> = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@y</span>)
 
+<span class="ruby-comment"># Unit vector pointing the same way as `self`. Returns the zero</span>
+<span class="ruby-comment"># vector unchanged (no division by zero).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
   <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Scalar dot product. Positive when both vectors point roughly the</span>
+<span class="ruby-comment"># same way, negative when opposite, zero when perpendicular.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dot</span>(<span class="ruby-identifier">other</span>)   = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>)
+
+<span class="ruby-comment"># Scalar 2D cross product (a.k.a. perpendicular dot). Positive when</span>
+<span class="ruby-comment"># `other` is counter-clockwise from `self`, negative when clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>)
 
-<span class="ruby-comment"># Euclidean distance between two points.</span>
+<span class="ruby-comment"># Euclidean distance to `other` — accepts a Vector2 or `[x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance</span>(<span class="ruby-identifier">other</span>)    = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length</span>
+
+<span class="ruby-comment"># Squared distance to `other` — skip the `sqrt` if you only need to</span>
+<span class="ruby-comment"># compare two distances.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">distance_sq</span>(<span class="ruby-identifier">other</span>) = (<span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)).<span class="ruby-identifier">length_sq</span>
 
 <span class="ruby-comment"># Angle of this vector relative to +X axis, in radians (-π..π].</span>
@@ -3293,6 +3731,7 @@
 <span class="ruby-comment"># if you already have radians.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -3338,15 +3777,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3372,7 +3825,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>sqrt</code> call.</p>
 
 
         </div>
@@ -3403,7 +3856,7 @@
             </details>
           </div>
           <div class="method-source-code" id="lerp-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 78</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lerp</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">t</span>)
   <span class="ruby-identifier">o</span> = <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@x</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">t</span>, <span class="ruby-ivar">@y</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">t</span>)
@@ -3446,7 +3899,7 @@
             </details>
           </div>
           <div class="method-source-code" id="normalize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 41</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">length</span>
   <span class="ruby-keyword">return</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">zero</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">zero?</span>
@@ -3459,7 +3912,7 @@
         <div class="method-description">
 
 
-          
+          <p>Unit vector pointing the same way as <code>self</code>. Returns the zero vector unchanged (no division by zero).</p>
 
 
         </div>
@@ -3490,7 +3943,7 @@
             </details>
           </div>
           <div class="method-source-code" id="perpendicular-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 74</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">perpendicular</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@y</span>, <span class="ruby-ivar">@x</span>)
 
 <span class="ruby-comment"># Linear interpolation toward `other`. `t` in [0, 1] gives the</span>
@@ -3529,15 +3982,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3594,7 +4061,7 @@
             </details>
           </div>
           <div class="method-source-code" id="project_on-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 84</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 110</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">project_on</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">o</span> = <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">d</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">length_sq</span>
@@ -3639,7 +4106,7 @@
             </details>
           </div>
           <div class="method-source-code" id="reflect-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 93</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 119</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reflect</span>(<span class="ruby-identifier">normal</span>)
   <span class="ruby-identifier">n</span> = <span class="ruby-identifier">_coerce</span>(<span class="ruby-identifier">normal</span>)
   <span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> (<span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dot</span>(<span class="ruby-identifier">n</span>)))
@@ -3682,9 +4149,10 @@
             </details>
           </div>
           <div class="method-source-code" id="rotated-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 65</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated</span>(<span class="ruby-identifier">degrees</span>) = <span class="ruby-identifier">rotated_rad</span>(<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>)
 
+<span class="ruby-comment"># Vector rotated by `radians` counter-clockwise.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -3730,15 +4198,29 @@
   <span class="ruby-keyword">self</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">target</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">len</span>)
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># `true` iff both components are zero.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3795,7 +4277,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotated_rad-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 67</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotated_rad</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-identifier">c</span>, <span class="ruby-identifier">s</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">radians</span>), <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">radians</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span>, <span class="ruby-ivar">@x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>)
@@ -3807,7 +4289,7 @@
         <div class="method-description">
 
 
-          
+          <p>Vector rotated by <code>radians</code> counter-clockwise.</p>
 
 
         </div>
@@ -3838,12 +4320,19 @@
             </details>
           </div>
           <div class="method-source-code" id="to_a-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 116</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3870,7 +4359,7 @@
         <div class="method-description">
 
 
-          
+          <p>As a 2-element <code>[x, y]</code> Array — supports splat destructuring: <code>x, y = vec</code>.</p>
 
 
         </div>
@@ -3901,11 +4390,16 @@
             </details>
           </div>
           <div class="method-source-code" id="to_h-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 117</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3933,7 +4427,7 @@
         <div class="method-description">
 
 
-          
+          <p>As a <code>{x:, y:}</code> Hash.</p>
 
 
         </div>
@@ -3964,7 +4458,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 121</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 161</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -3992,7 +4486,7 @@
         <div class="method-description">
 
 
-          
+          <p>String representation for debugging.</p>
 
 
         </div>
@@ -4023,14 +4517,23 @@
             </details>
           </div>
           <div class="method-source-code" id="to_v3-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 114</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -4056,7 +4559,7 @@
         <div class="method-description">
 
 
-          
+          <p>Promote to a <a href="Vector3.html"><code>Vector3</code></a> with optional <code>z</code> (default 0).</p>
 
 
         </div>
@@ -4087,16 +4590,29 @@
             </details>
           </div>
           <div class="method-source-code" id="zero-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 112</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/vector2.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>  = <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">zero?</span>
+
+<span class="ruby-comment"># Per-component absolute value.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">abs</span>    = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-ivar">@y</span>.<span class="ruby-identifier">abs</span>)
+
+<span class="ruby-comment"># Promote to a Vector3 with optional `z` (default 0).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_v3</span>(<span class="ruby-identifier">z</span> = <span class="ruby-value">0.0</span>) = <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>, <span class="ruby-identifier">z</span>)
 
+<span class="ruby-comment"># As a 2-element `[x, y]` Array — supports splat destructuring:</span>
+<span class="ruby-comment"># `x, y = vec`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># As a `{x:, y:}` Hash.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
+
+<span class="ruby-comment"># Pattern-match support for `in [x, y]`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+
+<span class="ruby-comment"># Pattern-match support for `in {x:, y:}`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">x:</span> <span class="ruby-ivar">@x</span>, <span class="ruby-value">y:</span> <span class="ruby-ivar">@y</span> }
 
+<span class="ruby-comment"># String representation for debugging.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Vector2(#{@x}, #{@y})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -4122,7 +4638,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> iff both components are zero.</p>
 
 
         </div>

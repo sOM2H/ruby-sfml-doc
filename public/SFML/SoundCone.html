@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::SoundCone - ruby-sfml 3.0.0.6</title>
+<title>class SFML::SoundCone - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::SoundCone - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::SoundCone - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::SoundCone - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::SoundCone - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -661,7 +661,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_native-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">new</span>(
     <span class="ruby-value">inner_angle:</span> <span class="ruby-identifier">struct</span>[<span class="ruby-value">:inner_angle</span>],
@@ -849,7 +849,7 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 32</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-identifier">inner_angle</span>, <span class="ruby-identifier">outer_angle</span>, <span class="ruby-identifier">outer_gain</span>].<span class="ruby-identifier">hash</span>
 
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
@@ -882,7 +882,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the hash.</p>
 
 
         </div>
@@ -913,7 +913,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_native-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span>
   <span class="ruby-identifier">s</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span><span class="ruby-operator">::</span><span class="ruby-constant">SoundSourceCone</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">s</span>[<span class="ruby-value">:inner_angle</span>] = <span class="ruby-ivar">@inner_angle</span>
@@ -959,7 +959,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 33</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_cone.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;SoundCone(inner=#{inner_angle}°, outer=#{outer_angle}°, outer_gain=#{outer_gain})&quot;</span>
 <span class="ruby-keyword">end</span></pre>

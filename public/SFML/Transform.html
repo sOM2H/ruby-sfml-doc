@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Transform - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Transform - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Transform - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Transform - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Transform - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Transform - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -827,7 +827,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_vec2-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 146</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 148</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -869,7 +869,7 @@
             </details>
           </div>
           <div class="method-source-code" id="allocate_new_with-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 138</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 140</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">allocate_new_with</span>(<span class="ruby-identifier">native_struct</span>)
   <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">new_buf</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">Transform</span>.<span class="ruby-identifier">new</span>
@@ -993,9 +993,10 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 128</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 129</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">hash</span>
 
+    <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Transform(#{matrix.map { |v| v.round(3) }.inspect})&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1024,7 +1025,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the hash.</p>
 
 
         </div>
@@ -1287,7 +1288,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 130</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transform.rb, line 132</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Transform(#{matrix.map { |v| v.round(3) }.inspect})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1315,7 +1316,7 @@
         <div class="method-description">
 
 
-          
+          <p>String representation for debugging.</p>
 
 
         </div>

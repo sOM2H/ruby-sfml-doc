@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::VertexArray - ruby-sfml 3.0.0.6</title>
+<title>class SFML::VertexArray - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::VertexArray - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::VertexArray - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::VertexArray - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::VertexArray - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -664,7 +664,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">primitive_type</span> = <span class="ruby-value">:points</span>, <span class="ruby-identifier">vertices</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfVertexArray_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -680,7 +680,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build an empty <a href="VertexArray.html"><code>VertexArray</code></a>. <a href="VertexArray.html#method-i-primitive_type"><code>primitive_type</code></a> chooses how vertices form geometry (see class doc). <code>vertices</code> is an optional initial list — same as calling <a href="VertexArray.html#method-i-append"><code>append</code></a> after.</p>
 
 
         </div>
@@ -725,7 +725,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 72</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-identifier">i</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">size</span>
@@ -770,7 +770,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">vertex</span>)
   <span class="ruby-identifier">i</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-comment"># CSFML&#39;s sfVertexArray_getVertex aborts the process on out-of-range</span>
@@ -796,7 +796,7 @@
         <div class="method-description">
 
 
-          
+          <p>In-place vertex replacement. Bounds-checked on the Ruby side because CSFML’s getter aborts the process for out-of-range.</p>
 
 
         </div>
@@ -827,7 +827,7 @@
             </details>
           </div>
           <div class="method-source-code" id="append-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append</span>(<span class="ruby-identifier">vertex</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_append</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vertex</span>.<span class="ruby-identifier">to_native</span>)
   <span class="ruby-keyword">self</span>
@@ -839,7 +839,7 @@
         <div class="method-description">
 
 
-          
+          <p>Add a vertex at the end. Returns self so calls can chain (<code>va &lt;&lt; v1 &lt;&lt; v2</code>).</p>
 
 
         </div>
@@ -870,7 +870,7 @@
             </details>
           </div>
           <div class="method-source-code" id="bounds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 104</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bounds</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_getBounds</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -881,7 +881,7 @@
         <div class="method-description">
 
 
-          
+          <p>Axis-aligned bounding box of all current vertices, as a <a href="Rect.html"><code>Rect</code></a>.</p>
 
 
         </div>
@@ -912,7 +912,7 @@
             </details>
           </div>
           <div class="method-source-code" id="clear-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_clear</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -924,7 +924,7 @@
         <div class="method-description">
 
 
-          
+          <p>Remove all vertices. Chainable.</p>
 
 
         </div>
@@ -955,7 +955,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 114</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfVertexArray_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1002,7 +1002,7 @@
             </details>
           </div>
           <div class="method-source-code" id="each-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 98</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 115</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-value">:each</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] }
@@ -1015,7 +1015,7 @@
         <div class="method-description">
 
 
-          
+          <p>Yield every vertex in order. Returns an Enumerator without a block — makes <code>va.map</code>, <code>va.select</code>, etc. work via Enumerable.</p>
 
 
         </div>
@@ -1046,19 +1046,24 @@
             </details>
           </div>
           <div class="method-source-code" id="empty-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 59</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">zero?</span>
 
+  <span class="ruby-comment"># Remove all vertices. Chainable.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_clear</span>(<span class="ruby-ivar">@handle</span>)
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Resize to exactly `n` vertices, allocating defaults if growing.</span>
+  <span class="ruby-comment"># Useful when you want to index-assign into the array directly.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">n</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>))
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Add a vertex at the end. Returns self so calls can chain</span>
+  <span class="ruby-comment"># (`va &lt;&lt; v1 &lt;&lt; v2`).</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append</span>(<span class="ruby-identifier">vertex</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_append</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vertex</span>.<span class="ruby-identifier">to_native</span>)
     <span class="ruby-keyword">self</span>
@@ -1075,6 +1080,8 @@
     <span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>))
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># In-place vertex replacement. Bounds-checked on the Ruby side</span>
+  <span class="ruby-comment"># because CSFML&#39;s getter aborts the process for out-of-range.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">vertex</span>)
     <span class="ruby-identifier">i</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)
     <span class="ruby-comment"># CSFML&#39;s sfVertexArray_getVertex aborts the process on out-of-range</span>
@@ -1094,12 +1101,15 @@
     <span class="ruby-identifier">vertex</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Yield every vertex in order. Returns an Enumerator without a</span>
+  <span class="ruby-comment"># block — makes `va.map`, `va.select`, etc. work via Enumerable.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-value">:each</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
     <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] }
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Axis-aligned bounding box of all current vertices, as a Rect.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bounds</span>
     <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_getBounds</span>(<span class="ruby-ivar">@handle</span>))
   <span class="ruby-keyword">end</span>
@@ -1129,7 +1139,7 @@
         <div class="method-description">
 
 
-          
+          <p><code>true</code> if there are no vertices.</p>
 
 
         </div>
@@ -1160,7 +1170,7 @@
             </details>
           </div>
           <div class="method-source-code" id="primitive_type-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">primitive_type</span>
   <span class="ruby-constant">PRIMITIVE_TYPES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_getPrimitiveType</span>(<span class="ruby-ivar">@handle</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1171,7 +1181,7 @@
         <div class="method-description">
 
 
-          
+          <p>Current primitive type as a Symbol (one of <a href="VertexArray.html#PRIMITIVE_TYPES"><code>PRIMITIVE_TYPES</code></a>).</p>
 
 
         </div>
@@ -1202,7 +1212,7 @@
             </details>
           </div>
           <div class="method-source-code" id="primitive_type-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">primitive_type=</span>(<span class="ruby-identifier">type</span>)
   <span class="ruby-identifier">code</span> = <span class="ruby-constant">PRIMITIVE_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
@@ -1217,7 +1227,7 @@
         <div class="method-description">
 
 
-          
+          <p>Change the primitive type. Raises <code>ArgumentError</code> for unknown symbols.</p>
 
 
         </div>
@@ -1248,7 +1258,7 @@
             </details>
           </div>
           <div class="method-source-code" id="resize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 58</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">n</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>))
   <span class="ruby-keyword">self</span>
@@ -1260,7 +1270,7 @@
         <div class="method-description">
 
 
-          
+          <p>Resize to exactly <code>n</code> vertices, allocating defaults if growing. Useful when you want to index-assign into the array directly.</p>
 
 
         </div>
@@ -1291,23 +1301,29 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 47</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_array.rb, line 54</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_getVertexCount</span>(<span class="ruby-ivar">@handle</span>)
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">length</span> <span class="ruby-identifier">size</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">count</span>  <span class="ruby-identifier">size</span>
 
+    <span class="ruby-comment"># `true` if there are no vertices.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">zero?</span>
 
+    <span class="ruby-comment"># Remove all vertices. Chainable.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_clear</span>(<span class="ruby-ivar">@handle</span>)
       <span class="ruby-keyword">self</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Resize to exactly `n` vertices, allocating defaults if growing.</span>
+    <span class="ruby-comment"># Useful when you want to index-assign into the array directly.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">n</span>)
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_resize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>))
       <span class="ruby-keyword">self</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Add a vertex at the end. Returns self so calls can chain</span>
+    <span class="ruby-comment"># (`va &lt;&lt; v1 &lt;&lt; v2`).</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append</span>(<span class="ruby-identifier">vertex</span>)
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_append</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vertex</span>.<span class="ruby-identifier">to_native</span>)
       <span class="ruby-keyword">self</span>
@@ -1324,6 +1340,8 @@
       <span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>))
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># In-place vertex replacement. Bounds-checked on the Ruby side</span>
+    <span class="ruby-comment"># because CSFML&#39;s getter aborts the process for out-of-range.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">vertex</span>)
       <span class="ruby-identifier">i</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)
       <span class="ruby-comment"># CSFML&#39;s sfVertexArray_getVertex aborts the process on out-of-range</span>
@@ -1343,12 +1361,15 @@
       <span class="ruby-identifier">vertex</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Yield every vertex in order. Returns an Enumerator without a</span>
+    <span class="ruby-comment"># block — makes `va.map`, `va.select`, etc. work via Enumerable.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
       <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-value">:each</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
       <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>] }
       <span class="ruby-keyword">self</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Axis-aligned bounding box of all current vertices, as a Rect.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bounds</span>
       <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexArray_getBounds</span>(<span class="ruby-ivar">@handle</span>))
     <span class="ruby-keyword">end</span>
@@ -1379,7 +1400,7 @@
         <div class="method-description">
 
 
-          
+          <p>Number of vertices currently in the array.</p>
 
 
         </div>

@@ -1,5 +1,7 @@
 # ruby-sfml-doc
 
+> 🌐 **Live site: <https://ruby-sfml-doc.netlify.app/>**
+
 Hosts the [ruby-sfml](https://github.com/sOM2H/ruby-sfml) HTML
 documentation. **The HTML in `public/` is checked into git** —
 Netlify serves it as-is without running Ruby.

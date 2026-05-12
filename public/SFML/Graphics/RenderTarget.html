@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Graphics::RenderTarget - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -687,7 +687,7 @@
             </details>
           </div>
           <div class="method-source-code" id="default_view-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 130</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_view</span>
   <span class="ruby-ivar">@default_view</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">View</span>.<span class="ruby-identifier">from_borrowed</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getDefaultView</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -897,7 +897,7 @@
             </details>
           </div>
           <div class="method-source-code" id="map_coords_to_pixel-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 144</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">map_coords_to_pixel</span>(<span class="ruby-identifier">coord</span>, <span class="ruby-value">view:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2f</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">cx</span>, <span class="ruby-identifier">cy</span> = <span class="ruby-identifier">coord</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">coord</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">coord</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">coord</span>
@@ -945,7 +945,7 @@
             </details>
           </div>
           <div class="method-source-code" id="map_pixel_to_coords-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 134</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 135</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">map_pixel_to_coords</span>(<span class="ruby-identifier">pixel</span>, <span class="ruby-value">view:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">pixel</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">pixel</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">pixel</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pixel</span>
@@ -993,7 +993,7 @@
             </details>
           </div>
           <div class="method-source-code" id="view-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 124</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">view</span>
   <span class="ruby-constant">View</span>.<span class="ruby-identifier">from_borrowed</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getView</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1035,7 +1035,7 @@
             </details>
           </div>
           <div class="method-source-code" id="view-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 118</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_target.rb, line 119</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">view=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{self.class}#view= requires a SFML::View&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">View</span>)
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:setView</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">handle</span>)
@@ -1048,7 +1048,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the view.</p>
 
 
         </div>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::App - ruby-sfml 3.0.0.6</title>
+<title>class SFML::App - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::App - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::App - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::App - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::App - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -864,7 +864,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_dispatch-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 273</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 278</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dispatch</span>(<span class="ruby-identifier">event</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">event</span>
   <span class="ruby-keyword">in</span> {<span class="ruby-value">type:</span> <span class="ruby-value">:closed</span>}
@@ -928,7 +928,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_invoke_key_handler-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 299</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 304</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_key_handler</span>(<span class="ruby-identifier">handler</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
   <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
@@ -973,7 +973,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_invoke_scene_key-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 306</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 311</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_invoke_scene_key</span>(<span class="ruby-identifier">handler</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">handler</span>
   <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@current_scene</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">handler</span>)
@@ -1018,7 +1018,7 @@
             </details>
           </div>
           <div class="method-source-code" id="draw-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 243</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 248</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw</span>
   <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">draw</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1060,7 +1060,7 @@
             </details>
           </div>
           <div class="method-source-code" id="height-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 121</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
 
 <span class="ruby-comment"># Close the window. The main loop exits at the start of the</span>
@@ -1103,9 +1103,13 @@
 <span class="ruby-comment"># (handy for pause overlays that need to be drawn over a</span>
 <span class="ruby-comment"># frozen scene).</span>
 
+<span class="ruby-comment"># Pause the simulation. `#draw` keeps firing; `#update` doesn&#39;t.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># Resume the simulation.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-comment"># Flip the pause state.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-comment"># `true` while the simulation is paused.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
 <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
@@ -1290,7 +1294,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_event-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 254</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 259</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_event</span>(<span class="ruby-identifier">event</span>)
   <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">event</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1332,7 +1336,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_resize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 261</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 266</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
   <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">on_resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1374,10 +1378,13 @@
             </details>
           </div>
           <div class="method-source-code" id="pause-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 163</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 165</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># Resume the simulation.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-comment"># Flip the pause state.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-comment"># `true` while the simulation is paused.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
 <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
@@ -1532,9 +1539,7 @@
         <div class="method-description">
 
 
-          <p>—- Pause / resume —-</p>
-
-<p>While paused, <code>update(dt)</code> is <em>not</em> called — the world stops advancing. <code>draw</code> keeps running so the window still updates (handy for pause overlays that need to be drawn over a frozen scene).</p>
+          <p>Pause the simulation. <a href="App.html#method-i-draw"><code>draw</code></a> keeps firing; <a href="App.html#method-i-update"><code>update</code></a> doesn’t.</p>
 
 
         </div>
@@ -1565,7 +1570,7 @@
             </details>
           </div>
           <div class="method-source-code" id="paused-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 166</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 171</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
   <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
@@ -1751,7 +1756,7 @@
             </details>
           </div>
           <div class="method-source-code" id="quit-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 125</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quit</span>
   <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">close</span>
   <span class="ruby-keyword">self</span>
@@ -1794,9 +1799,11 @@
             </details>
           </div>
           <div class="method-source-code" id="resume-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 164</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 167</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-comment"># Flip the pause state.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+  <span class="ruby-comment"># `true` while the simulation is paused.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
   <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
@@ -1982,7 +1989,7 @@
             </details>
           </div>
           <div class="method-source-code" id="run-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 188</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
   <span class="ruby-identifier">setup</span>
   <span class="ruby-identifier">clock</span>           = <span class="ruby-constant">Clock</span>.<span class="ruby-identifier">new</span>
@@ -2060,7 +2067,7 @@
             </details>
           </div>
           <div class="method-source-code" id="setup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 233</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 238</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">initial_scene</span>)
     <span class="ruby-identifier">switch_to</span>(<span class="ruby-identifier">klass</span>)
@@ -2106,7 +2113,7 @@
             </details>
           </div>
           <div class="method-source-code" id="switch_to-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 144</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">switch_to</span>(<span class="ruby-identifier">scene_or_class</span>)
   <span class="ruby-identifier">new_scene</span> =
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">scene_or_class</span>
@@ -2156,7 +2163,7 @@
             </details>
           </div>
           <div class="method-source-code" id="teardown-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 267</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 272</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
   <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">teardown</span>
 <span class="ruby-keyword">end</span></pre>
@@ -2198,8 +2205,9 @@
             </details>
           </div>
           <div class="method-source-code" id="toggle_pause-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 165</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 169</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+    <span class="ruby-comment"># `true` while the simulation is paused.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
     <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>
@@ -2386,7 +2394,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 239</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 244</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">dt</span>)
   <span class="ruby-ivar">@current_scene</span>&amp;.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dt</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2430,6 +2438,7 @@
           <div class="method-source-code" id="width-source">
             <pre class="ruby"><span class="ruby-comment"># File lib/sfml/app.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">x</span>
+<span class="ruby-comment"># Returns the height.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
 
 <span class="ruby-comment"># Close the window. The main loop exits at the start of the</span>
@@ -2472,9 +2481,13 @@
 <span class="ruby-comment"># (handy for pause overlays that need to be drawn over a</span>
 <span class="ruby-comment"># frozen scene).</span>
 
+<span class="ruby-comment"># Pause the simulation. `#draw` keeps firing; `#update` doesn&#39;t.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>   = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># Resume the simulation.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resume</span>  = (<span class="ruby-ivar">@paused</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-comment"># Flip the pause state.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">toggle_pause</span> = (<span class="ruby-ivar">@paused</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">paused?</span>)
+<span class="ruby-comment"># `true` while the simulation is paused.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span> = <span class="ruby-ivar">@paused</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
 
 <span class="ruby-comment"># Fraction of a fixed timestep accumulated since the last</span>

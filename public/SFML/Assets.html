@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Assets - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Assets - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Assets - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Assets - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Assets - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Assets - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -622,7 +622,7 @@
             </details>
           </div>
           <div class="method-source-code" id="add_search_path-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_search_path</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">search_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search_paths</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -664,7 +664,7 @@
             </details>
           </div>
           <div class="method-source-code" id="clear-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 44</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
   <span class="ruby-ivar">@cache</span>&amp;.<span class="ruby-identifier">clear</span>
   <span class="ruby-keyword">self</span>
@@ -707,7 +707,7 @@
             </details>
           </div>
           <div class="method-source-code" id="font-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 49</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">font</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">cache</span>[[<span class="ruby-value">:font</span>, <span class="ruby-identifier">name</span>]] <span class="ruby-operator">||=</span> <span class="ruby-identifier">load_font</span>(<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -749,7 +749,7 @@
             </details>
           </div>
           <div class="method-source-code" id="music-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">music</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">path</span> = <span class="ruby-identifier">locate</span>(<span class="ruby-identifier">name</span>, <span class="ruby-constant">MUSIC_EXTS</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFound</span>,
     <span class="ruby-node">&quot;Music #{name.inspect} not found. Searched: #{search_paths.inspect}&quot;</span>
@@ -793,7 +793,7 @@
             </details>
           </div>
           <div class="method-source-code" id="root-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">root=</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search_paths</span> = [<span class="ruby-identifier">path</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -804,7 +804,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the root.</p>
 
 
         </div>
@@ -877,7 +877,7 @@
             </details>
           </div>
           <div class="method-source-code" id="search_paths-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_paths=</span>(<span class="ruby-identifier">paths</span>)
   <span class="ruby-ivar">@search_paths</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">paths</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">p</span>) }
   <span class="ruby-ivar">@cache</span>&amp;.<span class="ruby-identifier">clear</span>
@@ -889,7 +889,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the search paths.</p>
 
 
         </div>
@@ -920,7 +920,7 @@
             </details>
           </div>
           <div class="method-source-code" id="sound-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sound</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">cache</span>[[<span class="ruby-value">:sound</span>, <span class="ruby-identifier">name</span>]] <span class="ruby-operator">||=</span> <span class="ruby-identifier">load_sound_buffer</span>(<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -962,7 +962,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/assets.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">cache</span>[[<span class="ruby-value">:texture</span>, <span class="ruby-identifier">name</span>]] <span class="ruby-operator">||=</span> <span class="ruby-identifier">load_texture</span>(<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6</title>
+<title>module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="module SFML::Graphics::ShapeInspectable - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -629,7 +629,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:copy</span>, <span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-node">&quot;#{self.class.name}#dup returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -682,7 +682,7 @@
             </details>
           </div>
           <div class="method-source-code" id="geometric_center-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">geometric_center</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getGeometricCenter</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -724,7 +724,7 @@
             </details>
           </div>
           <div class="method-source-code" id="global_bounds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 65</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getGlobalBounds</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -766,7 +766,7 @@
             </details>
           </div>
           <div class="method-source-code" id="inverse_transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getInverseTransform</span>, <span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -808,7 +808,7 @@
             </details>
           </div>
           <div class="method-source-code" id="local_bounds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 59</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getLocalBounds</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -850,7 +850,7 @@
             </details>
           </div>
           <div class="method-source-code" id="point-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">point</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getPoint</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">index</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -981,7 +981,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 27</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture=</span>(<span class="ruby-identifier">tex</span>)
   <span class="ruby-identifier">set_texture</span>(<span class="ruby-identifier">tex</span>, <span class="ruby-value">reset_rect:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -992,7 +992,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the texture.</p>
 
 
         </div>
@@ -1023,7 +1023,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture_rect-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getTextureRect</span>, <span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1065,7 +1065,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture_rect-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect=</span>(<span class="ruby-identifier">rect</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;texture_rect= requires a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
   <span class="ruby-identifier">native</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
@@ -1082,7 +1082,7 @@
         <div class="method-description">
 
 
-          
+          <p>Set the texture rect.</p>
 
 
         </div>
@@ -1113,7 +1113,7 @@
             </details>
           </div>
           <div class="method-source-code" id="transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 69</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape_inspectable.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
   <span class="ruby-identifier">_csfml</span>(<span class="ruby-value">:getTransform</span>, <span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>

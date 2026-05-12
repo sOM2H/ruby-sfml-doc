@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Image - ruby-sfml 3.0.0.6</title>
+<title>class SFML::Image - ruby-sfml 3.0.0.7</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Image - ruby-sfml 3.0.0.6">
+<meta property="og:title" content="class SFML::Image - ruby-sfml 3.0.0.7">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Image - ruby-sfml 3.0.0.6">
+<meta name="twitter:title" content="class SFML::Image - ruby-sfml 3.0.0.7">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.6
+    ruby-sfml 3.0.0.7
   </a>
 
   <!-- Desktop search bar -->
@@ -900,7 +900,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 101</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
   <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
@@ -944,7 +944,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 108</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 110</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
   <span class="ruby-identifier">coord</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">coord</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">coord</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
@@ -988,7 +988,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 203</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 205</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfImage_destroy</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1030,7 +1030,7 @@
             </details>
           </div>
           <div class="method-source-code" id="copy_from-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 132</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 134</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">copy_from</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">at:</span>, <span class="ruby-value">source_rect:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">apply_alpha:</span> <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Image#copy_from needs a SFML::Image&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Image</span>)
 
@@ -1090,7 +1090,7 @@
             </details>
           </div>
           <div class="method-source-code" id="flip_horizontally-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 189</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 191</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_horizontally</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipHorizontally</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -1133,7 +1133,7 @@
             </details>
           </div>
           <div class="method-source-code" id="flip_vertically-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 194</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 196</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flip_vertically</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_flipVertically</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -1176,7 +1176,7 @@
             </details>
           </div>
           <div class="method-source-code" id="height-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 98</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 100</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
 
   <span class="ruby-comment"># Read the colour of a single pixel.</span>
@@ -1324,7 +1324,7 @@
             </details>
           </div>
           <div class="method-source-code" id="mask_color-21-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 184</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 186</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mask_color!</span>(<span class="ruby-identifier">color</span>, <span class="ruby-value">alpha:</span> <span class="ruby-value">0</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_createMaskFromColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">alpha</span>))
   <span class="ruby-keyword">self</span>
@@ -1367,7 +1367,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pixels-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 117</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 119</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pixels</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_getPixelsPtr</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>)
@@ -1410,7 +1410,7 @@
             </details>
           </div>
           <div class="method-source-code" id="save-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 152</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 154</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfImage_saveToFile</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not save image to #{path.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>
@@ -1454,7 +1454,7 @@
             </details>
           </div>
           <div class="method-source-code" id="save_to_memory-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 165</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 167</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save_to_memory</span>(<span class="ruby-identifier">format</span>)
   <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfBuffer_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfBuffer_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span>
@@ -1552,8 +1552,9 @@
             </details>
           </div>
           <div class="method-source-code" id="width-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 97</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/image.rb, line 98</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">x</span>
+    <span class="ruby-comment"># Returns the height.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">y</span>
 
     <span class="ruby-comment"># Read the colour of a single pixel.</span>
@@ -1671,7 +1672,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the width.</p>
 
 
         </div>
