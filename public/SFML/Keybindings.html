@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Keybindings - ruby-sfml 3.0.0.7</title>
+<title>module SFML::Keybindings - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Keybindings - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="module SFML::Keybindings - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Keybindings - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="module SFML::Keybindings - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -574,7 +574,7 @@
             </details>
           </div>
           <div class="method-source-code" id="key_handlers-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/keybindings.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/keybindings.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_handlers</span>
   <span class="ruby-identifier">own</span>    = (<span class="ruby-ivar">@key_handlers</span> <span class="ruby-operator">||=</span> {})
   <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:key_handlers</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">key_handlers</span> <span class="ruby-operator">:</span> {}
@@ -618,7 +618,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_key-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/keybindings.rb, line 13</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/keybindings.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_key</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">target</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-ivar">@key_handlers</span> <span class="ruby-operator">||=</span> {}
   <span class="ruby-identifier">handler</span> = <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">target</span>
@@ -632,7 +632,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the on key.</p>
 
 
         </div>

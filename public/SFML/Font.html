@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Font - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Font - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Font - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Font - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Font - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Font - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -646,7 +646,7 @@
             </details>
           </div>
           <div class="method-source-code" id="default-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 70</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default</span>
   <span class="ruby-ivar">@default</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">load</span>(<span class="ruby-constant">DEFAULT_PATH</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -688,7 +688,7 @@
             </details>
           </div>
           <div class="method-source-code" id="find-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 77</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">find</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">target</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\.(ttf|otf)\z/</span>, <span class="ruby-string">&quot;&quot;</span>)
   <span class="ruby-constant">SEARCH_PATHS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
@@ -738,7 +738,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_memory-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_memory</span>(<span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;expected a String, got #{bytes.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
 
@@ -792,7 +792,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_stream-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-identifier">io</span>)
   <span class="ruby-identifier">stream</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_createFromStream</span>(<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">to_ptr</span>)
@@ -843,7 +843,7 @@
             </details>
           </div>
           <div class="method-source-code" id="load-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 21</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_createFromFile</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not load font from #{path.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -859,7 +859,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -904,7 +904,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 164</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 165</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfFont_destroy</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -946,7 +946,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 150</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfFont_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -993,7 +993,7 @@
             </details>
           </div>
           <div class="method-source-code" id="family-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 100</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">family</span>
   <span class="ruby-identifier">info</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_getInfo</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">info</span>[<span class="ruby-value">:family</span>].<span class="ruby-identifier">null?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">info</span>[<span class="ruby-value">:family</span>].<span class="ruby-identifier">read_string</span>
@@ -1036,7 +1036,7 @@
             </details>
           </div>
           <div class="method-source-code" id="has_glyph-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 107</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">has_glyph?</span>(<span class="ruby-identifier">codepoint</span>)
   <span class="ruby-identifier">cp</span> = <span class="ruby-identifier">codepoint</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">codepoint</span>.<span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">codepoint</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_hasGlyph</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">cp</span> <span class="ruby-operator">||</span> <span class="ruby-value">0</span>)
@@ -1079,7 +1079,7 @@
             </details>
           </div>
           <div class="method-source-code" id="kerning-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 115</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">kerning</span>(<span class="ruby-identifier">first</span>, <span class="ruby-identifier">second</span>, <span class="ruby-value">character_size:</span>, <span class="ruby-value">bold:</span> <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)  <span class="ruby-operator">?</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">first</span>  <span class="ruby-operator">:</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">first</span>)
   <span class="ruby-identifier">b</span> = <span class="ruby-identifier">second</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">second</span>.<span class="ruby-identifier">codepoints</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">second</span>)
@@ -1124,7 +1124,7 @@
             </details>
           </div>
           <div class="method-source-code" id="line_spacing-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 124</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_spacing</span>(<span class="ruby-identifier">character_size</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_getLineSpacing</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">character_size</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1166,7 +1166,7 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 93</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1208,7 +1208,7 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 90</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 91</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth?</span>       = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_isSmooth</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Set the smooth.</span>
@@ -1325,7 +1325,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 142</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture</span>(<span class="ruby-identifier">character_size</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_getTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">character_size</span>))
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1369,7 +1369,7 @@
             </details>
           </div>
           <div class="method-source-code" id="underline_position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 130</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">underline_position</span>(<span class="ruby-identifier">character_size</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_getUnderlinePosition</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">character_size</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1411,7 +1411,7 @@
             </details>
           </div>
           <div class="method-source-code" id="underline_thickness-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 135</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/font.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">underline_thickness</span>(<span class="ruby-identifier">character_size</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfFont_getUnderlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">character_size</span>))
 <span class="ruby-keyword">end</span></pre>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Texture - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Texture - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Texture - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Texture - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Texture - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Texture - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -660,7 +660,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_borrow-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 239</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 242</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_borrow</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">tex</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">tex</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-identifier">ptr</span>)
@@ -966,7 +966,7 @@
             </details>
           </div>
           <div class="method-source-code" id="maximum_size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 165</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 168</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">maximum_size</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getMaximumSize</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1008,7 +1008,7 @@
             </details>
           </div>
           <div class="method-source-code" id="unbind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 159</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 162</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1019,7 +1019,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -1064,7 +1064,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 247</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 250</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfTexture_destroy</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1106,7 +1106,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_vec2u-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 251</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 254</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_vec2u</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
@@ -1151,7 +1151,7 @@
             </details>
           </div>
           <div class="method-source-code" id="bind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 154</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
@@ -1163,7 +1163,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the bind.</p>
 
 
         </div>
@@ -1194,7 +1194,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 170</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 173</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTexture_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1241,7 +1241,7 @@
             </details>
           </div>
           <div class="method-source-code" id="generate_mipmap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 145</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 146</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_mipmap</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_generateMipmap</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Bind this texture to the active OpenGL texture unit. `coord`</span>
@@ -1251,11 +1251,13 @@
     <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
     <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
 
+    <span class="ruby-comment"># Returns the bind.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the self.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
     <span class="ruby-keyword">end</span>
@@ -1394,7 +1396,7 @@
             </details>
           </div>
           <div class="method-source-code" id="native_handle-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 205</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 208</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Upload the contents of another texture into this one at</span>
@@ -1486,7 +1488,7 @@
             </details>
           </div>
           <div class="method-source-code" id="repeated-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 135</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setRepeated</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1528,7 +1530,7 @@
             </details>
           </div>
           <div class="method-source-code" id="repeated-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 132</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repeated?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isRepeated</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the repeated.</span>
@@ -1551,11 +1553,13 @@
 <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
 <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
 
+<span class="ruby-comment"># Returns the bind.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
 <span class="ruby-keyword">end</span>
@@ -1693,7 +1697,7 @@
             </details>
           </div>
           <div class="method-source-code" id="resize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 184</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 187</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-value">srgb:</span> <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">size</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2u</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">size</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>); <span class="ruby-identifier">size</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
@@ -1741,7 +1745,7 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 119</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_getSize</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1752,7 +1756,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the size.</p>
 
 
         </div>
@@ -1783,7 +1787,7 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 127</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 128</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_setSmooth</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1825,7 +1829,7 @@
             </details>
           </div>
           <div class="method-source-code" id="smooth-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 124</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">smooth?</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSmooth</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the smooth.</span>
@@ -1856,11 +1860,13 @@
 <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
 <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
 
+<span class="ruby-comment"># Returns the bind.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
 <span class="ruby-keyword">end</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
 <span class="ruby-keyword">end</span>
@@ -1997,7 +2003,7 @@
             </details>
           </div>
           <div class="method-source-code" id="srgb-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 140</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 141</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">srgb?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_isSrgb</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Generate mipmaps for this texture. Returns `true` if the</span>
@@ -2012,11 +2018,13 @@
   <span class="ruby-comment">#   `SFML::Texture.unbind`.</span>
   <span class="ruby-constant">COORDINATE_TYPES</span> = {<span class="ruby-value">normalized:</span> <span class="ruby-value">0</span>, <span class="ruby-value">pixels:</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">freeze</span>
 
+  <span class="ruby-comment"># Returns the bind.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-value">coord:</span> <span class="ruby-value">:normalized</span>)
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;coord must be :normalized or :pixels&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">COORDINATE_TYPES</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">coord</span>)
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">COORDINATE_TYPES</span>[<span class="ruby-identifier">coord</span>])
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_bind</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
   <span class="ruby-keyword">end</span>
@@ -2154,7 +2162,7 @@
             </details>
           </div>
           <div class="method-source-code" id="swap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 197</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 200</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">swap</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Texture#swap needs a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_swap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">handle</span>)
@@ -2290,7 +2298,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update_from_render_window-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 219</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 222</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_render_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a RenderWindow&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">RenderWindow</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromRenderWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
@@ -2334,7 +2342,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update_from_texture-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 210</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 213</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_texture</span>(<span class="ruby-identifier">source</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">source</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))
@@ -2378,7 +2386,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update_from_window-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 227</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture.rb, line 230</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_from_window</span>(<span class="ruby-identifier">window</span>, <span class="ruby-value">offset:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected a Window&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">window</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTexture_updateFromWindow</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">_vec2u</span>(<span class="ruby-identifier">offset</span>))

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Keyboard - ruby-sfml 3.0.0.7</title>
+<title>module SFML::Keyboard - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Keyboard - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="module SFML::Keyboard - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Keyboard - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="module SFML::Keyboard - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -565,7 +565,7 @@
 
         <dd>
 
-          
+          <p>All key symbols in CSFML <code>sfKeyCode</code> enum order.</p>
         </dd>
 
 
@@ -581,7 +581,7 @@
 
         <dd>
 
-          
+          <p>Scancode symbol → integer code Hash.</p>
         </dd>
 
 
@@ -589,7 +589,7 @@
 
         <dd>
 
-          
+          <p>Key symbol → integer code Hash.</p>
         </dd>
 
 
@@ -634,7 +634,7 @@
             </details>
           </div>
           <div class="method-source-code" id="code_to_symbol-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 86</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">code_to_symbol</span>(<span class="ruby-identifier">code</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-value">:unknown</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">KEY_CODES</span>.<span class="ruby-identifier">length</span>
   <span class="ruby-constant">KEY_CODES</span>[<span class="ruby-identifier">code</span>]
@@ -646,7 +646,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the code to symbol.</p>
 
 
         </div>
@@ -677,7 +677,7 @@
             </details>
           </div>
           <div class="method-source-code" id="delocalize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 132</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delocalize</span>(<span class="ruby-identifier">key</span>)
   <span class="ruby-identifier">scancode_to_symbol</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_delocalize</span>(<span class="ruby-identifier">symbol_to_code</span>(<span class="ruby-identifier">key</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -719,7 +719,7 @@
             </details>
           </div>
           <div class="method-source-code" id="description-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 138</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 145</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">description</span>(<span class="ruby-identifier">scancode</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_getDescription</span>(<span class="ruby-identifier">symbol_to_scancode</span>(<span class="ruby-identifier">scancode</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -761,7 +761,7 @@
             </details>
           </div>
           <div class="method-source-code" id="key_pressed-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 112</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 119</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_pressed?</span>(<span class="ruby-identifier">symbol</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_isKeyPressed</span>(<span class="ruby-identifier">symbol_to_code</span>(<span class="ruby-identifier">symbol</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -803,7 +803,7 @@
             </details>
           </div>
           <div class="method-source-code" id="localize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 125</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">localize</span>(<span class="ruby-identifier">scancode</span>)
   <span class="ruby-identifier">code_to_symbol</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_localize</span>(<span class="ruby-identifier">symbol_to_scancode</span>(<span class="ruby-identifier">scancode</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -845,7 +845,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scancode_pressed-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 118</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scancode_pressed?</span>(<span class="ruby-identifier">symbol</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_isScancodePressed</span>(<span class="ruby-identifier">symbol_to_scancode</span>(<span class="ruby-identifier">symbol</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -887,7 +887,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scancode_to_symbol-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 99</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scancode_to_symbol</span>(<span class="ruby-identifier">code</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-value">:scan_unknown</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">SCAN_CODES</span>.<span class="ruby-identifier">length</span>
   <span class="ruby-constant">SCAN_CODES</span>[<span class="ruby-identifier">code</span>]
@@ -899,7 +899,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the scancode to symbol.</p>
 
 
         </div>
@@ -930,7 +930,7 @@
             </details>
           </div>
           <div class="method-source-code" id="symbol_to_code-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 91</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">symbol_to_code</span>(<span class="ruby-identifier">symbol</span>)
   <span class="ruby-identifier">symbol</span> = <span class="ruby-constant">ALIASES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">symbol</span>)
   <span class="ruby-constant">SYMBOL_TO_CODE</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">symbol</span>) <span class="ruby-keyword">do</span>
@@ -945,7 +945,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the symbol to code.</p>
 
 
         </div>
@@ -976,7 +976,7 @@
             </details>
           </div>
           <div class="method-source-code" id="symbol_to_scancode-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 104</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 111</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">symbol_to_scancode</span>(<span class="ruby-identifier">symbol</span>)
   <span class="ruby-constant">SCAN_SYMBOL_TO_CODE</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">symbol</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown scancode symbol: #{symbol.inspect}. &quot;</span> \
@@ -990,7 +990,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the symbol to scancode.</p>
 
 
         </div>
@@ -1021,7 +1021,7 @@
             </details>
           </div>
           <div class="method-source-code" id="virtual_keyboard_visible-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 144</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/keyboard.rb, line 151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">virtual_keyboard_visible=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfKeyboard_setVirtualKeyboardVisible</span>(<span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Shader - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Shader - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Shader - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Shader - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Shader - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Shader - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -645,7 +645,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_check_at_least_one-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 295</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 299</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_check_at_least_one</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">sources</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">empty?</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Shader needs at least one of vertex:, geometry:, fragment:&quot;</span>
@@ -688,7 +688,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_wrap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 288</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 292</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">shader</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">shader</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfShader_destroy</span>)))
@@ -774,7 +774,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_file-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 54</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_file</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_createFromFile</span>(
@@ -821,7 +821,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_source-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_source</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_createFromMemory</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
@@ -866,7 +866,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_stream-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 74</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-value">vertex:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">geometry:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">fragment:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">_check_at_least_one</span>(<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>)
   <span class="ruby-identifier">streams</span> = [<span class="ruby-identifier">vertex</span>, <span class="ruby-identifier">geometry</span>, <span class="ruby-identifier">fragment</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>) }
@@ -913,7 +913,7 @@
             </details>
           </div>
           <div class="method-source-code" id="geometry_available-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">geometry_available?</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_isGeometryAvailable</span>
 <span class="ruby-keyword">end</span></pre>
@@ -924,7 +924,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -955,7 +955,7 @@
             </details>
           </div>
           <div class="method-source-code" id="unbind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 211</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 215</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-keyword">nil</span>)
 
     <span class="ruby-comment"># The OpenGL program ID. Useful for debug printf / interop</span>
@@ -1053,7 +1053,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -1098,7 +1098,7 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 85</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">n</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
@@ -1185,7 +1185,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_coerce_matrix-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 230</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 234</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">expected_length</span>, <span class="ruby-identifier">label</span>)
   <span class="ruby-identifier">values</span> =
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">matrix</span>
@@ -1237,7 +1237,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_set_mat_array-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 244</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 248</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-identifier">stride</span>, <span class="ruby-identifier">setter</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;matrix array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">matrices</span>.<span class="ruby-identifier">empty?</span>
 
@@ -1285,7 +1285,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_set_vec_array_uniform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 256</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 260</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_set_vec_array_uniform</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">elements</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;uniform array must not be empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">empty?</span>
 
@@ -1352,9 +1352,10 @@
             </details>
           </div>
           <div class="method-source-code" id="bind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 209</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 212</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-ivar">@handle</span>)
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_bind</span>(<span class="ruby-keyword">nil</span>)
 
   <span class="ruby-comment"># The OpenGL program ID. Useful for debug printf / interop</span>
@@ -1482,7 +1483,7 @@
             </details>
           </div>
           <div class="method-source-code" id="native_handle-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 215</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 219</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Set a `vec4` uniform from an integer-channel `SFML::Color`</span>
@@ -1606,7 +1607,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_bvec-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 156</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 158</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_bvec</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">components</span>)
   <span class="ruby-identifier">flat</span> = <span class="ruby-identifier">components</span>.<span class="ruby-identifier">flatten</span>
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">flat</span>.<span class="ruby-identifier">length</span>
@@ -1664,7 +1665,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_float_array-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 148</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_float_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span>)
   <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">values</span>.<span class="ruby-identifier">length</span>)
   <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">write_array_of_float</span>(<span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>))
@@ -1708,7 +1709,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_int-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 135</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1750,7 +1751,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_int_color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 221</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 225</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_int_color</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">color</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;expected SFML::Color&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Color</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShader_setIntColorUniform</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_native</span>)
@@ -1793,7 +1794,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_ivec2-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 139</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 141</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_ivec2</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
   <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">y</span>)
@@ -1806,7 +1807,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the ivec2.</p>
 
 
         </div>
@@ -1837,7 +1838,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_mat3-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 178</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 180</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat3</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrix</span>)
   <span class="ruby-identifier">values</span> = <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-value">9</span>, <span class="ruby-string">&quot;mat3&quot;</span>)
   <span class="ruby-identifier">mat</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslMat3</span>.<span class="ruby-identifier">new</span>
@@ -1882,7 +1883,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_mat3_array-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 196</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 198</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat3_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>)
   <span class="ruby-identifier">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-value">9</span>, <span class="ruby-value">:sfShader_setMat3UniformArray</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1924,7 +1925,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_mat4-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 186</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 188</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat4</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrix</span>)
   <span class="ruby-identifier">values</span> = <span class="ruby-identifier">_coerce_matrix</span>(<span class="ruby-identifier">matrix</span>, <span class="ruby-value">16</span>, <span class="ruby-string">&quot;mat4&quot;</span>)
   <span class="ruby-identifier">mat</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">GlslMat4</span>.<span class="ruby-identifier">new</span>
@@ -1969,7 +1970,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_mat4_array-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 200</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shader.rb, line 203</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_mat4_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>)
   <span class="ruby-identifier">_set_mat_array</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">matrices</span>, <span class="ruby-value">16</span>, <span class="ruby-value">:sfShader_setMat4UniformArray</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1980,7 +1981,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the mat4 array.</p>
 
 
         </div>

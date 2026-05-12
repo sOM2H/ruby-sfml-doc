@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::RenderStates - ruby-sfml 3.0.0.7</title>
+<title>class SFML::RenderStates - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::RenderStates - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::RenderStates - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::RenderStates - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::RenderStates - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -575,7 +575,7 @@
 
         <dd>
 
-          
+          <p>Coordinate-type symbol → integer Hash.</p>
         </dd>
 
 
@@ -583,7 +583,7 @@
 
         <dd>
 
-          
+          <p><a href="Texture.html"><code>Texture</code></a> coordinate-type symbols.</p>
         </dd>
 
 
@@ -609,7 +609,7 @@
         <div class="method-description">
 
 
-        
+        <p>The blend mode, stencil mode, texture, shader, coordinate type components.</p>
 
         </div>
       </div>
@@ -625,7 +625,7 @@
         <div class="method-description">
 
 
-        
+        <p>The blend mode, stencil mode, texture, shader, coordinate type components.</p>
 
         </div>
       </div>
@@ -641,7 +641,7 @@
         <div class="method-description">
 
 
-        
+        <p>The blend mode, stencil mode, texture, shader, coordinate type components.</p>
 
         </div>
       </div>
@@ -657,7 +657,7 @@
         <div class="method-description">
 
 
-        
+        <p>The blend mode, stencil mode, texture, shader, coordinate type components.</p>
 
         </div>
       </div>
@@ -673,7 +673,7 @@
         <div class="method-description">
 
 
-        
+        <p>The blend mode, stencil mode, texture, shader, coordinate type components.</p>
 
         </div>
       </div>
@@ -710,7 +710,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_draw_opts-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_draw_opts</span>(<span class="ruby-identifier">opts</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">empty?</span>
   <span class="ruby-identifier">new</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
@@ -753,7 +753,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">blend_mode:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">stencil_mode:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">texture:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">shader:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">coordinate_type:</span> <span class="ruby-value">:normalized</span>)
   <span class="ruby-ivar">@blend_mode</span>      = <span class="ruby-identifier">blend_mode</span>
   <span class="ruby-ivar">@stencil_mode</span>    = <span class="ruby-identifier">stencil_mode</span>
@@ -815,7 +815,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_native_pointer-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/render_states.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native_pointer</span>
   <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">RenderStates</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-comment"># Start from the CSFML default so we get sane stencil + transform.</span>

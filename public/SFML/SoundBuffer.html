@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::SoundBuffer - ruby-sfml 3.0.0.7</title>
+<title>class SFML::SoundBuffer - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::SoundBuffer - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::SoundBuffer - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::SoundBuffer - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::SoundBuffer - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -630,7 +630,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_memory-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 19</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_memory</span>(<span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;expected a String, got #{bytes.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
 
@@ -681,7 +681,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_samples-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 59</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-value">sample_rate:</span>, <span class="ruby-value">channel_count:</span>, <span class="ruby-value">channel_map:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">arr</span> = <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">s</span>) }
   <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:int16</span>, <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">length</span>)
@@ -742,7 +742,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_stream-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_stream</span>(<span class="ruby-identifier">io</span>)
   <span class="ruby-identifier">stream</span> = <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">InputStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">io</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_createFromStream</span>(<span class="ruby-identifier">stream</span>.<span class="ruby-identifier">to_ptr</span>)
@@ -790,7 +790,7 @@
             </details>
           </div>
           <div class="method-source-code" id="load-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 9</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_createFromFile</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Could not load sound buffer from #{path.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -805,7 +805,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -850,7 +850,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 125</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfSoundBuffer_destroy</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -892,7 +892,7 @@
             </details>
           </div>
           <div class="method-source-code" id="channel_count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 88</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getChannelCount</span>(<span class="ruby-ivar">@handle</span>)
     <span class="ruby-comment"># Returns the sample count.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_count</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getSampleCount</span>(<span class="ruby-ivar">@handle</span>)
@@ -974,7 +974,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 102</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">AudioError</span>, <span class="ruby-string">&quot;sfSoundBuffer_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1021,7 +1021,7 @@
             </details>
           </div>
           <div class="method-source-code" id="duration-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 83</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">duration</span>      = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getDuration</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-comment"># Returns the sample rate.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_rate</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getSampleRate</span>(<span class="ruby-ivar">@handle</span>)
@@ -1106,7 +1106,7 @@
             </details>
           </div>
           <div class="method-source-code" id="sample_count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 89</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 90</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_count</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getSampleCount</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># The decoded 16-bit signed samples as a Ruby Array of</span>
@@ -1185,7 +1185,7 @@
             </details>
           </div>
           <div class="method-source-code" id="sample_rate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 85</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 86</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_rate</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getSampleRate</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-comment"># Returns the channel count.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getChannelCount</span>(<span class="ruby-ivar">@handle</span>)
@@ -1268,7 +1268,7 @@
             </details>
           </div>
           <div class="method-source-code" id="samples-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 94</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">samples</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_getSamples</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1312,7 +1312,7 @@
             </details>
           </div>
           <div class="method-source-code" id="save-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 115</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_buffer.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">ok</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundBuffer_saveToFile</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">AudioError</span>, <span class="ruby-node">&quot;could not save SoundBuffer to #{path.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ok</span>

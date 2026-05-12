@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::SoundRecorder - ruby-sfml 3.0.0.7</title>
+<title>class SFML::SoundRecorder - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::SoundRecorder - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::SoundRecorder - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::SoundRecorder - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::SoundRecorder - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -679,7 +679,7 @@
             </details>
           </div>
           <div class="method-source-code" id="default_device-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default_device</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getDefaultDevice</span>
 <span class="ruby-keyword">end</span></pre>
@@ -690,7 +690,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -721,7 +721,7 @@
             </details>
           </div>
           <div class="method-source-code" id="devices-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 53</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">devices</span>
   <span class="ruby-identifier">count_buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:size_t</span>)
   <span class="ruby-identifier">array_ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getAvailableDevices</span>(<span class="ruby-identifier">count_buf</span>)
@@ -767,7 +767,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
   <span class="ruby-comment"># Strong refs so the GC doesn&#39;t disappear callbacks under CSFML.</span>
   <span class="ruby-ivar">@start_cb</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:bool</span>, [<span class="ruby-value">:pointer</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_user</span><span class="ruby-operator">|</span>
@@ -839,7 +839,7 @@
             </details>
           </div>
           <div class="method-source-code" id="channel_count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 119</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 121</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getChannelCount</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Set the channel count.</span>
@@ -908,7 +908,7 @@
             </details>
           </div>
           <div class="method-source-code" id="channel_count-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 122</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count=</span>(<span class="ruby-identifier">n</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_setChannelCount</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -950,7 +950,7 @@
             </details>
           </div>
           <div class="method-source-code" id="channel_map-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 138</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 140</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_map</span>
   <span class="ruby-identifier">count_buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:size_t</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getChannelMap</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">count_buf</span>)
@@ -996,7 +996,7 @@
             </details>
           </div>
           <div class="method-source-code" id="device-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 127</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 129</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">device</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getDevice</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Set the device.</span>
@@ -1056,7 +1056,7 @@
             </details>
           </div>
           <div class="method-source-code" id="device-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 130</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">device=</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_setDevice</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">||</span>
     <span class="ruby-identifier">raise</span>(<span class="ruby-constant">AudioError</span>, <span class="ruby-node">&quot;sfSoundRecorder_setDevice failed for #{name.inspect}&quot;</span>)
@@ -1099,7 +1099,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_process_samples-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 96</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_process_samples</span>(<span class="ruby-identifier">_samples</span>, <span class="ruby-identifier">_channels</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;#{self.class} must override #on_process_samples&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1141,7 +1141,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_start-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 88</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_start</span>
   <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1183,7 +1183,7 @@
             </details>
           </div>
           <div class="method-source-code" id="on_stop-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 101</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on_stop</span>; <span class="ruby-keyword">end</span></pre>
           </div>
 
@@ -1223,7 +1223,7 @@
             </details>
           </div>
           <div class="method-source-code" id="sample_rate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 117</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 119</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_rate</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getSampleRate</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-comment"># Returns the channel count.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">channel_count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_getChannelCount</span>(<span class="ruby-ivar">@handle</span>)
@@ -1293,7 +1293,7 @@
             </details>
           </div>
           <div class="method-source-code" id="start-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 105</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start</span>(<span class="ruby-value">sample_rate:</span> <span class="ruby-value">44_100</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_start</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">sample_rate</span>)) <span class="ruby-operator">||</span>
     <span class="ruby-identifier">raise</span>(<span class="ruby-constant">AudioError</span>, <span class="ruby-string">&quot;sfSoundRecorder_start failed (no input device or driver error)&quot;</span>)
@@ -1337,7 +1337,7 @@
             </details>
           </div>
           <div class="method-source-code" id="stop-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 111</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound_recorder.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stop</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSoundRecorder_stop</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -1349,7 +1349,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the stop.</p>
 
 
         </div>

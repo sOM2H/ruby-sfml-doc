@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Event - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Event - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Event - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Event - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Event - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Event - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -587,7 +587,7 @@
 
         <dd>
 
-          
+          <p>Frozen empty Hash — shared default for missing event payloads.</p>
         </dd>
 
 
@@ -603,7 +603,7 @@
 
         <dd>
 
-          
+          <p><a href="Mouse.html"><code>Mouse</code></a> wheel axes — <code>:vertical</code> / <code>:horizontal</code>.</p>
         </dd>
 
 
@@ -629,7 +629,7 @@
         <div class="method-description">
 
 
-        
+        <p>The type, data components.</p>
 
         </div>
       </div>
@@ -645,7 +645,7 @@
         <div class="method-description">
 
 
-        
+        <p>The type, data components.</p>
 
         </div>
       </div>
@@ -682,7 +682,7 @@
             </details>
           </div>
           <div class="method-source-code" id="decode-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">decode</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">ptr</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">type_sym</span>
   <span class="ruby-keyword">when</span> <span class="ruby-value">:closed</span>, <span class="ruby-value">:focus_lost</span>, <span class="ruby-value">:focus_gained</span>,
@@ -772,7 +772,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -803,7 +803,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_native-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">buffer</span>)
   <span class="ruby-identifier">type_index</span> = <span class="ruby-identifier">buffer</span>[<span class="ruby-value">:type</span>]
   <span class="ruby-identifier">type_sym</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">EVENT_TYPES</span>[<span class="ruby-identifier">type_index</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
@@ -849,7 +849,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">data</span> = {})
   <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">type</span>
   <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">freeze</span>
@@ -862,7 +862,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build directly (rare — <a href="Event.html#method-c-from_native"><code>Event.from_native</code></a> is the usual path).</p>
 
 
         </div>
@@ -907,19 +907,25 @@
             </details>
           </div>
           <div class="method-source-code" id="5B-5D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 34</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">key</span>)        = <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-comment"># Hash-style fetch with the standard fallback / block behaviour.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fetch</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span>) = <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span>)
 
+  <span class="ruby-comment"># Pattern-match hook — flattens `{type:, ...payload}` into one</span>
+  <span class="ruby-comment"># hash so callers can write `in {type: :key_pressed, code:}`.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
     { <span class="ruby-value">type:</span> <span class="ruby-ivar">@type</span>, <span class="ruby-operator">**</span><span class="ruby-ivar">@data</span> }
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-comment"># `true` if respond to missing.</span>
+  <span class="ruby-comment"># `respond_to?` answer for payload keys — keeps `#method_missing`</span>
+  <span class="ruby-comment"># safe under introspection.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">_private</span> = <span class="ruby-keyword">false</span>)
     <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Payload keys are exposed as method calls so `event.code` works</span>
+  <span class="ruby-comment"># alongside `event[:code]`.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
     <span class="ruby-keyword">return</span> <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
     <span class="ruby-keyword">super</span>
@@ -941,6 +947,7 @@
     <span class="ruby-identifier">new</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">data</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">decode</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">ptr</span>)
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">type_sym</span>
     <span class="ruby-keyword">when</span> <span class="ruby-value">:closed</span>, <span class="ruby-value">:focus_lost</span>, <span class="ruby-value">:focus_gained</span>,
@@ -1024,6 +1031,7 @@
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Frozen empty Hash — shared default for missing event payloads.</span>
   <span class="ruby-constant">EMPTY</span> = {}.<span class="ruby-identifier">freeze</span>
   <span class="ruby-identifier">private_constant</span> <span class="ruby-value">:EMPTY</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1034,7 +1042,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash-style lookup into the event payload.</p>
 
 
         </div>
@@ -1065,7 +1073,7 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 33</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   { <span class="ruby-value">type:</span> <span class="ruby-ivar">@type</span>, <span class="ruby-operator">**</span><span class="ruby-ivar">@data</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -1076,7 +1084,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pattern-match hook — flattens <code>{type:, ...payload}</code> into one hash so callers can write <code>in {type: :key_pressed, code:}</code>.</p>
 
 
         </div>
@@ -1107,18 +1115,23 @@
             </details>
           </div>
           <div class="method-source-code" id="fetch-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 36</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fetch</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span>) = <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span>)
 
+    <span class="ruby-comment"># Pattern-match hook — flattens `{type:, ...payload}` into one</span>
+    <span class="ruby-comment"># hash so callers can write `in {type: :key_pressed, code:}`.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
       { <span class="ruby-value">type:</span> <span class="ruby-ivar">@type</span>, <span class="ruby-operator">**</span><span class="ruby-ivar">@data</span> }
     <span class="ruby-keyword">end</span>
 
-    <span class="ruby-comment"># `true` if respond to missing.</span>
+    <span class="ruby-comment"># `respond_to?` answer for payload keys — keeps `#method_missing`</span>
+    <span class="ruby-comment"># safe under introspection.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">_private</span> = <span class="ruby-keyword">false</span>)
       <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Payload keys are exposed as method calls so `event.code` works</span>
+    <span class="ruby-comment"># alongside `event[:code]`.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
       <span class="ruby-keyword">return</span> <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
       <span class="ruby-keyword">super</span>
@@ -1140,6 +1153,7 @@
       <span class="ruby-identifier">new</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">data</span>)
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the self.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">decode</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">ptr</span>)
       <span class="ruby-keyword">case</span> <span class="ruby-identifier">type_sym</span>
       <span class="ruby-keyword">when</span> <span class="ruby-value">:closed</span>, <span class="ruby-value">:focus_lost</span>, <span class="ruby-value">:focus_gained</span>,
@@ -1223,6 +1237,7 @@
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Frozen empty Hash — shared default for missing event payloads.</span>
     <span class="ruby-constant">EMPTY</span> = {}.<span class="ruby-identifier">freeze</span>
     <span class="ruby-identifier">private_constant</span> <span class="ruby-value">:EMPTY</span>
   <span class="ruby-keyword">end</span>
@@ -1234,7 +1249,7 @@
         <div class="method-description">
 
 
-          
+          <p>Hash-style fetch with the standard fallback / block behaviour.</p>
 
 
         </div>
@@ -1265,7 +1280,7 @@
             </details>
           </div>
           <div class="method-source-code" id="method_missing-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">super</span>
@@ -1277,7 +1292,7 @@
         <div class="method-description">
 
 
-          
+          <p>Payload keys are exposed as method calls so <code>event.code</code> works alongside <code>event[:code]</code>.</p>
 
 
             <div class="method-calls-super">
@@ -1313,7 +1328,7 @@
             </details>
           </div>
           <div class="method-source-code" id="respond_to_missing-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">_private</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1324,7 +1339,7 @@
         <div class="method-description">
 
 
-          <p><code>true</code> if respond to missing.</p>
+          <p><code>respond_to?</code> answer for payload keys — keeps <a href="Event.html#method-i-method_missing"><code>method_missing</code></a> safe under introspection.</p>
 
 
             <div class="method-calls-super">
@@ -1360,7 +1375,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/event.rb, line 58</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::Event #{@type} #{@data.inspect}&gt;&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
@@ -1376,6 +1391,7 @@
     <span class="ruby-identifier">new</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">data</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">decode</span>(<span class="ruby-identifier">type_sym</span>, <span class="ruby-identifier">ptr</span>)
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">type_sym</span>
     <span class="ruby-keyword">when</span> <span class="ruby-value">:closed</span>, <span class="ruby-value">:focus_lost</span>, <span class="ruby-value">:focus_gained</span>,
@@ -1459,6 +1475,7 @@
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Frozen empty Hash — shared default for missing event payloads.</span>
   <span class="ruby-constant">EMPTY</span> = {}.<span class="ruby-identifier">freeze</span>
   <span class="ruby-identifier">private_constant</span> <span class="ruby-value">:EMPTY</span>
 <span class="ruby-keyword">end</span></pre>

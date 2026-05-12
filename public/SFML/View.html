@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::View - ruby-sfml 3.0.0.7</title>
+<title>class SFML::View - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::View - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::View - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::View - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::View - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -629,7 +629,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_borrowed-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_borrowed</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;borrowed view pointer is NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
   <span class="ruby-identifier">copy</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_copy</span>(<span class="ruby-identifier">ptr</span>)
@@ -673,7 +673,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_rect-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_rect</span>(<span class="ruby-identifier">rect</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View.from_rect needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
 
@@ -725,7 +725,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 22</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">center:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">size:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">rotation:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">viewport:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">_handle:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-identifier">_handle</span> <span class="ruby-operator">||</span> <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfView_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -743,7 +743,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="View.html"><code>View</code></a>. All four kwargs may be passed up-front or set later. <code>_handle:</code> is for internal wrapping of CSFML pointers.</p>
 
 
         </div>
@@ -788,7 +788,7 @@
             </details>
           </div>
           <div class="method-source-code" id="center-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 58</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">center</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getCenter</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -799,7 +799,7 @@
         <div class="method-description">
 
 
-          
+          <p>Centre point of the view in world coordinates.</p>
 
 
         </div>
@@ -830,7 +830,7 @@
             </details>
           </div>
           <div class="method-source-code" id="center-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 63</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">center=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setCenter</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -872,7 +872,7 @@
             </details>
           </div>
           <div class="method-source-code" id="move-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 113</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 118</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move</span>(<span class="ruby-identifier">offset</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_move</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">offset</span>).<span class="ruby-identifier">to_native_f</span>)
   <span class="ruby-keyword">self</span>
@@ -915,7 +915,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotate-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 119</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotate</span>(<span class="ruby-identifier">degrees</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_rotate</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-keyword">self</span>
@@ -958,7 +958,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotation-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getRotation</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -969,7 +969,7 @@
         <div class="method-description">
 
 
-          
+          <p>Rotation in degrees (counter-clockwise).</p>
 
 
         </div>
@@ -1000,7 +1000,7 @@
             </details>
           </div>
           <div class="method-source-code" id="rotation-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 81</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotation=</span>(<span class="ruby-identifier">degrees</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setRotation</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1042,7 +1042,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scissor-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 102</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 107</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getScissor</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1084,7 +1084,7 @@
             </details>
           </div>
           <div class="method-source-code" id="scissor-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 107</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scissor=</span>(<span class="ruby-identifier">rect</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View#scissor= needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setScissor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_to_floatrect</span>(<span class="ruby-identifier">rect</span>))
@@ -1127,7 +1127,7 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 67</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
   <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getSize</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1138,7 +1138,7 @@
         <div class="method-description">
 
 
-          
+          <p>Visible area in world units (NOT pixels). Halving this zooms in.</p>
 
 
         </div>
@@ -1169,7 +1169,7 @@
             </details>
           </div>
           <div class="method-source-code" id="size-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 72</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setSize</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_vec2</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_native_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1211,7 +1211,7 @@
             </details>
           </div>
           <div class="method-source-code" id="viewport-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 88</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_getViewport</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1253,7 +1253,7 @@
             </details>
           </div>
           <div class="method-source-code" id="viewport-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 93</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">viewport=</span>(<span class="ruby-identifier">rect</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;View#viewport= needs a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_setViewport</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">_to_floatrect</span>(<span class="ruby-identifier">rect</span>))
@@ -1296,7 +1296,7 @@
             </details>
           </div>
           <div class="method-source-code" id="zoom-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 126</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/view.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zoom</span>(<span class="ruby-identifier">factor</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfView_zoom</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">factor</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-keyword">self</span>

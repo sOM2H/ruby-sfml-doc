@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::Http - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Network::Http - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Network::Http - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -579,7 +579,7 @@
 
         <dd>
 
-          
+          <p>Default per-call timeout.</p>
         </dd>
 
 
@@ -626,7 +626,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-value">port:</span> <span class="ruby-value">0</span>)
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttp_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NetworkError</span>, <span class="ruby-string">&quot;sfHttp_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -641,7 +641,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build an HTTP client pinned to <code>host</code> (URL prefix). Pass <code>port: 0</code> to let CSFML pick the protocol’s default port.</p>
 
 
         </div>
@@ -686,7 +686,7 @@
             </details>
           </div>
           <div class="method-source-code" id="send_request-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 34</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/http.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_request</span>(<span class="ruby-value">method:</span> <span class="ruby-value">:get</span>, <span class="ruby-value">uri:</span> <span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-value">fields:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">body:</span> <span class="ruby-keyword">nil</span>,
                  <span class="ruby-value">http_version:</span> <span class="ruby-constant">DEFAULT_VERSION</span>, <span class="ruby-value">timeout:</span> <span class="ruby-constant">DEFAULT_TIMEOUT</span>)
   <span class="ruby-identifier">request_ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfHttpRequest_create</span>
@@ -720,7 +720,7 @@
         <div class="method-description">
 
 
-          
+          <p>Send a request and wait for the response. See the class doc for all the kwargs.</p>
 
 
         </div>

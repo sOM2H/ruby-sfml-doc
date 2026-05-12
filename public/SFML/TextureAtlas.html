@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::TextureAtlas - ruby-sfml 3.0.0.7</title>
+<title>class SFML::TextureAtlas - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::TextureAtlas - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::TextureAtlas - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::TextureAtlas - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::TextureAtlas - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -595,7 +595,7 @@
 
         <dd>
 
-          
+          <p>File-extension regex for atlas image files.</p>
         </dd>
 
 
@@ -621,7 +621,7 @@
         <div class="method-description">
 
 
-        
+        <p>The texture, source components.</p>
 
         </div>
       </div>
@@ -637,7 +637,7 @@
         <div class="method-description">
 
 
-        
+        <p>The texture, source components.</p>
 
         </div>
       </div>
@@ -674,7 +674,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_parse_frames-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 99</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_parse_frames</span>(<span class="ruby-identifier">raw</span>)
   <span class="ruby-identifier">regions</span>   = {}
   <span class="ruby-identifier">durations</span> = {}
@@ -732,7 +732,7 @@
             </details>
           </div>
           <div class="method-source-code" id="load-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">load</span>(<span class="ruby-identifier">json_path</span>, <span class="ruby-value">image:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">smooth:</span> <span class="ruby-keyword">true</span>)
   <span class="ruby-identifier">data</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">json_path</span>))
   <span class="ruby-identifier">image_path</span> = <span class="ruby-identifier">image</span> <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">data</span>.<span class="ruby-identifier">dig</span>(<span class="ruby-string">&quot;meta&quot;</span>, <span class="ruby-string">&quot;image&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">json_path</span>))
@@ -780,7 +780,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">texture:</span>, <span class="ruby-value">regions:</span>, <span class="ruby-value">durations:</span> {}, <span class="ruby-value">source:</span> <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@texture</span>   = <span class="ruby-identifier">texture</span>
   <span class="ruby-ivar">@regions</span>   = <span class="ruby-identifier">regions</span>.<span class="ruby-identifier">transform_keys</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_normalize</span>(<span class="ruby-identifier">k</span>) }.<span class="ruby-identifier">freeze</span>
@@ -839,7 +839,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_normalize-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 124</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_normalize</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-constant">IMAGE_EXTS</span>, <span class="ruby-string">&quot;&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -881,7 +881,7 @@
             </details>
           </div>
           <div class="method-source-code" id="animation-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">animation</span>(<span class="ruby-identifier">frame_names</span>, <span class="ruby-value">fps:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">loop:</span> <span class="ruby-keyword">true</span>)
   <span class="ruby-identifier">rects</span> = <span class="ruby-identifier">frame_names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">region</span>(<span class="ruby-identifier">n</span>) }
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">fps</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">frame_names</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">duration</span>(<span class="ruby-identifier">frame_names</span>.<span class="ruby-identifier">first</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
@@ -931,7 +931,7 @@
             </details>
           </div>
           <div class="method-source-code" id="duration-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 89</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">duration</span>(<span class="ruby-identifier">name</span>) = <span class="ruby-ivar">@durations</span>[<span class="ruby-identifier">_normalize</span>(<span class="ruby-identifier">name</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
 
   <span class="ruby-comment"># The internal frame-name → Rect hash. Useful for filtering:</span>
@@ -1011,7 +1011,7 @@
             </details>
           </div>
           <div class="method-source-code" id="frame_names-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">frame_names</span> = <span class="ruby-ivar">@regions</span>.<span class="ruby-identifier">keys</span>
 
 <span class="ruby-comment"># @return [SFML::Rect] the pixel rect for frame `name`.</span>
@@ -1126,7 +1126,7 @@
             </details>
           </div>
           <div class="method-source-code" id="region-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 56</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">region</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-ivar">@regions</span>[<span class="ruby-identifier">_normalize</span>(<span class="ruby-identifier">name</span>)] <span class="ruby-keyword">or</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;TextureAtlas: no frame named #{name.inspect} &quot;</span> \
@@ -1170,7 +1170,7 @@
             </details>
           </div>
           <div class="method-source-code" id="regions-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 92</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 94</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">regions</span> = <span class="ruby-ivar">@regions</span>
 
     <span class="ruby-comment"># String representation for debugging.</span>
@@ -1248,7 +1248,7 @@
             </details>
           </div>
           <div class="method-source-code" id="sprite-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sprite</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
   <span class="ruby-constant">Sprite</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@texture</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>).<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">texture_rect</span> = <span class="ruby-identifier">region</span>(<span class="ruby-identifier">name</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -1290,7 +1290,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 95</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/texture_atlas.rb, line 97</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;TextureAtlas #{@regions.size} frames#{@source ? &quot; from #{File.basename(@source)}&quot; : &quot;&quot;}&gt;&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 

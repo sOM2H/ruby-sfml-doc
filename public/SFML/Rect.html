@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Rect - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Rect - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Rect - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Rect - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Rect - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Rect - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -610,7 +610,7 @@
         <div class="method-description">
 
 
-        
+        <p>The position, size components.</p>
 
         </div>
       </div>
@@ -626,7 +626,7 @@
         <div class="method-description">
 
 
-        
+        <p>The position, size components.</p>
 
         </div>
       </div>
@@ -663,7 +663,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 17</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">position</span>, <span class="ruby-identifier">size</span>)
   <span class="ruby-ivar">@position</span> = <span class="ruby-identifier">position</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">position</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">position</span>)
   <span class="ruby-ivar">@size</span>     = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">size</span>)
@@ -721,7 +721,7 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 56</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span></pre>
@@ -763,7 +763,7 @@
             </details>
           </div>
           <div class="method-source-code" id="bottom-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 37</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 
 <span class="ruby-comment"># `true` if `point` (Vector2 or `[x, y]`) is inside this rect.</span>
@@ -806,6 +806,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -849,7 +850,7 @@
             </details>
           </div>
           <div class="method-source-code" id="contains-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 41</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contains?</span>(<span class="ruby-identifier">point</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> [<span class="ruby-identifier">point</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">point</span>[<span class="ruby-value">1</span>]]
   <span class="ruby-identifier">px</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">px</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">py</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">bottom</span>
@@ -892,7 +893,7 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 70</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 71</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
 
   <span class="ruby-comment"># Pattern-match support for `in {position:, size:}`.</span>
@@ -902,6 +903,7 @@
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">new</span>(
       <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -947,13 +949,14 @@
             </details>
           </div>
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 73</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 74</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>) = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
     <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+    <span class="ruby-comment"># Returns the self.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
       <span class="ruby-identifier">new</span>(
         <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1000,7 +1003,7 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 61</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = [<span class="ruby-ivar">@position</span>, <span class="ruby-ivar">@size</span>].<span class="ruby-identifier">hash</span>
 
 <span class="ruby-comment"># `[x, y, width, height]`.</span>
@@ -1019,6 +1022,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1062,7 +1066,7 @@
             </details>
           </div>
           <div class="method-source-code" id="height-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">x</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">top</span>  <span class="ruby-identifier">y</span>
@@ -1112,6 +1116,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1154,7 +1159,7 @@
             </details>
           </div>
           <div class="method-source-code" id="intersects-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersects?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">left</span>   <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">right</span>  <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">right</span>  <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">left</span>  <span class="ruby-operator">&amp;&amp;</span>
@@ -1199,7 +1204,7 @@
             </details>
           </div>
           <div class="method-source-code" id="right-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right</span>  = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
 <span class="ruby-comment"># Y of the bottom edge (`y + height`).</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bottom</span> = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
@@ -1244,6 +1249,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1286,7 +1292,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_a-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span> = [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>]
 
 <span class="ruby-comment"># `{position:, size:}`.</span>
@@ -1302,6 +1308,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1346,7 +1353,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_h-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 67</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span> = { <span class="ruby-value">position:</span> <span class="ruby-ivar">@position</span>, <span class="ruby-value">size:</span> <span class="ruby-ivar">@size</span> }
 
 <span class="ruby-comment"># Pattern-match support for `in [x, y, w, h]`.</span>
@@ -1359,6 +1366,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1404,10 +1412,11 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 77</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">new</span>(
       <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1453,7 +1462,7 @@
             </details>
           </div>
           <div class="method-source-code" id="width-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
 <span class="ruby-comment"># Height.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span> = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">y</span>
@@ -1505,6 +1514,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1547,7 +1557,7 @@
             </details>
           </div>
           <div class="method-source-code" id="x-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 24</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">x</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">x</span>
 <span class="ruby-comment"># Top-left Y.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">y</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span>
@@ -1603,6 +1613,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),
@@ -1645,7 +1656,7 @@
             </details>
           </div>
           <div class="method-source-code" id="y-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/rect.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">y</span>      = <span class="ruby-ivar">@position</span>.<span class="ruby-identifier">y</span>
 <span class="ruby-comment"># Width.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">width</span>  = <span class="ruby-ivar">@size</span>.<span class="ruby-identifier">x</span>
@@ -1699,6 +1710,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;Rect(x=#{x}, y=#{y}, w=#{width}, h=#{height})&quot;</span>
 <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+<span class="ruby-comment"># Returns the self.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
   <span class="ruby-identifier">new</span>(
     <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:position</span>][<span class="ruby-value">:y</span>]),

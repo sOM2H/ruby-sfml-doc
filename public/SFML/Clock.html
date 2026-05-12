@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Clock - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Clock - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Clock - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Clock - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Clock - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Clock - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -605,7 +605,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 9</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_create</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-string">&quot;sfClock_create returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -618,7 +618,7 @@
         <div class="method-description">
 
 
-          
+          <p>Create a fresh clock — starts running at zero.</p>
 
 
         </div>
@@ -697,7 +697,7 @@
             </details>
           </div>
           <div class="method-source-code" id="elapsed_time-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 15</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">elapsed_time</span>
   <span class="ruby-constant">Time</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_getElapsedTime</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -708,7 +708,7 @@
         <div class="method-description">
 
 
-          
+          <p><a href="Time.html"><code>Time</code></a> elapsed since the clock was last started / restarted, as a <a href="Time.html"><code>SFML::Time</code></a>. Aliased as <a href="Clock.html#method-i-elapsed"><code>elapsed</code></a>.</p>
 
 
         </div>
@@ -743,7 +743,7 @@
             </details>
           </div>
           <div class="method-source-code" id="reset-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset</span>
   <span class="ruby-constant">Time</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_reset</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -754,7 +754,7 @@
         <div class="method-description">
 
 
-          
+          <p>Reset to zero without affecting the running state. Returns the elapsed time before the reset.</p>
 
 
         </div>
@@ -785,7 +785,7 @@
             </details>
           </div>
           <div class="method-source-code" id="restart-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 35</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">restart</span>
   <span class="ruby-constant">Time</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_restart</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -796,7 +796,7 @@
         <div class="method-description">
 
 
-          
+          <p>Atomic “read elapsed + reset to zero”. Standard pattern for per-frame dt: <code>dt = clock.restart</code>.</p>
 
 
         </div>
@@ -827,7 +827,7 @@
             </details>
           </div>
           <div class="method-source-code" id="running-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 21</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">running?</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_isRunning</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -838,7 +838,7 @@
         <div class="method-description">
 
 
-          <p><code>true</code> if running.</p>
+          <p><code>true</code> if the clock is currently ticking (not paused via <a href="Clock.html#method-i-stop"><code>stop</code></a>).</p>
 
 
         </div>
@@ -869,7 +869,7 @@
             </details>
           </div>
           <div class="method-source-code" id="start-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 25</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_start</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -881,7 +881,7 @@
         <div class="method-description">
 
 
-          
+          <p>Resume after <a href="Clock.html#method-i-stop"><code>stop</code></a>. No-op if already running.</p>
 
 
         </div>
@@ -912,7 +912,7 @@
             </details>
           </div>
           <div class="method-source-code" id="stop-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/system/clock.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stop</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span>.<span class="ruby-identifier">sfClock_stop</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -924,7 +924,7 @@
         <div class="method-description">
 
 
-          
+          <p>Pause the clock — <a href="Clock.html#method-i-elapsed_time"><code>elapsed_time</code></a> freezes until <a href="Clock.html#method-i-start"><code>start</code></a>.</p>
 
 
         </div>

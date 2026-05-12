@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Sprite - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Sprite - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Sprite - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Sprite - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Sprite - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Sprite - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -637,7 +637,7 @@
         <div class="method-description">
 
 
-        
+        <p>The texture.</p>
 
         </div>
       </div>
@@ -674,7 +674,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 14</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">texture</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Sprite requires a SFML::Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">texture</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
 
@@ -696,7 +696,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build a <a href="Sprite.html"><code>Sprite</code></a>. <code>texture</code> is required (<a href="../SFML.html"><code>SFML</code></a> 3 dropped the default constructor). Kwargs cover color / transform.</p>
 
 
         </div>
@@ -741,7 +741,7 @@
             </details>
           </div>
           <div class="method-source-code" id="color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 42</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getColor</span>(<span class="ruby-ivar">@handle</span>))
 
   <span class="ruby-comment"># Set the color.</span>
@@ -768,14 +768,17 @@
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_setTextureRect</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">native</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Bounding box of the sprite in its own (untransformed) coords.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
     <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Bounding box after applying the sprite&#39;s transform.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
     <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the draw on.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Sprite</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
   <span class="ruby-keyword">end</span>
@@ -794,6 +797,8 @@
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getTransform</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Inverse of `#transform` — maps world-space coords back to</span>
+  <span class="ruby-comment"># the sprite&#39;s local space.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">end</span>
@@ -852,7 +857,7 @@
             </details>
           </div>
           <div class="method-source-code" id="color-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 42</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_setColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -894,7 +899,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 97</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfSprite_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -943,7 +948,7 @@
             </details>
           </div>
           <div class="method-source-code" id="global_bounds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 69</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">global_bounds</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getGlobalBounds</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -954,7 +959,7 @@
         <div class="method-description">
 
 
-          
+          <p>Bounding box after applying the sprite’s transform.</p>
 
 
         </div>
@@ -985,7 +990,7 @@
             </details>
           </div>
           <div class="method-source-code" id="inverse_transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 91</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -996,7 +1001,7 @@
         <div class="method-description">
 
 
-          
+          <p>Inverse of <a href="Sprite.html#method-i-transform"><code>transform</code></a> — maps world-space coords back to the sprite’s local space.</p>
 
 
         </div>
@@ -1027,7 +1032,7 @@
             </details>
           </div>
           <div class="method-source-code" id="local_bounds-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 65</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_bounds</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getLocalBounds</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1038,7 +1043,7 @@
         <div class="method-description">
 
 
-          
+          <p>Bounding box of the sprite in its own (untransformed) coords.</p>
 
 
         </div>
@@ -1069,7 +1074,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 32</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture=</span>(<span class="ruby-identifier">new_texture</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Sprite#texture= requires a SFML::Texture&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new_texture</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Texture</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_setTexture</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">new_texture</span>.<span class="ruby-identifier">handle</span>, <span class="ruby-keyword">false</span>)
@@ -1113,7 +1118,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture_rect-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect</span>
   <span class="ruby-constant">Rect</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getTextureRect</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1157,7 +1162,7 @@
             </details>
           </div>
           <div class="method-source-code" id="texture_rect-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 55</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">texture_rect=</span>(<span class="ruby-identifier">rect</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Sprite#texture_rect= requires a SFML::Rect&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rect</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Rect</span>)
   <span class="ruby-identifier">native</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">IntRect</span>.<span class="ruby-identifier">new</span>
@@ -1205,7 +1210,7 @@
             </details>
           </div>
           <div class="method-source-code" id="transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/sprite.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfSprite_getTransform</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>

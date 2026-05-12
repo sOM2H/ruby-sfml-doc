@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::VertexBuffer - ruby-sfml 3.0.0.7</title>
+<title>class SFML::VertexBuffer - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::VertexBuffer - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::VertexBuffer - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::VertexBuffer - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::VertexBuffer - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -597,7 +597,7 @@
 
         <dd>
 
-          
+          <p>Primitive symbol → integer index Hash.</p>
         </dd>
 
 
@@ -605,7 +605,7 @@
 
         <dd>
 
-          
+          <p>Primitive type symbols in <code>sfPrimitiveType</code> order.</p>
         </dd>
 
 
@@ -613,7 +613,7 @@
 
         <dd>
 
-          
+          <p>VBO usage hints in CSFML enum order.</p>
         </dd>
 
 
@@ -621,7 +621,7 @@
 
         <dd>
 
-          
+          <p>Usage symbol → integer Hash.</p>
         </dd>
 
 
@@ -660,7 +660,7 @@
             </details>
           </div>
           <div class="method-source-code" id="available-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 30</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">available?</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_isAvailable</span>
 <span class="ruby-keyword">end</span></pre>
@@ -671,7 +671,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -702,7 +702,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">vertices</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-value">count:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">primitive_type:</span> <span class="ruby-value">:points</span>, <span class="ruby-value">usage:</span> <span class="ruby-value">:stream</span>)
   <span class="ruby-identifier">n</span> = <span class="ruby-identifier">vertices</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">vertices</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">count</span> <span class="ruby-operator">||</span> <span class="ruby-value">0</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;give either `vertices` or `count:`&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">vertices</span>.<span class="ruby-identifier">nil?</span>
@@ -763,7 +763,7 @@
             </details>
           </div>
           <div class="method-source-code" id="unbind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 123</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_bind</span>(<span class="ruby-keyword">nil</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -774,7 +774,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -819,7 +819,7 @@
             </details>
           </div>
           <div class="method-source-code" id="bind-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 118</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_bind</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -862,11 +862,12 @@
             </details>
           </div>
           <div class="method-source-code" id="count-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 60</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 65</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">count</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getVertexCount</span>(<span class="ruby-ivar">@handle</span>)
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">size</span>  <span class="ruby-identifier">count</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">length</span> <span class="ruby-identifier">count</span>
 
+    <span class="ruby-comment"># Returns the primitive type.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">primitive_type</span>
       <span class="ruby-constant">PRIMITIVE_TYPES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getPrimitiveType</span>(<span class="ruby-ivar">@handle</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
     <span class="ruby-keyword">end</span>
@@ -879,6 +880,7 @@
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_setPrimitiveType</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">idx</span>)
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the usage.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">usage</span>
       <span class="ruby-constant">USAGES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getUsage</span>(<span class="ruby-ivar">@handle</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
     <span class="ruby-keyword">end</span>
@@ -926,10 +928,12 @@
       <span class="ruby-keyword">self</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the self.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_bind</span>(<span class="ruby-keyword">nil</span>)
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the draw on.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
       <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:VertexBuffer</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
     <span class="ruby-keyword">end</span>
@@ -985,7 +989,7 @@
             </details>
           </div>
           <div class="method-source-code" id="draw_range_on-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 134</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_range_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">first</span>, <span class="ruby-identifier">count</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">public_send</span>(
     <span class="ruby-value">:&quot;#{target.class::CSFML_PREFIX}_drawVertexBufferRange&quot;</span>,
@@ -1030,7 +1034,7 @@
             </details>
           </div>
           <div class="method-source-code" id="native_handle-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 113</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 120</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">native_handle</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getNativeHandle</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Bind this VBO as the active vertex buffer for the GL pipeline.</span>
@@ -1041,10 +1045,12 @@
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">unbind</span>
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_bind</span>(<span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the draw on.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:VertexBuffer</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
   <span class="ruby-keyword">end</span>
@@ -1099,7 +1105,7 @@
             </details>
           </div>
           <div class="method-source-code" id="primitive_type-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">primitive_type</span>
   <span class="ruby-constant">PRIMITIVE_TYPES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getPrimitiveType</span>(<span class="ruby-ivar">@handle</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1110,7 +1116,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the primitive type.</p>
 
 
         </div>
@@ -1141,7 +1147,7 @@
             </details>
           </div>
           <div class="method-source-code" id="primitive_type-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 69</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">primitive_type=</span>(<span class="ruby-identifier">type</span>)
   <span class="ruby-identifier">idx</span> = <span class="ruby-constant">PRIMITIVE_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown primitive type: #{type.inspect}&quot;</span>
@@ -1186,7 +1192,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 91</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>(<span class="ruby-identifier">vertices</span>, <span class="ruby-value">offset:</span> <span class="ruby-value">0</span>)
   <span class="ruby-identifier">n</span>   = <span class="ruby-identifier">vertices</span>.<span class="ruby-identifier">length</span>
   <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span><span class="ruby-operator">::</span><span class="ruby-constant">Vertex</span>, <span class="ruby-identifier">n</span>)
@@ -1245,7 +1251,7 @@
             </details>
           </div>
           <div class="method-source-code" id="usage-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">usage</span>
   <span class="ruby-constant">USAGES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfVertexBuffer_getUsage</span>(<span class="ruby-ivar">@handle</span>)] <span class="ruby-operator">||</span> <span class="ruby-value">:unknown</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1256,7 +1262,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the usage.</p>
 
 
         </div>
@@ -1287,7 +1293,7 @@
             </details>
           </div>
           <div class="method-source-code" id="usage-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 81</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/vertex_buffer.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">usage=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">idx</span> = <span class="ruby-constant">USAGE_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">value</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown VertexBuffer usage: #{value.inspect}&quot;</span>

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::TransformableObject - ruby-sfml 3.0.0.7</title>
+<title>class SFML::TransformableObject - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::TransformableObject - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::TransformableObject - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::TransformableObject - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::TransformableObject - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -737,7 +737,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTransformable_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphicsError</span>, <span class="ruby-string">&quot;sfTransformable_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -753,7 +753,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the dup.</p>
 
 
         </div>
@@ -788,7 +788,7 @@
             </details>
           </div>
           <div class="method-source-code" id="inverse_transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 32</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inverse_transform</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTransformable_getInverseTransform</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -799,7 +799,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the inverse transform.</p>
 
 
         </div>
@@ -830,7 +830,7 @@
             </details>
           </div>
           <div class="method-source-code" id="transform-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/transformable_object.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transform</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfTransformable_getTransform</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -841,7 +841,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the transform.</p>
 
 
         </div>

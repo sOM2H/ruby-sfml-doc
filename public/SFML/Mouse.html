@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>module SFML::Mouse - ruby-sfml 3.0.0.7</title>
+<title>module SFML::Mouse - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="module SFML::Mouse - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="module SFML::Mouse - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="module SFML::Mouse - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="module SFML::Mouse - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -553,7 +553,7 @@
 
         <dd>
 
-          
+          <p>Recognised button symbols.</p>
         </dd>
 
 
@@ -561,7 +561,7 @@
 
         <dd>
 
-          
+          <p>Symbol → integer index for each button.</p>
         </dd>
 
 
@@ -606,7 +606,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_code-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 62</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_code</span>(<span class="ruby-identifier">button</span>)
   <span class="ruby-identifier">sym</span> = <span class="ruby-constant">ALIASES</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">button</span>, <span class="ruby-identifier">button</span>)
   <span class="ruby-constant">BUTTON_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">sym</span>) <span class="ruby-keyword">do</span>
@@ -653,7 +653,7 @@
             </details>
           </div>
           <div class="method-source-code" id="button_pressed-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">button_pressed?</span>(<span class="ruby-identifier">button</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfMouse_isButtonPressed</span>(<span class="ruby-identifier">_code</span>(<span class="ruby-identifier">button</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -695,7 +695,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>(<span class="ruby-identifier">window</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">window</span>
           <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfMouse_getPositionRenderWindow</span>(<span class="ruby-identifier">window</span>.<span class="ruby-identifier">handle</span>)
@@ -742,7 +742,7 @@
             </details>
           </div>
           <div class="method-source-code" id="set_position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/mouse.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_position</span>(<span class="ruby-identifier">point</span>, <span class="ruby-identifier">window</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">px</span>, <span class="ruby-identifier">py</span> = <span class="ruby-identifier">point</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector2</span>) <span class="ruby-operator">?</span> [<span class="ruby-identifier">point</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">point</span>.<span class="ruby-identifier">y</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">point</span>
   <span class="ruby-identifier">vec</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector2i</span>.<span class="ruby-identifier">new</span>

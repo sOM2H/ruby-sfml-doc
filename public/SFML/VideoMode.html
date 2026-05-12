@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::VideoMode - ruby-sfml 3.0.0.7</title>
+<title>class SFML::VideoMode - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::VideoMode - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::VideoMode - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::VideoMode - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::VideoMode - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -588,7 +588,7 @@
         <div class="method-description">
 
 
-        
+        <p>The width, height, bits per pixel components.</p>
 
         </div>
       </div>
@@ -604,7 +604,7 @@
         <div class="method-description">
 
 
-        
+        <p>The width, height, bits per pixel components.</p>
 
         </div>
       </div>
@@ -620,7 +620,7 @@
         <div class="method-description">
 
 
-        
+        <p>The width, height, bits per pixel components.</p>
 
         </div>
       </div>
@@ -657,7 +657,7 @@
             </details>
           </div>
           <div class="method-source-code" id="desktop_mode-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 16</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">desktop_mode</span>
   <span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfVideoMode_getDesktopMode</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -668,7 +668,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the self.</p>
 
 
         </div>
@@ -699,7 +699,7 @@
             </details>
           </div>
           <div class="method-source-code" id="fullscreen_modes-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 23</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">fullscreen_modes</span>
   <span class="ruby-identifier">count_buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:size_t</span>)
   <span class="ruby-identifier">array_ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfVideoMode_getFullscreenModes</span>(<span class="ruby-identifier">count_buf</span>)
@@ -749,7 +749,7 @@
             </details>
           </div>
           <div class="method-source-code" id="new-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 9</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">bits_per_pixel</span> = <span class="ruby-value">32</span>)
   <span class="ruby-ivar">@width</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>)
   <span class="ruby-ivar">@height</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>)
@@ -808,17 +808,19 @@
             </details>
           </div>
           <div class="method-source-code" id="size-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 43</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 45</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span> = <span class="ruby-constant">Vector2</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span>)
 
     <span class="ruby-comment"># String representation for debugging.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::VideoMode #{@width}x#{@height}@#{@bits_per_pixel}&gt;&quot;</span>
     <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+    <span class="ruby-comment"># Returns the self.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
       <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:bits_per_pixel</span>])
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the to native.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
       <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">m</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>] = <span class="ruby-ivar">@width</span>
@@ -866,14 +868,16 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 48</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> = <span class="ruby-node">&quot;#&lt;SFML::VideoMode #{@width}x#{@height}@#{@bits_per_pixel}&gt;&quot;</span>
   <span class="ruby-keyword">alias</span> <span class="ruby-identifier">inspect</span> <span class="ruby-identifier">to_s</span>
 
+  <span class="ruby-comment"># Returns the self.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_native</span>(<span class="ruby-identifier">struct</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">new</span>(<span class="ruby-identifier">struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:y</span>], <span class="ruby-identifier">struct</span>[<span class="ruby-value">:bits_per_pixel</span>])
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the to native.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_native</span> <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">VideoMode</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
       <span class="ruby-identifier">m</span>[<span class="ruby-value">:size</span>][<span class="ruby-value">:x</span>] = <span class="ruby-ivar">@width</span>
@@ -920,7 +924,7 @@
             </details>
           </div>
           <div class="method-source-code" id="valid-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 38</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/video_mode.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid?</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">sfVideoMode_isValid</span>(<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>

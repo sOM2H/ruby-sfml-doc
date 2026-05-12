@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Network::Ftp::Response - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -607,7 +607,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_take_ownership-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 157</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_take_ownership</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">obj</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>,
@@ -666,7 +666,7 @@
             </details>
           </div>
           <div class="method-source-code" id="ok-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 147</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 149</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ok?</span>           = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfFtpResponse_isOk</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-comment"># Returns the status.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status</span>        = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfFtpResponse_getStatus</span>(<span class="ruby-ivar">@handle</span>)
@@ -771,7 +771,7 @@
             </details>
           </div>
           <div class="method-source-code" id="status-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 149</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 151</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status</span>        = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfFtpResponse_getStatus</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-comment"># Returns the status symbol.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status_symbol</span> = <span class="ruby-constant">STATUS_NAMES</span>[<span class="ruby-identifier">status</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">status</span>
@@ -874,7 +874,7 @@
             </details>
           </div>
           <div class="method-source-code" id="status_symbol-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 151</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ftp.rb, line 153</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status_symbol</span> = <span class="ruby-constant">STATUS_NAMES</span>[<span class="ruby-identifier">status</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">status</span>
   <span class="ruby-comment"># Returns the message.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">message</span>       = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfFtpResponse_getMessage</span>(<span class="ruby-ivar">@handle</span>).<span class="ruby-identifier">to_s</span>

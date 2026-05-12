@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Sound - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Sound - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Sound - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Sound - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Sound - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Sound - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -670,7 +670,7 @@
         <div class="method-description">
 
 
-        
+        <p>The buffer.</p>
 
         </div>
       </div>
@@ -777,7 +777,7 @@
             </details>
           </div>
           <div class="method-source-code" id="attenuation-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 192</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attenuation</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getAttenuation</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the attenuation — see `#attenuation`.</span>
@@ -919,7 +919,7 @@
             </details>
           </div>
           <div class="method-source-code" id="attenuation-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 195</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 196</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attenuation=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setAttenuation</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -961,7 +961,7 @@
             </details>
           </div>
           <div class="method-source-code" id="buffer-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 31</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">buffer=</span>(<span class="ruby-identifier">new_buffer</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Sound#buffer= requires a SFML::SoundBuffer&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new_buffer</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SoundBuffer</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setBuffer</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">new_buffer</span>.<span class="ruby-identifier">handle</span>)
@@ -1005,7 +1005,7 @@
             </details>
           </div>
           <div class="method-source-code" id="cone-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 107</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cone</span>
   <span class="ruby-constant">SoundCone</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getCone</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -1047,7 +1047,7 @@
             </details>
           </div>
           <div class="method-source-code" id="cone-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 113</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cone=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">cone</span> =
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
@@ -1096,7 +1096,7 @@
             </details>
           </div>
           <div class="method-source-code" id="direction-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 93</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">direction</span>
   <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getDirection</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">:z</span>])
@@ -1141,7 +1141,7 @@
             </details>
           </div>
           <div class="method-source-code" id="direction-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 99</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">direction=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">packed</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector3f</span>.<span class="ruby-identifier">new</span>
@@ -1186,7 +1186,7 @@
             </details>
           </div>
           <div class="method-source-code" id="directional_attenuation_factor-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 273</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 274</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">directional_attenuation_factor</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getDirectionalAttenuationFactor</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1228,7 +1228,7 @@
             </details>
           </div>
           <div class="method-source-code" id="directional_attenuation_factor-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 279</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 280</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">directional_attenuation_factor=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setDirectionalAttenuationFactor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1270,7 +1270,7 @@
             </details>
           </div>
           <div class="method-source-code" id="doppler_factor-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">doppler_factor</span>    = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getDopplerFactor</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-comment"># Set the per-source Doppler scale. See `#doppler_factor`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">doppler_factor=</span>(<span class="ruby-identifier">v</span>) <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setDopplerFactor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>); <span class="ruby-keyword">end</span>
@@ -1515,7 +1515,7 @@
             </details>
           </div>
           <div class="method-source-code" id="doppler_factor-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 89</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">doppler_factor=</span>(<span class="ruby-identifier">v</span>) <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setDopplerFactor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>); <span class="ruby-keyword">end</span></pre>
           </div>
 
@@ -1555,7 +1555,7 @@
             </details>
           </div>
           <div class="method-source-code" id="dup-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 285</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 286</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_copy</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">AudioError</span>, <span class="ruby-string">&quot;sfSound_copy returned NULL&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>
@@ -1604,7 +1604,7 @@
             </details>
           </div>
           <div class="method-source-code" id="effect_processor-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 136</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 137</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">effect_processor=</span>(<span class="ruby-identifier">callable</span>)
   <span class="ruby-ivar">@effect_cb</span> = <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Audio</span>.<span class="ruby-identifier">_build_effect_processor</span>(<span class="ruby-identifier">callable</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setEffectProcessor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-ivar">@effect_cb</span>, <span class="ruby-keyword">nil</span>)
@@ -1649,7 +1649,7 @@
             </details>
           </div>
           <div class="method-source-code" id="looping-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 148</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">looping=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-ivar">@looping</span> = <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setLooping</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-ivar">@looping</span>)
@@ -1692,7 +1692,7 @@
             </details>
           </div>
           <div class="method-source-code" id="looping-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 142</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">looping?</span>
   <span class="ruby-ivar">@looping</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1734,7 +1734,7 @@
             </details>
           </div>
           <div class="method-source-code" id="max_distance-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 254</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 255</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">max_distance</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getMaxDistance</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Set the max-distance — see `#max_distance`.</span>
@@ -1817,7 +1817,7 @@
             </details>
           </div>
           <div class="method-source-code" id="max_distance-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 257</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 258</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">max_distance=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setMaxDistance</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1859,7 +1859,7 @@
             </details>
           </div>
           <div class="method-source-code" id="max_gain-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 246</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 247</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">max_gain</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getMaxGain</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Set the max-gain cap — see `#max_gain`.</span>
@@ -1949,7 +1949,7 @@
             </details>
           </div>
           <div class="method-source-code" id="max_gain-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 249</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 250</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">max_gain=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setMaxGain</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1991,7 +1991,7 @@
             </details>
           </div>
           <div class="method-source-code" id="min_distance-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 200</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_distance</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getMinDistance</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the min-distance — see `#min_distance`.</span>
@@ -2126,7 +2126,7 @@
             </details>
           </div>
           <div class="method-source-code" id="min_distance-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 203</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 204</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_distance=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setMinDistance</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2168,7 +2168,7 @@
             </details>
           </div>
           <div class="method-source-code" id="min_gain-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 238</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 239</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_gain</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getMinGain</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the min-gain floor — see `#min_gain`.</span>
@@ -2266,7 +2266,7 @@
             </details>
           </div>
           <div class="method-source-code" id="min_gain-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 241</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 242</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_gain=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setMinGain</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2308,7 +2308,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pan-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 227</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 228</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pan</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getPan</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the stereo pan — see `#pan`.</span>
@@ -2416,7 +2416,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pan-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 230</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 231</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pan=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setPan</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2458,7 +2458,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pause-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 41</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_pause</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-comment"># Stop playback and rewind to the start.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stop</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_stop</span>(<span class="ruby-ivar">@handle</span>)
@@ -2748,7 +2748,7 @@
             </details>
           </div>
           <div class="method-source-code" id="paused-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 50</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span>     = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:paused</span>
 <span class="ruby-comment"># Convenience predicate for `status == :stopped`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stopped?</span>    = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:stopped</span>
@@ -3030,7 +3030,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pitch-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 163</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 164</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pitch</span>       = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getPitch</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the pitch multiplier — see `#pitch`.</span>
@@ -3201,7 +3201,7 @@
             </details>
           </div>
           <div class="method-source-code" id="pitch-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 166</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 167</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pitch=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setPitch</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3243,7 +3243,7 @@
             </details>
           </div>
           <div class="method-source-code" id="play-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 39</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">play</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_play</span>(<span class="ruby-ivar">@handle</span>)
 <span class="ruby-comment"># Pause playback. `#play` resumes from this point; `#stop` rewinds.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pause</span>  = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_pause</span>(<span class="ruby-ivar">@handle</span>)
@@ -3535,7 +3535,7 @@
             </details>
           </div>
           <div class="method-source-code" id="playing-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">playing?</span>    = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:playing</span>
 <span class="ruby-comment"># Convenience predicate for `status == :paused`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">paused?</span>     = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:paused</span>
@@ -3819,7 +3819,7 @@
             </details>
           </div>
           <div class="method-source-code" id="playing_offset-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">playing_offset</span>
   <span class="ruby-constant">Time</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getPlayingOffset</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -3861,7 +3861,7 @@
             </details>
           </div>
           <div class="method-source-code" id="playing_offset-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 64</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">playing_offset=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">t</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Time</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">seconds</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setPlayingOffset</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_native</span>)
@@ -3904,7 +3904,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 180</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 181</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position</span>
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getPosition</span>(<span class="ruby-ivar">@handle</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -3950,7 +3950,7 @@
             </details>
           </div>
           <div class="method-source-code" id="position-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 185</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 186</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">position=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setPosition</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">to_native_f</span>)
@@ -3993,7 +3993,7 @@
             </details>
           </div>
           <div class="method-source-code" id="relative_to_listener-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 213</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 214</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">relative_to_listener=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setRelativeToListener</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4035,7 +4035,7 @@
             </details>
           </div>
           <div class="method-source-code" id="relative_to_listener-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 210</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 211</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">relative_to_listener?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_isRelativeToListener</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Toggle listener-relative positioning.</span>
@@ -4160,7 +4160,7 @@
             </details>
           </div>
           <div class="method-source-code" id="spatialization_enabled-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 266</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 267</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">spatialization_enabled=</span>(<span class="ruby-identifier">v</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setSpatializationEnabled</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">v</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4202,7 +4202,7 @@
             </details>
           </div>
           <div class="method-source-code" id="spatialization_enabled-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 263</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 264</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">spatialization_enabled?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_isSpatializationEnabled</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Toggle 3D spatialisation — see `#spatialization_enabled?`.</span>
@@ -4275,7 +4275,7 @@
             </details>
           </div>
           <div class="method-source-code" id="status-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 46</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status</span>      = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span><span class="ruby-operator">::</span><span class="ruby-constant">STATUSES</span>[<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getStatus</span>(<span class="ruby-ivar">@handle</span>)]
 <span class="ruby-comment"># Convenience predicate for `status == :playing`.</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">playing?</span>    = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:playing</span>
@@ -4561,7 +4561,7 @@
             </details>
           </div>
           <div class="method-source-code" id="stop-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 43</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stop</span>   = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_stop</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Playback state — one of `:stopped`, `:paused`, `:playing`.</span>
@@ -4850,7 +4850,7 @@
             </details>
           </div>
           <div class="method-source-code" id="stopped-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stopped?</span>    = <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:stopped</span>
 
 <span class="ruby-comment"># Current playback head as a SFML::Time. Reads from the underlying</span>
@@ -5130,7 +5130,7 @@
             </details>
           </div>
           <div class="method-source-code" id="velocity-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 72</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">velocity</span>
   <span class="ruby-identifier">v</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getVelocity</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>[<span class="ruby-value">:x</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">:y</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">:z</span>])
@@ -5173,7 +5173,7 @@
             </details>
           </div>
           <div class="method-source-code" id="velocity-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 78</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">velocity=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">vec</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector3</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Vector3</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">packed</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">System</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector3f</span>.<span class="ruby-identifier">new</span>
@@ -5218,7 +5218,7 @@
             </details>
           </div>
           <div class="method-source-code" id="volume-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 154</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 155</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">volume</span>      = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_getVolume</span>(<span class="ruby-ivar">@handle</span>)
 
 <span class="ruby-comment"># Set the playback volume in [0, 100].</span>
@@ -5397,7 +5397,7 @@
             </details>
           </div>
           <div class="method-source-code" id="volume-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 157</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/audio/sound.rb, line 158</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">volume=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Audio</span>.<span class="ruby-identifier">sfSound_setVolume</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>

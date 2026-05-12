@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Cursor - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Cursor - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Cursor - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Cursor - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Cursor - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Cursor - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -568,7 +568,7 @@
 
         <dd>
 
-          
+          <p>Type symbol → integer index Hash.</p>
         </dd>
 
 
@@ -607,7 +607,7 @@
             </details>
           </div>
           <div class="method-source-code" id="_wrap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 62</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_wrap</span>(<span class="ruby-identifier">ptr</span>)
   <span class="ruby-identifier">cursor</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@handle</span>, <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:sfCursor_destroy</span>)))
@@ -651,7 +651,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_pixels-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 41</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_pixels</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">pixels</span>, <span class="ruby-value">hotspot:</span> [<span class="ruby-value">0</span>, <span class="ruby-value">0</span>])
   <span class="ruby-identifier">expected</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">width</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">height</span>) <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;pixels must be #{expected} bytes, got #{pixels.bytesize}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">pixels</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">expected</span>
@@ -707,7 +707,7 @@
             </details>
           </div>
           <div class="method-source-code" id="system-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 28</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/window/cursor.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">system</span>(<span class="ruby-identifier">type</span>)
   <span class="ruby-identifier">code</span> = <span class="ruby-constant">TYPE_INDEX</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown cursor type: #{type.inspect}. &quot;</span> \

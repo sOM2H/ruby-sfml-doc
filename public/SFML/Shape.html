@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Shape - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Shape - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Shape - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Shape - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Shape - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Shape - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -738,7 +738,7 @@
             </details>
           </div>
           <div class="method-source-code" id="fill_color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 76</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 77</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_getFillColor</span>(<span class="ruby-ivar">@handle</span>))
 
   <span class="ruby-comment"># Set the fill color.</span>
@@ -771,6 +771,7 @@
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the draw on.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Shape</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
   <span class="ruby-keyword">end</span>
@@ -820,7 +821,7 @@
             </details>
           </div>
           <div class="method-source-code" id="fill_color-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 79</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_setFillColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -862,7 +863,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_color-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 84</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 85</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">from_native</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_getOutlineColor</span>(<span class="ruby-ivar">@handle</span>))
 
     <span class="ruby-comment"># Set the outline color.</span>
@@ -887,6 +888,7 @@
       <span class="ruby-keyword">self</span>
     <span class="ruby-keyword">end</span>
 
+    <span class="ruby-comment"># Returns the draw on.</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
       <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Shape</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
     <span class="ruby-keyword">end</span>
@@ -937,7 +939,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_color-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 87</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_color=</span>(<span class="ruby-identifier">c</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_setOutlineColor</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_native</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -979,7 +981,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_thickness-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 92</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 93</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_getOutlineThickness</span>(<span class="ruby-ivar">@handle</span>)
 
   <span class="ruby-comment"># Set the outline thickness.</span>
@@ -996,6 +998,7 @@
     <span class="ruby-keyword">self</span>
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Returns the draw on.</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_on</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">states_ptr</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :nodoc:</span>
     <span class="ruby-identifier">target</span>.<span class="ruby-identifier">_draw_native</span>(<span class="ruby-value">:Shape</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">states_ptr</span>)
   <span class="ruby-keyword">end</span>
@@ -1045,7 +1048,7 @@
             </details>
           </div>
           <div class="method-source-code" id="outline_thickness-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 95</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">outline_thickness=</span>(<span class="ruby-identifier">t</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_setOutlineThickness</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1087,7 +1090,7 @@
             </details>
           </div>
           <div class="method-source-code" id="point-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 70</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">point</span>(<span class="ruby-identifier">_index</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-node">&quot;#{self.class} must override #point(index)&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1098,7 +1101,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the point.</p>
 
 
         </div>
@@ -1171,7 +1174,7 @@
             </details>
           </div>
           <div class="method-source-code" id="update-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 103</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/graphics/shape.rb, line 104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Graphics</span>.<span class="ruby-identifier">sfShape_update</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>

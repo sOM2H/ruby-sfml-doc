@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::IpAddress - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Network::IpAddress - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::IpAddress - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Network::IpAddress - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::IpAddress - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Network::IpAddress - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -597,7 +597,7 @@
 
         <dd>
 
-          
+          <p>0.0.0.0 — match any local interface.</p>
         </dd>
 
 
@@ -605,7 +605,7 @@
 
         <dd>
 
-          
+          <p>255.255.255.255 — broadcast on the local subnet.</p>
         </dd>
 
 
@@ -613,7 +613,7 @@
 
         <dd>
 
-          
+          <p>127.0.0.1 — local-only.</p>
         </dd>
 
 
@@ -621,7 +621,7 @@
 
         <dd>
 
-          
+          <p>The 0.0.0.0 / empty placeholder address.</p>
         </dd>
 
 
@@ -660,7 +660,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_bytes-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 17</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_bytes</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">d</span>)
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_fromBytes</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">a</span>), <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">b</span>), <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">c</span>), <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">d</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -671,7 +671,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build from four octets: <code>from_bytes(192, 168, 1, 42)</code>.</p>
 
 
         </div>
@@ -702,7 +702,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_integer-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 21</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_integer</span>(<span class="ruby-identifier">n</span>)
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_fromInteger</span>(<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">n</span>)))
 <span class="ruby-keyword">end</span></pre>
@@ -713,7 +713,7 @@
         <div class="method-description">
 
 
-          
+          <p>Build from a 32-bit packed integer.</p>
 
 
         </div>
@@ -744,7 +744,7 @@
             </details>
           </div>
           <div class="method-source-code" id="from_string-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 13</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">from_string</span>(<span class="ruby-identifier">s</span>)
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_fromString</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -755,7 +755,7 @@
         <div class="method-description">
 
 
-          
+          <p>Parse from a dotted-decimal string like <code>&quot;192.168.1.42&quot;</code>.</p>
 
 
         </div>
@@ -786,7 +786,7 @@
             </details>
           </div>
           <div class="method-source-code" id="local-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 26</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">local</span>
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_getLocalAddress</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -828,7 +828,7 @@
             </details>
           </div>
           <div class="method-source-code" id="public-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 32</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">public</span>(<span class="ruby-value">timeout:</span> <span class="ruby-constant">SFML</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zero</span>)
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_getPublicAddress</span>(<span class="ruby-identifier">timeout</span>.<span class="ruby-identifier">to_native</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -870,7 +870,7 @@
             </details>
           </div>
           <div class="method-source-code" id="wrap-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 37</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">wrap</span>(<span class="ruby-identifier">struct</span>)
   <span class="ruby-identifier">ip</span> = <span class="ruby-identifier">allocate</span>
   <span class="ruby-identifier">ip</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@struct</span>, <span class="ruby-identifier">struct</span>)
@@ -928,7 +928,7 @@
             </details>
           </div>
           <div class="method-source-code" id="3D-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 52</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">IpAddress</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
@@ -939,7 +939,7 @@
         <div class="method-description">
 
 
-          
+          <p>Value equality — same dotted-decimal string.</p>
 
 
         </div>
@@ -1008,15 +1008,19 @@
             </details>
           </div>
           <div class="method-source-code" id="hash-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 57</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 63</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span> = <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">hash</span>
 
   <span class="ruby-comment"># @!visibility private</span>
   <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:struct</span>
 
+  <span class="ruby-comment"># The 0.0.0.0 / empty placeholder address.</span>
   <span class="ruby-constant">NONE</span>      = <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_None</span>)
+  <span class="ruby-comment"># 0.0.0.0 — match any local interface.</span>
   <span class="ruby-constant">ANY</span>       = <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_Any</span>)
+  <span class="ruby-comment"># 127.0.0.1 — local-only.</span>
   <span class="ruby-constant">LOCALHOST</span> = <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_LocalHost</span>)
+  <span class="ruby-comment"># 255.255.255.255 — broadcast on the local subnet.</span>
   <span class="ruby-constant">BROADCAST</span> = <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_Broadcast</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -1091,7 +1095,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_i-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 48</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_i</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfIpAddress_toInteger</span>(<span class="ruby-ivar">@struct</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1102,7 +1106,7 @@
         <div class="method-description">
 
 
-          
+          <p>Packed 32-bit Integer view of the address.</p>
 
 
         </div>
@@ -1133,7 +1137,7 @@
             </details>
           </div>
           <div class="method-source-code" id="to_s-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 43</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/ip_address.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-ivar">@struct</span>[<span class="ruby-value">:address</span>].<span class="ruby-identifier">to_ptr</span>.<span class="ruby-identifier">read_string_to_null</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1144,7 +1148,7 @@
         <div class="method-description">
 
 
-          
+          <p>Dotted-decimal string (“192.168.1.42”).</p>
 
 
         </div>

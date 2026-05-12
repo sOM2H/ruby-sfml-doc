@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>class SFML::Network::TcpListener - ruby-sfml 3.0.0.7</title>
+<title>class SFML::Network::TcpListener - ruby-sfml 3.0.0.8</title>
 
 
   <meta
@@ -24,7 +24,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="class SFML::Network::TcpListener - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="class SFML::Network::TcpListener - ruby-sfml 3.0.0.8">
 
 
 
@@ -36,7 +36,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class SFML::Network::TcpListener - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="class SFML::Network::TcpListener - ruby-sfml 3.0.0.8">
 
 
 
@@ -308,7 +308,7 @@
 
 <header class="top-navbar">
   <a href="../../index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -665,7 +665,7 @@
             </details>
           </div>
           <div class="method-source-code" id="accept-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 36</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>
   <span class="ruby-identifier">out_ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:pointer</span>)
   <span class="ruby-identifier">code</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfTcpListener_accept</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">out_ptr</span>)
@@ -717,7 +717,7 @@
             </details>
           </div>
           <div class="method-source-code" id="blocking-3D-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 54</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blocking=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfTcpListener_setBlocking</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -759,7 +759,7 @@
             </details>
           </div>
           <div class="method-source-code" id="blocking-3F-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 51</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 52</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blocking?</span> = <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfTcpListener_isBlocking</span>(<span class="ruby-ivar">@handle</span>)
 
     <span class="ruby-comment"># Set the blocking.</span>
@@ -811,7 +811,7 @@
             </details>
           </div>
           <div class="method-source-code" id="close-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 29</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/sfml/network/tcp_listener.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">close</span>
   <span class="ruby-constant">C</span><span class="ruby-operator">::</span><span class="ruby-constant">Network</span>.<span class="ruby-identifier">sfTcpListener_close</span>(<span class="ruby-ivar">@handle</span>)
   <span class="ruby-keyword">self</span>
@@ -823,7 +823,7 @@
         <div class="method-description">
 
 
-          
+          <p>Returns the close.</p>
 
 
         </div>

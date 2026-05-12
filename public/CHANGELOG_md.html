@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CHANGELOG - ruby-sfml 3.0.0.7</title>
+<title>CHANGELOG - ruby-sfml 3.0.0.8</title>
 
 
   <meta name="keywords" content="ruby,documentation,CHANGELOG">
@@ -19,7 +19,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="CHANGELOG - ruby-sfml 3.0.0.7">
+<meta property="og:title" content="CHANGELOG - ruby-sfml 3.0.0.8">
 
 
 
@@ -31,7 +31,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHANGELOG - ruby-sfml 3.0.0.7">
+<meta name="twitter:title" content="CHANGELOG - ruby-sfml 3.0.0.8">
 
 
 
@@ -303,7 +303,7 @@
 
 <header class="top-navbar">
   <a href="./index.html" class="navbar-brand">
-    ruby-sfml 3.0.0.7
+    ruby-sfml 3.0.0.8
   </a>
 
   <!-- Desktop search bar -->
@@ -464,13 +464,30 @@
 <span id="label-5BUnreleased-5D" class="legacy-anchor"></span>
 <h2 id="unreleased"><a href="#unreleased">[Unreleased]</a></h2>
 
-<span id="label-5B3.0.0.7-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
-<h2 id="3007--2026-05-12"><a href="#3007--2026-05-12">[3.0.0.7] — 2026-05-12</a></h2>
+<span id="label-5B3.0.0.8-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
+<h2 id="3008--2026-05-12"><a href="#3008--2026-05-12">[3.0.0.8] — 2026-05-12</a></h2>
 
-<p>Documentation pass. Every public class / module / method now carries at least a one-line RDoc comment — coverage went from ~36% (<code>rake rdoc:coverage</code>) to ~68%. Pair this release with the new docs site at <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/.</p>
+<p>Continued documentation pass. RDoc coverage went from <strong>68% → 87%</strong> on top of 3.0.0.7’s first pass — every public class, module, and attribute is now documented, plus all the simple setter/getter/predicate methods. Docs site: <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/.</p>
 
 <span id="label-Changed+-E2-80-94+documentation" class="legacy-anchor"></span>
 <h3 id="changed--documentation"><a href="#changed--documentation">Changed — documentation</a></h3>
+<ul><li>
+<p>All 63 <code>attr_reader</code> / <code>attr_accessor</code> declarations now carry a one-line description (62 → 0 undocumented).</p>
+</li><li>
+<p>72 of 97 module-level constants now documented (was 23) — every <code>CODES</code> / <code>INDEX</code> table, <code>STATUSES</code> enum, <code>DEFAULT_*</code> sentinel, and named-color singleton has a sentence.</p>
+</li><li>
+<p>Hand-written docstrings on <code>Assets</code>, <code>Clock</code>, <code>Window</code> (bare), <code>Sprite</code>, <code>View</code>, <code>Transform</code>, <code>SocketSelector</code>, <code>Http</code>, <code>IpAddress</code>, <code>Event</code> — the methods that survived the previous pass without docs.</p>
+</li><li>
+<p>Final aggressive auto-doc pass fills setter / getter / predicate / accessor patterns the conservative pass skipped.</p>
+</li></ul>
+
+<span id="label-5B3.0.0.7-5D+-E2-80-94+2026-05-12" class="legacy-anchor"></span>
+<h2 id="3007--2026-05-12"><a href="#3007--2026-05-12">[3.0.0.7] — 2026-05-12</a></h2>
+
+<p>Documentation pass. RDoc coverage went from <strong>36% → 68%</strong> —every public class, module, and the high-traffic methods now carry at least a one-line description. Pair this release with the new docs site at <a href="https://ruby-sfml-doc.netlify.app">ruby-sfml-doc.netlify.app</a>/.</p>
+
+<span id="label-Changed+-E2-80-94+documentation-1" class="legacy-anchor"></span>
+<h3 id="changed--documentation-1"><a href="#changed--documentation-1">Changed — documentation</a></h3>
 <ul><li>
 <p>Hand-written, context-aware docstrings on the value classes (<code>Vector2</code>, <code>Vector3</code>, <code>Color</code>, <code>Rect</code>, <code>Time</code>): every operator, every helper, every pattern-match hook.</p>
 </li><li>
